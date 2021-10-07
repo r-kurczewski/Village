@@ -1,0 +1,612 @@
+fileFormatVersion: 2
+guid: 51f61d5e6f8da0d41b61f9999cab210f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -780441507183819159
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_0
+  - first:
+      213: -2036597177203828329
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_1
+  - first:
+      213: -2439641396578180142
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_2
+  - first:
+      213: -5441268790875020873
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_3
+  - first:
+      213: 7011851912532293590
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_4
+  - first:
+      213: 99894375907288413
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_5
+  - first:
+      213: -1906292621467494338
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_6
+  - first:
+      213: -3819594774901197287
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_7
+  - first:
+      213: 7410737644298981623
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_8
+  - first:
+      213: 6280539879409524727
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_9
+  - first:
+      213: -5538591166823807634
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_10
+  - first:
+      213: -4047758701324520970
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_11
+  - first:
+      213: 34338429989194866
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_12
+  - first:
+      213: -9206290744243039202
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_13
+  - first:
+      213: -334913117207825528
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_14
+  - first:
+      213: -3101163398041126708
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_15
+  - first:
+      213: -7386770098568078134
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_16
+  - first:
+      213: -824330580492777122
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_17
+  - first:
+      213: 343668274082108851
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_18
+  - first:
+      213: 2325786852942004418
+    second: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1010
+        width: 266
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 966865c85905b25f0800000000000000
+      internalID: -780441507183819159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_1
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 1003
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 799d33e58ad8cb3e0800000000000000
+      internalID: -2036597177203828329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_2
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 1000
+        width: 266
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d3ae995317a42ed0800000000000000
+      internalID: -2439641396578180142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_3
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 1010
+        width: 266
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b1a9702ddabc74b0800000000000000
+      internalID: -5441268790875020873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_4
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 751
+        width: 266
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d771200a2a1f4160800000000000000
+      internalID: 7011851912532293590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_5
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 742
+        width: 266
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d556307d765e26100800000000000000
+      internalID: 99894375907288413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_6
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 729
+        width: 266
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e385b73f5fc7b85e0800000000000000
+      internalID: -1906292621467494338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_7
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 742
+        width: 266
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91673101ac21efac0800000000000000
+      internalID: -3819594774901197287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 482
+        width: 266
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f05e0caf9a38d660800000000000000
+      internalID: 7410737644298981623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_9
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 482
+        width: 266
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ff11ed9eb5f82750800000000000000
+      internalID: 6280539879409524727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_10
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 477
+        width: 266
+        height: 260
+      alignment: 9
+      pivot: {x: 0.47070014, y: 0.49500427}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65c951bda8f223b0800000000000000
+      internalID: -5538591166823807634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_11
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 476
+        width: 266
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f13e0738e873d7c0800000000000000
+      internalID: -4047758701324520970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 260
+        width: 266.25
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c86a1ce9ef97000800000000000000
+      internalID: 34338429989194866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_13
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 260
+        width: 266.25
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e145d6a585fac3080800000000000000
+      internalID: -9206290744243039202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_14
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 259
+        width: 266
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 883753a5b462a5bf0800000000000000
+      internalID: -334913117207825528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_15
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 263
+        width: 266
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc8b055f15476f4d0800000000000000
+      internalID: -3101163398041126708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_16
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 6
+        width: 266
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acc5f5d6bbbec7990800000000000000
+      internalID: -7386770098568078134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_17
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 21
+        width: 266
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e598c3c54b36f84f0800000000000000
+      internalID: -824330580492777122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_18
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 30
+        width: 266
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b55c357974f4c400800000000000000
+      internalID: 343668274082108851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vector-icon-set-d-games-platformer-game-interface-ui-resources-ore-food-wood-78970951_19
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 22
+        width: 266
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c0c1e8f1dad64020800000000000000
+      internalID: 2325786852942004418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

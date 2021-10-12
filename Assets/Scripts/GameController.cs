@@ -1,5 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-internal class GameController : MonoBehaviour
+public class GameController : MonoBehaviour
 {
+	[SerializeField] private GameData data;
+
 }

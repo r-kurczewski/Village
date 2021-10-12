@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 6663533551790628121}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_Children: []
   m_Father: {fileID: 6859613252906170227}
   m_RootOrder: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7917222906288610961, guid: d02835bd23b453843aa6baa8e98faaf5, type: 3}
+  m_Sprite: {fileID: -3588946559414339053, guid: 15427c46447f29b4aa2e39a21b890bb4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -100,7 +100,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6859613252906170227}
   - component: {fileID: 5717805646915996445}
-  - component: {fileID: 4734737230363868678}
+  - component: {fileID: 2613612443940979981}
+  - component: {fileID: 59685035}
   m_Layer: 5
   m_Name: Resource
   m_TagString: Untagged
@@ -137,7 +138,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7131784721454533779}
   m_CullTransparentMesh: 1
---- !u!114 &4734737230363868678
+--- !u!114 &2613612443940979981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,27 +147,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 7131784721454533779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a62d192d3a820645b2f4dd98d0d17bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.491, g: 0.32492647, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  tooltip: {fileID: 0}
+  showTime: 0.1
+  label: {fileID: 3570259409621875003}
+--- !u!114 &59685035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7131784721454533779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 1
 --- !u!1 &7303403154529864193
 GameObject:
   m_ObjectHideFlags: 0

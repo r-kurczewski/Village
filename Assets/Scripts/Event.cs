@@ -9,8 +9,8 @@ public class Event : MonoBehaviour
 	public string Title { get; set; }
 	public string Description { get; set; }
 	public List<EventRequirement> Requirements { get; set; }
-	public List<EventEffect> OnSuccess { get; set; }
-	public List<EventEffect> OnFailure { get; set; }
+	//public List<Effect> OnSuccess { get; set; }
+	//public List<Effect> OnFailure { get; set; }
 	public int Turns { get; set; }
 
 	#region Unity references

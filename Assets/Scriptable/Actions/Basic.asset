@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b670dcb6a49ce54eb255a4183055549, type: 3}
+  m_Name: Basic
+  m_EditorClassIdentifier: 
+  actionName: 
+  stat1: {fileID: 0}
+  stat2: {fileID: 0}
+  heal: 0
+  gold: 0
+  food: 0
+  water: 0
+  medicine: 0
+  wood: 0
+  stone: 0
+  material: 0
+  herbs: 0
+  metal: 0
+  gems: 0
+  countryAReputation: 0
+  countryBReputation: 0

@@ -1,18 +1,26 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class GameData : MonoBehaviour
 {
+	[Header("Basic")]
 	public int turn;
+
+	[Header("Current resources")]
+	public List<ResourceQuantity> resources;
+
+	[Header("Current reputation")]
+	public int CountryAReputation;
+	public int CountryBReputation;
+
+	[Header("Villagers")]
+	public List<Villager> villagers;
+
+	[Header("Active events")]
+	public List<Event> events;
 	
-	[Header("Resources")]
-	public int gold;
-	public int food;
-	public int water;
-	public int medicine;
-	public int wood;
-	public int stone;
-	public int cloth;
-	public int herbs;
-	public int metal;
-	public int gems;
+	[Header("Current trades")]
+	public List<TradeOffer> merchantOffer;
+	public List<TradeOffer> countryAOffer;
+	public List<TradeOffer> countryBOffer;
 }

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf964d09d9cad8648885a374e4752b6b, type: 3}
+  m_Name: Petra
+  m_EditorClassIdentifier: 
+  villagerName: Petra
+  icon: {fileID: 21300000, guid: ad671996f5652764b918ad82842d9073, type: 3}
+  CountryAReputation: 1
+  CountryBReputation: -2
+  baseStrength: 0
+  baseGathering: 3
+  baseCrafting: 1
+  baseDiplomacy: 1
+  baseIntelligence: 2

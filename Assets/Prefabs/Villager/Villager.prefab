@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 2136132191754573736}
   - component: {fileID: 2136132191754573737}
   - component: {fileID: 3030878898432219112}
-  - component: {fileID: 190920492}
+  - component: {fileID: 7896652310548351838}
   m_Layer: 5
   m_Name: Villager
   m_TagString: Untagged
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: 0, y: -0.6, z: 0, w: 0}
   m_Softness: {x: 0, y: 0}
---- !u!114 &190920492
+--- !u!114 &7896652310548351838
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -342,20 +342,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2136132191754573743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf964d09d9cad8648885a374e4752b6b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3737b1717b8fb6840871f4320493907e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  villagerName: Eleonore
-  sprite: {fileID: 0}
-  health: 3
-  CountryAReputation: -3
-  CountryBReputation: 2
-  strength: 1
-  gathering: 0
-  crafting: 2
-  diplomacy: 3
-  intelligence: 1
   showTime: 0.5
+  villagerBase: {fileID: 0}
+  strength: 0
+  gathering: 0
+  crafting: 0
+  diplomacy: 0
+  intelligence: 0
+  health: 4
 --- !u!1 &2490433635502999989
 GameObject:
   m_ObjectHideFlags: 0

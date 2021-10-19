@@ -1450,9 +1450,9 @@ GameObject:
   - component: {fileID: 5428628185059959626}
   - component: {fileID: 8806448678038921697}
   - component: {fileID: 8862133922857211327}
+  - component: {fileID: 8561491303845711501}
   - component: {fileID: 3133984949929698002}
   - component: {fileID: 677428507005285149}
-  - component: {fileID: 8561491303845711501}
   m_Layer: 2
   m_Name: VillagerTooltip
   m_TagString: Untagged
@@ -1520,6 +1520,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8561491303845711501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8506739355876643985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924c77daa213ca24da3eee520b7fe9b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 6059238518190486704}
+  villagerName: {fileID: 1411308508402823550}
+  countryAReputation: {fileID: 5372934773354357207}
+  countryBReputation: {fileID: 4058288703365196954}
+  strengthBar: {fileID: 4048450558135662992}
+  gatheringBar: {fileID: 248130220378619471}
+  craftingBar: {fileID: 6444265623440457000}
+  diplomacyBar: {fileID: 884718164576681649}
+  intelligenceBar: {fileID: 5659671291284642822}
 --- !u!114 &3133984949929698002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1560,27 +1581,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 1
   m_VerticalFit: 1
---- !u!114 &8561491303845711501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8506739355876643985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 924c77daa213ca24da3eee520b7fe9b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  icon: {fileID: 6059238518190486704}
-  villagerName: {fileID: 1411308508402823550}
-  countryAReputation: {fileID: 5372934773354357207}
-  countryBReputation: {fileID: 4058288703365196954}
-  strengthBar: {fileID: 4048450558135662992}
-  gatheringBar: {fileID: 248130220378619471}
-  craftingBar: {fileID: 6444265623440457000}
-  diplomacyBar: {fileID: 884718164576681649}
-  intelligenceBar: {fileID: 5659671291284642822}
 --- !u!1 &8686518884334251870
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,12 +1,12 @@
-﻿public class TradeOffer
+﻿using System;
+using UnityEngine;
+
+[Serializable]
+public class TradeOffer
 {
-	public enum TradeMode { OnlyBuy, OnlySell, BuyAndSell}
+	public enum TradeMode { Buy, Sell}
 
 	public TradeMode mode;
-	public ResourceView resource;
-	public int cost;
-	public int reputationPerItem;
-
-
-
+	public ResourceAmount yourResources;
+	public ResourceAmount merchantResources;
 }

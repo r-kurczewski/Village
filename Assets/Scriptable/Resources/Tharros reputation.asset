@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a092a0297ffabb4d8454bb14c8d1a27, type: 3}
+  m_Script: {fileID: 11500000, guid: d4e103318d6bd6440b7bf26de1cda65f, type: 3}
   m_Name: Tharros reputation
   m_EditorClassIdentifier: 
-  resourceName: Reputscja Tharros
+  resourceName: Reputacja Tharros
   icon: {fileID: -3871137802639562391, guid: a321d742dbdc768408046dafc122677a, type: 3}
-  baseValue: 20
   color: {r: 1, g: 0.44043308, b: 0, a: 1}
+  baseValue: 20

@@ -4,14 +4,27 @@ using UnityEngine.EventSystems;
 [SelectionBase]
 public class Villager : Tooltiped
 {
-	public string villagerName;
-	public Sprite sprite;
-	[Range(0, 3)]
-	public int health;
-	[Range(-3, 3)]
-	public int CountryAReputation, CountryBReputation;
-	[Range(0, 5)]
+	public VillagerBase villagerBase;
 	public int strength, gathering, crafting, diplomacy, intelligence;
+	
+	[Range(0, 4)]
+	public int health;
+
+	public new void Start()
+	{
+		SetTooltipObject();
+		if (villagerBase) Load(villagerBase);
+	}
+
+	public void Load(VillagerBase villager)
+	{
+		villagerBase = villager;
+		strength = villager.baseStrength;
+		gathering = villager.baseGathering;
+		crafting = villager.baseCrafting;
+		diplomacy = villager.baseDiplomacy;
+		intelligence = villager.baseIntelligence;
+	}
 
 	protected override void LoadTooltipData()
 	{

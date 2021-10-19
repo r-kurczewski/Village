@@ -18,10 +18,10 @@ public class VillagerTooltip : Tooltip<Villager>
 
 	public override void Load(Villager data)
 	{
-		icon.sprite = data.sprite;
-		villagerName.text = data.villagerName;
-		countryAReputation.SetReputation(data.CountryAReputation);
-		countryBReputation.SetReputation(data.CountryBReputation);
+		icon.sprite = data.villagerBase.icon;
+		villagerName.text = data.villagerBase.villagerName;
+		countryAReputation.SetReputation(data.villagerBase.CountryAReputation);
+		countryBReputation.SetReputation(data.villagerBase.CountryBReputation);
 		strengthBar.SetStat(data.strength);
 		gatheringBar.SetStat(data.gathering);
 		craftingBar.SetStat(data.crafting);

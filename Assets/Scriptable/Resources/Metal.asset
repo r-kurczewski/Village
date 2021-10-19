@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Metal
   m_EditorClassIdentifier: 
   resourceName: Metal
-  icon: {fileID: -4047758701324520970, guid: 51f61d5e6f8da0d41b61f9999cab210f, type: 3}
+  icon: {fileID: -5578061715106032065, guid: 3d985224bfab70b419fd48e53a97e3a8, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
   baseValue: 10

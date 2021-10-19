@@ -11,7 +11,7 @@ public abstract class Tooltiped : MonoBehaviour, IPointerEnterHandler, IPointerE
 	private bool tooltipShown;
 	private bool mouseOver;
 
-	private void Start()
+	protected void Start()
 	{
 		SetTooltipObject();
 	}

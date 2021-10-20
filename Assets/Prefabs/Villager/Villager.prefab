@@ -185,10 +185,10 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 3, y: -21}
-  m_SizeDelta: {x: 6, y: -48}
-  m_Pivot: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 2, y: 2}
+  m_SizeDelta: {x: 5, y: 25}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &7093668046160082946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 4
   m_WholeNumbers: 1
-  m_Value: 4
+  m_Value: 3
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -250,9 +250,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2136132191754573742}
   - component: {fileID: 2136132191754573736}
+  - component: {fileID: 7896652310548351838}
   - component: {fileID: 2136132191754573737}
   - component: {fileID: 3030878898432219112}
-  - component: {fileID: 7896652310548351838}
   m_Layer: 5
   m_Name: Villager
   m_TagString: Untagged
@@ -289,6 +289,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136132191754573743}
   m_CullTransparentMesh: 1
+--- !u!114 &7896652310548351838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136132191754573743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3737b1717b8fb6840871f4320493907e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showTime: 0.5
+  villagerBase: {fileID: 0}
+  strength: 0
+  gathering: 0
+  crafting: 0
+  diplomacy: 0
+  intelligence: 0
+  health: 4
 --- !u!114 &2136132191754573737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,26 +353,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: 0, y: -0.6, z: 0, w: 0}
   m_Softness: {x: 0, y: 0}
---- !u!114 &7896652310548351838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136132191754573743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3737b1717b8fb6840871f4320493907e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showTime: 0.5
-  villagerBase: {fileID: 0}
-  strength: 0
-  gathering: 0
-  crafting: 0
-  diplomacy: 0
-  intelligence: 0
-  health: 4
 --- !u!1 &2490433635502999989
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,7 +388,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -2, y: -2}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7181885428878756254
 CanvasRenderer:
@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 2995876013320271849}
   - component: {fileID: 6701610082662361851}
   m_Layer: 2
-  m_Name: Border (1)
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -463,7 +463,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -2, y: -2}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2995876013320271849
 CanvasRenderer:
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

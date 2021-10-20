@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5965d1a3ef78eef4d8d3f3f524e1ef3f, type: 3}
+  m_Name: Fisherman
+  m_EditorClassIdentifier: 
+  basicActions:
+  - {fileID: 11400000, guid: 66d565fbe9b00a04487cb75674dc6e5c, type: 2}
+  buildDescription: "Odbuduj chatk\u0119 ryback\u0105"
+  buildingCost:
+  - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
+    amount: 10
+  - resource: {fileID: 11400000, guid: 389ae6ddb3eee6e4c94fe350940428df, type: 2}
+    amount: 8
+  - resource: {fileID: 11400000, guid: 276a9847a78915b46bb48e7d72a033e5, type: 2}
+    amount: 2
+  buildingAction:
+  - {fileID: 11400000, guid: afe6762b4b2202049a0b6e50c769dce8, type: 2}

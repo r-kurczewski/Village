@@ -363,8 +363,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -620,10 +620,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5715605488862507519}
   - component: {fileID: 5715605488862507458}
+  - component: {fileID: 5715605487689930210}
   - component: {fileID: 5715605488862507459}
   - component: {fileID: 5715605488862507457}
   - component: {fileID: 5715605488862507456}
-  - component: {fileID: 5715605487689930210}
   - component: {fileID: 7601602019889762116}
   m_Layer: 2
   m_Name: ActionTooltip
@@ -661,6 +661,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5715605488862507518}
   m_CullTransparentMesh: 1
+--- !u!114 &5715605487689930210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5715605488862507518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4849d6933353e8e46b8f973cda778d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: {fileID: 5715605488245009063}
+  statIcon1: {fileID: 5715605487853486512}
+  statIcon2: {fileID: 5715605488402920680}
+  defaultIcon: {fileID: 21300000, guid: c37641bb9c4da9e45be624de922c7327, type: 3}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  effectsParent: {fileID: 5715605488713001963}
+  actionResultPrefab: {fileID: 3105178375998585868, guid: 0fe97a2bf79d17e43b6fd9b5dcf15723, type: 3}
 --- !u!114 &5715605488862507459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,7 +719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5660378, g: 0.38490883, b: 0.03470988, a: 1}
+  m_Color: {r: 0.7176471, g: 0.60784316, b: 0.3921569, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -731,23 +750,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
---- !u!114 &5715605487689930210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5715605488862507518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4849d6933353e8e46b8f973cda778d8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionName: {fileID: 5715605488245009063}
-  statIcon1: {fileID: 5715605487853486512}
-  statIcon2: {fileID: 5715605488402920680}
-  effectsParent: {fileID: 5715605488713001963}
-  actionResultPrefab: {fileID: 3105178375998585868, guid: 0fe97a2bf79d17e43b6fd9b5dcf15723, type: 3}
 --- !u!114 &7601602019889762116
 MonoBehaviour:
   m_ObjectHideFlags: 0

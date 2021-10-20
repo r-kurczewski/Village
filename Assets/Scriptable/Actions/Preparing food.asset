@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b670dcb6a49ce54eb255a4183055549, type: 3}
+  m_Name: Preparing food
+  m_EditorClassIdentifier: 
+  actionName: "Przer\xF3bka \u017Cywno\u015Bci"
+  icon: {fileID: 21300000, guid: 6d0c5f524b1d0fe41b55084147dd0dc8, type: 3}
+  stat1: {fileID: 11400000, guid: 059d52fc42c7b2946a03304d4c1416fe, type: 2}
+  stat2: {fileID: 0}
+  costs:
+  - resource: {fileID: 11400000, guid: 45064975a6a06084b884e05747925761, type: 2}
+    amount: 4
+  - resource: {fileID: 11400000, guid: 0f76ab08f0674984fa3c0712680d9969, type: 2}
+    amount: 3
+  effects:
+  - effect: {fileID: 11400000, guid: 45064975a6a06084b884e05747925761, type: 2}
+    amount: 12

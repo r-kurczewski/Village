@@ -10,7 +10,7 @@ public class Event : ScriptableObject
 {
 	public string title;
 
-	[TextArea]
+	[TextArea(4,4)]
 	public string description;
 
 	public int turnDuration;

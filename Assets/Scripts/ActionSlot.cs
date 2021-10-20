@@ -2,11 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 [SelectionBase]
 public class ActionSlot : Tooltiped
 {
-	public Action action;
+	[SerializeField]
+	private IAction action;
+
+	[SerializeField]
+	private Image icon;
+
+	public void Load(IAction action)
+	{
+		this.action = action;
+		icon.sprite = action.Icon;
+	}
 
 	protected override void LoadTooltipData()
 	{

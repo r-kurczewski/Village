@@ -19,5 +19,5 @@ public abstract class Action : ScriptableObject, IAction
 	public List<EffectAmount> Effects => effects;
 	#endregion
 
-	public abstract void Apply(Villager target);
+	public abstract void Execute(Villager target);
 }

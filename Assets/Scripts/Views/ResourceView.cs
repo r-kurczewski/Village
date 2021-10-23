@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -23,6 +24,12 @@ public class ResourceView : Tooltiped
 		resource = res;
 		icon.sprite = res.icon;
 		icon.color = res.color;
+	}
+
+	public void Refresh()
+	{
+		int currentValue = GameController.instance.GetResourceAmount(resource);
+		SetAmount(currentValue);
 	}
 
 	public void SetAmount(int value)

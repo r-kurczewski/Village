@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b670dcb6a49ce54eb255a4183055549, type: 3}
   m_Name: Hunting
   m_EditorClassIdentifier: 
-  actionName: "Polowanie na zwierz\u0119ta"
+  actionName: "Zastawianie side\u0142"
   icon: {fileID: 21300000, guid: 052cd0587cb926c44a3c8570cc29e90e, type: 3}
   stat1: {fileID: 11400000, guid: 4ed32862a36be7746b14073449606be5, type: 2}
   stat2: {fileID: 11400000, guid: 5370ec057d4122a40ae19428b07211c1, type: 2}

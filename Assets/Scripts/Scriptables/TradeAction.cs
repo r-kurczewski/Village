@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ public class TradeAction : Action
 	public enum TradeTarget { Merchant, CountryA, CountryB }
 	public TradeTarget target;
 
-	public override void Apply(Villager target)
+	public override void Execute(Villager target)
 	{
 		throw new System.NotImplementedException();
 	}

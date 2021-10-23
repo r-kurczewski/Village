@@ -136,10 +136,10 @@ TextureImporter:
       name: resources-games-icons-vector-set-cartoon-game-coin-stone-wood-crystal-nugget-mucus-63912930_0
       rect:
         serializedVersion: 2
-        x: 38
-        y: 438
-        width: 400
-        height: 400
+        x: 47
+        y: 470
+        width: 350
+        height: 350
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

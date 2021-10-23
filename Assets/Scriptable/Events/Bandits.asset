@@ -26,7 +26,7 @@ MonoBehaviour:
     amount: 15
   onSuccess: []
   onFailure:
-  - effect: {fileID: 11400000, guid: 4d17e08534be81040b29bacaa6bddd36, type: 2}
+  - effect: {fileID: 11400000, guid: 50aa1173ed38a3a45a9209e35b5f2aed, type: 2}
     amount: -2
   - effect: {fileID: 11400000, guid: a6dbb00f31de2fa45bb514a060ce9b25, type: 2}
     amount: -200

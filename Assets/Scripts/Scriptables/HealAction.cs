@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,10 @@ public class HealAction : ResourceAction
 
 	public int HealStrength => effects.FirstOrDefault(x => x.effect == heal).amount;
 
-	public override void Apply(Villager target)
+	public override void Execute(Villager target)
 	{
 		target.health = Mathf.Clamp(target.health + HealStrength, 0, 4);
 	}
+
+	public Action<IEnumerable<Villager>, int> OnApply;
 }

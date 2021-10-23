@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LocationView : MonoBehaviour
 {
@@ -11,9 +12,6 @@ public class LocationView : MonoBehaviour
 	private bool isBuilt = false;
 
 	[SerializeField]
-	private bool isLocked = false;
-
-	[SerializeField]
 	private ActionSlot actionSlotPrefab;
 
 	[SerializeField]
@@ -22,7 +20,11 @@ public class LocationView : MonoBehaviour
 	public void Start()
 	{
 		Clear();
-		if (location) Load(location);
+		if (location)
+		{
+			Load(location);
+			//Build();
+		}
 		else Debug.LogWarning("No location set.", this);
 	}
 
@@ -41,7 +43,15 @@ public class LocationView : MonoBehaviour
 		if (location is MapBuilding building)
 		{
 			LoadBuildingActions(building);
+			if (isBuilt
+				&& building.basicActions.Count == 0
+				&& building.buildingAction.Count == 0)
+			{
+				Hide();
+			}
 		}
+
+
 	}
 
 	private void LoadBuildingActions(MapBuilding building)
@@ -62,6 +72,8 @@ public class LocationView : MonoBehaviour
 
 	private void LoadBasicActions()
 	{
+		if (location.basicActions == null) return;
+
 		foreach (var action in location.basicActions)
 		{
 			LoadAction(action);
@@ -76,6 +88,28 @@ public class LocationView : MonoBehaviour
 
 	public void Build()
 	{
-		isBuilt = true;
+		if (location is MapBuilding building)
+		{
+			building.ApplyOnetimeBonus();
+			isBuilt = true;
+			Reload();
+		}
+		else Debug.LogWarning("Trying to build not-building location!", this);
+	}
+
+	private void Show()
+	{
+		gameObject.SetActive(true);
+	}
+
+	private void Hide()
+	{
+		gameObject.SetActive(false);
+	}
+
+	private void Reload()
+	{
+		Clear();
+		Load(location);
 	}
 }

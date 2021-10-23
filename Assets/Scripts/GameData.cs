@@ -1,17 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class GameData : MonoBehaviour
+[Serializable]
+public class GameData
 {
-	public TradeWindow window;
-
-	private void Start()
-	{
-		window.Load(merchantOffer);
-	}
-
 	[Header("Basic")]
 	public int turn;
+	public int predictionFactor;
 
 	[Header("Current resources")]
 	public List<ResourceAmount> resources;
@@ -21,7 +17,7 @@ public class GameData : MonoBehaviour
 
 	[Header("Active events")]
 	public List<EventView> events;
-	
+
 	[Header("Current trades")]
 	public List<TradeOffer> merchantOffer;
 	public List<TradeOffer> countryAOffer;

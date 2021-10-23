@@ -1,11 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 
-[CreateAssetMenu(fileName ="Effect", menuName ="Village/Effect")]
-public class Effect : ScriptableObject
+public abstract class Effect : ScriptableObject
 {
-    //public string effectName;
-    public Sprite icon;
-    public Color color = Color.white;
+	public Sprite icon;
+	public Color color = Color.white;
+
+	public abstract void Apply(Villager villager, int value);
 }

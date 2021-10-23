@@ -17,9 +17,9 @@ MonoBehaviour:
   stat1: {fileID: 0}
   stat2: {fileID: 0}
   costs:
-  - resource: {fileID: 11400000, guid: 0f76ab08f0674984fa3c0712680d9969, type: 2}
+  - resource: {fileID: 11400000, guid: 89ccf5a1788e2dc4487261ed0aea1f86, type: 2}
     amount: 1
   effects:
-  - effect: {fileID: 11400000, guid: 4d17e08534be81040b29bacaa6bddd36, type: 2}
+  - effect: {fileID: 11400000, guid: 50aa1173ed38a3a45a9209e35b5f2aed, type: 2}
     amount: 1
-  heal: {fileID: 11400000, guid: 4d17e08534be81040b29bacaa6bddd36, type: 2}
+  heal: {fileID: 11400000, guid: 50aa1173ed38a3a45a9209e35b5f2aed, type: 2}

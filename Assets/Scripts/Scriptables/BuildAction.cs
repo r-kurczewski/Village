@@ -16,7 +16,7 @@ public class BuildAction : IAction
 		this.buildingBase = buildingBase;
 	}
 
-	public string ActionName => buildingBase.buildDescription;
+	public string ActionName => buildingBase.buildActionName;
 
 	public Sprite Icon => buildBaseAction.icon;
 
@@ -25,7 +25,7 @@ public class BuildAction : IAction
 	public VillagerStat Stat1 => buildBaseAction.stat1;
 	public VillagerStat Stat2 => buildBaseAction.stat2;
 
-	public void Apply(Villager target)
+	public void Execute(Villager target)
 	{
 		buildingView.Build();
 	}

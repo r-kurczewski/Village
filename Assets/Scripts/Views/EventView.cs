@@ -70,6 +70,8 @@ public class EventView : MonoBehaviour
 			reqView.SetIconColor(req.effect.color);
 			reqView.SetFontColor(Color.black);
 		}
+
+		RefreshLayout();
 	}
 
 	public void TurnUpdate()
@@ -91,6 +93,7 @@ public class EventView : MonoBehaviour
 
 	private void RefreshLayout()
 	{
-		GetComponentInParent<LayoutRefresher>().RefreshContentFitters();
+		var refresher = GetComponentInParent<LayoutRefresher>();
+		refresher.RefreshContentFitters();
 	}
 }

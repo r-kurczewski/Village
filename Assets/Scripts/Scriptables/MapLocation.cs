@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "MapLocation", menuName ="Village/Location/MapLocation")]
 public class MapLocation : ScriptableObject
 {
-	public List<Action> basicActions;
+	public List<Action> basicActions = new List<Action>();
 }

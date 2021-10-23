@@ -2,37 +2,29 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 [SelectionBase]
-public class Villager : Tooltiped
+public class Villager : MonoBehaviour
 {
+	private const int MaxHealth = 4;
+
 	public VillagerBase villagerBase;
 	public int strength, gathering, crafting, diplomacy, intelligence;
 	
 	[Range(0, 4)]
 	public int health;
 
-	public new void Start()
-	{
-		SetTooltipObject();
-		if (villagerBase) Load(villagerBase);
-	}
+	//public void Start()
+	//{
+	//	if (villagerBase) Load(villagerBase);
+	//}
 
-	public void Load(VillagerBase villager)
+	public void Load(VillagerBase villagerBase)
 	{
-		villagerBase = villager;
-		strength = villager.baseStrength;
-		gathering = villager.baseGathering;
-		crafting = villager.baseCrafting;
-		diplomacy = villager.baseDiplomacy;
-		intelligence = villager.baseIntelligence;
-	}
-
-	protected override void LoadTooltipData()
-	{
-		VillagerTooltip.instance.Load(this);
-	}
-
-	protected override void SetTooltipObject()
-	{
-		tooltip = VillagerTooltip.instance.gameObject;
+		this.villagerBase = villagerBase;
+		strength = villagerBase.baseStrength;
+		gathering = villagerBase.baseGathering;
+		crafting = villagerBase.baseCrafting;
+		diplomacy = villagerBase.baseDiplomacy;
+		intelligence = villagerBase.baseIntelligence;
+		health = Random.Range(1, MaxHealth + 1);
 	}
 }

@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "VillagerBase", menuName = "Village/VillagerBase")]
 public class VillagerBase : ScriptableObject
 {
 	public string villagerName;
-	public Sprite icon;
+	public Sprite avatar;
 
 	[Range(-3, 3)]
 	public int CountryAReputation, CountryBReputation;

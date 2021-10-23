@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wilfred
   m_EditorClassIdentifier: 
   villagerName: Wilfred
-  icon: {fileID: 21300000, guid: 51483980a22d6bd4488c99d8b5df987e, type: 3}
+  avatar: {fileID: 21300000, guid: a039dd8aa72e8784e87bdc506c2b6979, type: 3}
   CountryAReputation: -2
   CountryBReputation: 1
   baseStrength: 3

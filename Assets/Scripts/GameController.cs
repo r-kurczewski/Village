@@ -11,6 +11,12 @@ public class GameController : MonoBehaviour
 	private ResourcePanelView resourcePanel;
 
 	[SerializeField]
+	private VillagerPanelView villagerPanel;
+
+	[SerializeField]
+	private List<VillagerBase> startVillagers;
+
+	[SerializeField]
 	private GameData data;
 
 	private void Awake()
@@ -23,10 +29,15 @@ public class GameController : MonoBehaviour
 	}
 	private void Start()
 	{
+		var randomVillagers = startVillagers.OrderBy(x => UnityEngine.Random.value).Take(6);
+		foreach (var villagerBase in randomVillagers)
+		{
+			data.villagers.Add(villagerPanel.CreateNewVillager(villagerBase));
+		}
 		resourcePanel.Refresh();
 	}
 
-	public  void AddRemoveVillagerHealth(int value)
+	public void AddRemoveVillagerHealth(int value)
 	{
 		data.villagers.ForEach(x => x.health += value);
 	}

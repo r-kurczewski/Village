@@ -5,20 +5,19 @@ using UnityEngine;
 [Serializable]
 public class GameData
 {
-	[Header("Basic")]
 	public int turn;
 	public int predictionFactor;
 
-	[Header("Current resources")]
+	[Space(10)]
 	public List<ResourceAmount> resources;
 
-	[Header("Villagers")]
+	[Space(10)]
 	public List<Villager> villagers;
 
-	[Header("Active events")]
+	[Space(10)]
 	public List<EventView> events;
 
-	[Header("Current trades")]
+	[Space(10)]
 	public List<TradeOffer> merchantOffer;
 	public List<TradeOffer> countryAOffer;
 	public List<TradeOffer> countryBOffer;

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hunter
   m_EditorClassIdentifier: 
   basicActions: []
-  buildDescription: "Odbuduj chatk\u0119 my\u015Bliwsk\u0105"
+  buildActionName: "Odbuduj chatk\u0119 my\u015Bliwsk\u0105"
   buildingCost:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
     amount: 10

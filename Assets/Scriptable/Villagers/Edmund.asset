@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Edmund
   m_EditorClassIdentifier: 
   villagerName: Edmund
-  icon: {fileID: 21300000, guid: 47788e954abb43542b4c956c0ee93bfe, type: 3}
+  avatar: {fileID: 21300000, guid: 47788e954abb43542b4c956c0ee93bfe, type: 3}
   CountryAReputation: 1
   CountryBReputation: -2
   baseStrength: 2

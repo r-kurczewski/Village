@@ -10,6 +10,7 @@ public abstract class Tooltiped : MonoBehaviour, IPointerEnterHandler, IPointerE
 	private float time;
 	private bool tooltipShown;
 	private bool mouseOver;
+	protected bool blockTooltip;
 
 	protected void Start()
 	{
@@ -30,7 +31,12 @@ public abstract class Tooltiped : MonoBehaviour, IPointerEnterHandler, IPointerE
 	{
 		if (!mouseOver) return;
 
-		if (time > showTime)
+		if (blockTooltip)
+		{
+			HideTooltip();
+			return;
+		} 
+		else if (time > showTime)
 		{
 			if (!tooltipShown) ShowTooltip();
 			tooltip.transform.position = Input.mousePosition;

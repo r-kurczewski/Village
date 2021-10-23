@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gisele
   m_EditorClassIdentifier: 
   villagerName: Gisele
-  icon: {fileID: 21300000, guid: 2a51274f9ac12df4cb9affa1a0fd92f6, type: 3}
+  avatar: {fileID: 21300000, guid: 2a51274f9ac12df4cb9affa1a0fd92f6, type: 3}
   CountryAReputation: -3
   CountryBReputation: 2
   baseStrength: 0

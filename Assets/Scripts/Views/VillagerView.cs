@@ -24,19 +24,6 @@ public class VillagerView : Tooltiped, IBeginDragHandler, IDragHandler, IEndDrag
 	[SerializeField]
 	private VillagerPanelView villagerPanel;
 
-	#region dragging data
-	private Transform prevParent = default;
-	private Vector2 prevPosition = default;
-	private Vector2 prevSize = default;
-	private int prevChildIndex;
-	#endregion
-
-	//public new void Start()
-	//{
-	//	SetTooltipObject();
-	//	if (villager) Load(villager);
-	//}
-
 	public void Load(Villager villager, VillagerPanelView villagerPanel)
 	{
 		this.villager = villager;
@@ -55,16 +42,11 @@ public class VillagerView : Tooltiped, IBeginDragHandler, IDragHandler, IEndDrag
 
 	public void OnBeginDrag(PointerEventData eventData)
 	{
-		var rt = GetComponent<RectTransform>();
-		prevParent = rt.parent;
-		prevPosition = rt.localPosition;
-		prevSize = rt.sizeDelta;
-		prevChildIndex = rt.GetSiblingIndex();
-
-		GetComponent<RectTransform>().sizeDelta = Vector2.one * dragSpriteSize;
-		GetComponent<Image>().raycastTarget = false;
-		transform.SetParent(dragParent);
 		draggedVillager = this;
+		var rt = GetComponent<RectTransform>();
+		rt.sizeDelta = Vector2.one * dragSpriteSize;
+		rt.SetParent(dragParent);
+		GetComponent<Image>().raycastTarget = false;
 		blockTooltip = true;
 	}
 

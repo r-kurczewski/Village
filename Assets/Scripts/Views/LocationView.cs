@@ -23,7 +23,6 @@ public class LocationView : MonoBehaviour
 		if (location)
 		{
 			Load(location);
-			//Build();
 		}
 		else Debug.LogWarning("No location set.", this);
 	}

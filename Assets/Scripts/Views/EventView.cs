@@ -1,15 +1,17 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static EventBase;
 
 [SelectionBase]
 public class EventView : MonoBehaviour
 {
 	[SerializeField]
-	private Event baseEvent;
+	private GameEvent gameEvent;
 
-	public int turnDuration;
+	public GameEvent Event => gameEvent;
 
 	#region Unity referencess
 
@@ -25,24 +27,21 @@ public class EventView : MonoBehaviour
 	[SerializeField]
 	private EffectView effectViewPrefab;
 
-	#endregion
-
-	private void Start()
+	public void SetTurnLeft(int value)
 	{
-		if(baseEvent) Load(baseEvent);
+		turnText.text = value.ToString();
 	}
 
-	public void Load(Event ev)
+	#endregion
+
+	public void Load(GameEvent gameEvent)
 	{
-		baseEvent = ev;
-		titleText.text = ev.title;
-		descriptionText.text = ev.description;
-		turnDuration = ev.turnDuration;
+		this.gameEvent = gameEvent;
+		titleText.text = gameEvent.eventBase.title;
+		descriptionText.text = gameEvent.eventBase.description;
 
-		turnText.text = turnDuration.ToString();
-
-		requirements.SetActive(ev.requirements.Count > 0);
-		foreach (var req in ev.requirements)
+		requirements.SetActive(gameEvent.eventBase.requirements.Count > 0);
+		foreach (var req in gameEvent.eventBase.requirements)
 		{
 			var reqView = Instantiate(effectViewPrefab, requirementsList.transform);
 			reqView.SetAmount(req.amount);
@@ -51,8 +50,8 @@ public class EventView : MonoBehaviour
 			reqView.SetFontColor(Color.black);
 		}
 
-		success.SetActive(ev.onSuccess.Count > 0);
-		foreach (var req in ev.onSuccess)
+		success.SetActive(gameEvent.eventBase.onSuccess.Count > 0);
+		foreach (var req in gameEvent.eventBase.onSuccess)
 		{
 			var reqView = Instantiate(effectViewPrefab, successList.transform);
 			reqView.SetAmount(req.amount);
@@ -61,8 +60,8 @@ public class EventView : MonoBehaviour
 			reqView.SetFontColor(Color.black);
 		}
 
-		failure.SetActive(ev.onFailure.Count > 0);
-		foreach (var req in ev.onFailure)
+		failure.SetActive(gameEvent.eventBase.onFailure.Count > 0);
+		foreach (var req in gameEvent.eventBase.onFailure)
 		{
 			var reqView = Instantiate(effectViewPrefab, failureList.transform);
 			reqView.SetAmount(req.amount);
@@ -74,10 +73,11 @@ public class EventView : MonoBehaviour
 		RefreshLayout();
 	}
 
-	public void TurnUpdate()
+	public void RefreshData()
 	{
-		turnDuration--;
-		turnText.text = turnDuration.ToString();
+		int currentTurn = GameController.instance.GetCurrentTurn();
+		int turnLeft = gameEvent.turn + gameEvent.eventBase.turnDuration - currentTurn;
+		turnText.text = turnLeft.ToString();
 	}
 
 	public void ChangeDetailsVisibility(bool show)
@@ -94,6 +94,7 @@ public class EventView : MonoBehaviour
 	private void RefreshLayout()
 	{
 		var refresher = GetComponentInParent<LayoutRefresher>();
+		refresher.RefreshContentFitters();
 		refresher.RefreshContentFitters();
 	}
 }

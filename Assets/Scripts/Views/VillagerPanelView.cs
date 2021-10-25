@@ -7,7 +7,6 @@ public class VillagerPanelView : MonoBehaviour
 	[SerializeField]
 	private VillagerView villagerPrefab;
 
-	[SerializeField]
 	public Transform dragParent;
 
 	public void PutVillager(VillagerView villager)

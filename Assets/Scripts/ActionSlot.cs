@@ -47,7 +47,7 @@ public class ActionSlot : Tooltiped, IDropHandler, IPointerClickHandler
 
 	public void OnPointerClick(PointerEventData eventData)
 	{
-		VillagerView.MoveToVillagerPanel();
+		if(VillagerView) VillagerView.MoveToVillagerPanel();
 	}
 
 	protected override void LoadTooltipData()

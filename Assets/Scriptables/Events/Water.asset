@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce2ee1299a4cc6e4e9be60473b9cf415, type: 3}
-  m_Name: Food
+  m_Name: Water
   m_EditorClassIdentifier: 
-  title: "Zapasy \u017Cywno\u015Bci"
-  description: "Potrzebujemy zgromadzi\u0107 zapas jedzenia na kolejne tygodnie."
+  title: Zapasy wody
+  description: "Potrzebujemy zgromadzi\u0107 zapas wody na kolejne tygodnie."
   turnDuration: 3
   requirements:
-  - resource: {fileID: 11400000, guid: 45064975a6a06084b884e05747925761, type: 2}
+  - resource: {fileID: 11400000, guid: 9d3db97e89f3adb42808e15635bb1c4e, type: 2}
     amount: 20
   onSuccess: []
   onFailure:

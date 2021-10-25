@@ -7,6 +7,6 @@ public class HealVillagers : Effect
 {
 	public override void Apply(Villager villager, int value)
 	{
-		GameController.instance.AddRemoveVillagerHealth(value);
+		GameController.instance.AddRemoveVillagersHealth(value);
 	}
 }

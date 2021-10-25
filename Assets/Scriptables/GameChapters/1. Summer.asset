@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1b209d165661443b594b65d57e04a6, type: 3}
+  m_Name: 1. Summer
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 0.8000001, b: 0.16078432, a: 1}
+  chapterName: Lato
+  chapterTurnStart: 1
+  chapterMusic: {fileID: 8300000, guid: f891391b118dbee4bb13c6e64e7a72e1, type: 3}
+  nextChapter: {fileID: 11400000, guid: 7c7bf0e103ef42c4180cadb58f26a964, type: 2}
+  chapterStartMessage: "Po d\u0142ugiej, krwawej i bezowocnej wojnie terytorialnej
+    mi\u0119dzy kr\xF3lestwem Tharros i oligarchi\u0105 kupieck\u0105 Salvante nastaje
+    tymczasowy rozejm . Poprowad\u017A ludzi \u2013 dezerter\xF3w, ocala\u0142ych
+    mieszka\u0144c\xF3w, wygna\u0144c\xF3w - i zapewnij im przetrwanie na tych ziemiach
+    . Tereny te, \u017Cyzne i bogate w r\xF3\u017Cne surowce naturalne, s\u0105 r\xF3wnie\u017C
+    pe\u0142ne niebezpiecze\u0144stw, takich jak gro\u017Ane zwierz\u0119ta czy szabrownicy
+    szukaj\u0105cy \u0142atwego \u0142upu."
+  periodicEvents:
+  - eventBase: {fileID: 11400000, guid: 9aa164f31c91b3246bf66a9d20e4aa69, type: 2}
+    turn: 2
+    period: 4
+  - eventBase: {fileID: 11400000, guid: 70aec7321b83d3642b2d48236d0f2b09, type: 2}
+    turn: 2
+    period: 6
+  events:
+  - eventBase: {fileID: 11400000, guid: 791799ae627974f44bad6292cbdc8979, type: 2}
+    turn: 12
+    possibleDelay: 3

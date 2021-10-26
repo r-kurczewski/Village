@@ -5,10 +5,13 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public abstract class Effect : ScriptableObject
+namespace Village.Scriptables
 {
-	public Sprite icon;
-	public Color color = Color.white;
+	public abstract class Effect : ScriptableObject
+	{
+		public Sprite icon;
+		public Color color = Color.white;
 
-	public abstract void Apply(Villager villager, int value);
+		public abstract void Apply(int value, Villager target = null);
+	}
 }

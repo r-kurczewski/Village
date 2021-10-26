@@ -5,32 +5,35 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EffectView : MonoBehaviour
+namespace Village.Views
 {
-    [SerializeField]
-    private Image icon;
-
-    [SerializeField]
-    private TMP_Text amountText;
-
-	public void SetIcon(Sprite sprite)
+	public class EffectView : MonoBehaviour
 	{
-        icon.sprite = sprite;
-	}
+		[SerializeField]
+		private Image icon;
 
-    public void SetAmount(int value)
-	{
-		amountText.text = value.ToString();
-	}
+		[SerializeField]
+		private TMP_Text amountText;
 
-	public void SetIconColor(Color color)
-	{
-		icon.color = color;
-	}
+		public void SetIcon(Sprite sprite)
+		{
+			icon.sprite = sprite;
+		}
 
-	public void SetFontColor(Color color)
-	{
-		amountText.color = color;
-	}
+		public void SetAmount(int value)
+		{
+			amountText.text = value.ToString();
+		}
 
+		public void SetIconColor(Color color)
+		{
+			icon.color = color;
+		}
+
+		public void SetFontColor(Color color)
+		{
+			amountText.color = color;
+		}
+
+	}
 }

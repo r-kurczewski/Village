@@ -3,20 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-[CreateAssetMenu(fileName = "VillagerBase", menuName = "Village/VillagerBase")]
-public class VillagerBase : ScriptableObject
+namespace Village.Scriptables
 {
-	public string villagerName;
-	public Sprite avatar;
+	[CreateAssetMenu(fileName = "VillagerBase", menuName = "Village/VillagerBase")]
+	public class VillagerBase : ScriptableObject
+	{
+		public string villagerName;
+		public Sprite avatar;
 
-	[Range(-3, 3)]
-	public int CountryAReputation, CountryBReputation;
+		[Range(-3, 3)]
+		public int CountryAReputation, CountryBReputation;
 
-	[Range(0, 5)]
-	public int
-		baseStrength,
-		baseGathering,
-		baseCrafting,
-		baseDiplomacy,
-		baseIntelligence;
+		[Range(0, 5)]
+		public int
+			baseStrength,
+			baseGathering,
+			baseCrafting,
+			baseDiplomacy,
+			baseIntelligence;
+	}
 }

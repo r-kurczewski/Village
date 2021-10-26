@@ -1,14 +1,16 @@
 ﻿using TMPro;
 using UnityEngine;
 
-[SelectionBase]
-public class TextTooltip : Tooltip<string>
+namespace Village.Views.Tooltips
 {
-	public TMP_Text label;
-	
-	public override void Load(string text)
+	[SelectionBase]
+	public class TextTooltip : Tooltip<string>
 	{
-		label.text = text;
-	}
+		public TMP_Text label;
 
+		public override void Load(string text)
+		{
+			label.text = text;
+		}
+	}
 }

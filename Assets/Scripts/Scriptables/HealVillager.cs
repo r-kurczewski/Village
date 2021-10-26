@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "HealVillager", menuName = "Village/Effect/HealVillager")]
-public class HealVillager : Effect
+namespace Village.Scriptables
 {
-	public override void Apply(Villager villager, int value)
+	[CreateAssetMenu(fileName = "HealVillager", menuName = "Village/Effect/HealVillager")]
+	public class HealVillager : Effect
 	{
-		villager.health += 1;
+		public override void Apply(int value, Villager villager)
+		{
+			villager.health += 1;
+		}
 	}
 }

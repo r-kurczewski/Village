@@ -6,20 +6,41 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-[CreateAssetMenu(fileName = "Event", menuName = "Village/Event")]
-public partial class EventBase : ScriptableObject
+namespace Village.Scriptables
 {
-	public string title;
+	[CreateAssetMenu(fileName = "Event", menuName = "Village/Event")]
+	public partial class EventBase : ScriptableObject
+	{
+		public string title;
 
-	[TextArea(4, 4)]
-	public string description;
+		[TextArea(4, 4)]
+		public string description;
 
-	public int turnDuration;
+		public int turnDuration;
 
-	public List<ResourceAmount> requirements;
+		[FormerlySerializedAs("requirements")]
+		public List<ResourceAmount> requirements;
 
-	public List<EffectAmount> onSuccess;
+		[SerializeField]
+		public List<EffectAmount> onSuccess;
 
-	public List<EffectAmount> onFailure;
+		[SerializeField]
+		public List<EffectAmount> onFailure;
+
+		public void ApplySuccess()
+		{
+			foreach (var eff in onSuccess)
+			{
+				eff.effect.Apply(eff.amount);
+			}
+		}
+
+		public void ApplyFailure()
+		{
+			foreach (var eff in onFailure)
+			{
+				eff.effect.Apply(eff.amount);
+			}
+		}
+	}
 }
-

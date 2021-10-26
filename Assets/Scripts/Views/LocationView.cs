@@ -2,113 +2,117 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Village.Scriptables;
 
-public class LocationView : MonoBehaviour
+namespace Village.Views
 {
-	[SerializeField]
-	private MapLocation location;
-
-	[SerializeField]
-	private bool isBuilt = false;
-
-	[SerializeField]
-	private ActionSlot actionSlotPrefab;
-
-	[SerializeField]
-	private Action buildBaseAction;
-
-	public void Start()
+	public class LocationView : MonoBehaviour
 	{
-		Clear();
-		if (location)
-		{
-			Load(location);
-		}
-		else Debug.LogWarning("No location set.", this);
-	}
+		[SerializeField]
+		private MapLocation location;
 
-	private void Clear()
-	{
-		foreach (Transform obj in transform)
-		{
-			Destroy(obj.gameObject);
-		}
-	}
+		[SerializeField]
+		private bool isBuilt = false;
 
-	public void Load(MapLocation location)
-	{
-		LoadBasicActions();
+		[SerializeField]
+		private ActionSlot actionSlotPrefab;
 
-		if (location is MapBuilding building)
+		[SerializeField]
+		private Action buildBaseAction;
+
+		public void Start()
 		{
-			LoadBuildingActions(building);
-			if (isBuilt
-				&& building.basicActions.Count == 0
-				&& building.buildingAction.Count == 0)
+			Clear();
+			if (location)
 			{
-				Hide();
+				Load(location);
+			}
+			else Debug.LogWarning("No location set.", this);
+		}
+
+		private void Clear()
+		{
+			foreach (Transform obj in transform)
+			{
+				Destroy(obj.gameObject);
 			}
 		}
 
-
-	}
-
-	private void LoadBuildingActions(MapBuilding building)
-	{
-		if (isBuilt)
+		public void Load(MapLocation location)
 		{
-			foreach (var action in building.buildingAction)
+			LoadBasicActions();
+
+			if (location is MapBuilding building)
+			{
+				LoadBuildingActions(building);
+				if (isBuilt
+					&& building.basicActions.Count == 0
+					&& building.buildingAction.Count == 0)
+				{
+					Hide();
+				}
+			}
+
+
+		}
+
+		private void LoadBuildingActions(MapBuilding building)
+		{
+			if (isBuilt)
+			{
+				foreach (var action in building.buildingAction)
+				{
+					LoadAction(action);
+				}
+			}
+			else
+			{
+				var buildAction = new BuildAction(buildBaseAction, building, this);
+				LoadAction(buildAction);
+			}
+		}
+
+		private void LoadBasicActions()
+		{
+			if (location.basicActions == null) return;
+
+			foreach (var action in location.basicActions)
 			{
 				LoadAction(action);
 			}
 		}
-		else
+
+		private void LoadAction(IAction action)
 		{
-			var buildAction = new BuildAction(buildBaseAction, building, this);
-			LoadAction(buildAction);
+			var actionSlot = Instantiate(actionSlotPrefab, transform);
+			actionSlot.Load(action);
 		}
-	}
 
-	private void LoadBasicActions()
-	{
-		if (location.basicActions == null) return;
-
-		foreach (var action in location.basicActions)
+		public void Build()
 		{
-			LoadAction(action);
+			if (location is MapBuilding building)
+			{
+				building.ApplyOnetimeBonus();
+				isBuilt = true;
+				Reload();
+			}
+			else Debug.LogWarning("Trying to build not-building location!", this);
 		}
-	}
 
-	private void LoadAction(IAction action)
-	{
-		var actionSlot = Instantiate(actionSlotPrefab, transform);
-		actionSlot.Load(action);
-	}
-
-	public void Build()
-	{
-		if (location is MapBuilding building)
+		private void Show()
 		{
-			building.ApplyOnetimeBonus();
-			isBuilt = true;
-			Reload();
+			gameObject.SetActive(true);
 		}
-		else Debug.LogWarning("Trying to build not-building location!", this);
-	}
 
-	private void Show()
-	{
-		gameObject.SetActive(true);
-	}
+		private void Hide()
+		{
+			gameObject.SetActive(false);
+		}
 
-	private void Hide()
-	{
-		gameObject.SetActive(false);
-	}
-
-	private void Reload()
-	{
-		Clear();
-		Load(location);
+		private void Reload()
+		{
+			Clear();
+			Load(location);
+		}
 	}
 }

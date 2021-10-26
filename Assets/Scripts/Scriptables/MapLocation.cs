@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MapLocation", menuName ="Village/Location/MapLocation")]
-public class MapLocation : ScriptableObject
+namespace Village.Scriptables
 {
-	public List<Action> basicActions = new List<Action>();
+	[CreateAssetMenu(fileName = "MapLocation", menuName = "Village/Location/MapLocation")]
+	public class MapLocation : ScriptableObject
+	{
+		public List<Action> basicActions = new List<Action>();
+	}
 }

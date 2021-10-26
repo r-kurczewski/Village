@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Village.Controllers;
 
-[CreateAssetMenu(fileName = "HealVillagers", menuName = "Village/Effect/HealVillagers")]
-public class HealVillagers : Effect
+namespace Village.Scriptables
 {
-	public override void Apply(Villager villager, int value)
+	[CreateAssetMenu(fileName = "HealVillagers", menuName = "Village/Effect/HealVillagers")]
+	public class HealVillagers : Effect
 	{
-		GameController.instance.AddRemoveVillagersHealth(value);
+		public override void Apply(int value, Villager villager)
+		{
+			GameController.instance.AddRemoveVillagersHealth(value);
+		}
 	}
 }

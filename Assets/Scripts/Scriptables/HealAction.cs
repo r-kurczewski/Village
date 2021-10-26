@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[CreateAssetMenu(fileName ="HealAction", menuName = "Village/Action/HealAction")]
-public class HealAction : ResourceAction
+namespace Village.Scriptables
 {
-	[SerializeField]
-	private Effect heal;
-
-	public int HealStrength => effects.FirstOrDefault(x => x.effect == heal).amount;
-
-	public override void Execute(Villager target)
+	[CreateAssetMenu(fileName = "HealAction", menuName = "Village/Action/HealAction")]
+	public class HealAction : ResourceAction
 	{
-		target.health = Mathf.Clamp(target.health + HealStrength, 0, 4);
-	}
+		[SerializeField]
+		private Effect heal;
 
-	public Action<IEnumerable<Villager>, int> OnApply;
+		public int HealStrength => effects.FirstOrDefault(x => x.effect == heal).amount;
+
+		public override void Execute(Villager target)
+		{
+			target.health = Mathf.Clamp(target.health + HealStrength, 0, 4);
+		}
+
+		public Action<IEnumerable<Villager>, int> OnApply;
+	}
 }

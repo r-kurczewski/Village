@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class TurnView : MonoBehaviour
+namespace Village.Views
 {
-	[SerializeField]
-	private TMP_Text turnLabel;
-
-	[SerializeField]
-	private TMP_Text seasonLabel;
-
-    public void SetValue(int turn)
+	public class TurnView : MonoBehaviour
 	{
-		turnLabel.text = $"Tura {turn}";
-	}
+		[SerializeField]
+		private TMP_Text turnLabel;
 
-	public void SetChapterName(string name)
-	{
-		seasonLabel.text = name;
+		[SerializeField]
+		private TMP_Text seasonLabel;
+
+		public void SetTurn(int turn)
+		{
+			turnLabel.text = $"Tura {turn}";
+		}
+
+		public void SetChapterName(string name)
+		{
+			seasonLabel.text = name;
+		}
 	}
 }

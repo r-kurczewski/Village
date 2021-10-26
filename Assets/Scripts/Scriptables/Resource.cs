@@ -2,15 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Village.Controllers;
 
-[CreateAssetMenu(fileName = "Resource", menuName = "Village/Resource")]
-public class Resource : Effect
+namespace Village.Scriptables
 {
-	public string resourceName;
-	public int baseValue;
-
-	public override void Apply(Villager villager, int value)
+	[CreateAssetMenu(fileName = "Resource", menuName = "Village/Resource")]
+	public class Resource : Effect
 	{
-		GameController.instance.AddRemoveResource(this, value);
+		public string resourceName;
+		public int baseValue;
+
+		public override void Apply(int value, Villager villager = null)
+		{
+			GameController.instance.AddRemoveResource(this, value);
+		}
 	}
 }

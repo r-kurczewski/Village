@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Village.Controllers;
 
-[CreateAssetMenu(fileName ="Watchtower", menuName = "Village/Location/Watchtower")]
-public class Watchtower : MapBuilding
+namespace Village.Scriptables
 {
-	public override void ApplyOnetimeBonus()
+	[CreateAssetMenu(fileName = "Watchtower", menuName = "Village/Location/Watchtower")]
+	public class Watchtower : MapBuilding
 	{
-		Debug.Log("Prediction");
-		GameController.instance.SetPredictionFactor(1);
+		public override void ApplyOnetimeBonus()
+		{
+			Debug.Log("Prediction");
+			GameController.instance.SetPredictionFactor(1);
+		}
 	}
 }

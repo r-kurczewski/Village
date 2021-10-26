@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Village.Scriptables;
 
 [SelectionBase]
 public class Villager : MonoBehaviour
@@ -11,11 +12,6 @@ public class Villager : MonoBehaviour
 	
 	[Range(0, 4)]
 	public int health;
-
-	//public void Start()
-	//{
-	//	if (villagerBase) Load(villagerBase);
-	//}
 
 	public void Load(VillagerBase villagerBase)
 	{

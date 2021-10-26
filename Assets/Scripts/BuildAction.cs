@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Village.Scriptables;
+using Village.Views;
 
 public class BuildAction : IAction
 {

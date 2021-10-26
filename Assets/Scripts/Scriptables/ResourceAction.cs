@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName ="ResourceAction", menuName = "Village/Action/ResourceAction")]
-public class ResourceAction : Action
+namespace Village.Scriptables
 {
-	public override void Execute(Villager target)
+	[CreateAssetMenu(fileName = "ResourceAction", menuName = "Village/Action/ResourceAction")]
+	public class ResourceAction : Action
 	{
-		throw new System.NotImplementedException();
+		public override void Execute(Villager target)
+		{
+			throw new System.NotImplementedException();
+		}
 	}
 }

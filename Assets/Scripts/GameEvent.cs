@@ -1,4 +1,5 @@
 ﻿using System;
+using Village.Scriptables;
 
 [Serializable]
 public class GameEvent

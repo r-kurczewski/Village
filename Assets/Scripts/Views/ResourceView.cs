@@ -4,46 +4,51 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Village.Controllers;
+using Village.Scriptables;
+using Village.Views.Tooltips;
 
-[SelectionBase]
-public class ResourceView : Tooltiped
+namespace Village.Views
 {
-	[SerializeField]
-	private TMP_Text label;
-
-	[SerializeField]
-	private Image icon;
-
-	[SerializeField]
-	private Resource resource;
-
-	public Resource Resource => resource;
-
-	public void SetResource(Resource res)
+	[SelectionBase]
+	public class ResourceView : Tooltiped
 	{
-		resource = res;
-		icon.sprite = res.icon;
-		icon.color = res.color;
-	}
+		[SerializeField]
+		private TMP_Text label;
 
-	public void Refresh()
-	{
-		int currentValue = GameController.instance.GetResourceAmount(resource);
-		SetAmount(currentValue);
-	}
+		[SerializeField]
+		private Image icon;
 
-	public void SetAmount(int value)
-	{
-		label.text = value.ToString();
-	}
+		[SerializeField]
+		private Resource resource;
 
-	protected override void LoadTooltipData()
-	{
-		TextTooltip.instance.Load(resource.resourceName);
-	}
+		public Resource Resource => resource;
 
-	protected override void SetTooltipObject()
-	{
-		tooltip = TextTooltip.instance.gameObject;
+		public void Load(Resource res)
+		{
+			resource = res;
+			icon.sprite = res.icon;
+			icon.color = res.color;
+		}
+
+		public void Reload()
+		{
+			Load(resource);
+		}
+
+		public void SetAmount(int value)
+		{
+			label.text = value.ToString();
+		}
+
+		protected override void LoadTooltipData()
+		{
+			TextTooltip.instance.Load(resource.resourceName);
+		}
+
+		protected override void SetTooltipObject()
+		{
+			tooltip = TextTooltip.instance.gameObject;
+		}
 	}
 }

@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Village.Scriptables;
+using Village.Views;
 using static TradeOffer.TradeMode;
 
 [SelectionBase]
-public class TradeWindow : MonoBehaviour
+public class TradeWindowView : MonoBehaviour
 {
 	[SerializeField]
 	private TradeOfferView offerPrefab;
@@ -24,7 +26,7 @@ public class TradeWindow : MonoBehaviour
 	[SerializeField]
 	private Button acceptButton;
 
-	private List<TradeOfferView> offerViews = new List<TradeOfferView>();
+	private List<TradeOfferView> offerViews;
 
 	public void Load(List<TradeOffer> offers)
 	{
@@ -65,7 +67,7 @@ public class TradeWindow : MonoBehaviour
 
 	public bool IsOfferCorrect()
 	{
-		return true;
+		throw new System.NotImplementedException();
 	}
 
 	public int GetTotalGold()

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Village.Views;
+using Village.Views.Tooltips;
 
 [SelectionBase]
 public class ActionSlot : Tooltiped, IDropHandler, IPointerClickHandler

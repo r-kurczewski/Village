@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "TradeEffect", menuName = "Village/Effect/TradeEffect")]
-public class TradeEffect : Effect
+namespace Village.Scriptables
 {
-	public override void Apply(Villager villager, int value)
+	[CreateAssetMenu(fileName = "TradeEffect", menuName = "Village/Effect/TradeEffect")]
+	public class TradeEffect : Effect
 	{
-		// Implemented in TradeAction
-		return;
+		public override void Apply(int value, Villager villager)
+		{
+			// Implemented in TradeAction
+			return;
+		}
 	}
 }

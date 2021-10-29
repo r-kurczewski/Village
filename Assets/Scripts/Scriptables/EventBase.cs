@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Serialization;
+using static Village.Scriptables.Effect;
+using static Village.Scriptables.Resource;
 
 namespace Village.Scriptables
 {
@@ -31,7 +33,7 @@ namespace Village.Scriptables
 		{
 			foreach (var eff in onSuccess)
 			{
-				eff.effect.Apply(eff.amount);
+				eff.effect.Apply(eff.value);
 			}
 		}
 
@@ -39,7 +41,7 @@ namespace Village.Scriptables
 		{
 			foreach (var eff in onFailure)
 			{
-				eff.effect.Apply(eff.amount);
+				eff.effect.Apply(eff.value);
 			}
 		}
 	}

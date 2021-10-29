@@ -15,11 +15,21 @@ namespace Village.Controllers
 	{
 		public static GameController instance;
 
+		public const float STAT_MULTIPIER = 0.2f;
+		public const int STAT_MAX = 5;
+		public const int HEALTH_MAX = 4;
+		public const int COUNTRY_A_ENDING_REPUTATION = 700;
+		public const int COUNTRY_B_ENDING_REPUTATION = 700;
+		public const int NEUTRAL_ENDING_REPUTATION = 500;
+
 		[SerializeField]
 		private ResourceController resourceController;
 
 		[SerializeField]
 		private VillagerController villagerController;
+
+		[SerializeField]
+		private LocationController locationController;
 
 		[SerializeField]
 		private EventController eventController;
@@ -45,6 +55,7 @@ namespace Village.Controllers
 		private void Start()
 		{
 			villagerController.CreateStartVillagers(6);
+			locationController.LoadLoctions();
 			eventController.LoadChapterEvents();
 			resourceController.LoadResources();
 			TurnUpdate();
@@ -54,6 +65,9 @@ namespace Village.Controllers
 		{
 			turnController.ChapterUpdate();
 			eventController.EventUpdate();
+			locationController.LocationUpdate();
+			villagerController.VillagerUpdate();
+			turnController.CheckIfGameEnds();
 			UpdateGUI();
 		}
 
@@ -61,6 +75,7 @@ namespace Village.Controllers
 		{
 			villagerController.AddRemoveVillagersHealth(value);
 		}
+
 		public void AddRemoveResource(Resource resource, int amount)
 		{
 			resourceController.AddRemoveResource(resource, amount);
@@ -71,6 +86,11 @@ namespace Village.Controllers
 			return resourceController.GetResourceAmount(resource);
 		}
 
+		public int GetVillagersCount()
+		{
+			return villagerController.GetVillagersCount();
+		}
+
 		public int GetCurrentTurn()
 		{
 			return turnController.Turn;
@@ -79,7 +99,8 @@ namespace Village.Controllers
 		public void EndTurn()
 		{
 			turnController.CheckIfGameEnds();
-			villagerController.ExecuteVillagerActions();
+			locationController.ExecuteVillagerActions();
+			villagerController.MoveVillagersToPanel();
 			turnController.MoveToNextTurn();
 			TurnUpdate();
 		}

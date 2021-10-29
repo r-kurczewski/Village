@@ -5,6 +5,7 @@ using System.Linq;
 using Village.Views;
 using Village.Scriptables;
 using System;
+using static Village.Scriptables.Resource;
 
 namespace Village.Controllers
 {

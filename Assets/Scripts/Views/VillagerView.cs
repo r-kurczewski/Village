@@ -34,12 +34,12 @@ namespace Village.Views
 		public void Load(Villager villager, VillagerController controller)
 		{
 			this.villager = villager;
-			icon.sprite = villager.villagerBase.avatar;
-			healthBar.value = villager.health;
-			name = villager.villagerBase.villagerName;
-
 			this.controller = controller;
-			dragParent = controller.dragParent;
+			this.dragParent = controller.dragParent;
+
+			icon.sprite = villager.villagerBase.avatar;
+			healthBar.value = villager.Health;
+			name = villager.villagerBase.villagerName;
 		}
 
 		public void SetHealtBarVisibility(bool visibilty)
@@ -65,7 +65,7 @@ namespace Village.Views
 		public void OnEndDrag(PointerEventData eventData)
 		{
 			var slot = eventData.pointerCurrentRaycast.gameObject.GetComponent<ActionSlot>();
-			if (!slot) MoveToVillagerPanel();
+			if (!slot) MoveToPanel();
 			GetComponent<Image>().raycastTarget = true;
 		}
 
@@ -74,7 +74,7 @@ namespace Village.Views
 			healthBar.value = value;
 		}
 
-		public void MoveToVillagerPanel()
+		public void MoveToPanel()
 		{
 			GetComponent<Image>().raycastTarget = true;
 			blockTooltip = false;

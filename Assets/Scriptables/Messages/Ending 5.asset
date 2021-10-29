@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ae9a3226242774ebdf30de13be3a69, type: 3}
+  m_Name: Ending 5
+  m_EditorClassIdentifier: 
+  title: Sukces negocjacyjny
+  music: {fileID: 8300000, guid: 750e9069ecd7d5c4482b666d816f5128, type: 3}
+  backgroundColor: {r: 0.25490195, g: 0.50971645, b: 0.62352943, a: 1}
+  messages:
+  - "Czas rozejmu dobiega ko\u0144ca. Dzi\u0119ki staraniom mieszkanc\xF3w udaje
+    si\u0119 og\u0142oszenie terenu neutralnego, otrzymuj\u0105 oni mo\u017Cliwo\u015B\u0107
+    zostania na znanych im ziemiach pod warunkiem sta\u0142ych dostaw cennego kruszca
+    do obu pa\u0144stw. Mieszkancy mog\u0105 dzieki temu wie\u015B\u0107 spokojne,
+    skromne \u017Cycie. Nie wiadomo jednak, czy i na jak d\u0142ugo ten stan da si\u0119
+    utrzyma\u0107."

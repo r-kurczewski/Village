@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Map.unity
-    guid: 6250ccf61b54bbb45ade4e6ab7d3094e
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 115438578790b374eba6d0079ff6d6fc
+  - enabled: 1
+    path: Assets/Scenes/EndingScene.unity
+    guid: 6b0a50b7958f3bc4a8b49466f4f0f3ef
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: 6250ccf61b54bbb45ade4e6ab7d3094e
+  - enabled: 1
+    path: Assets/Scenes/PrologScene.unity
+    guid: 8c6a57f60a385684891c597a32b1ddf7
   m_configObjects: {}

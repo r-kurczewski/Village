@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using Village.Scriptables;
+using static Village.Scriptables.Effect;
+using static Village.Scriptables.Resource;
 
 public interface IAction
 {

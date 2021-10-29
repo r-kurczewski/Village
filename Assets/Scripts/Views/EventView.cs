@@ -56,7 +56,7 @@ namespace Village.Views
 			foreach (var req in gameEvent.eventBase.onSuccess)
 			{
 				var reqView = Instantiate(effectViewPrefab, successList.transform);
-				reqView.SetAmount(req.amount);
+				reqView.SetAmount(req.value);
 				reqView.SetIcon(req.effect.icon);
 				reqView.SetIconColor(req.effect.color);
 				reqView.SetFontColor(Color.black);
@@ -66,7 +66,7 @@ namespace Village.Views
 			foreach (var req in gameEvent.eventBase.onFailure)
 			{
 				var reqView = Instantiate(effectViewPrefab, failureList.transform);
-				reqView.SetAmount(req.amount);
+				reqView.SetAmount(req.value);
 				reqView.SetIcon(req.effect.icon);
 				reqView.SetIconColor(req.effect.color);
 				reqView.SetFontColor(Color.black);

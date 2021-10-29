@@ -4,6 +4,9 @@ using System.Linq;
 using UnityEngine;
 using Village.Scriptables;
 using Village.Views;
+using static Village.Scriptables.Effect;
+using static Village.Scriptables.Resource;
+using static Village.Controllers.GameController;
 
 public class BuildAction : IAction
 {
@@ -29,6 +32,40 @@ public class BuildAction : IAction
 
 	public void Execute(Villager target)
 	{
-		buildingView.Build();
+		if (IsCostCorrect())
+		{
+			ApplyCosts();
+			buildingView.Build();	
+		}
+	}
+
+	protected void ApplyCosts()
+	{
+		foreach (var cost in Costs)
+		{
+			instance.AddRemoveResource(cost.resource, -cost.amount);
+		}
+	}
+
+	protected bool IsCostCorrect()
+	{
+		foreach (var cost in Costs)
+		{
+			int amount = instance.GetResourceAmount(cost.resource);
+			if (cost.amount > amount)
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	protected void ApplyEffects(float villagerMultiplier)
+	{
+		foreach (var eff in Effects)
+		{
+			int finalValue = Mathf.RoundToInt(eff.value * villagerMultiplier);
+			eff.effect.Apply(finalValue);
+		}
 	}
 }

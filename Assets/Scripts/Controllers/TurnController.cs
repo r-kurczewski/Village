@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Village.Scriptables;
 using Village.Views;
+using static Village.Controllers.GameController;
 
 namespace Village.Controllers
 {
@@ -15,16 +16,13 @@ namespace Village.Controllers
 	public class TurnController : MonoBehaviour
 	{
 		[SerializeField]
-		private TurnView view;
-
-		[SerializeField]
-		private Image panel;
-
-		[SerializeField]
 		private GameChapter chapter;
 
 		[SerializeField]
 		private int turn = 1;
+
+		[SerializeField]
+		private UnityData references;
 
 		public int Turn => turn;
 
@@ -39,8 +37,8 @@ namespace Village.Controllers
 				if (turn == selected.chapterTurnStart)
 				{
 					chapter = selected;
-					panel.color = selected.color;
-					view.SetChapterName(selected.chapterName);
+					references.panel.color = selected.color;
+					references.view.SetChapterName(selected.chapterName);
 					GameController.instance.PlayMusic(selected.chapterMusic);
 					break;
 				}
@@ -50,11 +48,46 @@ namespace Village.Controllers
 
 		public void CheckIfGameEnds()
 		{
-			if (chapter.nextChapter is null
-				&& Turn != Chapter.chapterTurnStart)
+			bool lastTurn = chapter.nextChapter is null && Turn != Chapter.chapterTurnStart;
+			int villagersCount = instance.GetVillagersCount();
+			if (villagersCount == 0 || lastTurn)
 			{
-				SceneManager.LoadScene("MainMenu");
+				int reputationA = instance.GetResourceAmount(references.countryAReputation);
+				int reputationB = instance.GetResourceAmount(references.countryBReputation);
+				EndingLoader.ending = SelectEnding(villagersCount, reputationA, reputationB);
+				SceneManager.LoadScene("EndingScene");
 			}
+		}
+
+		private Message SelectEnding(int villagersCount, int reputationA, int reputationB)
+		{
+			Message ending = default;
+
+			if (villagersCount == 0)
+			{
+				ending = references.ending1;
+			}
+			else
+			{
+				if (reputationA >= NEUTRAL_ENDING_REPUTATION
+				&& reputationB >= NEUTRAL_ENDING_REPUTATION)
+				{
+					ending = references.ending5;
+				}
+				else if (reputationB >= COUNTRY_B_ENDING_REPUTATION)
+				{
+					ending = references.ending4;
+				}
+				else if (reputationA >= COUNTRY_A_ENDING_REPUTATION)
+				{
+					ending = references.ending3;
+				}
+				else
+				{
+					ending = references.ending2;
+				}
+			}
+			return ending;
 		}
 
 		public void MoveToNextTurn()
@@ -64,7 +97,27 @@ namespace Village.Controllers
 
 		public void RefreshGUI()
 		{
-			view.SetTurn(turn);
+			references.view.SetTurn(turn);
+		}
+
+		[Serializable]
+		public class UnityData
+		{
+			public TurnView view;
+
+
+			public Image panel;
+
+			public Message
+				ending1,
+				ending2,
+				ending3,
+				ending4,
+				ending5;
+
+			public Resource countryAReputation;
+
+			public Resource countryBReputation;
 		}
 	}
 }

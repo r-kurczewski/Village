@@ -16,5 +16,18 @@ namespace Village.Scriptables
 		{
 			GameController.instance.AddRemoveResource(this, value);
 		}
+
+		[Serializable]
+		public class ResourceAmount
+		{
+			public Resource resource;
+			public int amount;
+
+			public ResourceAmount(Resource resource, int amount)
+			{
+				this.resource = resource;
+				this.amount = amount;
+			}
+		}
 	}
 }

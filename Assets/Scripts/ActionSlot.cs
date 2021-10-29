@@ -15,6 +15,8 @@ public class ActionSlot : Tooltiped, IDropHandler, IPointerClickHandler
 	[SerializeField]
 	private Image icon;
 
+	public IAction Action => action;
+
 	public VillagerView VillagerView
 	{
 		get
@@ -49,7 +51,7 @@ public class ActionSlot : Tooltiped, IDropHandler, IPointerClickHandler
 
 	public void OnPointerClick(PointerEventData eventData)
 	{
-		if(VillagerView) VillagerView.MoveToVillagerPanel();
+		if(VillagerView) VillagerView.MoveToPanel();
 	}
 
 	protected override void LoadTooltipData()

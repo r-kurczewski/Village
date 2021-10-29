@@ -17,13 +17,7 @@ MonoBehaviour:
   chapterTurnStart: 1
   chapterMusic: {fileID: 8300000, guid: f891391b118dbee4bb13c6e64e7a72e1, type: 3}
   nextChapter: {fileID: 11400000, guid: 7c7bf0e103ef42c4180cadb58f26a964, type: 2}
-  chapterStartMessage: "Po d\u0142ugiej, krwawej i bezowocnej wojnie terytorialnej
-    mi\u0119dzy kr\xF3lestwem Tharros i oligarchi\u0105 kupieck\u0105 Salvante nastaje
-    tymczasowy rozejm . Poprowad\u017A ludzi \u2013 dezerter\xF3w, ocala\u0142ych
-    mieszka\u0144c\xF3w, wygna\u0144c\xF3w - i zapewnij im przetrwanie na tych ziemiach
-    . Tereny te, \u017Cyzne i bogate w r\xF3\u017Cne surowce naturalne, s\u0105 r\xF3wnie\u017C
-    pe\u0142ne niebezpiecze\u0144stw, takich jak gro\u017Ane zwierz\u0119ta czy szabrownicy
-    szukaj\u0105cy \u0142atwego \u0142upu."
+  chapterStartMessage: 
   periodicEvents:
   - eventBase: {fileID: 11400000, guid: 9aa164f31c91b3246bf66a9d20e4aa69, type: 2}
     turn: 2

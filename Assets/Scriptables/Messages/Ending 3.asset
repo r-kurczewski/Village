@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ae9a3226242774ebdf30de13be3a69, type: 3}
+  m_Name: Ending 3
+  m_EditorClassIdentifier: 
+  title: "Przy\u0142\u0105czenie do Tharros"
+  music: {fileID: 8300000, guid: 9b69e356671f41543b726ce9e3399d52, type: 3}
+  backgroundColor: {r: 0.6226415, g: 0.36894587, b: 0.255518, a: 1}
+  messages:
+  - "Czas rozejmu dobiega ko\u0144ca. Mieszkancom udaje si\u0119 wynegocjowa\u0107
+    dobrowolne przy\u0142\u0105czenie do kr\xF3lestwa Tharros. Wi\u0119kszo\u015B\u0107
+    mieszka\u0144c\xF3w zostaje u\u0142askawiona z drobniejszych przest\u0119pstw,
+    staj\u0105 si\u0119 obywatelami tego ekspansywnego mocarstwa, a teren wioski
+    zostaje przej\u0119ty i dostosowany do przemys\u0142u g\xF3rniczego."

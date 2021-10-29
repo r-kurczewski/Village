@@ -13,6 +13,8 @@ namespace Village.Scriptables
 
 		public override void Execute(Villager target)
 		{
+			if (!target) return;
+
 			throw new NotImplementedException();
 		}
 

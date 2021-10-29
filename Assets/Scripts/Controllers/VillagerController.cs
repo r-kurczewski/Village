@@ -27,9 +27,13 @@ namespace Village.Controllers
 			villager.transform.SetParent(transform);
 		}
 
-		public void ExecuteVillagerActions()
+		public void MoveVillagersToPanel()
 		{
-			villagers.ForEach(x => x.MoveToVillagerPanel());
+			foreach (var villager in villagers)
+			{
+				villager.MoveToPanel();
+				PutVillager(villager);
+			}
 		}
 
 		public Villager CreateNewVillager(VillagerBase villagerBase)
@@ -51,17 +55,37 @@ namespace Village.Controllers
 			}
 		}
 
-		public void RefreshGUI()
+		public void VillagerUpdate()
 		{
+			var toRemove = new List<VillagerView>();
 			foreach (var view in villagers)
 			{
-				view.SetHealth(view.Villager.health);
+				if(view.Villager.Health == 0)
+				{
+					toRemove.Add(view);
+					Destroy(view.gameObject);
+				}
 			}
+			foreach(var view in toRemove)
+			{
+				villagers.Remove(view);
+				Destroy(view.gameObject);
+			}
+		}
+
+		public void RefreshGUI()
+		{
+			villagers.ForEach(x=> x.SetHealth(x.Villager.Health));
 		}
 
 		public void AddRemoveVillagersHealth(int value)
 		{
-			villagers.ForEach(x => x.Villager.health += value);
+			villagers.ForEach(x => x.Villager.Health += value);
+		}
+
+		public int GetVillagersCount()
+		{
+			return villagers.Count;
 		}
 	}
 }

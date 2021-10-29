@@ -24,11 +24,11 @@ namespace Village.Views.Tooltips
 			villagerName.text = data.villagerBase.villagerName;
 			countryAReputation.SetReputation(data.villagerBase.CountryAReputation);
 			countryBReputation.SetReputation(data.villagerBase.CountryBReputation);
-			strengthBar.SetStat(data.strength);
-			gatheringBar.SetStat(data.gathering);
-			craftingBar.SetStat(data.crafting);
-			diplomacyBar.SetStat(data.diplomacy);
-			intelligenceBar.SetStat(data.intelligence);
+			strengthBar.SetStat(data.Strength);
+			gatheringBar.SetStat(data.Gathering);
+			craftingBar.SetStat(data.Crafting);
+			diplomacyBar.SetStat(data.Diplomacy);
+			intelligenceBar.SetStat(data.Intelligence);
 
 		}
 	}

@@ -9,7 +9,7 @@ namespace Village.Scriptables
 	{
 		public override void Apply(int value, Villager villager)
 		{
-			villager.health += 1;
+			villager.Health += 1;
 		}
 	}
 }

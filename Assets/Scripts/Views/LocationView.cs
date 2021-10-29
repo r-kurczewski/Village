@@ -45,15 +45,12 @@ namespace Village.Views
 			if (location is MapBuilding building)
 			{
 				LoadBuildingActions(building);
-				if (isBuilt
-					&& building.basicActions.Count == 0
-					&& building.buildingAction.Count == 0)
+				bool noActions = building.basicActions.Count == 0 && building.buildingAction.Count == 0;
+				if (isBuilt && noActions)
 				{
 					Hide();
 				}
 			}
-
-
 		}
 
 		private void LoadBuildingActions(MapBuilding building)
@@ -94,7 +91,6 @@ namespace Village.Views
 			{
 				building.ApplyOnetimeBonus();
 				isBuilt = true;
-				Reload();
 			}
 			else Debug.LogWarning("Trying to build not-building location!", this);
 		}
@@ -109,7 +105,7 @@ namespace Village.Views
 			gameObject.SetActive(false);
 		}
 
-		private void Reload()
+		public void Reload()
 		{
 			Clear();
 			Load(location);

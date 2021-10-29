@@ -12,11 +12,11 @@ namespace Village.Scriptables
 		[SerializeField]
 		private Effect heal;
 
-		public int HealStrength => effects.FirstOrDefault(x => x.effect == heal).amount;
+		public int HealStrength => effects.FirstOrDefault(x => x.effect == heal).value;
 
 		public override void Execute(Villager target)
 		{
-			target.health = Mathf.Clamp(target.health + HealStrength, 0, 4);
+			target.Health += HealStrength;
 		}
 
 		public Action<IEnumerable<Villager>, int> OnApply;

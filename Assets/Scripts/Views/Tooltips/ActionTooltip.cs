@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static Village.Scriptables.Effect;
+using static Village.Scriptables.Resource;
 
 namespace Village.Views.Tooltips
 {
@@ -69,9 +71,7 @@ namespace Village.Views.Tooltips
 			}
 
 			RefreshLayout();
-
 		}
-
 
 		private void Clear()
 		{
@@ -86,7 +86,7 @@ namespace Village.Views.Tooltips
 			var actionResult = Instantiate(actionResultPrefab, effectsParent);
 			actionResult.SetIcon(eff.effect.icon);
 			actionResult.SetIconColor(eff.effect.color);
-			actionResult.SetAmount(eff.amount);
+			actionResult.SetAmount(eff.value);
 		}
 
 		private void LoadCost(ResourceAmount res)

@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using Village.Scriptables;
 using Village.Views;
+using static Village.Controllers.GameController;
 
 namespace Village.Controllers
 {
@@ -18,6 +19,9 @@ namespace Village.Controllers
 		private EventView eventPrefab;
 
 		[SerializeField]
+		private EventBase merchantEvent;
+
+		[SerializeField]
 		private List<EventView> currentEvents = new List<EventView>();
 
 		[SerializeField]
@@ -26,7 +30,7 @@ namespace Village.Controllers
 		[SerializeField]
 		private int predictionFactor;
 
-		public int PredictionFactor { get; set; }
+		public int PredictionFactor { get => predictionFactor; set => predictionFactor = value; }
 
 		public EventView AddEvent(GameEvent gameEvent)
 		{
@@ -36,16 +40,21 @@ namespace Village.Controllers
 			return view;
 		}
 
+		public bool MerchantAvailable()
+		{
+			return currentEvents.Select(x => x.Event.eventBase).Contains(merchantEvent);
+		}
+
 		public void LoadChapterEvents()
 		{
-			GameChapter chapter = GameController.instance.Chapter;
+			GameChapter chapter = instance.Chapter;
 			chapterEvents = chapter.GenerateEventList().OrderBy(x => x.turn).ToList();
 		}
 
 		public void EventUpdate()
 		{
-			int currentTurn = GameController.instance.GetCurrentTurn();
-			var newEvents = chapterEvents.Where(x => x.turn == currentTurn );
+			int turnToLoad = instance.GetCurrentTurn() + predictionFactor;
+			var newEvents = chapterEvents.Where(x => x.turn == turnToLoad);
 			foreach (var newEvent in newEvents)
 			{
 				AddEvent(newEvent);
@@ -54,14 +63,14 @@ namespace Village.Controllers
 			var toRemove = new List<EventView>();
 			foreach (var ev in currentEvents)
 			{
-				int turnsLeft = ev.Event.turn + ev.Event.eventBase.turnDuration - currentTurn;
+				int turnsLeft = ev.Event.turn + ev.Event.eventBase.turnDuration - turnToLoad;
 
 				if (turnsLeft == 0)
 				{
 					bool eventSuccess = true;
 					foreach (var req in ev.Event.eventBase.requirements)
 					{
-						if (GameController.instance.GetResourceAmount(req.resource) < req.amount)
+						if (instance.GetResourceAmount(req.resource) < req.amount)
 						{
 							eventSuccess = false;
 						}
@@ -70,7 +79,6 @@ namespace Village.Controllers
 					{
 						ev.Event.eventBase.requirements.ForEach(x => x.resource.Apply(-x.amount));
 					}
-					Debug.Log($"Event {ev.Event.eventBase.title}: {eventSuccess}");
 					if (eventSuccess)
 					{
 						ev.Event.eventBase.ApplySuccess();

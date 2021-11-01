@@ -12,5 +12,7 @@ public interface IAction
 	public List<EffectAmount> Effects { get; }
 	public VillagerStat Stat1 { get; }
 	public VillagerStat Stat2 { get; }
+
+	public float GetMultiplier(Villager target);
 	public void Execute(Villager target);
 }

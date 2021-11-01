@@ -55,18 +55,23 @@ namespace Village.Controllers
 			}
 		}
 
+		public void ApplyIntelligenceBonus()
+		{
+			villagers.ForEach(x => x.Villager.ApplyIntelligenceBonus());
+		}
+
 		public void VillagerUpdate()
 		{
 			var toRemove = new List<VillagerView>();
 			foreach (var view in villagers)
 			{
-				if(view.Villager.Health == 0)
+				if (view.Villager.Health == 0)
 				{
 					toRemove.Add(view);
 					Destroy(view.gameObject);
 				}
 			}
-			foreach(var view in toRemove)
+			foreach (var view in toRemove)
 			{
 				villagers.Remove(view);
 				Destroy(view.gameObject);
@@ -75,7 +80,7 @@ namespace Village.Controllers
 
 		public void RefreshGUI()
 		{
-			villagers.ForEach(x=> x.SetHealth(x.Villager.Health));
+			villagers.ForEach(x => x.SetHealth(x.Villager.Health));
 		}
 
 		public void AddRemoveVillagersHealth(int value)

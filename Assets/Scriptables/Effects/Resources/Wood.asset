@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e103318d6bd6440b7bf26de1cda65f, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 9416c6643f820e946ad66ba83a7a546b, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
   resourceName: Drewno
-  icon: {fileID: -4422450899936316775, guid: 588266200fa675c4ea3ccde5414023de, type: 3}
-  baseValue: 2
+  baseCost: 6

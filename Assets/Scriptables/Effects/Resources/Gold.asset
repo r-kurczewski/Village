@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e103318d6bd6440b7bf26de1cda65f, type: 3}
   m_Name: Gold
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: c3a28b9242ea70b428dda7592dd58bb7, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
   resourceName: "Z\u0142oto"
-  icon: {fileID: -3588946559414339053, guid: 15427c46447f29b4aa2e39a21b890bb4, type: 3}
-  baseValue: 0
+  baseCost: 2

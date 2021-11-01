@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e103318d6bd6440b7bf26de1cda65f, type: 3}
   m_Name: Salvante reputation
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 4dad365650d586847bb54bee6956d998, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
   resourceName: Reputacja Salvante
-  icon: {fileID: 7595712706507329377, guid: a321d742dbdc768408046dafc122677a, type: 3}
-  color: {r: 0.325233, g: 0.8867924, b: 0, a: 1}
   baseValue: 20

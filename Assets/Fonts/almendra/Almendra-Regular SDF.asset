@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Almendra-Regular SDF
   m_EditorClassIdentifier: 
-  hashCode: 1971423610
+  hashCode: 580342204
   material: {fileID: 7770481541815364990}
-  materialHashCode: 972346266
+  materialHashCode: 50445596
   m_Version: 1.1.0
   m_SourceFontFileGUID: 4b1e951d17f4c0c44914cebd653c671b
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 4b1e951d17f4c0c44914cebd653c671b, type: 3}

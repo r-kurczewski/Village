@@ -1,10 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Village.Controllers;
+using static Village.Controllers.GameController;
 using static Village.Scriptables.Effect;
 using static Village.Scriptables.Resource;
-using static Village.Controllers.GameController;
 
 namespace Village.Scriptables
 {
@@ -56,13 +54,6 @@ namespace Village.Scriptables
 				eff.effect.Apply(finalValue);
 			}
 		}
-
-		protected float GetVillagerMultiplier(Villager villager)
-		{
-			int stat1Val = 0, stat2Val = 0;
-			if (stat1) stat1Val = villager.GetStatValue(stat1);
-			if (stat2) stat2Val = villager.GetStatValue(stat2);
-			return 1 + (stat1Val + stat2Val) * STAT_MULTIPIER;
-		}
+		public abstract float GetMultiplier(Villager villager);
 	}
 }

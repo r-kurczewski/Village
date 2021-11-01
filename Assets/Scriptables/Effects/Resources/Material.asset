@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e103318d6bd6440b7bf26de1cda65f, type: 3}
   m_Name: Material
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: f485cb326b1584b48a5248e7678d4cdc, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
   resourceName: "Materia\u0142"
-  icon: {fileID: 21300000, guid: 1a852ad82c602dc4c856695ed0798e1d, type: 3}
-  baseValue: 3
+  baseCost: 10

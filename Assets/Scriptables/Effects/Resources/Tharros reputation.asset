@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e103318d6bd6440b7bf26de1cda65f, type: 3}
   m_Name: Tharros reputation
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: d8f336400af383644bacdc090cadef61, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
   resourceName: Reputacja Tharros
-  icon: {fileID: -3871137802639562391, guid: a321d742dbdc768408046dafc122677a, type: 3}
-  color: {r: 1, g: 0.44043308, b: 0, a: 1}
   baseValue: 20

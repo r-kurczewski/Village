@@ -574,8 +574,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2fdd6a94398ce744b7c0e87fec3a35c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  givenResource: {fileID: 1938501104006336168}
-  takenResource: {fileID: 5101711261471431014}
+  resource: {fileID: 1938501104006336168}
+  gold: {fileID: 5101711261471431014}
   tradeCountLabel: {fileID: 1166072908200300145}
   lessButton: {fileID: 188327176745022867}
   moreButton: {fileID: 3247798578353910800}
@@ -1089,7 +1089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7131784721454533779, guid: 9ff6246a8448e1149b0d225ae1bcdddd, type: 3}
       propertyPath: m_Name
-      value: Given
+      value: Resource
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ff6246a8448e1149b0d225ae1bcdddd, type: 3}
@@ -1243,7 +1243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7131784721454533779, guid: 9ff6246a8448e1149b0d225ae1bcdddd, type: 3}
       propertyPath: m_Name
-      value: Taken
+      value: Gold
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ff6246a8448e1149b0d225ae1bcdddd, type: 3}

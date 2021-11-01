@@ -10,7 +10,7 @@ namespace Village.Scriptables
 	public class Resource : Effect
 	{
 		public string resourceName;
-		public int baseValue;
+		public int baseCost;
 
 		public override void Apply(int value, Villager villager = null)
 		{

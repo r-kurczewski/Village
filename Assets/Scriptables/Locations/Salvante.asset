@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Salvante
   m_EditorClassIdentifier: 
   basicActions:
-  - {fileID: 11400000, guid: 1a98017fcea46b741ae6a4d9ab023496, type: 2}
   - {fileID: 11400000, guid: 0e382e6c45eb79340983420be95a275e, type: 2}
+  - {fileID: 11400000, guid: 4a4a66b7ba73ef84d85fe120e9bba0c2, type: 2}

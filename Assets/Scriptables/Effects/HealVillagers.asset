@@ -12,9 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbf2ce59440921549962a1c66ec11320, type: 3}
   m_Name: HealVillagers
   m_EditorClassIdentifier: Assembly-CSharp::HealVillagers
-  icon: {fileID: 21300000, guid: d58650b7bd6d90e4fba73cb45303c7af, type: 3}
-  color:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
+  icon: {fileID: 21300000, guid: f521be3955a1a244c88482ebe9304658, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}

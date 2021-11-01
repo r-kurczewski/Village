@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b670dcb6a49ce54eb255a4183055549, type: 3}
   m_Name: Gem mining
   m_EditorClassIdentifier: 
-  actionName: "Wydobywanie krzyszta\u0142\xF3w"
-  icon: {fileID: 21300000, guid: a4f70c4b5ac373d44af69302cb37a091, type: 3}
+  actionName: Wyprawa do kopalni
+  icon: {fileID: 21300000, guid: 06f11728439c5f6428ddbdee450ff4e0, type: 3}
   stat1: {fileID: 11400000, guid: 4ed32862a36be7746b14073449606be5, type: 2}
   stat2: {fileID: 0}
   costs:
   - resource: {fileID: 11400000, guid: 45064975a6a06084b884e05747925761, type: 2}
-    amount: 2
+    amount: 1
   - resource: {fileID: 11400000, guid: 9d3db97e89f3adb42808e15635bb1c4e, type: 2}
-    amount: 2
+    amount: 1
   - resource: {fileID: 11400000, guid: 389ae6ddb3eee6e4c94fe350940428df, type: 2}
     amount: 1
   effects:
   - effect: {fileID: 11400000, guid: 589a88112db49c24cafc4f7b46447af5, type: 2}
-    amount: 5
+    value: 2

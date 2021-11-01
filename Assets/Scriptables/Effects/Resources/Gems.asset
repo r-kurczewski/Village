@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e103318d6bd6440b7bf26de1cda65f, type: 3}
   m_Name: Gems
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 736ec7f3501b094409033a332210c3e0, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
   resourceName: Kamienie szlachetne
-  icon: {fileID: -3141257633952027100, guid: 15427c46447f29b4aa2e39a21b890bb4, type: 3}
-  baseValue: 20
+  baseCost: 28

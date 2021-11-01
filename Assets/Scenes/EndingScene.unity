@@ -555,6 +555,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1741382816}
     m_Modifications:
+    - target: {fileID: 3040041346912749455, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
+      propertyPath: m_fontSize
+      value: 29.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040041346912749455, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
+    - target: {fileID: 3040041346912749455, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
+    - target: {fileID: 3040041347981111054, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
+    - target: {fileID: 3040041347981111054, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
+    - target: {fileID: 3040041348067368765, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
+      propertyPath: m_fontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040041348067368765, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
+    - target: {fileID: 3040041348067368765, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
     - target: {fileID: 3040041348115975682, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

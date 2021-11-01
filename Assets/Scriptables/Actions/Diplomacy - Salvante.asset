@@ -9,13 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b670dcb6a49ce54eb255a4183055549, type: 3}
+  m_Script: {fileID: 11500000, guid: b9cc3890841a06448a7f2b336260653f, type: 3}
   m_Name: Diplomacy - Salvante
   m_EditorClassIdentifier: 
   actionName: Dyplomacja
   icon: {fileID: 21300000, guid: 4fd01daded910254d9f03a2978bff6c1, type: 3}
   stat1: {fileID: 11400000, guid: f88959040f03e404491774af1e4e7953, type: 2}
   stat2: {fileID: 11400000, guid: 5370ec057d4122a40ae19428b07211c1, type: 2}
+  costs: []
   effects:
   - effect: {fileID: 11400000, guid: f77db6335bfa7664f927a025e5f4cc62, type: 2}
-    amount: 5
+    value: 5
+  country: 1

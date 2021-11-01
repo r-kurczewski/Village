@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9cc3890841a06448a7f2b336260653f, type: 3}
+  m_Name: Sell Gems - Salvante
+  m_EditorClassIdentifier: 
+  actionName: "Sprzedaj kryszta\u0142y"
+  icon: {fileID: 21300000, guid: a4f70c4b5ac373d44af69302cb37a091, type: 3}
+  stat1: {fileID: 11400000, guid: f88959040f03e404491774af1e4e7953, type: 2}
+  stat2: {fileID: 0}
+  costs:
+  - resource: {fileID: 11400000, guid: 589a88112db49c24cafc4f7b46447af5, type: 2}
+    amount: 3
+  effects:
+  - effect: {fileID: 11400000, guid: f77db6335bfa7664f927a025e5f4cc62, type: 2}
+    value: 30
+  country: 1

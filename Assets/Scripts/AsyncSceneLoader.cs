@@ -8,18 +8,22 @@ public class AsyncSceneLoader : MonoBehaviour
 	[SerializeField]
 	private string sceneName;
 
+	[SerializeField]
+	private float delay;
+
 	private AsyncOperation loading;
 	bool changeScene = false;
 
 	private void Start()
 	{
-		StartLoading(sceneName);
+		StartCoroutine(IStartLoading(sceneName, delay));
 	}
 
-	public void StartLoading(string sceneName)
+	public IEnumerator IStartLoading(string sceneName, float delay)
 	{
+		yield return new WaitForSeconds(delay);
 		loading = SceneManager.LoadSceneAsync(sceneName);
-		loading.allowSceneActivation = false;
+		loading.allowSceneActivation = changeScene;
 		StartCoroutine(IChangeScene());
 	}
 

@@ -64,7 +64,7 @@ namespace Village.Views
 
 		public void OnEndDrag(PointerEventData eventData)
 		{
-			var slot = eventData.pointerCurrentRaycast.gameObject.GetComponent<ActionSlot>();
+			var slot = eventData.pointerCurrentRaycast.gameObject?.GetComponent<ActionSlot>();
 			if (!slot) MoveToPanel();
 			GetComponent<Image>().raycastTarget = true;
 		}

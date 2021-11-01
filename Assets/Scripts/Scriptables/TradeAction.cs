@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Village.Controllers.GameController;
 
 namespace Village.Scriptables
 {
@@ -15,9 +16,13 @@ namespace Village.Scriptables
 		{
 			if (!target) return;
 
-			throw new NotImplementedException();
+			instance.LoadTradeWindow(target);
 		}
 
-
+		public override float GetMultiplier(Villager villager)
+		{
+			if (villager is null) return 0;
+			return villager.Diplomacy * TRADE_DISCOUNT * 100;
+		}
 	}
 }

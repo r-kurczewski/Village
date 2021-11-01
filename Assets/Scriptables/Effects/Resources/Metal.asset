@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e103318d6bd6440b7bf26de1cda65f, type: 3}
   m_Name: Metal
   m_EditorClassIdentifier: 
-  resourceName: Metal
-  icon: {fileID: -5578061715106032065, guid: 3d985224bfab70b419fd48e53a97e3a8, type: 3}
+  icon: {fileID: 21300000, guid: d5c3df73eb91dba49b81250be2faaf20, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
-  baseValue: 10
+  resourceName: Metal
+  baseCost: 20

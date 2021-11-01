@@ -20,3 +20,6 @@ MonoBehaviour:
   - resource: {fileID: 11400000, guid: 389ae6ddb3eee6e4c94fe350940428df, type: 2}
     amount: 5
   buildingAction: []
+  resource:
+    resource: {fileID: 11400000, guid: 9d3db97e89f3adb42808e15635bb1c4e, type: 2}
+    amount: 3

@@ -15,12 +15,20 @@ namespace Village.Controllers
 	{
 		public static GameController instance;
 
-		public const float STAT_MULTIPIER = 0.2f;
-		public const int STAT_MAX = 5;
-		public const int HEALTH_MAX = 4;
 		public const int COUNTRY_A_ENDING_REPUTATION = 700;
 		public const int COUNTRY_B_ENDING_REPUTATION = 700;
 		public const int NEUTRAL_ENDING_REPUTATION = 500;
+		public const float SELL_VALUE_MULTIPLIER = 0.5f;
+
+		public bool MerchantAvailable()
+		{
+			return eventController.MerchantAvailable();
+		}
+
+		public const float TRADE_DISCOUNT = 0.06f;
+		public const float STAT_MULTIPIER = 0.2f;
+		public const int HEALTH_MAX = 4;
+		public const int STAT_MAX = 5;
 
 		[SerializeField]
 		private ResourceController resourceController;
@@ -36,6 +44,9 @@ namespace Village.Controllers
 
 		[SerializeField]
 		private TurnController turnController;
+
+		[SerializeField]
+		private TradeController tradeController;
 
 		[SerializeField]
 		private AudioSource audioPlayer;
@@ -66,7 +77,8 @@ namespace Village.Controllers
 			turnController.ChapterUpdate();
 			eventController.EventUpdate();
 			locationController.LocationUpdate();
-			villagerController.VillagerUpdate();
+			locationController.ApplyTurnBonuses();
+			//villagerController.VillagerUpdate();
 			turnController.CheckIfGameEnds();
 			UpdateGUI();
 		}
@@ -91,6 +103,16 @@ namespace Village.Controllers
 			return villagerController.GetVillagersCount();
 		}
 
+		public void ApplyIntelligenceBonus()
+		{
+			villagerController.ApplyIntelligenceBonus();
+		}
+		public void LoadTradeWindow(Villager villager)
+		{
+			tradeController.ShowTradeWindow();
+			tradeController.LoadTradeWindow(villager);
+		}
+
 		public int GetCurrentTurn()
 		{
 			return turnController.Turn;
@@ -105,9 +127,12 @@ namespace Village.Controllers
 			TurnUpdate();
 		}
 
-		public void SetPredictionFactor(int value)
+		public void IncreasePredictionFactor()
 		{
-			eventController.PredictionFactor = value;
+			eventController.PredictionFactor++;
+
+			//load events that would be skipped
+			eventController.EventUpdate(); 
 		}
 
 		public void UpdateGUI()

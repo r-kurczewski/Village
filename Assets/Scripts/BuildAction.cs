@@ -1,12 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using Village.Scriptables;
 using Village.Views;
+using static Village.Controllers.GameController;
 using static Village.Scriptables.Effect;
 using static Village.Scriptables.Resource;
-using static Village.Controllers.GameController;
 
 public class BuildAction : IAction
 {
@@ -35,7 +33,12 @@ public class BuildAction : IAction
 		if (IsCostCorrect())
 		{
 			ApplyCosts();
-			buildingView.Build();	
+			if (buildingView.Location is MapBuilding building)
+			{
+				building.ApplyOnetimeBonus();
+				buildingView.SetAsBuilt();
+			}
+			else Debug.LogWarning("Trying to build not-building location!");
 		}
 	}
 
@@ -67,5 +70,10 @@ public class BuildAction : IAction
 			int finalValue = Mathf.RoundToInt(eff.value * villagerMultiplier);
 			eff.effect.Apply(finalValue);
 		}
+	}
+
+	public float GetMultiplier(Villager target)
+	{
+		return 1;
 	}
 }

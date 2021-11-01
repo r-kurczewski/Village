@@ -22,11 +22,17 @@ public class Villager : MonoBehaviour
 	[SerializeField]
 	private UnityData references;
 
-	public int Strength => GetStatValue(references.strength);
-	public int Gathering => GetStatValue(references.gathering);
-	public int Crafting => GetStatValue(references.crafting);
-	public int Diplomacy => GetStatValue(references.diplomacy);
-	public int Intelligence => GetStatValue(references.intelligence);
+	public int BaseStrength => GetBaseStatValue(references.strength);
+	public int BaseGathering => GetBaseStatValue(references.gathering);
+	public int BaseCrafting => GetBaseStatValue(references.crafting);
+	public int BaseDiplomacy => GetBaseStatValue(references.diplomacy);
+	public int BaseIntelligence => GetBaseStatValue(references.intelligence);
+	public int Strength => GetEffectiveStatValue(references.strength);
+	public int Gathering => GetEffectiveStatValue(references.gathering);
+	public int Crafting => GetEffectiveStatValue(references.crafting);
+	public int Diplomacy => GetEffectiveStatValue(references.diplomacy);
+	public int Intelligence => GetEffectiveStatValue(references.intelligence);
+
 	public int Health { get => _health; set => _health = Mathf.Clamp(value, 0, HEALTH_MAX); }
 
 	public void Load(VillagerBase villagerBase)
@@ -35,24 +41,61 @@ public class Villager : MonoBehaviour
 		SetStat(references.strength, villagerBase.baseStrength);
 		SetStat(references.gathering, villagerBase.baseGathering);
 		SetStat(references.crafting, villagerBase.baseCrafting);
-		SetStat( references.diplomacy, villagerBase.baseDiplomacy);
-		SetStat( references.intelligence, villagerBase.baseIntelligence);
+		SetStat(references.diplomacy, villagerBase.baseDiplomacy);
+		SetStat(references.intelligence, villagerBase.baseIntelligence);
 		Health = HEALTH_MAX;
 	}
 
-	public int GetStatValue(VillagerStat stat)
+	private VillagerStatAmount GetStat(VillagerStat stat)
 	{
-		return stats.First(x => x.stat == stat).Amount;
+		return stats.First(x => x.stat == stat);
+	}
+
+	public int GetBaseStatValue(VillagerStat stat)
+	{
+		return GetStat(stat).Amount;
+	}
+
+	public int GetEffectiveStatValue(VillagerStat stat)
+	{
+		return GetBaseStatValue(stat) + GetHealthStatModfier();
+	}
+
+	private int GetHealthStatModfier()
+	{
+		switch (Health)
+		{
+			case 4:
+				return 0;
+
+			case 3:
+				return -1;
+
+			case 2:
+				return -2;
+
+			case 1:
+				return -4;
+
+			default:
+				throw new ArgumentException();
+		}
 	}
 
 	public void SetStat(VillagerStat stat, int value)
 	{
-		stats.First(x => x.stat == stat).Amount = value;
+		GetStat(stat).Amount = value;
 	}
 
-	public void IncreaseDecreaseAllStats(int value)
+	public void ApplyIntelligenceBonus()
 	{
-		stats.ForEach(x => x.Amount += value);
+		var boostableStats = new List<VillagerStatAmount>(stats);
+		boostableStats.Remove(GetStat(references.intelligence));
+		int intelligence = BaseIntelligence;
+		for (int i = 0; i < intelligence; i++)
+		{
+			boostableStats[Random.Range(0, boostableStats.Count - 1)].Amount++;
+		}
 	}
 
 	[Serializable]
@@ -71,7 +114,7 @@ public class Villager : MonoBehaviour
 
 			set
 			{
-				amount = Mathf.Clamp(amount + value, 0, STAT_MAX);
+				amount = Mathf.Clamp(value, 0, STAT_MAX);
 			}
 		}
 

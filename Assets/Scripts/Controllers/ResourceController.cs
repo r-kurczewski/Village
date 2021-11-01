@@ -6,6 +6,7 @@ using Village.Views;
 using Village.Scriptables;
 using System;
 using static Village.Scriptables.Resource;
+using static Village.Controllers.GameController;
 
 namespace Village.Controllers
 {
@@ -26,6 +27,7 @@ namespace Village.Controllers
 				view.Reload();
 				resources.Add(new ResourceAmount(view.Resource, 0));
 			}
+			
 		}
 
 		public void RefreshGUI()

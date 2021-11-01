@@ -20,6 +20,10 @@ namespace Village.Views
 		[SerializeField]
 		private Action buildBaseAction;
 
+		public MapLocation Location => location;
+
+		public bool Built => isBuilt;
+
 		public void Start()
 		{
 			Clear();
@@ -48,7 +52,7 @@ namespace Village.Views
 				bool noActions = building.basicActions.Count == 0 && building.buildingAction.Count == 0;
 				if (isBuilt && noActions)
 				{
-					Hide();
+					SetVisibility(false);
 				}
 			}
 		}
@@ -85,24 +89,14 @@ namespace Village.Views
 			actionSlot.Load(action);
 		}
 
-		public void Build()
+		public void SetAsBuilt()
 		{
-			if (location is MapBuilding building)
-			{
-				building.ApplyOnetimeBonus();
-				isBuilt = true;
-			}
-			else Debug.LogWarning("Trying to build not-building location!", this);
+			isBuilt = true;
 		}
 
-		private void Show()
+		public void SetVisibility(bool visibility)
 		{
-			gameObject.SetActive(true);
-		}
-
-		private void Hide()
-		{
-			gameObject.SetActive(false);
+			gameObject.SetActive(visibility);
 		}
 
 		public void Reload()

@@ -39,7 +39,8 @@ namespace Village.Controllers
 					chapter = selected;
 					references.panel.color = selected.color;
 					references.view.SetChapterName(selected.chapterName);
-					GameController.instance.PlayMusic(selected.chapterMusic);
+					instance.PlayMusic(selected.chapterMusic);
+					instance.ApplyIntelligenceBonus();
 					break;
 				}
 				else selected = selected.nextChapter;

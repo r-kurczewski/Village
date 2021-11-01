@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e103318d6bd6440b7bf26de1cda65f, type: 3}
   m_Name: Stone
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 982ec4fb418f9dc4d83d7eab869e1555, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
   resourceName: "Kamie\u0144"
-  icon: {fileID: -2036597177203828329, guid: 51f61d5e6f8da0d41b61f9999cab210f, type: 3}
-  baseValue: 2
+  baseCost: 4

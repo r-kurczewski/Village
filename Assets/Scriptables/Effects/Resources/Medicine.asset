@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e103318d6bd6440b7bf26de1cda65f, type: 3}
   m_Name: Medicine
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 27e023e05467b2b439c6a406f8e921de, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
   resourceName: Medykamenty
-  icon: {fileID: 21300000, guid: 8d737600106da464093a4b69d0f708f6, type: 3}
-  baseValue: 8
+  baseCost: 18

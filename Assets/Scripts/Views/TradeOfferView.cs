@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Village.Controllers;
+using Village.Scriptables;
 
 namespace Village.Views
 {
 	public class TradeOfferView : MonoBehaviour
 	{
 		[SerializeField]
-		private ResourceView givenResource;
+		private ResourceView resource;
 
 		[SerializeField]
-		private ResourceView takenResource;
+		private ResourceView gold;
 
 		[SerializeField]
 		private TMP_Text tradeCountLabel;
@@ -23,20 +23,23 @@ namespace Village.Views
 		[SerializeField]
 		private Button moreButton;
 
+		[SerializeField]
+		private Resource goldReference;
+
 		public int TradeCount { get; private set; }
 
-		private TradeWindowView parentWindow;
+		private TradeController controller;
 
 		public TradeOffer Offer { get; private set; }
 
-		public void Load(TradeOffer offer, TradeWindowView parentWindow)
+		public void Load(TradeOffer offer, TradeController controller, Villager villager)
 		{
 			Offer = offer;
-			this.parentWindow = parentWindow;
-			givenResource.Load(offer.yourResources.resource);
-			givenResource.SetAmount(offer.yourResources.amount);
-			takenResource.Load(offer.merchantResources.resource);
-			takenResource.SetAmount(offer.merchantResources.amount);
+			this.controller = controller;
+			resource.Load(offer.resource);
+			resource.SetAmount(1);
+			gold.Reload();
+			gold.SetAmount(offer.GetCost(villager));
 			Refresh();
 		}
 
@@ -45,14 +48,14 @@ namespace Village.Views
 
 			TradeCount++;
 			Refresh();
-			parentWindow.Refresh();
+			controller.Refresh();
 		}
 
 		public void TradeLess()
 		{
 			TradeCount--;
 			Refresh();
-			parentWindow.Refresh();
+			controller.Refresh();
 		}
 
 		private void Refresh()

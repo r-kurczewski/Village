@@ -17,21 +17,9 @@ public class ActionSlot : Tooltiped, IDropHandler, IPointerClickHandler
 
 	public IAction Action => action;
 
-	public VillagerView VillagerView
-	{
-		get
-		{
-			return GetComponentInChildren<VillagerView>();
-		}
-	}
+	public VillagerView VillagerView => GetComponentInChildren<VillagerView>();
 
-	public Villager Villager
-	{
-		get
-		{
-			return GetComponentInChildren<Villager>();
-		}
-	}
+	public Villager Villager => GetComponentInChildren<Villager>();
 
 	public void Load(IAction action)
 	{
@@ -51,16 +39,21 @@ public class ActionSlot : Tooltiped, IDropHandler, IPointerClickHandler
 
 	public void OnPointerClick(PointerEventData eventData)
 	{
-		if(VillagerView) VillagerView.MoveToPanel();
+		if (VillagerView) VillagerView.MoveToPanel();
 	}
 
 	protected override void LoadTooltipData()
 	{
-		ActionTooltip.instance.Load(action);
+		ActionTooltip.instance.Load(this);
 	}
 
 	protected override void SetTooltipObject()
 	{
 		tooltip = ActionTooltip.instance.gameObject;
+	}
+
+	public float GetActionMultiplier()
+	{
+		return action.GetMultiplier(Villager);
 	}
 }

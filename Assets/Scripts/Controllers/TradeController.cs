@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,6 +32,9 @@ namespace Village.Controllers
 
 		[SerializeField]
 		private Button acceptButton;
+
+		[SerializeField]
+		private Image raycastBlock;
 
 		[SerializeField]
 		private List<TradeOffer> merchantTrades;
@@ -79,15 +83,21 @@ namespace Village.Controllers
 		{
 			return Mathf.RoundToInt(villager.Diplomacy * TRADE_DISCOUNT * 100);
 		}
+		public void LoadTrades(List<TradeOffer> trades)
+		{
+			merchantTrades = trades;
+		}
 
 		public void ShowTradeWindow()
 		{
 			gameObject.SetActive(true);
+			raycastBlock.enabled = true;
 		}
 
 		public void HideTradeWindow()
 		{
 			gameObject.SetActive(false);
+			raycastBlock.enabled = false;
 		}
 		public void LoadTradeWindow(Villager villager)
 		{
@@ -102,7 +112,16 @@ namespace Village.Controllers
 
 		public bool IsOfferCorrect()
 		{
-			return instance.GetResourceAmount(gold) + GetTotalCost() >= 0;
+			bool correctGold = instance.GetResourceAmount(gold) + GetTotalCost() >= 0;
+			bool correctResources = true;
+			foreach(var view in offerViews.Where(x=> x.Offer.mode == Sell))
+			{
+				if (instance.GetResourceAmount(view.Offer.resource) < view.TradeCount)
+				{
+					correctResources = false;
+				}
+			}
+			return correctGold && correctResources;
 		}
 
 		public void FinishTrade()
@@ -121,6 +140,7 @@ namespace Village.Controllers
 					instance.AddRemoveResource(view.Offer.resource, view.TradeCount);
 				}
 				HideTradeWindow();
+				instance.UpdateGUI();
 			}
 		}
 

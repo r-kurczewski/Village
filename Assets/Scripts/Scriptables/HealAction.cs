@@ -16,9 +16,13 @@ namespace Village.Scriptables
 
 		public override void Execute(Villager target)
 		{
-			target.Health += HealStrength;
+			if (IsCostCorrect())
+			{
+				ApplyCosts();
+				target.Health += HealStrength;
+			}
 		}
 
-		public Action<IEnumerable<Villager>, int> OnApply;
+		//public Action<IEnumerable<Villager>, int> OnApply;
 	}
 }

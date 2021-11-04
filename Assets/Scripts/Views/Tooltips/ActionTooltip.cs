@@ -96,7 +96,7 @@ namespace Village.Views.Tooltips
 			var actionResult = Instantiate(actionResultPrefab, effectsParent);
 			actionResult.SetIcon(res.resource.icon);
 			actionResult.SetIconColor(res.resource.color);
-			actionResult.SetAmount(-res.amount);
+			actionResult.SetAmount(-res.Amount);
 		}
 
 		

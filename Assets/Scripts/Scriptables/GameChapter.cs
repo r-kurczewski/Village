@@ -15,8 +15,8 @@ namespace Village.Scriptables
 		public AudioClip chapterMusic;
 		public GameChapter nextChapter;
 
-		[TextArea(5, 8)]
-		public string chapterStartMessage;
+		[SerializeField]
+		public Message chapterStartMessage;
 
 		public List<PeriodicEvent> periodicEvents;
 

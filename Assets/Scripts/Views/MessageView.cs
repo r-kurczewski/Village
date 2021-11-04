@@ -26,7 +26,7 @@ namespace Village.Views
 		private int currentMessage;
 
 		[SerializeField]
-		private UnityEvent MessagesEnded;
+		public UnityEvent MessagesEnded;
 
 		private void Start()
 		{
@@ -40,8 +40,11 @@ namespace Village.Views
 				currentMessage = 0;
 				this.data = data;
 				var audio = FindObjectOfType<AudioSource>();
-				audio.clip = data.music;
-				audio.Play();
+				if (data.music)
+				{
+					audio.clip = data.music;
+					audio.Play();
+				}
 				background.color = data.backgroundColor;
 				Reload();
 			}
@@ -63,7 +66,6 @@ namespace Village.Views
 
 		public void OnPointerClick(PointerEventData eventData)
 		{
-			Debug.Log("Click!");
 			currentMessage++;
 			Reload();
 		}

@@ -7,6 +7,8 @@ using Village.Scriptables;
 using System;
 using static Village.Scriptables.Resource;
 using static Village.Controllers.GameController;
+using Random = UnityEngine.Random;
+using static TradeOffer;
 
 namespace Village.Controllers
 {
@@ -22,12 +24,12 @@ namespace Village.Controllers
 		public void LoadResources()
 		{
 			views = GetComponentsInChildren<ResourceView>().ToList();
-			foreach(var view in views)
+			foreach (var view in views)
 			{
 				view.Reload();
 				resources.Add(new ResourceAmount(view.Resource, 0));
 			}
-			
+
 		}
 
 		public void RefreshGUI()
@@ -41,12 +43,31 @@ namespace Village.Controllers
 
 		public void AddRemoveResource(Resource resource, int amount)
 		{
-			resources.First(x => x.resource == resource).amount += amount;
+			resources.First(x => x.resource == resource).Amount += amount;
 		}
 
 		public int GetResourceAmount(Resource resource)
 		{
-			return resources.First(x => x.resource == resource).amount;
+			return resources.First(x => x.resource == resource).Amount;
+		}
+
+		public List<TradeOffer> GenerateTrades()
+		{
+			var res = resources
+				.Select(x => x.resource)
+				.Where(x => x.tradable)
+				.OrderBy(x => Random.value);
+
+			var sell = res
+				.Take(MERCHANT_SELL_ITEMS_COUNT)
+				.Select(x => new TradeOffer(x, TradeMode.Sell));
+
+			var buy = res
+				.Skip(MERCHANT_SELL_ITEMS_COUNT)
+				.Take(MERCHANT_BUY_ITEMS_COUNT)
+				.Select(x => new TradeOffer(x, TradeMode.Buy));
+
+			return sell.Concat(buy).ToList();
 		}
 	}
 }

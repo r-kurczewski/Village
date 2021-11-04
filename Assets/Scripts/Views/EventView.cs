@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Village.Controllers;
+using static Village.Controllers.GameController;
 
 namespace Village.Views
 {
@@ -12,6 +12,8 @@ namespace Village.Views
 	{
 		[SerializeField]
 		private GameEvent gameEvent;
+
+		public int turnsLeft;
 
 		public GameEvent Event => gameEvent;
 
@@ -39,6 +41,9 @@ namespace Village.Views
 		public void Load(GameEvent gameEvent)
 		{
 			this.gameEvent = gameEvent;
+
+			turnsLeft = gameEvent.eventBase.turnDuration + instance.GetPredictionFactor();
+
 			titleText.text = gameEvent.eventBase.title;
 			descriptionText.text = gameEvent.eventBase.description;
 
@@ -46,7 +51,7 @@ namespace Village.Views
 			foreach (var req in gameEvent.eventBase.requirements)
 			{
 				var reqView = Instantiate(effectViewPrefab, requirementsList.transform);
-				reqView.SetAmount(req.amount);
+				reqView.SetAmount(req.Amount);
 				reqView.SetIcon(req.resource.icon);
 				reqView.SetIconColor(req.resource.color);
 				reqView.SetFontColor(Color.black);
@@ -71,15 +76,13 @@ namespace Village.Views
 				reqView.SetIconColor(req.effect.color);
 				reqView.SetFontColor(Color.black);
 			}
-
+			RefreshData();
 			RefreshLayout();
 		}
 
 		public void RefreshData()
 		{
-			int currentTurn = GameController.instance.GetCurrentTurn();
-			int turnLeft = gameEvent.turn + gameEvent.eventBase.turnDuration - currentTurn;
-			turnText.text = turnLeft.ToString();
+			turnText.text = turnsLeft.ToString();
 		}
 
 		public void ChangeDetailsVisibility(bool show)

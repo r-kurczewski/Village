@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce2ee1299a4cc6e4e9be60473b9cf415, type: 3}
+  m_Name: Food conservation
+  m_EditorClassIdentifier: 
+  title: "Konserwacja \u017Cywno\u015Bci"
+  description: "Nasza \u017Cywno\u015B\u0107 powoli si\u0119 psuje. Je\u015Bli jej
+    odpowiednio nie zakonserwujemy nie b\u0119dzie zdatna do u\u017Cytku."
+  turnDuration: 3
+  requirements:
+  - resource: {fileID: 11400000, guid: 0f76ab08f0674984fa3c0712680d9969, type: 2}
+    amount: 20
+  onSuccess: []
+  onFailure:
+  - effect: {fileID: 11400000, guid: 45064975a6a06084b884e05747925761, type: 2}
+    value: -50

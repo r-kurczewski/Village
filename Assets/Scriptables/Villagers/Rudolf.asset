@@ -15,9 +15,9 @@ MonoBehaviour:
   villagerName: Rudolf
   avatar: {fileID: 21300000, guid: 014708b4865232c43bcaa7055f911525, type: 3}
   CountryAReputation: 1
-  CountryBReputation: 1
+  CountryBReputation: -1
   baseStrength: 0
-  baseGathering: 1
+  baseGathering: 0
   baseCrafting: 1
-  baseDiplomacy: 1
+  baseDiplomacy: 0
   baseIntelligence: 3

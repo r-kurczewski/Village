@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   villagerName: Eleonore
   avatar: {fileID: 21300000, guid: ace615845e3f78d49b2be72ab20682c6, type: 3}
-  CountryAReputation: 0
-  CountryBReputation: 0
+  CountryAReputation: -1
+  CountryBReputation: 1
   baseStrength: 0
   baseGathering: 1
-  baseCrafting: 2
-  baseDiplomacy: 3
+  baseCrafting: 1
+  baseDiplomacy: 2
   baseIntelligence: 1

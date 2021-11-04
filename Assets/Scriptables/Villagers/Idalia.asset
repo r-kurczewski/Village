@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   villagerName: Idalia
   avatar: {fileID: 21300000, guid: e8c88da9e9dde6a4f90905be48310686, type: 3}
-  CountryAReputation: 2
+  CountryAReputation: 1
   CountryBReputation: -2
   baseStrength: 2
-  baseGathering: 2
+  baseGathering: 1
   baseCrafting: 1
   baseDiplomacy: 1
   baseIntelligence: 1

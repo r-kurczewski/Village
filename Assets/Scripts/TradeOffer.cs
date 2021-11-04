@@ -9,8 +9,16 @@ public class TradeOffer
 {
 	public enum TradeMode { Buy, Sell }
 
-	public TradeMode mode;
 	public Resource resource;
+	public TradeMode mode;
+
+	public TradeOffer() { }
+
+	public TradeOffer(Resource resource, TradeMode mode)
+	{
+		this.resource = resource;
+		this.mode = mode;
+	}
 
 	public int GetCost(Villager villager)
 	{

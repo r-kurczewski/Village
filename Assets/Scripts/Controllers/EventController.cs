@@ -37,6 +37,10 @@ namespace Village.Controllers
 			var view = Instantiate(eventPrefab, contentParent);
 			view.Load(gameEvent);
 			currentEvents.Add(view);
+			if (gameEvent.eventBase == merchantEvent)
+			{
+				instance.LoadNewMerchantTrades();
+			}
 			return view;
 		}
 
@@ -54,30 +58,27 @@ namespace Village.Controllers
 		public void EventUpdate()
 		{
 			int turnToLoad = instance.GetCurrentTurn() + predictionFactor;
-			var newEvents = chapterEvents.Where(x => x.turn == turnToLoad);
-			foreach (var newEvent in newEvents)
-			{
-				AddEvent(newEvent);
-			}
+			var chapter = instance.Chapter;
 
 			var toRemove = new List<EventView>();
 			foreach (var ev in currentEvents)
 			{
-				int turnsLeft = ev.Event.turn + ev.Event.eventBase.turnDuration - turnToLoad;
+				ev.turnsLeft--;
+				ev.RefreshData();
 
-				if (turnsLeft == 0)
+				if (ev.turnsLeft == 0)
 				{
 					bool eventSuccess = true;
 					foreach (var req in ev.Event.eventBase.requirements)
 					{
-						if (instance.GetResourceAmount(req.resource) < req.amount)
+						if (instance.GetResourceAmount(req.resource) < req.Amount)
 						{
 							eventSuccess = false;
 						}
 					}
 					if (eventSuccess)
 					{
-						ev.Event.eventBase.requirements.ForEach(x => x.resource.Apply(-x.amount));
+						ev.Event.eventBase.requirements.ForEach(x => x.resource.Apply(-x.Amount));
 					}
 					if (eventSuccess)
 					{
@@ -88,17 +89,18 @@ namespace Village.Controllers
 						ev.Event.eventBase.ApplyFailure();
 					}
 					toRemove.Add(ev);
-
-				}
-				else
-				{
-					ev.SetTurnLeft(turnsLeft);
 				}
 			}
 			foreach (var ev in toRemove)
 			{
 				currentEvents.Remove(ev);
 				Destroy(ev.gameObject);
+			}
+
+			var newEvents = chapterEvents.Where(x => x.turn == turnToLoad).ToList();
+			foreach (var newEvent in newEvents)
+			{
+				AddEvent(newEvent);
 			}
 		}
 	}

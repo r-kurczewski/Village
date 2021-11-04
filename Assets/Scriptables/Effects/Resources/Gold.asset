@@ -16,3 +16,4 @@ MonoBehaviour:
   color: {r: 1, g: 1, b: 1, a: 1}
   resourceName: "Z\u0142oto"
   baseCost: 2
+  tradable: 0

@@ -19,4 +19,4 @@ MonoBehaviour:
   costs: []
   effects:
   - effect: {fileID: 11400000, guid: 211dcfd509658244d9bbcba6f056f2bc, type: 2}
-    amount: 4
+    value: 2

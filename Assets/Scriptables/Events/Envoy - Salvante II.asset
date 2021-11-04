@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce2ee1299a4cc6e4e9be60473b9cf415, type: 3}
-  m_Name: Envoy - Tharros
+  m_Name: Envoy - Salvante II
   m_EditorClassIdentifier: 
-  title: "Wys\u0142annik z Tharros"
+  title: "Wys\u0142annik z Salvante"
   description: "Do wioski przyby\u0142 wys\u0142annik jednego z pa\u0144stw. W zamian
     za konkretne dobra jest w stanie przychylniej spojrze\u0107 na twoj\u0105 sytuacj\u0119."
-  turnDuration: 4
+  turnDuration: 3
   requirements:
-  - resource: {fileID: 11400000, guid: 276a9847a78915b46bb48e7d72a033e5, type: 2}
-    amount: 20
   - resource: {fileID: 11400000, guid: 89ccf5a1788e2dc4487261ed0aea1f86, type: 2}
     amount: 10
   - resource: {fileID: 11400000, guid: 589a88112db49c24cafc4f7b46447af5, type: 2}
-    amount: 5
+    amount: 10
+  - resource: {fileID: 11400000, guid: 389ae6ddb3eee6e4c94fe350940428df, type: 2}
+    amount: 10
   onSuccess:
-  - effect: {fileID: 11400000, guid: 8e622f24acd0b0844b4248fdbb7b13c1, type: 2}
-    amount: 200
+  - effect: {fileID: 11400000, guid: f77db6335bfa7664f927a025e5f4cc62, type: 2}
+    value: 200
   onFailure: []

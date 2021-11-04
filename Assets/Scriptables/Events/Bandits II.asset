@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce2ee1299a4cc6e4e9be60473b9cf415, type: 3}
-  m_Name: Bandits
+  m_Name: Bandits II
   m_EditorClassIdentifier: 
-  title: "Atak bandyt\xF3w"
+  title: Bandyci
   description: "W okolicy pojawi\u0142a si\u0119 grupka bandyt\xF3w. Prawdopodobnie
-    b\u0119d\u0105 chcieli nas ograbi\u0107. Musimy szastawi\u0107 pu\u0142apki i
+    b\u0119d\u0105 chcieli nas ograbi\u0107. Musimy zastawi\u0107 pu\u0142apki i
     wyposa\u017Cy\u0107 si\u0119 w bro\u0144."
-  turnDuration: 4
+  turnDuration: 3
   requirements:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
-    amount: 30
-  - resource: {fileID: 11400000, guid: 389ae6ddb3eee6e4c94fe350940428df, type: 2}
-    amount: 20
+    amount: 15
   - resource: {fileID: 11400000, guid: 276a9847a78915b46bb48e7d72a033e5, type: 2}
     amount: 15
+  - resource: {fileID: 11400000, guid: 211dcfd509658244d9bbcba6f056f2bc, type: 2}
+    amount: 15
+  - resource: {fileID: 11400000, guid: 89ccf5a1788e2dc4487261ed0aea1f86, type: 2}
+    amount: 6
   onSuccess: []
   onFailure:
-  - effect: {fileID: 11400000, guid: 50aa1173ed38a3a45a9209e35b5f2aed, type: 2}
-    amount: -2
   - effect: {fileID: 11400000, guid: a6dbb00f31de2fa45bb514a060ce9b25, type: 2}
-    amount: -200
+    value: -100
   - effect: {fileID: 11400000, guid: 589a88112db49c24cafc4f7b46447af5, type: 2}
-    amount: -5
+    value: -10

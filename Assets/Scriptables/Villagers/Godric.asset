@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   villagerName: Godric
   avatar: {fileID: 21300000, guid: e7c91c536926d2648b1f6a5ddae7c2f0, type: 3}
-  CountryAReputation: 1
-  CountryBReputation: 1
+  CountryAReputation: -1
+  CountryBReputation: 0
   baseStrength: 1
   baseGathering: 0
-  baseCrafting: 3
-  baseDiplomacy: 1
+  baseCrafting: 2
+  baseDiplomacy: 0
   baseIntelligence: 2

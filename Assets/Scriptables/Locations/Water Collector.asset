@@ -16,9 +16,9 @@ MonoBehaviour:
   buildActionName: "Zbuduj zbiornik na deszcz\xF3wk\u0119"
   buildingCost:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
-    amount: 20
+    amount: 40
   - resource: {fileID: 11400000, guid: 389ae6ddb3eee6e4c94fe350940428df, type: 2}
-    amount: 5
+    amount: 15
   buildingAction: []
   resource:
     resource: {fileID: 11400000, guid: 9d3db97e89f3adb42808e15635bb1c4e, type: 2}

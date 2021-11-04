@@ -18,7 +18,7 @@ MonoBehaviour:
   stat2: {fileID: 11400000, guid: 5370ec057d4122a40ae19428b07211c1, type: 2}
   costs:
   - resource: {fileID: 11400000, guid: 0f76ab08f0674984fa3c0712680d9969, type: 2}
-    amount: 6
+    amount: 5
   effects:
   - effect: {fileID: 11400000, guid: 89ccf5a1788e2dc4487261ed0aea1f86, type: 2}
-    amount: 2
+    value: 1

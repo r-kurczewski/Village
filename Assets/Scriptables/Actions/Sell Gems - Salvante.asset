@@ -21,5 +21,5 @@ MonoBehaviour:
     amount: 3
   effects:
   - effect: {fileID: 11400000, guid: f77db6335bfa7664f927a025e5f4cc62, type: 2}
-    value: 30
+    value: 20
   country: 1

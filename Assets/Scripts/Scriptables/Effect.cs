@@ -28,7 +28,7 @@ namespace Village.Scriptables
 				this.value = amount;
 			}
 
-			public static explicit operator EffectAmount(ResourceAmount resAm) => new EffectAmount(resAm.resource, resAm.amount);
+			public static explicit operator EffectAmount(ResourceAmount resAm) => new EffectAmount(resAm.resource, resAm.Amount);
 		}
 	}
 }

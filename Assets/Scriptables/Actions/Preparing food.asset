@@ -20,7 +20,7 @@ MonoBehaviour:
   - resource: {fileID: 11400000, guid: 45064975a6a06084b884e05747925761, type: 2}
     amount: 4
   - resource: {fileID: 11400000, guid: 0f76ab08f0674984fa3c0712680d9969, type: 2}
-    amount: 3
+    amount: 5
   effects:
   - effect: {fileID: 11400000, guid: 45064975a6a06084b884e05747925761, type: 2}
-    amount: 12
+    value: 12

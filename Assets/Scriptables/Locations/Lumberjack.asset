@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicActions:
   - {fileID: 11400000, guid: 88ee2048ad0a3b24686464ccb77f04a6, type: 2}
-  buildActionName: "Odbuduj chatl\u0119 drwala"
+  buildActionName: "Odbuduj chatk\u0119 drwala"
   buildingCost:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
-    amount: 10
+    amount: 20
   - resource: {fileID: 11400000, guid: 211dcfd509658244d9bbcba6f056f2bc, type: 2}
     amount: 5
   - resource: {fileID: 11400000, guid: 276a9847a78915b46bb48e7d72a033e5, type: 2}

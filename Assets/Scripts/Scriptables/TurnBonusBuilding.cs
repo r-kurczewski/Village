@@ -13,7 +13,7 @@ namespace Village.Scriptables
 		private ResourceAmount resource;
 		public override void ApplyTurnBonus()
 		{
-			GameController.instance.AddRemoveResource(resource.resource, resource.amount);
+			GameController.instance.AddRemoveResource(resource.resource, resource.Amount);
 		}
 	}
 }

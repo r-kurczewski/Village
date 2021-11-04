@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: 5. Finale
   m_EditorClassIdentifier: 
   color: {r: 0.79607844, g: 0.18431373, b: 0.1549929, a: 1}
-  chapterName: "Fina\u0142"
+  chapterName: "Rozstrzygni\u0119cie"
   chapterTurnStart: 105
   chapterMusic: {fileID: 8300000, guid: 93fa414cb5bf71947ba5cf031cbb6450, type: 3}
   nextChapter: {fileID: 0}
-  chapterStartMessage: "Czas rozejmu sko\u0144czy\u0142 si\u0119. Oba pa\u0144stwa
-    szykuj\u0105 swoje wojska, aby ruszy\u0107. Ostatni tydzie\u0144 negocjacyjny
-    nasta\u0142."
+  chapterStartMessage: {fileID: 11400000, guid: 94ca266cdc89a964a91bdc65f3c55840, type: 2}
   periodicEvents: []
   events: []

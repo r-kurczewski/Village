@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce2ee1299a4cc6e4e9be60473b9cf415, type: 3}
+  m_Name: Epidemic
+  m_EditorClassIdentifier: 
+  title: Epidemia
+  description: "W wiosce zaczynaj\u0105 chorowa\u0107 ludzie. Musimy przygotowa\u0107
+    lekarstwa."
+  turnDuration: 3
+  requirements:
+  - resource: {fileID: 11400000, guid: 89ccf5a1788e2dc4487261ed0aea1f86, type: 2}
+    amount: 10
+  onSuccess: []
+  onFailure:
+  - effect: {fileID: 11400000, guid: 627e18a2cdad1cb4cb5979acfcf0ddc8, type: 2}
+    value: -2

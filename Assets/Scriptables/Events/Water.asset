@@ -21,4 +21,4 @@ MonoBehaviour:
   onSuccess: []
   onFailure:
   - effect: {fileID: 11400000, guid: 627e18a2cdad1cb4cb5979acfcf0ddc8, type: 2}
-    amount: -1
+    value: -1

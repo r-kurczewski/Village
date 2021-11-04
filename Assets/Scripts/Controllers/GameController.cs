@@ -15,20 +15,18 @@ namespace Village.Controllers
 	{
 		public static GameController instance;
 
-		public const int COUNTRY_A_ENDING_REPUTATION = 700;
-		public const int COUNTRY_B_ENDING_REPUTATION = 700;
+		public const int COUNTRY_A_ENDING_REPUTATION = 750;
+		public const int COUNTRY_B_ENDING_REPUTATION = 750;
 		public const int NEUTRAL_ENDING_REPUTATION = 500;
 		public const float SELL_VALUE_MULTIPLIER = 0.5f;
-
-		public bool MerchantAvailable()
-		{
-			return eventController.MerchantAvailable();
-		}
-
 		public const float TRADE_DISCOUNT = 0.06f;
 		public const float STAT_MULTIPIER = 0.2f;
 		public const int HEALTH_MAX = 4;
 		public const int STAT_MAX = 5;
+		public const int RESOURCES_MAX = 999;
+		public const int START_VILLAGERS = 6;
+		public const int MERCHANT_SELL_ITEMS_COUNT = 4;
+		public const int MERCHANT_BUY_ITEMS_COUNT = 4;
 
 		[SerializeField]
 		private ResourceController resourceController;
@@ -65,9 +63,8 @@ namespace Village.Controllers
 		}
 		private void Start()
 		{
-			villagerController.CreateStartVillagers(6);
+			villagerController.CreateStartVillagers(START_VILLAGERS);
 			locationController.LoadLoctions();
-			eventController.LoadChapterEvents();
 			resourceController.LoadResources();
 			TurnUpdate();
 		}
@@ -78,9 +75,14 @@ namespace Village.Controllers
 			eventController.EventUpdate();
 			locationController.LocationUpdate();
 			locationController.ApplyTurnBonuses();
-			//villagerController.VillagerUpdate();
+			villagerController.VillagerUpdate();
 			turnController.CheckIfGameEnds();
 			UpdateGUI();
+		}
+
+		public void LoadChapterEvents()
+		{
+			eventController.LoadChapterEvents();
 		}
 
 		public void AddRemoveVillagersHealth(int value)
@@ -92,6 +94,12 @@ namespace Village.Controllers
 		{
 			resourceController.AddRemoveResource(resource, amount);
 		}
+
+		public int GetPredictionFactor()
+		{
+			return eventController.PredictionFactor;
+		}
+
 
 		public int GetResourceAmount(Resource resource)
 		{
@@ -107,10 +115,22 @@ namespace Village.Controllers
 		{
 			villagerController.ApplyIntelligenceBonus();
 		}
+
+		public bool MerchantAvailable()
+		{
+			return eventController.MerchantAvailable();
+		}
+
+		public void LoadNewMerchantTrades()
+		{
+			var trades = resourceController.GenerateTrades();
+			tradeController.LoadTrades(trades);
+		}
+
 		public void LoadTradeWindow(Villager villager)
 		{
-			tradeController.ShowTradeWindow();
 			tradeController.LoadTradeWindow(villager);
+			tradeController.ShowTradeWindow();
 		}
 
 		public int GetCurrentTurn()
@@ -132,7 +152,7 @@ namespace Village.Controllers
 			eventController.PredictionFactor++;
 
 			//load events that would be skipped
-			eventController.EventUpdate(); 
+			eventController.EventUpdate();
 		}
 
 		public void UpdateGUI()

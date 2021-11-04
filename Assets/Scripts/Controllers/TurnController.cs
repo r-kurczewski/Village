@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -40,6 +36,8 @@ namespace Village.Controllers
 					references.panel.color = selected.color;
 					references.view.SetChapterName(selected.chapterName);
 					instance.PlayMusic(selected.chapterMusic);
+					LoadChapterMessage(chapter.chapterStartMessage);
+					instance.LoadChapterEvents();
 					instance.ApplyIntelligenceBonus();
 					break;
 				}
@@ -58,6 +56,13 @@ namespace Village.Controllers
 				EndingLoader.ending = SelectEnding(villagersCount, reputationA, reputationB);
 				SceneManager.LoadScene("EndingScene");
 			}
+		}
+
+		public void LoadChapterMessage(Message message)
+		{
+			var view = Instantiate(references.messagePrefab, references.canvas);
+			view.LoadMessage(message);
+			view.MessagesEnded.AddListener(() => Destroy(view.gameObject));
 		}
 
 		private Message SelectEnding(int villagersCount, int reputationA, int reputationB)
@@ -106,7 +111,6 @@ namespace Village.Controllers
 		{
 			public TurnView view;
 
-
 			public Image panel;
 
 			public Message
@@ -119,6 +123,10 @@ namespace Village.Controllers
 			public Resource countryAReputation;
 
 			public Resource countryBReputation;
+
+			public MessageView messagePrefab;
+
+			public Transform canvas;
 		}
 	}
 }

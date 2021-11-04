@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Village.Controllers;
+using static Village.Controllers.GameController;
 
 namespace Village.Scriptables
 {
@@ -11,6 +12,7 @@ namespace Village.Scriptables
 	{
 		public string resourceName;
 		public int baseCost;
+		public bool tradable = true;
 
 		public override void Apply(int value, Villager villager = null)
 		{
@@ -21,7 +23,21 @@ namespace Village.Scriptables
 		public class ResourceAmount
 		{
 			public Resource resource;
-			public int amount;
+
+			[SerializeField]
+			private int amount;
+
+			public int Amount 
+			{ 
+				get
+				{
+					return amount;
+				}
+				set
+				{
+					amount = Mathf.Clamp(value, 0, RESOURCES_MAX); 
+				}
+			}
 
 			public ResourceAmount(Resource resource, int amount)
 			{

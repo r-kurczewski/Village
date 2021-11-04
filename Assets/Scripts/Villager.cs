@@ -58,7 +58,7 @@ public class Villager : MonoBehaviour
 
 	public int GetEffectiveStatValue(VillagerStat stat)
 	{
-		return GetBaseStatValue(stat) + GetHealthStatModfier();
+		return Mathf.Clamp(GetBaseStatValue(stat) + GetHealthStatModfier(), 0, STAT_MAX);
 	}
 
 	private int GetHealthStatModfier()
@@ -78,7 +78,8 @@ public class Villager : MonoBehaviour
 				return -4;
 
 			default:
-				throw new ArgumentException();
+				Debug.LogWarning("Health error: " + Health);
+				return -4;
 		}
 	}
 
@@ -94,7 +95,7 @@ public class Villager : MonoBehaviour
 		int intelligence = BaseIntelligence;
 		for (int i = 0; i < intelligence; i++)
 		{
-			boostableStats[Random.Range(0, boostableStats.Count - 1)].Amount++;
+			boostableStats[Random.Range(0, boostableStats.Count)].Amount++;
 		}
 	}
 

@@ -12,13 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b670dcb6a49ce54eb255a4183055549, type: 3}
   m_Name: Hunting
   m_EditorClassIdentifier: 
-  actionName: "Zastawianie side\u0142"
-  icon: {fileID: 21300000, guid: 052cd0587cb926c44a3c8570cc29e90e, type: 3}
-  stat1: {fileID: 11400000, guid: 4ed32862a36be7746b14073449606be5, type: 2}
-  stat2: {fileID: 11400000, guid: 5370ec057d4122a40ae19428b07211c1, type: 2}
+  actionName: "Wyprawianie sk\xF3r"
+  icon: {fileID: 21300000, guid: df3173f4e22f72f4d8971bed5b7afb65, type: 3}
+  stat1: {fileID: 11400000, guid: 059d52fc42c7b2946a03304d4c1416fe, type: 2}
+  stat2: {fileID: 0}
   costs: []
   effects:
-  - effect: {fileID: 11400000, guid: 45064975a6a06084b884e05747925761, type: 2}
-    amount: 8
   - effect: {fileID: 11400000, guid: 389ae6ddb3eee6e4c94fe350940428df, type: 2}
-    amount: 3
+    value: 2

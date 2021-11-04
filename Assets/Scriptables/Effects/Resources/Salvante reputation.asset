@@ -15,4 +15,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 4dad365650d586847bb54bee6956d998, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
   resourceName: Reputacja Salvante
-  baseValue: 20
+  baseCost: 0
+  tradable: 0

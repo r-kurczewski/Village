@@ -29,7 +29,7 @@ namespace Village.Scriptables
 		{
 			foreach(var cost in Costs)
 			{
-				instance.AddRemoveResource(cost.resource, -cost.amount);
+				instance.AddRemoveResource(cost.resource, -cost.Amount);
 			}
 		}
 
@@ -38,7 +38,7 @@ namespace Village.Scriptables
 			foreach(var cost in Costs)
 			{
 				int amount = instance.GetResourceAmount(cost.resource);
-				if (cost.amount > amount)
+				if (cost.Amount > amount)
 				{
 					return false;
 				}

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Merchant
   m_EditorClassIdentifier: 
   title: Przybycie handlarza
-  description: "W pobli\u017Cu wioski zatrzymuje si\u0119 handlarz. Mo\u017Ce warto
-    si\u0119 z nim powymienia\u0107?"
+  description: "W pobli\u017Cu wioski zatrzyma\u0142 si\u0119 handlarz. Mo\u017Ce
+    warto si\u0119 z nim powymienia\u0107?"
   turnDuration: 3
   requirements: []
   onSuccess: []

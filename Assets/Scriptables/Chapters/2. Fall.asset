@@ -17,12 +17,27 @@ MonoBehaviour:
   chapterTurnStart: 27
   chapterMusic: {fileID: 8300000, guid: 3aba79932026b0d4b98d9783fc6767d1, type: 3}
   nextChapter: {fileID: 11400000, guid: e062c01d41b09cf469f0b09750e34baa, type: 2}
-  chapterStartMessage: "Zaczyna si\u0119 jesie\u0144. "
+  chapterStartMessage: {fileID: 11400000, guid: 0f007c36d7bd7e74cb11418f686d7eb9, type: 2}
   periodicEvents:
   - eventBase: {fileID: 11400000, guid: 9aa164f31c91b3246bf66a9d20e4aa69, type: 2}
     turn: 2
     period: 4
-  - eventBase: {fileID: 11400000, guid: 70aec7321b83d3642b2d48236d0f2b09, type: 2}
+  - eventBase: {fileID: 11400000, guid: 7fa5f0ce12a554b44b97546980ac859e, type: 2}
     turn: 2
     period: 6
-  events: []
+  - eventBase: {fileID: 11400000, guid: 3041724d13eafec449a4825b232116a2, type: 2}
+    turn: 1
+    period: 5
+  events:
+  - eventBase: {fileID: 11400000, guid: 2288dfadcbf30fd488db6d31b0dadc5c, type: 2}
+    turn: 4
+    possibleDelay: 2
+  - eventBase: {fileID: 11400000, guid: 11cda4331a1c20a45a0fd256800a66e4, type: 2}
+    turn: 9
+    possibleDelay: 2
+  - eventBase: {fileID: 11400000, guid: 17e2ab5458cd4c54e98aa3a13a767e1f, type: 2}
+    turn: 14
+    possibleDelay: 2
+  - eventBase: {fileID: 11400000, guid: 791799ae627974f44bad6292cbdc8979, type: 2}
+    turn: 20
+    possibleDelay: 2

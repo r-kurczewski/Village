@@ -25,4 +25,4 @@ MonoBehaviour:
     amount: 1
   effects:
   - effect: {fileID: 11400000, guid: 589a88112db49c24cafc4f7b46447af5, type: 2}
-    value: 2
+    value: 1

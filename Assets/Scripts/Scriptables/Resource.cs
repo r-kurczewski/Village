@@ -16,7 +16,7 @@ namespace Village.Scriptables
 
 		public override void Apply(int value, Villager villager = null)
 		{
-			GameController.instance.AddRemoveResource(this, value);
+			instance.AddRemoveResource(this, value);
 		}
 
 		[Serializable]

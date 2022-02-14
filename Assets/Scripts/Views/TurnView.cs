@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Lean.Localization;
 
 namespace Village.Views
 {
@@ -15,12 +16,12 @@ namespace Village.Views
 
 		public void SetTurn(int turn)
 		{
-			turnLabel.text = $"Tura {turn}";
+			LeanLocalization.SetToken("turn", turn.ToString());
 		}
 
 		public void SetChapterName(string name)
 		{
-			seasonLabel.text = name;
+			LeanLocalization.SetToken("chapter", name);
 		}
 	}
 }

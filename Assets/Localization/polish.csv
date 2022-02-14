@@ -1,0 +1,67 @@
+game/settings,Ustawienia
+game/resolution,Rozdzielczość
+game/fullscreen,Pełny ekran
+game/save,Zapisz
+game/music,Muzyka
+game/language,Język
+game/backToMenu,Powrót do menu
+game/startGame,Rozpocznij grę
+game/exit,Zakończ
+game/credits,Autorzy
+game/currentChapter,{chapter}
+game/turn,Tura {turn}
+game/endTurn,Zakończ turę
+game/help,Pomoc
+game/mainMenu,Menu
+action/battleground,Pobojowisko
+action/craftMedicine,Tworzenie medykamentów
+action/cutTrees,Wycinka drzew
+action/diplomacy,Dyplomacja
+action/fishing,Łowienie ryb
+action/gemMining,Wydobycie klejnotów
+action/heal1,Podstawowa opieka
+action/heal2,Lekka kuracja
+action/heal3,Radykalna kuracja
+action/gatherHerbs,Zbieranie ziół
+action/leatherTanning,Wyprawianie skóry
+action/preparingFood,Przeróbka żywności
+action/merchant,Handlarz
+action/sellGems,Sprzedaj klejnoty
+action/collectStone,Rumowisko skalne
+action/settingTraps,Zastawianie sideł
+action/collectWater,Zbiórka wody
+action/woodGathering,Zbieranie drewna
+action/description/reputation,Reputacja wysyłanej osoby wpływa na jej efektywność.
+build/miningEquipment,Przygotuj sprzęt górniczy
+build/fisherman,Odbuduj chatkę rybacką
+build/herbalist,Odbuduj chatkę zielarza
+build/hospital,Rozbuduj szpital polowy
+build/hunter,Odbuduj chatkę myśliwską
+build/lumberjack,Odbuduj chatkę drwala
+build/watchtower,Odbuduj wieżę obserwacyjną
+build/waterCollector,Zbuduj zbiornik na deszczówkę
+building/miningEquipment,Pozwala na wysyłanie ludzi w celu wydobycia kamieni szlachetnych.
+building/fisherman,Odblokuje dodatkową akcję do pozyskiwania żywności.
+building/herbalist,Pozwala na wytwarzanie lekarstw oraz obróbkę żywności.
+building/hospital,Umożliwia stosowanie wzmocnionych kuracji.
+building/hunter,Odblokowywuje możliwość wyprawiania skóry.
+building/lumberjack,Dodaje efektywniejszą metodę pozyskiwania drewna.
+building/watchtower,Pozwala na wcześniejsze wykrywanie nadchodzących wydarzeń.
+building/waterCollector,Daje stały, niewielki przyrost wody.
+chapter/summer,Lato
+chapter/fall,Jesień
+chapter/winter,Zima
+chapter/spring,Wiosna
+chapter/finale,Rozstrzygnięcie
+resource/food,Żywność
+resource/gems,Klejnoty
+resource/gold,Złoto
+resource/herbs,Zioła
+resource/material,Materiał
+resource/medicine,Medykamenty
+resource/metal,Metal
+resource/salvanteReputation,Reputacja Salvante
+resource/stone,Kamień
+resource/tharrosReputation,Reputacja Tharros
+resource/water,Woda
+resource/wood,Drewno

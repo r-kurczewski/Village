@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicActions:
   - {fileID: 11400000, guid: 75eb5714ad91db943b4a3dabcd93f593, type: 2}
-  buildActionName: "Odbuduj chatk\u0119 my\u015Bliwsk\u0105"
-  buildingDescription: "Odblokowywuje mo\u017Cliwo\u015B\u0107 wyprawiania sk\xF3ry."
+  LocaleBuildActionName: build/hunter
+  localeBuildingDescription: building/hunter
   buildingCost:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
     amount: 25

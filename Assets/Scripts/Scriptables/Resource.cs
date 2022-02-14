@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Village.Controllers;
+using UnityEngine.Serialization;
 using static Village.Controllers.GameController;
 
 namespace Village.Scriptables
@@ -10,9 +11,12 @@ namespace Village.Scriptables
 	[CreateAssetMenu(fileName = "Resource", menuName = "Village/Resource")]
 	public class Resource : Effect
 	{
-		public string resourceName;
+		[SerializeField, FormerlySerializedAs("resourceName")]
+		private string localeResourceName;
 		public int baseCost;
 		public bool tradable = true;
+
+		public string ResourceName => Lean.Localization.LeanLocalization.GetTranslationText(localeResourceName);
 
 		public override void Apply(int value, Villager villager = null)
 		{

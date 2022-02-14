@@ -34,7 +34,7 @@ namespace Village.Controllers
 				{
 					chapter = selected;
 					references.panel.color = selected.color;
-					references.view.SetChapterName(selected.chapterName);
+					references.view.SetChapterName(selected.ChapterName);
 					instance.PlayMusic(selected.chapterMusic);
 					LoadChapterMessage(chapter.chapterStartMessage);
 					instance.LoadChapterEvents();

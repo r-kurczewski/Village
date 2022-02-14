@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b670dcb6a49ce54eb255a4183055549, type: 3}
   m_Name: Traps
   m_EditorClassIdentifier: 
-  actionName: "Zastawianie side\u0142"
+  localeActionName: action/settingTraps
+  localeDescription: 
   icon: {fileID: 21300000, guid: 052cd0587cb926c44a3c8570cc29e90e, type: 3}
   stat1: {fileID: 11400000, guid: 059d52fc42c7b2946a03304d4c1416fe, type: 2}
   stat2: {fileID: 0}

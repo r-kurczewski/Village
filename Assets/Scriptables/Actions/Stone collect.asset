@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b670dcb6a49ce54eb255a4183055549, type: 3}
   m_Name: Stone collect
   m_EditorClassIdentifier: 
-  actionName: Rumowisko skalne
+  localeActionName: action/collectStone
+  localeDescription: 
   icon: {fileID: 21300000, guid: 59771911e3b1b1d449142fab0a3fe3a4, type: 3}
   stat1: {fileID: 11400000, guid: 4ed32862a36be7746b14073449606be5, type: 2}
   stat2: {fileID: 0}

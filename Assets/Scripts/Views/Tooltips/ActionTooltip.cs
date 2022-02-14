@@ -1,3 +1,4 @@
+using Lean.Localization;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -42,10 +43,9 @@ namespace Village.Views.Tooltips
 			}
 
 			Clear();
-
 			actionName.text = slot.Action.ActionName;
 
-			bool hasDescription = slot.Action.Description != string.Empty;
+			bool hasDescription = slot.Action.Description != null;
 			if (hasDescription)
 			{
 				actionDescription.text = slot.Action.Description;

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 5. Finale
   m_EditorClassIdentifier: 
   color: {r: 0.79607844, g: 0.18431373, b: 0.1549929, a: 1}
-  chapterName: "Rozstrzygni\u0119cie"
+  localeChapterName: chapter/finale
   chapterTurnStart: 105
   chapterMusic: {fileID: 8300000, guid: 93fa414cb5bf71947ba5cf031cbb6450, type: 3}
   nextChapter: {fileID: 0}

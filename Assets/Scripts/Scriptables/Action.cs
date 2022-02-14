@@ -3,22 +3,25 @@ using UnityEngine;
 using static Village.Controllers.GameController;
 using static Village.Scriptables.Effect;
 using static Village.Scriptables.Resource;
+using UnityEngine.Serialization;
+using Lean.Localization;
 
 namespace Village.Scriptables
 {
 	public abstract class Action : ScriptableObject, IAction
 	{
-		public string actionName;
-		[TextArea(3,4)]
-		public string description;
+		[SerializeField]
+		private string localeActionName;
+		[SerializeField]
+		private string localeDescription;
 		public Sprite icon;
 		public VillagerStat stat1, stat2;
 		public List<ResourceAmount> costs;
 		public List<EffectAmount> effects;
 
 		#region Interface properties
-		public string ActionName => actionName;
-		public string Description => description;
+		public string ActionName => LeanLocalization.GetTranslationText(localeActionName);
+		public string Description => LeanLocalization.GetTranslationText(localeDescription);
 		public Sprite Icon => icon;
 		public VillagerStat Stat1 => stat1;
 		public VillagerStat Stat2 => stat2;

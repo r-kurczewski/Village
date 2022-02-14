@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 1. Summer
   m_EditorClassIdentifier: 
   color: {r: 1, g: 0.8000001, b: 0.16078432, a: 1}
-  chapterName: Lato
+  localeChapterName: chapter/summer
   chapterTurnStart: 1
   chapterMusic: {fileID: 8300000, guid: f891391b118dbee4bb13c6e64e7a72e1, type: 3}
   nextChapter: {fileID: 11400000, guid: 7c7bf0e103ef42c4180cadb58f26a964, type: 2}

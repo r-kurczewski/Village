@@ -1,0 +1,67 @@
+game/settings,Settings
+game/resolution,Resolution
+game/fullscreen,Fullscreen
+game/save,Save
+game/music,Music
+game/language,Language
+game/backToMenu,Back to menu
+game/startGame,Start new game
+game/exit,Exit game
+game/credits,Credits
+game/turn,Turn {turn}
+game/currentChapter,{chapter}
+game/endTurn,End turn
+game/help,Help
+game/mainMenu,Menu
+action/battleground,Battleground
+action/craftMedicine,Craft medicine
+action/cutTrees,Cut trees
+action/diplomacy,Diplomacy
+action/fishing,Fishing
+action/gemMining,Gem mining
+action/heal1,Basic care
+action/heal2,Light treatment
+action/heal3,Radical treatment
+action/gatherHerbs,Gather herbs
+action/leatherTanning,Leather tanning
+action/preparingFood,Preparing food
+action/merchant,Merchant
+action/sellGems,Sell gems
+action/collectStone,Collect stone
+action/settingTraps,Setting traps
+action/collectWater,Water collecting
+action/woodGathering,Wood gathering
+action/description/reputation,Person's reputation affects their efficiency.
+build/miningEquipment,Construct mining equipment
+build/fisherman,Rebuild fisherman cottage
+build/herbalist,Rebuild herbalist cottage
+build/hospital,Expand field hospital
+build/hunter,Rebuild hunter cottage
+build/lumberjack,Rebuild lumberjack cottage
+build/watchtower,Rebuild watchtower
+build/waterCollector,Build water collector
+building/miningEquipment,Allows sending people to mine gems.
+building/fisherman,Unlocks new method of collecting food.
+building/herbalist,Unlocks preparing food and crafting medicine.
+building/hospital,Unlocks additional, better treatment.
+building/hunter,Unlocks leather tanning.
+building/lumberjack,Adds better way of collecting the wood
+building/watchtower,Allows to see incoming events earlier.
+building/waterCollector,Gives small, pernament water gain.
+chapter/summer,Summer
+chapter/fall,Fall
+chapter/winter,Winter
+chapter/spring,Spring
+chapter/finale,Finale
+resource/food,Food
+resource/gems,Gems
+resource/gold,Gold
+resource/herbs,Herbs
+resource/material,Material
+resource/medicine,Medicine
+resource/metal,Metal
+resource/salvanteReputation,Salvante's esteem
+resource/stone,Stone
+resource/tharrosReputation,Tharros' esteem
+resource/water,Water
+resource/wood,Wood

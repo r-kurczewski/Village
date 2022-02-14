@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b670dcb6a49ce54eb255a4183055549, type: 3}
   m_Name: BuildBaseAction
   m_EditorClassIdentifier: 
-  actionName: Zbuduj
+  localNameString: 
+  description: 
   icon: {fileID: 21300000, guid: 659c6c686bd8bd94aa6e16e4f4d8e17a, type: 3}
   stat1: {fileID: 0}
   stat2: {fileID: 0}

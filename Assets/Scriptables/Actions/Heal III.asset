@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ad97debf0e0d5448b0919aaf17c98f7, type: 3}
   m_Name: Heal III
   m_EditorClassIdentifier: 
-  actionName: Radykalna kuracja
+  localeActionName: action/heal3
+  localeDescription: 
   icon: {fileID: 21300000, guid: 2e630cc5a64dc91438b943c480d5fc1b, type: 3}
   stat1: {fileID: 0}
   stat2: {fileID: 0}
@@ -21,5 +22,5 @@ MonoBehaviour:
     amount: 3
   effects:
   - effect: {fileID: 11400000, guid: 50aa1173ed38a3a45a9209e35b5f2aed, type: 2}
-    amount: 3
+    value: 3
   heal: {fileID: 11400000, guid: 50aa1173ed38a3a45a9209e35b5f2aed, type: 2}

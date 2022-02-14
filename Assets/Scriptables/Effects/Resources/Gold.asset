@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: c3a28b9242ea70b428dda7592dd58bb7, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
-  resourceName: "Z\u0142oto"
+  localeResourceName: resource/gold
   baseCost: 2
   tradable: 0

@@ -1,0 +1,448 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5426732834721320161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5426732834721320160}
+  - component: {fileID: 5426732834721320167}
+  - component: {fileID: 5426732834721320166}
+  m_Layer: 0
+  m_Name: Polish
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5426732834721320160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5426732834721320161}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5426732834749606645}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5426732834721320167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5426732834721320161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225ec97158446a94d9cb40a9f742a8b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationCode: pl
+  cultures:
+  - pl-PL
+--- !u!114 &5426732834721320166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5426732834721320161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 086ae75064fca9f46b315403da7f5d20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Source: {fileID: 4900000, guid: 32e6fd3887daa8946a825e6223993b3f, type: 3}
+  Format: 1
+  Language: Polish
+  Cache: 0
+  entries:
+  - Name: game/settings
+    Text: Ustawienia
+  - Name: game/resolution
+    Text: "Rozdzielczo\u015B\u0107"
+  - Name: game/fullscreen
+    Text: "Pe\u0142ny ekran"
+  - Name: game/save
+    Text: Zapisz
+  - Name: game/music
+    Text: Muzyka
+  - Name: game/language
+    Text: "J\u0119zyk"
+  - Name: game/backToMenu
+    Text: "Powr\xF3t do menu"
+  - Name: game/startGame
+    Text: "Rozpocznij gr\u0119"
+  - Name: game/exit
+    Text: "Zako\u0144cz"
+  - Name: game/credits
+    Text: Autorzy
+  - Name: game/currentChapter
+    Text: '{chapter}'
+  - Name: game/turn
+    Text: Tura {turn}
+  - Name: game/endTurn
+    Text: "Zako\u0144cz tur\u0119"
+  - Name: game/help
+    Text: Pomoc
+  - Name: game/mainMenu
+    Text: Menu
+  - Name: action/battleground
+    Text: Pobojowisko
+  - Name: action/craftMedicine
+    Text: "Tworzenie medykament\xF3w"
+  - Name: action/cutTrees
+    Text: Wycinka drzew
+  - Name: action/diplomacy
+    Text: Dyplomacja
+  - Name: action/fishing
+    Text: "\u0141owienie ryb"
+  - Name: action/gemMining
+    Text: "Wydobycie klejnot\xF3w"
+  - Name: action/heal1
+    Text: Podstawowa opieka
+  - Name: action/heal2
+    Text: Lekka kuracja
+  - Name: action/heal3
+    Text: Radykalna kuracja
+  - Name: action/gatherHerbs
+    Text: "Zbieranie zi\xF3\u0142"
+  - Name: action/leatherTanning
+    Text: "Wyprawianie sk\xF3ry"
+  - Name: action/preparingFood
+    Text: "Przer\xF3bka \u017Cywno\u015Bci"
+  - Name: action/sellGems
+    Text: Sprzedaj klejnoty
+  - Name: action/collectStone
+    Text: Rumowisko skalne
+  - Name: action/merchant
+    Text: Handlarz
+  - Name: action/settingTraps
+    Text: "Zastawianie side\u0142"
+  - Name: action/watherGathering
+    Text: "Zbi\xF3rka wody"
+  - Name: action/woodGathering
+    Text: Zbieranie drewna
+  - Name: action/description/reputation
+    Text: "Reputacja wysy\u0142anej osoby wp\u0142ywa na jej efektywno\u015B\u0107."
+  - Name: build/miningEquipment
+    Text: "Przygotuj sprz\u0119t g\xF3rniczy"
+  - Name: build/fisherman
+    Text: "Odbuduj chatk\u0119 ryback\u0105"
+  - Name: build/herbalist
+    Text: "Odbuduj chatk\u0119 zielarza"
+  - Name: build/hospital
+    Text: Rozbuduj szpital polowy
+  - Name: build/hunter
+    Text: "Odbuduj chatk\u0119 my\u015Bliwsk\u0105"
+  - Name: build/lumberjack
+    Text: "Odbuduj chatk\u0119 drwala"
+  - Name: build/watchtower
+    Text: "Zbuduj wie\u017C\u0119 obserwacyjn\u0105"
+  - Name: build/waterCollector
+    Text: "Zbuduj zbiornik na deszcz\xF3wk\u0119"
+  - Name: building/miningEquipment
+    Text: "Pozwala na wysy\u0142anie ludzi w celu wydobycia kamieni szlachetnych."
+  - Name: building/fisherman
+    Text: "Odblokuje dodatkow\u0105 akcj\u0119 do pozyskiwania \u017Cywno\u015Bci."
+  - Name: building/herbalist
+    Text: "Pozwala na wytwarzanie lekarstw oraz obr\xF3bk\u0119 \u017Cywno\u015Bci."
+  - Name: building/hospital
+    Text: "Umo\u017Cliwia stosowanie wzmocnionych kuracji."
+  - Name: building/hunter
+    Text: "Odblokowywuje mo\u017Cliwo\u015B\u0107 wyprawiania sk\xF3ry."
+  - Name: building/lumberjack
+    Text: "Dodaje efektywniejsz\u0105 metod\u0119 pozyskiwania drewna."
+  - Name: building/watchtower
+    Text: "Pozwala na wcze\u015Bniejsze wykrywanie nadchodz\u0105cych wydarze\u0144."
+  - Name: building/waterCollector
+    Text: "Daje sta\u0142y, niewielki przyrost wody."
+  - Name: chapter/summer
+    Text: Lato
+  - Name: chapter/fall
+    Text: "Jesie\u0144"
+  - Name: chapter/winter
+    Text: Zima
+  - Name: chapter/spring
+    Text: Wiosna
+  - Name: chapter/finale
+    Text: "Rozstrzygni\u0119cie"
+  - Name: resource/food
+    Text: "\u017Bywno\u015B\u0107"
+  - Name: resource/gems
+    Text: Kamienie szlachetne
+  - Name: resource/gold
+    Text: "Z\u0142oto"
+  - Name: resource/herbs
+    Text: "Zio\u0142a"
+  - Name: resource/material
+    Text: "Materia\u0142"
+  - Name: resource/medicine
+    Text: Medykamenty
+  - Name: resource/metal
+    Text: Metal
+  - Name: resource/salvanteReputation
+    Text: Reputacja Salvante
+  - Name: resource/stone
+    Text: "Kamie\u0144"
+  - Name: resource/tharrosReputation
+    Text: Reputacja Tharros
+  - Name: resource/water
+    Text: Woda
+  - Name: resource/wood
+    Text: Drewno
+--- !u!1 &5426732834749606647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5426732834749606645}
+  - component: {fileID: 5426732834749606646}
+  m_Layer: 0
+  m_Name: Localization
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5426732834749606645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5426732834749606647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 431.61734, y: 404.23407, z: -50.692688}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5426732834721320160}
+  - {fileID: 5426732834919885527}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5426732834749606646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5426732834749606647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLanguage: English
+  detectLanguage: 1
+  defaultLanguage: English
+  saveLoad: 1
+  prefabs: []
+--- !u!1 &5426732834919885520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5426732834919885527}
+  - component: {fileID: 5426732834919885526}
+  - component: {fileID: 5426732834919885525}
+  m_Layer: 0
+  m_Name: English
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5426732834919885527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5426732834919885520}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5426732834749606645}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5426732834919885526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5426732834919885520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225ec97158446a94d9cb40a9f742a8b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationCode: en
+  cultures:
+  - en-US
+--- !u!114 &5426732834919885525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5426732834919885520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 086ae75064fca9f46b315403da7f5d20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Source: {fileID: 4900000, guid: 64ec8eff485ecbe419b93c17c2471f8c, type: 3}
+  Format: 1
+  Language: English
+  Cache: 0
+  entries:
+  - Name: game/settings
+    Text: Settings
+  - Name: game/resolution
+    Text: Resolution
+  - Name: game/fullscreen
+    Text: Fullscreen
+  - Name: game/save
+    Text: Save
+  - Name: game/music
+    Text: Music
+  - Name: game/language
+    Text: Language
+  - Name: game/backToMenu
+    Text: Back to menu
+  - Name: game/startGame
+    Text: Start new game
+  - Name: game/exit
+    Text: Exit game
+  - Name: game/credits
+    Text: Credits
+  - Name: game/turn
+    Text: Turn {turn}
+  - Name: game/currentChapter
+    Text: '{chapter}'
+  - Name: game/endTurn
+    Text: End turn
+  - Name: game/help
+    Text: Help
+  - Name: game/mainMenu
+    Text: Menu
+  - Name: action/battleground
+    Text: Battleground
+  - Name: action/craftMedicine
+    Text: Craft medicine
+  - Name: action/cutTrees
+    Text: Cut trees
+  - Name: action/diplomacy
+    Text: Diplomacy
+  - Name: action/fishing
+    Text: Fishing
+  - Name: action/gemMining
+    Text: Gem mining
+  - Name: action/heal1
+    Text: Basic care
+  - Name: action/heal2
+    Text: Light treatment
+  - Name: action/heal3
+    Text: Radical treatment
+  - Name: action/gatherHerbs
+    Text: Gather herbs
+  - Name: action/leatherTanning
+    Text: Leather tanning
+  - Name: action/preparingFood
+    Text: Preparing food
+  - Name: action/merchant
+    Text: Merchant
+  - Name: action/sellGems
+    Text: Sell gems
+  - Name: action/collectStone
+    Text: Collect stone
+  - Name: action/settingTraps
+    Text: Setting traps
+  - Name: action/collectWater
+    Text: Water collecting
+  - Name: action/woodGathering
+    Text: Wood gathering
+  - Name: action/description/reputation
+    Text: Person's reputation affects their efficiency
+  - Name: build/miningEquipment
+    Text: Construct mining equipment
+  - Name: build/fisherman
+    Text: Rebuild fisherman cottage
+  - Name: build/herbalist
+    Text: Rebuild herbalist cottage
+  - Name: build/hospital
+    Text: Expand field hospital
+  - Name: build/hunter
+    Text: Rebuild hunter cottage
+  - Name: build/lumberjack
+    Text: Rebuild lumberjack cottage
+  - Name: build/watchtower
+    Text: Rebuild watchtower
+  - Name: build/waterCollector
+    Text: Build water collector
+  - Name: building/miningEquipment
+    Text: Allows sending people to mine gems.
+  - Name: building/fisherman
+    Text: Unlocks new method of collecting food.
+  - Name: building/herbalist
+    Text: Unlocks preparing food and crafting medicine.
+  - Name: building/hospital
+    Text: Unlocks additional, better treatment.
+  - Name: building/hunter
+    Text: Unlocks leather tanning.
+  - Name: building/lumberjack
+    Text: Adds better way of collecting the wood
+  - Name: building/watchtower
+    Text: Allows to see incoming events earlier.
+  - Name: building/waterCollector
+    Text: Gives small, pernament water gain.
+  - Name: chapter/summer
+    Text: Summer
+  - Name: chapter/fall
+    Text: Fall
+  - Name: chapter/winter
+    Text: Winter
+  - Name: chapter/spring
+    Text: Spring
+  - Name: chapter/finale
+    Text: Finale
+  - Name: resource/food
+    Text: Food
+  - Name: resource/gems
+    Text: Gems
+  - Name: resource/gold
+    Text: Gold
+  - Name: resource/herbs
+    Text: Herbs
+  - Name: resource/material
+    Text: Material
+  - Name: resource/medicine
+    Text: Medicine
+  - Name: resource/metal
+    Text: Metal
+  - Name: resource/salvanteReputation
+    Text: Salvante's esteem
+  - Name: resource/stone
+    Text: Stone
+  - Name: resource/tharrosReputation
+    Text: Tharros' esteem
+  - Name: resource/water
+    Text: Water
+  - Name: resource/wood
+    Text: Wood

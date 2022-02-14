@@ -10,10 +10,10 @@ namespace Village.Scriptables
 	[CreateAssetMenu(fileName = "MapBuilding", menuName = "Village/Location/MapBuilding")]
 	public class MapBuilding : MapLocation
 	{
-		public string buildActionName;
+		public string LocaleBuildActionName;
 
-		[TextArea(4,5)]
-		public string buildingDescription;
+		[TextArea(4,5), FormerlySerializedAs("buildingDescription")]
+		public string localeBuildingDescription;
 
 		public List<ResourceAmount> buildingCost = new List<ResourceAmount>();
 

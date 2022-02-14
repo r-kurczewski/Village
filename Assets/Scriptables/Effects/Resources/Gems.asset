@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 736ec7f3501b094409033a332210c3e0, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
-  resourceName: Kamienie szlachetne
+  localeResourceName: resource/gems
   baseCost: 28
+  tradable: 1

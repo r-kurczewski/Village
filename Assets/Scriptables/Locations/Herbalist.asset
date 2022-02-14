@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicActions:
   - {fileID: 11400000, guid: d64d1353ccce53042983476c682f9e15, type: 2}
-  buildActionName: "Odbuduj chatk\u0119 zielarza"
-  buildingDescription: "Pozwala na wytwarzanie lekarstw oraz obr\xF3bk\u0119 \u017Cywno\u015Bci."
+  LocaleBuildActionName: build/herbalist
+  localeBuildingDescription: building/herbalist
   buildingCost:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
     amount: 30

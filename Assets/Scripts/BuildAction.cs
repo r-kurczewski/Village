@@ -1,3 +1,4 @@
+using Lean.Localization;
 using System.Collections.Generic;
 using UnityEngine;
 using Village.Scriptables;
@@ -19,8 +20,8 @@ public class BuildAction : IAction
 		this.buildingBase = buildingBase;
 	}
 
-	public string ActionName => buildingBase.buildActionName;
-	public string Description => buildingBase.buildingDescription;
+	public string ActionName => LeanLocalization.GetTranslationText(buildingBase.LocaleBuildActionName);
+	public string Description => LeanLocalization.GetTranslationText(buildingBase.localeBuildingDescription);
 	public Sprite Icon => buildBaseAction.icon;
 	public List<EffectAmount> Effects => new List<EffectAmount>();
 	public List<ResourceAmount> Costs => buildingBase.buildingCost;

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using UnityEngine.Serialization;
 
 namespace Village.Scriptables
 {
@@ -10,7 +11,8 @@ namespace Village.Scriptables
 	public class GameChapter : ScriptableObject
 	{
 		public Color color;
-		public string chapterName;
+		[SerializeField, FormerlySerializedAs("chapterName")]
+		private string localeChapterName;
 		public int chapterTurnStart;
 		public AudioClip chapterMusic;
 		public GameChapter nextChapter;
@@ -21,6 +23,8 @@ namespace Village.Scriptables
 		public List<PeriodicEvent> periodicEvents;
 
 		public List<EventTimeSpan> events;
+
+		public string ChapterName => Lean.Localization.LeanLocalization.GetTranslationText(localeChapterName);
 
 		public List<GameEvent> GenerateEventList()
 		{

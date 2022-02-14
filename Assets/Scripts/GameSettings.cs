@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lean.Localization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,9 @@ public class GameSettings : MonoBehaviour
 	private TMP_Dropdown resolution;
 
 	[SerializeField]
+	private TMP_Dropdown language;
+
+	[SerializeField]
 	private Toggle fullscreen;
 
 	[SerializeField]
@@ -21,6 +25,7 @@ public class GameSettings : MonoBehaviour
 	private void Start()
 	{
 		LoadResolutions();
+		LoadLanguages();
 	}
 
 	public void LoadResolutions()
@@ -29,6 +34,14 @@ public class GameSettings : MonoBehaviour
 			Select(x => $"{x.width}x{x.height}").ToList();
 		resolution.ClearOptions();
 		resolution.AddOptions(resolutionStrings);
+	}
+
+	public void LoadLanguages()
+	{
+		var langNames = LeanLocalization.CurrentLanguages.Keys.Select(x => new TMP_Dropdown.OptionData(x));
+		var selectedLang = LeanLocalization.Instances.First().CurrentLanguage;
+		language.options.AddRange(langNames);
+		language.SetValueWithoutNotify(language.options.IndexOf(language.options.First(x => x.text == selectedLang)));
 	}
 
 	public void ChangeResolution()
@@ -41,6 +54,12 @@ public class GameSettings : MonoBehaviour
 	public void ChangeVolume()
 	{
 		AudioListener.volume = music.value;
+	}
+
+	public void SetLanguage()
+	{
+		string lang = language.options[language.value].text;
+		LeanLocalization.SetCurrentLanguageAll(lang);
 	}
 }
 

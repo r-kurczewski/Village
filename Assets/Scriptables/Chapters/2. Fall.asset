@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 2. Fall
   m_EditorClassIdentifier: 
   color: {r: 0.9607844, g: 0.5254902, b: 0.20392159, a: 1}
-  chapterName: "Jesie\u0144"
+  localeChapterName: chapter/fall
   chapterTurnStart: 27
   chapterMusic: {fileID: 8300000, guid: 3aba79932026b0d4b98d9783fc6767d1, type: 3}
   nextChapter: {fileID: 11400000, guid: e062c01d41b09cf469f0b09750e34baa, type: 2}

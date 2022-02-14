@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Watchtower
   m_EditorClassIdentifier: 
   basicActions: []
-  buildActionName: "Zbuduj wie\u017C\u0119 obserwacyjn\u0105"
-  buildingDescription: "Pozwala na wcze\u015Bniejsze wykrywanie nadchodz\u0105cych
-    wydarze\u0144."
+  LocaleBuildActionName: build/watchtower
+  localeBuildingDescription: building/watchtower
   buildingCost:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
     amount: 50

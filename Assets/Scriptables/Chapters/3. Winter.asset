@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 3. Winter
   m_EditorClassIdentifier: 
   color: {r: 0.39209485, g: 0.41422924, b: 0.8, a: 1}
-  chapterName: Zima
+  localeChapterName: chapter/winter
   chapterTurnStart: 53
   chapterMusic: {fileID: 8300000, guid: b5061b79e6da0cb47ae4502d4a3ff549, type: 3}
   nextChapter: {fileID: 11400000, guid: 81d480bafd5f1b04a90951f6fdfec2bf, type: 2}

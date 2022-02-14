@@ -43,7 +43,7 @@ namespace Village.Views
 
 		protected override void LoadTooltipData()
 		{
-			TextTooltip.instance.Load(resource.resourceName);
+			TextTooltip.instance.Load(resource.ResourceName);
 		}
 
 		protected override void SetTooltipObject()

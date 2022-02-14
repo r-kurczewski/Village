@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b670dcb6a49ce54eb255a4183055549, type: 3}
   m_Name: Craft medicine
   m_EditorClassIdentifier: 
-  actionName: "Tworzenie medykament\xF3w"
+  localeActionName: action/craftMedicine
+  localeDescription: 
   icon: {fileID: 21300000, guid: 59d70b0e3fc940545b2c08a8507435d4, type: 3}
   stat1: {fileID: 11400000, guid: 059d52fc42c7b2946a03304d4c1416fe, type: 2}
   stat2: {fileID: 11400000, guid: 5370ec057d4122a40ae19428b07211c1, type: 2}

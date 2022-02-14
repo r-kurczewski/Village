@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cc3890841a06448a7f2b336260653f, type: 3}
   m_Name: Sell Gems - Tharros
   m_EditorClassIdentifier: 
-  actionName: "Sprzedaj kryszta\u0142y"
-  description: "Reputacja wysy\u0142anej osoby wp\u0142ywa na jej efektywno\u015B\u0107."
+  localeActionName: action/sellGems
+  localeDescription: action/description/reputation
   icon: {fileID: 21300000, guid: a4f70c4b5ac373d44af69302cb37a091, type: 3}
   stat1: {fileID: 11400000, guid: f88959040f03e404491774af1e4e7953, type: 2}
   stat2: {fileID: 0}

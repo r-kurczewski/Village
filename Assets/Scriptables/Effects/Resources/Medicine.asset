@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 27e023e05467b2b439c6a406f8e921de, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
-  resourceName: Medykamenty
+  localeResourceName: resource/medicine
   baseCost: 18
+  tradable: 1

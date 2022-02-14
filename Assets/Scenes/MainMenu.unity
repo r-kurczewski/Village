@@ -368,6 +368,63 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1001 &377549916
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5426732834749606645, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426732834749606645, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 431.61734
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426732834749606645, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 404.23407
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426732834749606645, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -50.692688
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426732834749606645, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426732834749606645, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426732834749606645, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426732834749606645, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426732834749606645, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426732834749606645, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426732834749606645, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426732834749606647, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
+      propertyPath: m_Name
+      value: Localization
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
 --- !u!1 &444316537
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,6 +669,7 @@ GameObject:
   - component: {fileID: 954298962}
   - component: {fileID: 954298964}
   - component: {fileID: 954298963}
+  - component: {fileID: 954298965}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -658,7 +716,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Assety
+  m_text: Credits
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
   m_sharedMaterial: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
@@ -735,6 +793,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954298961}
   m_CullTransparentMesh: 1
+--- !u!114 &954298965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954298961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: game/credits
+  FallbackText: Assety
 --- !u!1 &955104351
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,6 +818,7 @@ GameObject:
   - component: {fileID: 955104352}
   - component: {fileID: 955104354}
   - component: {fileID: 955104353}
+  - component: {fileID: 955104355}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -792,7 +865,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Rozpocznij gr\u0119"
+  m_text: Start new game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
   m_sharedMaterial: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
@@ -819,7 +892,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48.85
+  m_fontSize: 45.55
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -869,6 +942,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955104351}
   m_CullTransparentMesh: 1
+--- !u!114 &955104355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955104351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: game/startGame
+  FallbackText: "Rozpocznij gr\u0119"
 --- !u!1 &1141975885
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,6 +1011,7 @@ GameObject:
   - component: {fileID: 1196213010}
   - component: {fileID: 1196213012}
   - component: {fileID: 1196213011}
+  - component: {fileID: 1196213013}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -970,7 +1058,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Zako\u0144cz"
+  m_text: Exit game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
   m_sharedMaterial: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
@@ -1047,6 +1135,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196213009}
   m_CullTransparentMesh: 1
+--- !u!114 &1196213013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196213009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: game/exit
+  FallbackText: "Zako\u0144cz"
 --- !u!1 &1236412726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,6 +1160,7 @@ GameObject:
   - component: {fileID: 1236412727}
   - component: {fileID: 1236412729}
   - component: {fileID: 1236412728}
+  - component: {fileID: 1236412730}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1104,7 +1207,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ustawienia
+  m_text: Settings
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
   m_sharedMaterial: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
@@ -1181,6 +1284,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236412726}
   m_CullTransparentMesh: 1
+--- !u!114 &1236412730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236412726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: game/settings
+  FallbackText: Ustawienia
 --- !u!1 &1264170951
 GameObject:
   m_ObjectHideFlags: 0

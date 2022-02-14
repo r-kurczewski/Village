@@ -9,8 +9,6 @@ namespace Village.Scriptables
 	[CreateAssetMenu(fileName = "ResourceAction", menuName = "Village/Action/ResourceAction")]
 	public class ResourceAction : Action
 	{
-	
-
 		public override void Execute(Villager target)
 		{
 			float multiplier = GetMultiplier(target);

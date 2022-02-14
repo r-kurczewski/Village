@@ -20,9 +20,8 @@ public class BuildAction : IAction
 	}
 
 	public string ActionName => buildingBase.buildActionName;
-
+	public string Description => buildingBase.buildingDescription;
 	public Sprite Icon => buildBaseAction.icon;
-
 	public List<EffectAmount> Effects => new List<EffectAmount>();
 	public List<ResourceAmount> Costs => buildingBase.buildingCost;
 	public VillagerStat Stat1 => buildBaseAction.stat1;

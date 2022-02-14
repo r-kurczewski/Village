@@ -9,6 +9,8 @@ namespace Village.Scriptables
 	public abstract class Action : ScriptableObject, IAction
 	{
 		public string actionName;
+		[TextArea(3,4)]
+		public string description;
 		public Sprite icon;
 		public VillagerStat stat1, stat2;
 		public List<ResourceAmount> costs;
@@ -16,6 +18,7 @@ namespace Village.Scriptables
 
 		#region Interface properties
 		public string ActionName => actionName;
+		public string Description => description;
 		public Sprite Icon => icon;
 		public VillagerStat Stat1 => stat1;
 		public VillagerStat Stat2 => stat2;

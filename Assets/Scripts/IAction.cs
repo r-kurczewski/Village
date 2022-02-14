@@ -7,6 +7,7 @@ using static Village.Scriptables.Resource;
 public interface IAction
 {
 	public string ActionName { get; }
+	public string Description { get; }
 	public Sprite Icon { get; }
 	public List<ResourceAmount> Costs { get; }
 	public List<EffectAmount> Effects { get; }

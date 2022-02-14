@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using static Village.Scriptables.Resource;
+using UnityEngine.Serialization;
 
 namespace Village.Scriptables
 {
@@ -11,6 +11,10 @@ namespace Village.Scriptables
 	public class MapBuilding : MapLocation
 	{
 		public string buildActionName;
+
+		[TextArea(4,5)]
+		public string buildingDescription;
+
 		public List<ResourceAmount> buildingCost = new List<ResourceAmount>();
 
 		public List<Action> buildingAction;

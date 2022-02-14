@@ -15,6 +15,7 @@ MonoBehaviour:
   basicActions:
   - {fileID: 11400000, guid: 96a0209c04ed5df4a943032f07d0a98c, type: 2}
   buildActionName: Rozbuduj szpital polowy
+  buildingDescription: "Umo\u017Cliwia stosowanie wzmocnionych kuracji."
   buildingCost:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
     amount: 50

@@ -16,6 +16,9 @@ namespace Village.Views.Tooltips
 		private TMP_Text actionName;
 
 		[SerializeField]
+		private TMP_Text actionDescription;
+
+		[SerializeField]
 		private Image statIcon1, statIcon2;
 
 		[SerializeField]
@@ -41,6 +44,13 @@ namespace Village.Views.Tooltips
 			Clear();
 
 			actionName.text = slot.Action.ActionName;
+
+			bool hasDescription = slot.Action.Description != string.Empty;
+			if (hasDescription)
+			{
+				actionDescription.text = slot.Action.Description;
+			}
+			actionDescription.transform.parent.gameObject.SetActive(hasDescription);
 
 			if (slot.Action.Stat1)
 			{

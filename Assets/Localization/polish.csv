@@ -13,6 +13,8 @@ game/turn,Tura {turn}
 game/endTurn,Zakończ turę
 game/help,Pomoc
 game/mainMenu,Menu
+game/clickToContinue,"Kliknij, aby kontynuować..."
+game/loading,"Ładowanie..."
 action/battleground,Pobojowisko
 action/craftMedicine,Tworzenie medykamentów
 action/cutTrees,Wycinka drzew
@@ -47,12 +49,61 @@ building/hospital,Umożliwia stosowanie wzmocnionych kuracji.
 building/hunter,Odblokowywuje możliwość wyprawiania skóry.
 building/lumberjack,Dodaje efektywniejszą metodę pozyskiwania drewna.
 building/watchtower,Pozwala na wcześniejsze wykrywanie nadchodzących wydarzeń.
-building/waterCollector,Daje stały, niewielki przyrost wody.
+building/waterCollector,"Daje stały, niewielki przyrost wody."
 chapter/summer,Lato
 chapter/fall,Jesień
 chapter/winter,Zima
 chapter/spring,Wiosna
 chapter/finale,Rozstrzygnięcie
+event/label/requirements,Wymagania:
+event/label/success,Sukces:
+event/label/failure,Porażka:
+event/animals/title,Dzikie zwierzęta
+event/bandits/title,Bandyci
+event/cold/title,Gwałtowne ochłodzenie
+event/envoyTharros/title,Wysłannik z Tharros
+event/envoySalvante/title,Wysłannik z Salvante
+event/epidemic/title,Epidemia
+event/firewood/title,Drewno na opał
+event/food/title,Zapasy żywności
+event/foodPreservation/title,Konserwacja żywności
+event/heat/title,Fale upałów
+event/merchant/title,Przybycie handlarza
+event/water/title,Zapasy wody
+event/animals/description,"Dzikie zwierzęta zbliżają się coraz bliżej wioski i wyżerają zapasy żywności. Trzeba zaopatrzyć mieszkańców w podstawowe narzędzia do obrony oraz przygotować pułapki i sidła."
+event/bandits/description,"W okolicy pojawiła się grupka bandytów. Prawdopodobnie będą chcieli nas ograbić. Musimy zastawić pułapki i wyposażyć się w broń."
+event/cold/description,"Pogoda zaczyna wariować, robi się bardzo zimno. Potrzebujemy dodatkowy zapas drewna na opał, aby ludzie nie pochorowali się."
+event/envoyTharros/description,"Do wioski przybył wysłannik jednego z państw. W zamian za konkretne dobra jest w stanie przychylniej spojrzeć na twoją sytuację."
+event/envoySalvante/description,"Do wioski przybył wysłannik jednego z państw. W zamian za konkretne dobra jest w stanie przychylniej spojrzeć na twoją sytuację."
+event/epidemic/description,"W wiosce zaczynają chorować ludzie. Musimy przygotować lekarstwa."
+event/firewood/description,"Jest za chłodno. Potrzebujemy drewna na opał aby ogrzać chaty."
+event/food/description,"Potrzebujemy zgromadzić zapas jedzenia na kolejne tygodnie."
+event/foodPreservation/description,"Nasza żywność powoli się psuje. Jeśli jej odpowiednio nie zakonserwujemy nie będzie zdatna do użytku."
+event/heat/description,"Temperatura robią się coraz bardziej uciążliwe. Musimy przygotować dodatkowe zapasy wody."
+event/merchant/description,"W pobliżu wioski zatrzymał się handlarz. Może warto się z nim powymieniać?"
+event/water/description,"Potrzebujemy zgromadzić zapas wody na kolejne tygodnie."
+messages/ending1/title,Śmierć mieszkańców
+messages/ending2/title,Zniszczenie wioski
+messages/ending3/title,Przyłączenie do Tharros
+messages/ending4/title,Przyłączenie do Salvante
+messages/ending5/title,Sukces negocjacyjny
+messages/finale/title,Czas rozejmu dobiega końca.
+messages/fall/title,Zaczyna się jesień.
+messages/prologue/title,Prolog
+messages/spring/title,Zaczyna się wiosna.
+messages/winter/title,Zaczyna się zima.
+messages/summer/title,Zaczyna się lato.
+messages/ending1/description,"Warunki życia w wiosce pogarszały się z dnia na dzień. Osadnicy mieli coraz mniej sił, częściej chorowali i cierpieli z braku podstawowych zasobów. Z czasem pojawiły się pierwsze zgony, sytuacja chyliła się ku upadkowi. Ostatecznie nikomu nie udało się przetrwać nawet do chwili rozstrzygnięcia powoli powracającego konfliktu."
+messages/ending2/description,"Czas rozejmu dobiega końca. Mieszkańcy nie zdołali porozumieć się z żadnym z przedstawicieli władców. Obie armie wkraczają na tereny sporne, wioska zostaje doszczętnie zniszczona. Ukrywający się ludzie ścigani przez kraje zostają aresztowani lub zabici. Pozostałi zostają ograbieni z wszelkich dóbr i pozostawieni na śmierć."
+messages/ending3/description,"Czas rozejmu dobiega końca. Mieszkańcom udaje się wynegocjować dobrowolne przyłączenie do królestwa Tharros. Większość mieszkańców zostaje ułaskawiona z drobniejszych przestępstw, stają się obywatelami tego ekspansywnego mocarstwa, a teren wioski zostaje przejęty i dostosowany do przemysłu górniczego."
+messages/ending4/description,"Czas rozejmu dobiega końca. Mieszkańcom udaje się wynegocjować dobrowolne przyłączenie do państwa kupieckiego Salvante. Mieszkańcy zostają ułaskawioni z wszelkich win, stają się obywatelami tego bogatego kraju oraz otrzymują możliwość zostania na znanych im ziemiach. W wiosce zaczyna się ekspansja przemysłu górniczego."
+messages/ending5/description,"Czas rozejmu dobiega końca. Dzięki staraniom mieszkanców udaje się ogłoszenie terenu neutralnego, otrzymują oni możliwość zostania na znanych im ziemiach pod warunkiem stałych dostaw cennego kruszca do obu państw. Mieszkancy mogą dzieki temu wieść spokojne, skromne życie. Nie wiadomo jednak, czy i na jak długo ten stan da się utrzymać."
+messages/prologue/description,"Po długiej, krwawej i bezowocnej wojnie terytorialnej między królestwem Tharros i oligarchią kupiecką Salvante nastaje tymczasowy rozejm. Poprowadź ludzi - dezerterów, ocalałych mieszkańców, wygnańców - zapewnij im przetrwanie na tych spornych ziemiach. Tereny te, żyzne i bogate w różne surowce naturalne, są również pełne niebezpieczeństw, takich jak groźne zwierzęta czy szabrownicy szukający łatwego łupu."
+messages/fall/description,Z dnia na dzień robi się coraz zimniej...
+messages/finale/description,Nadchodzi czas rozstrzygnięcia...
+messages/spring/description,Wzdłuż granic powoli zbierają się wojska...
+messages/summer/description,Na razie powinno być tu bezpiecznie...
+messages/winter/description,Cały teren pokryła niewielka warstwa śniegu...
 resource/food,Żywność
 resource/gems,Klejnoty
 resource/gold,Złoto
@@ -60,8 +111,44 @@ resource/herbs,Zioła
 resource/material,Materiał
 resource/medicine,Medykamenty
 resource/metal,Metal
-resource/salvanteReputation,Reputacja Salvante
+resource/salvanteReputation,Uznanie Salvante
 resource/stone,Kamień
-resource/tharrosReputation,Reputacja Tharros
+resource/tharrosReputation,Uznanie Tharros
 resource/water,Woda
 resource/wood,Drewno
+game/help/description,"Podczas każdej tury przydzielaj mieszkańców do odpowiednich zadań na mapie. Niektóre akcje mają atrybuty, które pozwalą ci uzyskać więcej materiałów. 
+
+Więcej szczegółów odnośnie postaci i akcji zobaczysz przytrzymując na nich kursor myszy. 
+
+Pilnuj pojawiających się wydarzeń na panelu po prawej. Są kluczowe do przetrwania.
+
+Odbuduj wioskę, aby zyskać dodatkowe akcje lub profity. 
+
+Zbieraj reputację, aby zapewnić twoim osadnikom lepszy los po zakończeniu rozejmu.
+ 
+Każdego osadnika charakteryzuje zestaw statystyk, jego zdrowie, jego reputacja, a także:
+<sprite index=1> - Siła
+<sprite index=2> - Zbieractwo
+<sprite index=6> - Przetwórstwo
+<sprite index=7> - Dyplomacja
+<sprite index=5> - Inteligencja
+ 
+Każdy punkt zwiększa liczbę zbieranych zasobów o 20% domyślnej wartości za każdy punkt przy akcjach danego typu.  
+
+Dodatkowo każdy punkt dyplomacji daje bonus +6% do ceny sprzedawanych przedmiotów oraz -6% do ceny kupowanych przedmiotów.
+
+Oprócz tego każdy punkt inteligencji powoduje dodatkowo wzrost innej, losowej statystyki na początku nowego rozdziału.
+
+Zdrowie reprezentuje stan i przydatność do pracy danego mieszkańca. Wpływa ono na efektywne statystyki postaci. Wyszczególnia się kilka poziomów zdrowia:
+
+Poziom 4: Brak modyfikatorów.
+Poziom 3: -1 punkt do wszystkich statystyk postaci. 
+Poziom 2 -2 punkty do wszystkich statystyk postaci.
+Poziom 1: -4 punkty do wszystkich statystyk postaci.
+Poziom 0: Powoduje śmierć mieszkańca.
+
+Zdrowie postaci możesz zwiększać używając akcji w szpitalu polowym.
+
+Reputacja osadnika wpływa na efektywną wartość charyzmy przy interakcjach z danym krajem.
+
+Aby schować te informacje, ponownie naciśnij pzycisk Pomoc."

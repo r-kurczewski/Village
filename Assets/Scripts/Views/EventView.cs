@@ -44,8 +44,8 @@ namespace Village.Views
 
 			turnsLeft = gameEvent.eventBase.turnDuration + instance.GetPredictionFactor();
 
-			titleText.text = gameEvent.eventBase.title;
-			descriptionText.text = gameEvent.eventBase.description;
+			titleText.text = gameEvent.eventBase.Title;
+			descriptionText.text = gameEvent.eventBase.Description;
 
 			requirements.SetActive(gameEvent.eventBase.requirements.Count > 0);
 			foreach (var req in gameEvent.eventBase.requirements)

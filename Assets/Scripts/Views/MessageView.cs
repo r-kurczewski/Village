@@ -6,11 +6,16 @@ using Village.Scriptables;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Lean.Localization;
+using Village.Controllers;
 
 namespace Village.Views
 {
 	public class MessageView : MonoBehaviour, IPointerClickHandler
 	{
+		[SerializeField]
+		private string localeLoading;
+
 		[SerializeField]
 		private Image background;
 
@@ -19,6 +24,9 @@ namespace Village.Views
 
 		[SerializeField]
 		private TMP_Text messageField;
+
+		[SerializeField]
+		private TMP_Text clickHint;
 
 		[SerializeField]
 		private Message data;
@@ -39,11 +47,9 @@ namespace Village.Views
 			{
 				currentMessage = 0;
 				this.data = data;
-				var audio = FindObjectOfType<AudioSource>();
 				if (data.music)
 				{
-					audio.clip = data.music;
-					audio.Play();
+					AudioController.instance.PlayMusic(data.music);
 				}
 				background.color = data.backgroundColor;
 				Reload();
@@ -53,15 +59,20 @@ namespace Village.Views
 
 		private void Reload()
 		{
-			if (currentMessage < data.messages.Count)
+			if (currentMessage < data.MessageCount)
 			{
-				messageField.text = data.messages[currentMessage];
-				titleField.text = data.title;
+				messageField.text = data.GetMessage(currentMessage);
+				titleField.text = data.Title;
 			}
 			else
 			{
 				MessagesEnded.Invoke();
 			}
+		}
+
+		public void ShowLoadingMessage()
+		{
+			clickHint.text = LeanLocalization.GetTranslationText(localeLoading);
 		}
 
 		public void OnPointerClick(PointerEventData eventData)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lean.Localization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,21 +14,23 @@ namespace Village.Scriptables
 	[CreateAssetMenu(fileName = "Event", menuName = "Village/Event")]
 	public partial class EventBase : ScriptableObject
 	{
-		public string title;
+		[SerializeField]
+		private string localeTitle;
 
-		[TextArea(4, 4)]
-		public string description;
+		[SerializeField]
+		private string localeDescription;
 
 		public int turnDuration;
 
-		[FormerlySerializedAs("requirements")]
 		public List<ResourceAmount> requirements;
 
-		[SerializeField]
 		public List<EffectAmount> onSuccess;
 
-		[SerializeField]
 		public List<EffectAmount> onFailure;
+
+		public string Title => LeanLocalization.GetTranslationText(localeTitle);
+
+		public string Description => LeanLocalization.GetTranslationText(localeDescription);
 
 		public void ApplySuccess()
 		{

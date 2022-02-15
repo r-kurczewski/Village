@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2ee1299a4cc6e4e9be60473b9cf415, type: 3}
   m_Name: Bandits II
   m_EditorClassIdentifier: 
-  title: Bandyci
-  description: "W okolicy pojawi\u0142a si\u0119 grupka bandyt\xF3w. Prawdopodobnie
-    b\u0119d\u0105 chcieli nas ograbi\u0107. Musimy zastawi\u0107 pu\u0142apki i
-    wyposa\u017Cy\u0107 si\u0119 w bro\u0144."
+  localeTitle: event/bandits/title
+  localeDescription: event/bandits/description
   turnDuration: 3
   requirements:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}

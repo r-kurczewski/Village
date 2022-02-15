@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4ae9a3226242774ebdf30de13be3a69, type: 3}
-  m_Name: Summer
+  m_Name: Prologue
   m_EditorClassIdentifier: 
-  localeTitle: messages/summer/title
-  music: {fileID: 0}
-  backgroundColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  localeTitle: messages/prologue/title
+  music: {fileID: 8300000, guid: 7ed65f11639376f4ca50a2cf1255e24a, type: 3}
+  backgroundColor: {r: 0.078, g: 0.078, b: 0.078, a: 1}
   localeMessages:
-  - messages/summer/description
+  - messages/prologue/description

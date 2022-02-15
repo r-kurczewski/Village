@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ae9a3226242774ebdf30de13be3a69, type: 3}
   m_Name: Spring
   m_EditorClassIdentifier: 
-  title: "Zaczyna si\u0119 wiosna."
+  localeTitle: messages/spring/title
   music: {fileID: 0}
   backgroundColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  messages:
-  - "Wzd\u0142u\u017C granic powoli zbieraj\u0105 si\u0119 wojska..."
+  localeMessages:
+  - messages/spring/description

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2ee1299a4cc6e4e9be60473b9cf415, type: 3}
   m_Name: Water
   m_EditorClassIdentifier: 
-  title: Zapasy wody
-  description: "Potrzebujemy zgromadzi\u0107 zapas wody na kolejne tygodnie."
+  localeTitle: event/water/title
+  localeDescription: event/water/description
   turnDuration: 3
   requirements:
   - resource: {fileID: 11400000, guid: 9d3db97e89f3adb42808e15635bb1c4e, type: 2}

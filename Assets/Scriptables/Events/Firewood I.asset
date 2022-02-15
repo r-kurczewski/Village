@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2ee1299a4cc6e4e9be60473b9cf415, type: 3}
   m_Name: Firewood I
   m_EditorClassIdentifier: 
-  title: "Drewno na opa\u0142"
-  description: "Jest za ch\u0142odno. Potrzebujemy drewna na opa\u0142 aby ogrza\u0107
-    chaty."
+  localeTitle: event/firewood/title
+  localeDescription: event/firewood/description
   turnDuration: 3
   requirements:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}

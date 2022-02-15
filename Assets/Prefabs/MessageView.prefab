@@ -99,7 +99,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.35
+  m_fontSize: 32.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 3040041347981111055}
   - component: {fileID: 3040041347981111053}
   - component: {fileID: 3040041347981111054}
+  - component: {fileID: 1403069570032265240}
   m_Layer: 5
   m_Name: ClickHint
   m_TagString: Untagged
@@ -275,6 +276,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1403069570032265240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3040041347981111048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: game/clickToContinue
+  FallbackText: <MISSING>
 --- !u!1 &3040041348067368767
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,9 +485,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef4a356c39bc3fb4eb4d702c31d7fa3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  localeLoading: game/loading
   background: {fileID: 3040041348115975681}
   titleField: {fileID: 3040041348067368765}
   messageField: {fileID: 3040041346912749455}
+  clickHint: {fileID: 3040041347981111054}
   data: {fileID: 0}
   MessagesEnded:
     m_PersistentCalls:

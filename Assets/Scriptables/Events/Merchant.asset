@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2ee1299a4cc6e4e9be60473b9cf415, type: 3}
   m_Name: Merchant
   m_EditorClassIdentifier: 
-  title: Przybycie handlarza
-  description: "W pobli\u017Cu wioski zatrzyma\u0142 si\u0119 handlarz. Mo\u017Ce
-    warto si\u0119 z nim powymienia\u0107?"
+  localeTitle: event/merchant/title
+  localeDescription: event/merchant/description
   turnDuration: 3
   requirements: []
   onSuccess: []

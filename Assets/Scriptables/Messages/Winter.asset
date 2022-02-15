@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ae9a3226242774ebdf30de13be3a69, type: 3}
   m_Name: Winter
   m_EditorClassIdentifier: 
-  title: "Zaczyna si\u0119 zima."
+  localeTitle: messages/winter/title
   music: {fileID: 0}
   backgroundColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  messages:
-  - "Ca\u0142y teren pokry\u0142a niewielka warstwa \u015Bniegu..."
+  localeMessages:
+  - messages/winter/description

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ae9a3226242774ebdf30de13be3a69, type: 3}
   m_Name: Fall
   m_EditorClassIdentifier: 
-  title: "Zaczyna si\u0119 jesie\u0144"
+  localeTitle: messages/fall/title
   music: {fileID: 0}
   backgroundColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  messages:
-  - "Z dnia na dzie\u0144 robi si\u0119 coraz zimniej..."
+  localeMessages:
+  - messages/fall/description

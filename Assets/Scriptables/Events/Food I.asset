@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2ee1299a4cc6e4e9be60473b9cf415, type: 3}
   m_Name: Food I
   m_EditorClassIdentifier: 
-  title: "Zapasy \u017Cywno\u015Bci"
-  description: "Potrzebujemy zgromadzi\u0107 zapas jedzenia na kolejne tygodnie."
+  localeTitle: event/food/title
+  localeDescription: event/food/description
   turnDuration: 4
   requirements:
   - resource: {fileID: 11400000, guid: 45064975a6a06084b884e05747925761, type: 2}

@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce2ee1299a4cc6e4e9be60473b9cf415, type: 3}
-  m_Name: Food conservation
+  m_Name: Food preservation
   m_EditorClassIdentifier: 
-  title: "Konserwacja \u017Cywno\u015Bci"
-  description: "Nasza \u017Cywno\u015B\u0107 powoli si\u0119 psuje. Je\u015Bli jej
-    odpowiednio nie zakonserwujemy nie b\u0119dzie zdatna do u\u017Cytku."
+  localeTitle: event/foodPreservation/title
+  localeDescription: event/foodPreservation/description
   turnDuration: 3
   requirements:
   - resource: {fileID: 11400000, guid: 0f76ab08f0674984fa3c0712680d9969, type: 2}

@@ -13,6 +13,8 @@ game/currentChapter,{chapter}
 game/endTurn,End turn
 game/help,Help
 game/mainMenu,Menu
+game/clickToContinue,"Click to continue..."
+game/loading,"Loading..."
 action/battleground,Battleground
 action/craftMedicine,Craft medicine
 action/cutTrees,Cut trees
@@ -31,28 +33,77 @@ action/collectStone,Collect stone
 action/settingTraps,Setting traps
 action/collectWater,Water collecting
 action/woodGathering,Wood gathering
-action/description/reputation,Person's reputation affects their efficiency.
+action/description/reputation,The reputation of the person being sent affects their efficiency.
 build/miningEquipment,Construct mining equipment
-build/fisherman,Rebuild fisherman cottage
-build/herbalist,Rebuild herbalist cottage
+build/fisherman,Rebuild fisherman's cottage
+build/herbalist,Rebuild herbalist's cottage
 build/hospital,Expand field hospital
-build/hunter,Rebuild hunter cottage
-build/lumberjack,Rebuild lumberjack cottage
+build/hunter,Rebuild hunter's cottage
+build/lumberjack,Rebuild lumberjack's cottage
 build/watchtower,Rebuild watchtower
 build/waterCollector,Build water collector
 building/miningEquipment,Allows sending people to mine gems.
 building/fisherman,Unlocks new method of collecting food.
 building/herbalist,Unlocks preparing food and crafting medicine.
-building/hospital,Unlocks additional, better treatment.
+building/hospital,"Unlocks additional, better treatment."
 building/hunter,Unlocks leather tanning.
 building/lumberjack,Adds better way of collecting the wood
 building/watchtower,Allows to see incoming events earlier.
-building/waterCollector,Gives small, pernament water gain.
+building/waterCollector,"Gives small, pernament water gain."
 chapter/summer,Summer
 chapter/fall,Fall
 chapter/winter,Winter
 chapter/spring,Spring
 chapter/finale,Finale
+event/label/requirements,Requirements:
+event/label/success,Success:
+event/label/failure,Failure:
+event/animals/title,Wild animals
+event/bandits/title,Bandits
+event/cold/title,Rapid cooling
+event/envoyTharros/title,Emissary of Tharros
+event/envoySalvante/title,Emissary of Salvante
+event/epidemic/title,Epidemic
+event/firewood/title,Firewood
+event/food/title,Food supplies
+event/foodPreservation/title,Food preservation
+event/heat/title,Heatwave
+event/merchant/title,Arrival of the merchant
+event/water/title,Water reserves
+event/animals/description,"Wild animals are getting closer and closer to the village and are eating up the food supplies. You have to supply the inhabitants with basic tools for defense and prepare traps and snares."
+event/bandits/description,"A group of bandits appeared in the area. They will probably try to rob us. We need to set traps and equip ourselves with weapons."
+event/cold/description,"The weather starts to get crazy, it gets very cold. We need extra firewood to keep people from getting sick."
+event/envoyTharros/description,"An envoy from one of the countries has arrived in the village. In exchange for specific goods, he is able to look at your situation more favorably."
+event/envoySalvante/description,"An envoy from one of the countries has arrived in the village. In exchange for specific goods, he is able to look at your situation more favorably."
+event/epidemic/description,"People in the village are starting to get sick. We need to prepare medicine."
+event/firewood/description,"It's too cold. We need firewood to heat the cottages."
+event/food/description,"We need to stockpile food for the next few weeks."
+event/foodPreservation/description,"Our food is slowly spoiling. If we do not preserve it properly, it will not be fit for use."
+event/heat/description,"Temperatures are getting more and more oppressive. We need to prepare additional water supplies."
+event/merchant/description,"A merchant stopped near the village. Maybe it's worth trading with him?"
+event/water/description,"We need to accumulate a supply of water for the next few weeks."
+messages/ending1/title,Death of the villagers
+messages/ending2/title,Destruction of the village
+messages/ending3/title,Joining Tharros
+messages/ending4/title,Joining Salvante
+messages/ending5/title,Declaration of independent territory
+messages/finale/title,The truce is coming to an end
+messages/fall/title,Autumn begins.
+messages/prologue/title,Prologue
+messages/spring/title,Spring begins.
+messages/winter/title,Winter begins.
+messages/summer/title,Summer begins.
+messages/ending1/description,"Living conditions in the village were worsening day by day. The settlers had less and less strength, were more often ill and suffered from lack of basic resources. With time, the first deaths occurred, and the situation began to deteriorate. In the end, no one managed to survive even until the slowly returning conflict was resolved."
+messages/ending2/description,"The time of truce is coming to an end. The inhabitants have failed to communicate with any of the representatives of the rulers. Both armies enter the disputed areas, the village is completely destroyed. Hiding people pursued by the countries are arrested or killed. Others are robbed of all possessions and left to die."
+messages/ending3/description,"The time of truce comes to an end. The villagers succeed in negotiating voluntary incorporation into the kingdom of Tharros. Most of the inhabitants are pardoned from minor crimes, become citizens of this expansive power, and the village area is taken over and adapted for mining."
+messages/ending4/description,"The time of truce comes to an end. The inhabitants manage to negotiate a voluntary annexation to the merchant state of Salvante. The inhabitants are pardoned of any guilt, become citizens of this rich country, and are given the opportunity to stay on familiar lands. The mining industry begins to expand in the village."
+messages/ending5/description,"The time of truce is coming to an end. The inhabitants manage to negotiate a voluntary annexation to the merchant state of Salvante. The inhabitants are pardoned of any guilt, become citizens of this rich country, and are given the opportunity to stay on familiar lands. The mining industry begins to expand in the village."
+messages/prologue/description,"After a long, bloody, and fruitless territorial war between the kingdom of Tharros and the merchant oligarchy of Salvante, a temporary truce is called. Lead the people - deserters, surviving citizens, exiles - ensure their survival in these disputed lands. Fertile and rich in various natural resources, these lands are also full of dangers, such as dangerous animals and plunderers looking for easy loot."
+messages/fall/description,Every day it gets colder and colder...
+messages/finale/description,It's time to resolve...
+messages/spring/description,"Along the borders, troops are slowly gathering..."
+messages/summer/description,It should be safe here for now...
+messages/winter/description,A thin layer of snow covered the entire area...
 resource/food,Food
 resource/gems,Gems
 resource/gold,Gold
@@ -65,3 +116,39 @@ resource/stone,Stone
 resource/tharrosReputation,Tharros' esteem
 resource/water,Water
 resource/wood,Wood
+game/help/description,"During each turn, assign citizens to appropriate tasks on the map. Some actions have attributes that will allow you to obtain more materials. 
+
+You can see more details about characters and actions by holding your mouse cursor over them. 
+
+Keep an eye on emerging events on the panel on the right. They are crucial to survival.
+
+Rebuild your village to gain additional actions or rewards. 
+
+Collect reputation to give your settlers a better fate after the truce ends.
+ 
+Each settler is characterized by a set of stats, his health, his reputation, and:
+<sprite index=1> - Strength
+<sprite index=2> - Gathering
+<sprite index=6> - Processing
+<sprite index=7> - Diplomacy
+<sprite index=5> - Intelligence
+ 
+Each point increases the number of resources harvested by 20% of the default value per point on actions of that type.  
+
+Additionally, each diplomacy point gives a +6% bonus to the price of items sold and -6% to the price of items bought.
+
+In addition to this, each point of intelligence causes another random stat to increase at the beginning of a new chapter.
+
+Health represents the condition and fitness for work of a given inhabitant. It influences the effective stats of the character. There are several levels of health:
+
+Level 4: No modifiers.
+Level 3: -1 point to all character stats. 
+Level 2 -2 points to all character stats.
+Level 1: -4 points to all character stats.
+Level 0: Causes the death of the occupant.
+
+You can increase a character's health using actions in the field hospital.
+
+The settler's reputation affects the effective charisma value when interacting with a country.
+
+To hide this information, press the Help button again."

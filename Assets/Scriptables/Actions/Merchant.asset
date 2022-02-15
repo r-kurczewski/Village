@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2fdec45b5f07fd4788380eabbceec4c, type: 3}
   m_Name: Merchant
   m_EditorClassIdentifier: 
-  localNameString: action/merchant
-  description: 
+  localeActionName: action/merchant
+  localeDescription: 
   icon: {fileID: 21300000, guid: 57ba51f298b56a349a59570a6ef3e5e3, type: 3}
   stat1: {fileID: 11400000, guid: f88959040f03e404491774af1e4e7953, type: 2}
   stat2: {fileID: 0}

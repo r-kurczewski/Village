@@ -25,15 +25,19 @@ public class GameSettings : MonoBehaviour
 	private void Start()
 	{
 		LoadResolutions();
+		LoadMusic();
 		LoadLanguages();
 	}
 
 	public void LoadResolutions()
 	{
-		var resolutionStrings = Screen.resolutions.
-			Select(x => $"{x.width}x{x.height}").ToList();
 		resolution.ClearOptions();
-		resolution.AddOptions(resolutionStrings);
+		var resolutions = Screen.resolutions.Select(x => $"{x.width}x{x.height}").ToList();
+		resolution.AddOptions(resolutions);
+		var currentResolution = $"{Screen.width}x{Screen.height}";
+		var currentResolutionIndex = resolution.options.IndexOf(resolution.options.FirstOrDefault(x=> x.text== currentResolution));
+		resolution.SetValueWithoutNotify(currentResolutionIndex);
+		fullscreen.isOn = Screen.fullScreen;
 	}
 
 	public void LoadLanguages()
@@ -44,10 +48,14 @@ public class GameSettings : MonoBehaviour
 		language.SetValueWithoutNotify(language.options.IndexOf(language.options.First(x => x.text == selectedLang)));
 	}
 
+	public void LoadMusic()
+	{
+		music.value = AudioListener.volume;
+	}
+
 	public void ChangeResolution()
 	{
 		var res = resolution.options[resolution.value].text.Split('x');
-		Debug.Log("Set resolution to: " + res[0] + "x" + res[1]);
 		Screen.SetResolution(int.Parse(res[0]), int.Parse(res[1]), fullscreen.isOn);
 	}
 

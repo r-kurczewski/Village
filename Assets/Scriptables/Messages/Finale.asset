@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ae9a3226242774ebdf30de13be3a69, type: 3}
   m_Name: Finale
   m_EditorClassIdentifier: 
-  title: "Czas rozejmu dobiega ko\u0144ca."
+  localeTitle: messages/finale/title
   music: {fileID: 0}
   backgroundColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  messages:
-  - "Nadchodzi czas rozstrzygni\u0119cia...\n"
+  localeMessages:
+  - messages/finale/description

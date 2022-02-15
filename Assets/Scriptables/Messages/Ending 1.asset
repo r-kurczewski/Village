@@ -12,13 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ae9a3226242774ebdf30de13be3a69, type: 3}
   m_Name: Ending 1
   m_EditorClassIdentifier: 
-  title: "\u015Amier\u0107 mieszka\u0144c\xF3w"
+  localeTitle: messages/ending1/title
   music: {fileID: 8300000, guid: 8a14291c4112b5349952a7ee6167f146, type: 3}
   backgroundColor: {r: 0.078, g: 0.078, b: 0.078, a: 1}
-  messages:
-  - "Warunki \u017Cycia w wiosce pogarsza\u0142y si\u0119 z dnia na dzie\u0144. Osadnicy
-    mieli coraz mniej si\u0142, cz\u0119\u015Bciej chorowali i cierpieli z braku
-    podstawowych zasob\xF3w. Z czasem pojawi\u0142y si\u0119 pierwsze zgony, sytuacja
-    chyli\u0142a si\u0119 ku upadkowi. Ostatecznie nikomu nie uda\u0142o si\u0119
-    przetrwa\u0107 nawet do chwili roztrzygni\u0119cia powoli powracaj\u0105cego
-    konfliktu."
+  localeMessages:
+  - messages/ending1/description

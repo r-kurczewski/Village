@@ -17,11 +17,13 @@ namespace Village.Views
 		public void SetTurn(int turn)
 		{
 			LeanLocalization.SetToken("turn", turn.ToString());
+			LeanLocalization.UpdateTranslations();
 		}
 
 		public void SetChapterName(string name)
 		{
 			LeanLocalization.SetToken("chapter", name);
+			LeanLocalization.UpdateTranslations();
 		}
 	}
 }

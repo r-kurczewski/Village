@@ -12,12 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ae9a3226242774ebdf30de13be3a69, type: 3}
   m_Name: Ending 4
   m_EditorClassIdentifier: 
-  title: "Przy\u0142\u0105czenie do Salvante"
+  localeTitle: messages/ending4/title
   music: {fileID: 8300000, guid: 9b69e356671f41543b726ce9e3399d52, type: 3}
   backgroundColor: {r: 0.2542, g: 0.62, b: 0.37613332, a: 1}
-  messages:
-  - "Czas rozejmu dobiega ko\u0144ca. Mieszkancom udaje si\u0119 wynegocjowa\u0107
-    dobrowolne przy\u0142\u0105czenie do pa\u0144stwa kupieckiego Salvante. Mieszka\u0144cy
-    zostaj\u0105 u\u0142askawioni z wszelkich win, staj\u0105 si\u0119 obywatelami
-    tego bogatego kraju oraz otrzymuj\u0105 mo\u017Cliwo\u015B\u0107 zostania na
-    znanych im ziemiach. W wiosce zaczyna si\u0119 ekspansja przemys\u0142u g\xF3rniczego."
+  localeMessages:
+  - messages/ending3/description

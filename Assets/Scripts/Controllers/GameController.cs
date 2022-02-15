@@ -46,9 +46,6 @@ namespace Village.Controllers
 		[SerializeField]
 		private TradeController tradeController;
 
-		[SerializeField]
-		private AudioSource audioPlayer;
-
 		public GameChapter Chapter => turnController.Chapter;
 
 		public int Turn => turnController.Turn;
@@ -151,7 +148,7 @@ namespace Village.Controllers
 		{
 			eventController.PredictionFactor++;
 
-			//load events that would be skipped
+			// load events that would be skipped
 			eventController.EventUpdate();
 		}
 
@@ -164,13 +161,12 @@ namespace Village.Controllers
 
 		public void PlayMusic(AudioClip clip)
 		{
-			audioPlayer.clip = clip;
-			audioPlayer.Play();
+			AudioController.instance.PlayMusic(clip);
 		}
 
 		public void PlaySound(AudioClip sound)
 		{
-			audioPlayer.PlayOneShot(sound);
+			AudioController.instance.PlaySound(sound);
 		}
 	}
 }

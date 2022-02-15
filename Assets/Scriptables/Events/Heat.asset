@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2ee1299a4cc6e4e9be60473b9cf415, type: 3}
   m_Name: Heat
   m_EditorClassIdentifier: 
-  title: "Fala upa\u0142\xF3w"
-  description: "Temperatura robi\u0105 si\u0119 coraz bardziej uci\u0105\u017Cliwe.
-    Musimy przygotowa\u0107 dodatkowe zapasy wody."
+  localeTitle: event/heat/title
+  localeDescription: event/heat/description
   turnDuration: 3
   requirements:
   - resource: {fileID: 11400000, guid: 9d3db97e89f3adb42808e15635bb1c4e, type: 2}

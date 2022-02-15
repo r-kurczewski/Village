@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2ee1299a4cc6e4e9be60473b9cf415, type: 3}
   m_Name: Epidemic
   m_EditorClassIdentifier: 
-  title: Epidemia
-  description: "W wiosce zaczynaj\u0105 chorowa\u0107 ludzie. Musimy przygotowa\u0107
-    lekarstwa."
+  localeTitle: event/epidemic/title
+  localeDescription: event/epidemic/description
   turnDuration: 3
   requirements:
   - resource: {fileID: 11400000, guid: 89ccf5a1788e2dc4487261ed0aea1f86, type: 2}

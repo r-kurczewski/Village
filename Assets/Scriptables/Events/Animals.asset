@@ -10,13 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce2ee1299a4cc6e4e9be60473b9cf415, type: 3}
-  m_Name: Wild animals
+  m_Name: Animals
   m_EditorClassIdentifier: 
-  title: Dzika zwierzyna
-  description: "Dzikie zwierz\u0119ta zbli\u017Caj\u0105 si\u0119 coraz bli\u017Cej
-    wioski i wy\u017Ceraj\u0105 zapasy \u017Cywno\u015Bci. Trzeba zaopatrzy\u0107
-    mieszka\u0144c\xF3w w podstawowe narz\u0119dzia do obrony oraz przygotowa\u0107
-    pu\u0142apki i sid\u0142a."
+  localeTitle: event/animals/title
+  localeDescription: event/animals/description
   turnDuration: 3
   requirements:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}

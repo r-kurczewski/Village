@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2ee1299a4cc6e4e9be60473b9cf415, type: 3}
   m_Name: Envoy - Salvante I
   m_EditorClassIdentifier: 
-  title: "Wys\u0142annik z Salvante"
-  description: "Do wioski przyby\u0142 wys\u0142annik jednego z pa\u0144stw. W zamian
-    za konkretne dobra jest w stanie przychylniej spojrze\u0107 na twoj\u0105 sytuacj\u0119."
+  localeTitle: event/envoySalvante/title
+  localeDescription: event/envoySalvante/description
   turnDuration: 3
   requirements:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}

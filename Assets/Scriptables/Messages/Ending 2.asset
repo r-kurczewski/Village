@@ -12,12 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ae9a3226242774ebdf30de13be3a69, type: 3}
   m_Name: Ending 2
   m_EditorClassIdentifier: 
-  title: Zniszczenie wioski
+  localeTitle: messagestitle2/title
   music: {fileID: 8300000, guid: 8a14291c4112b5349952a7ee6167f146, type: 3}
   backgroundColor: {r: 0.078, g: 0.078, b: 0.078, a: 1}
-  messages:
-  - "Czas rozejmu dobiega ko\u0144ca. Mieszka\u0144cy nie zdo\u0142ali porozumie\u0107
-    si\u0119 z \u017Cadnym z przedstawicieli w\u0142adc\xF3w. Obie armie wkraczaj\u0105
-    na tereny sporne, wioska zostaje doszcz\u0119tnie zniszczona. Ukrywaj\u0105cy
-    si\u0119 ludzie \u015Bcigani przez kraje zostaj\u0105 aresztowani lub zabici.
-    Pozosta\u0142i zostaj\u0105 ograbieni z wszelkich d\xF3br i pozostawieni na \u015Bmier\u0107."
+  localeMessages:
+  - messages/ending1/description

@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2ee1299a4cc6e4e9be60473b9cf415, type: 3}
   m_Name: Cold
   m_EditorClassIdentifier: 
-  title: "Gwa\u0142towne och\u0142odzenie"
-  description: "Pogoda zaczyna wariowa\u0107, robi si\u0119 bardzo zimno. Potrzemujemy
-    dodatkowy zapas drewna na opa\u0142, aby ludzie nie pochorowali si\u0119."
+  localeTitle: event/cold/title
+  localeDescription: event/cold/description
   turnDuration: 3
   requirements:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}

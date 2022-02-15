@@ -1,5 +1,93 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &261468753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 261468754}
+  - component: {fileID: 261468755}
+  m_Layer: 0
+  m_Name: turn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &261468754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261468753}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5426732834749606645}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &261468755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261468753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b00b1c461a103b4898dcc53ee709d22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: xx
+--- !u!1 &1120611073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1120611074}
+  - component: {fileID: 1120611075}
+  m_Layer: 0
+  m_Name: chapter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1120611074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120611073}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5426732834749606645}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1120611075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120611073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b00b1c461a103b4898dcc53ee709d22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: Chapter
 --- !u!1 &5426732834721320161
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +182,10 @@ MonoBehaviour:
     Text: Pomoc
   - Name: game/mainMenu
     Text: Menu
+  - Name: game/clickToContinue
+    Text: "Kliknij, aby kontynuowa\u0107..."
+  - Name: game/loading
+    Text: "\u0141adowanie..."
   - Name: action/battleground
     Text: Pobojowisko
   - Name: action/craftMedicine
@@ -118,15 +210,15 @@ MonoBehaviour:
     Text: "Wyprawianie sk\xF3ry"
   - Name: action/preparingFood
     Text: "Przer\xF3bka \u017Cywno\u015Bci"
+  - Name: action/merchant
+    Text: Handlarz
   - Name: action/sellGems
     Text: Sprzedaj klejnoty
   - Name: action/collectStone
     Text: Rumowisko skalne
-  - Name: action/merchant
-    Text: Handlarz
   - Name: action/settingTraps
     Text: "Zastawianie side\u0142"
-  - Name: action/watherGathering
+  - Name: action/collectWater
     Text: "Zbi\xF3rka wody"
   - Name: action/woodGathering
     Text: Zbieranie drewna
@@ -145,7 +237,7 @@ MonoBehaviour:
   - Name: build/lumberjack
     Text: "Odbuduj chatk\u0119 drwala"
   - Name: build/watchtower
-    Text: "Zbuduj wie\u017C\u0119 obserwacyjn\u0105"
+    Text: "Odbuduj wie\u017C\u0119 obserwacyjn\u0105"
   - Name: build/waterCollector
     Text: "Zbuduj zbiornik na deszcz\xF3wk\u0119"
   - Name: building/miningEquipment
@@ -174,10 +266,150 @@ MonoBehaviour:
     Text: Wiosna
   - Name: chapter/finale
     Text: "Rozstrzygni\u0119cie"
+  - Name: event/label/requirements
+    Text: 'Wymagania:'
+  - Name: event/label/success
+    Text: 'Sukces:'
+  - Name: event/label/failure
+    Text: "Pora\u017Cka:"
+  - Name: event/animals/title
+    Text: "Dzikie zwierz\u0119ta"
+  - Name: event/bandits/title
+    Text: Bandyci
+  - Name: event/cold/title
+    Text: "Gwa\u0142towne och\u0142odzenie"
+  - Name: event/envoyTharros/title
+    Text: "Wys\u0142annik z Tharros"
+  - Name: event/envoySalvante/title
+    Text: "Wys\u0142annik z Salvante"
+  - Name: event/epidemic/title
+    Text: Epidemia
+  - Name: event/firewood/title
+    Text: "Drewno na opa\u0142"
+  - Name: event/food/title
+    Text: "Zapasy \u017Cywno\u015Bci"
+  - Name: event/foodPreservation/title
+    Text: "Konserwacja \u017Cywno\u015Bci"
+  - Name: event/heat/title
+    Text: "Fale upa\u0142\xF3w"
+  - Name: event/merchant/title
+    Text: Przybycie handlarza
+  - Name: event/water/title
+    Text: Zapasy wody
+  - Name: event/animals/description
+    Text: "Dzikie zwierz\u0119ta zbli\u017Caj\u0105 si\u0119 coraz bli\u017Cej wioski
+      i wy\u017Ceraj\u0105 zapasy \u017Cywno\u015Bci. Trzeba zaopatrzy\u0107 mieszka\u0144c\xF3w
+      w podstawowe narz\u0119dzia do obrony oraz przygotowa\u0107 pu\u0142apki i
+      sid\u0142a."
+  - Name: event/bandits/description
+    Text: "W okolicy pojawi\u0142a si\u0119 grupka bandyt\xF3w. Prawdopodobnie b\u0119d\u0105
+      chcieli nas ograbi\u0107. Musimy zastawi\u0107 pu\u0142apki i wyposa\u017Cy\u0107
+      si\u0119 w bro\u0144."
+  - Name: event/cold/description
+    Text: "Pogoda zaczyna wariowa\u0107, robi si\u0119 bardzo zimno. Potrzebujemy
+      dodatkowy zapas drewna na opa\u0142, aby ludzie nie pochorowali si\u0119."
+  - Name: event/envoyTharros/description
+    Text: "Do wioski przyby\u0142 wys\u0142annik jednego z pa\u0144stw. W zamian
+      za konkretne dobra jest w stanie przychylniej spojrze\u0107 na twoj\u0105 sytuacj\u0119."
+  - Name: event/envoySalvante/description
+    Text: "Do wioski przyby\u0142 wys\u0142annik jednego z pa\u0144stw. W zamian
+      za konkretne dobra jest w stanie przychylniej spojrze\u0107 na twoj\u0105 sytuacj\u0119."
+  - Name: event/epidemic/description
+    Text: "W wiosce zaczynaj\u0105 chorowa\u0107 ludzie. Musimy przygotowa\u0107
+      lekarstwa."
+  - Name: event/firewood/description
+    Text: "Jest za ch\u0142odno. Potrzebujemy drewna na opa\u0142 aby ogrza\u0107
+      chaty."
+  - Name: event/food/description
+    Text: "Potrzebujemy zgromadzi\u0107 zapas jedzenia na kolejne tygodnie."
+  - Name: event/foodPreservation/description
+    Text: "Nasza \u017Cywno\u015B\u0107 powoli si\u0119 psuje. Je\u015Bli jej odpowiednio
+      nie zakonserwujemy nie b\u0119dzie zdatna do u\u017Cytku."
+  - Name: event/heat/description
+    Text: "Temperatura robi\u0105 si\u0119 coraz bardziej uci\u0105\u017Cliwe. Musimy
+      przygotowa\u0107 dodatkowe zapasy wody."
+  - Name: event/merchant/description
+    Text: "W pobli\u017Cu wioski zatrzyma\u0142 si\u0119 handlarz. Mo\u017Ce warto
+      si\u0119 z nim powymienia\u0107?"
+  - Name: event/water/description
+    Text: "Potrzebujemy zgromadzi\u0107 zapas wody na kolejne tygodnie."
+  - Name: messages/ending1/title
+    Text: "\u015Amier\u0107 mieszka\u0144c\xF3w"
+  - Name: messages/ending2/title
+    Text: Zniszczenie wioski
+  - Name: messages/ending3/title
+    Text: "Przy\u0142\u0105czenie do Tharros"
+  - Name: messages/ending4/title
+    Text: "Przy\u0142\u0105czenie do Salvante"
+  - Name: messages/ending5/title
+    Text: Sukces negocjacyjny
+  - Name: messages/finale/title
+    Text: "Czas rozejmu dobiega ko\u0144ca."
+  - Name: messages/fall/title
+    Text: "Zaczyna si\u0119 jesie\u0144."
+  - Name: messages/prologue/title
+    Text: Prolog
+  - Name: messages/spring/title
+    Text: "Zaczyna si\u0119 wiosna."
+  - Name: messages/winter/title
+    Text: "Zaczyna si\u0119 zima."
+  - Name: messages/summer/title
+    Text: "Zaczyna si\u0119 lato."
+  - Name: messages/ending1/description
+    Text: "Warunki \u017Cycia w wiosce pogarsza\u0142y si\u0119 z dnia na dzie\u0144.
+      Osadnicy mieli coraz mniej si\u0142, cz\u0119\u015Bciej chorowali i cierpieli
+      z braku podstawowych zasob\xF3w. Z czasem pojawi\u0142y si\u0119 pierwsze zgony,
+      sytuacja chyli\u0142a si\u0119 ku upadkowi. Ostatecznie nikomu nie uda\u0142o
+      si\u0119 przetrwa\u0107 nawet do chwili rozstrzygni\u0119cia powoli powracaj\u0105cego
+      konfliktu."
+  - Name: messages/ending2/description
+    Text: "Czas rozejmu dobiega ko\u0144ca. Mieszka\u0144cy nie zdo\u0142ali porozumie\u0107
+      si\u0119 z \u017Cadnym z przedstawicieli w\u0142adc\xF3w. Obie armie wkraczaj\u0105
+      na tereny sporne, wioska zostaje doszcz\u0119tnie zniszczona. Ukrywaj\u0105cy
+      si\u0119 ludzie \u015Bcigani przez kraje zostaj\u0105 aresztowani lub zabici.
+      Pozosta\u0142i zostaj\u0105 ograbieni z wszelkich d\xF3br i pozostawieni na
+      \u015Bmier\u0107."
+  - Name: messages/ending3/description
+    Text: "Czas rozejmu dobiega ko\u0144ca. Mieszka\u0144com udaje si\u0119 wynegocjowa\u0107
+      dobrowolne przy\u0142\u0105czenie do kr\xF3lestwa Tharros. Wi\u0119kszo\u015B\u0107
+      mieszka\u0144c\xF3w zostaje u\u0142askawiona z drobniejszych przest\u0119pstw,
+      staj\u0105 si\u0119 obywatelami tego ekspansywnego mocarstwa, a teren wioski
+      zostaje przej\u0119ty i dostosowany do przemys\u0142u g\xF3rniczego."
+  - Name: messages/ending4/description
+    Text: "Czas rozejmu dobiega ko\u0144ca. Mieszka\u0144com udaje si\u0119 wynegocjowa\u0107
+      dobrowolne przy\u0142\u0105czenie do pa\u0144stwa kupieckiego Salvante. Mieszka\u0144cy
+      zostaj\u0105 u\u0142askawioni z wszelkich win, staj\u0105 si\u0119 obywatelami
+      tego bogatego kraju oraz otrzymuj\u0105 mo\u017Cliwo\u015B\u0107 zostania na
+      znanych im ziemiach. W wiosce zaczyna si\u0119 ekspansja przemys\u0142u g\xF3rniczego."
+  - Name: messages/ending5/description
+    Text: "Czas rozejmu dobiega ko\u0144ca. Dzi\u0119ki staraniom mieszkanc\xF3w
+      udaje si\u0119 og\u0142oszenie terenu neutralnego, otrzymuj\u0105 oni mo\u017Cliwo\u015B\u0107
+      zostania na znanych im ziemiach pod warunkiem sta\u0142ych dostaw cennego kruszca
+      do obu pa\u0144stw. Mieszkancy mog\u0105 dzieki temu wie\u015B\u0107 spokojne,
+      skromne \u017Cycie. Nie wiadomo jednak, czy i na jak d\u0142ugo ten stan da
+      si\u0119 utrzyma\u0107."
+  - Name: messages/prologue/description
+    Text: "Po d\u0142ugiej, krwawej i bezowocnej wojnie terytorialnej mi\u0119dzy
+      kr\xF3lestwem Tharros i oligarchi\u0105 kupieck\u0105 Salvante nastaje tymczasowy
+      rozejm. Poprowad\u017A ludzi - dezerter\xF3w, ocala\u0142ych mieszka\u0144c\xF3w,
+      wygna\u0144c\xF3w - zapewnij im przetrwanie na tych spornych ziemiach. Tereny
+      te, \u017Cyzne i bogate w r\xF3\u017Cne surowce naturalne, s\u0105 r\xF3wnie\u017C
+      pe\u0142ne niebezpiecze\u0144stw, takich jak gro\u017Ane zwierz\u0119ta czy
+      szabrownicy szukaj\u0105cy \u0142atwego \u0142upu."
+  - Name: messages/fall/description
+    Text: "Z dnia na dzie\u0144 robi si\u0119 coraz zimniej..."
+  - Name: messages/finale/description
+    Text: "Nadchodzi czas rozstrzygni\u0119cia..."
+  - Name: messages/spring/description
+    Text: "Wzd\u0142u\u017C granic powoli zbieraj\u0105 si\u0119 wojska..."
+  - Name: messages/summer/description
+    Text: "Na razie powinno by\u0107 tu bezpiecznie..."
+  - Name: messages/winter/description
+    Text: "Ca\u0142y teren pokry\u0142a niewielka warstwa \u015Bniegu..."
   - Name: resource/food
     Text: "\u017Bywno\u015B\u0107"
   - Name: resource/gems
-    Text: Kamienie szlachetne
+    Text: Klejnoty
   - Name: resource/gold
     Text: "Z\u0142oto"
   - Name: resource/herbs
@@ -189,15 +421,42 @@ MonoBehaviour:
   - Name: resource/metal
     Text: Metal
   - Name: resource/salvanteReputation
-    Text: Reputacja Salvante
+    Text: Uznanie Salvante
   - Name: resource/stone
     Text: "Kamie\u0144"
   - Name: resource/tharrosReputation
-    Text: Reputacja Tharros
+    Text: Uznanie Tharros
   - Name: resource/water
     Text: Woda
   - Name: resource/wood
     Text: Drewno
+  - Name: game/help/description
+    Text: "Podczas ka\u017Cdej tury przydzielaj mieszka\u0144c\xF3w do odpowiednich
+      zada\u0144 na mapie. Niekt\xF3re akcje maj\u0105 atrybuty, kt\xF3re pozwal\u0105
+      ci uzyska\u0107 wi\u0119cej materia\u0142\xF3w. \n\nWi\u0119cej szczeg\xF3\u0142\xF3w
+      odno\u015Bnie postaci i akcji zobaczysz przytrzymuj\u0105c na nich kursor myszy.
+      \n\nPilnuj pojawiaj\u0105cych si\u0119 wydarze\u0144 na panelu po prawej. S\u0105
+      kluczowe do przetrwania.\n\nOdbuduj wiosk\u0119, aby zyska\u0107 dodatkowe
+      akcje lub profity. \n\nZbieraj reputacj\u0119, aby zapewni\u0107 twoim osadnikom
+      lepszy los po zako\u0144czeniu rozejmu.\n \nKa\u017Cdego osadnika charakteryzuje
+      zestaw statystyk, jego zdrowie, jego reputacja, a tak\u017Ce:\n<sprite index=1>
+      - Si\u0142a\n<sprite index=2> - Zbieractwo\n<sprite index=6> - Przetw\xF3rstwo\n<sprite
+      index=7> - Dyplomacja\n<sprite index=5> - Inteligencja\n \nKa\u017Cdy punkt
+      zwi\u0119ksza liczb\u0119 zbieranych zasob\xF3w o 20% domy\u015Blnej warto\u015Bci
+      za ka\u017Cdy punkt przy akcjach danego typu.  \n\nDodatkowo ka\u017Cdy punkt
+      dyplomacji daje bonus +6% do ceny sprzedawanych przedmiot\xF3w oraz -6% do
+      ceny kupowanych przedmiot\xF3w.\n\nOpr\xF3cz tego ka\u017Cdy punkt inteligencji
+      powoduje dodatkowo wzrost innej, losowej statystyki na pocz\u0105tku nowego
+      rozdzia\u0142u.\n\nZdrowie reprezentuje stan i przydatno\u015B\u0107 do pracy
+      danego mieszka\u0144ca. Wp\u0142ywa ono na efektywne statystyki postaci. Wyszczeg\xF3lnia
+      si\u0119 kilka poziom\xF3w zdrowia:\n\nPoziom 4: Brak modyfikator\xF3w.\nPoziom
+      3: -1 punkt do wszystkich statystyk postaci. \nPoziom 2 -2 punkty do wszystkich
+      statystyk postaci.\nPoziom 1: -4 punkty do wszystkich statystyk postaci.\nPoziom
+      0: Powoduje \u015Bmier\u0107 mieszka\u0144ca.\n\nZdrowie postaci mo\u017Cesz
+      zwi\u0119ksza\u0107 u\u017Cywaj\u0105c akcji w szpitalu polowym.\n\nReputacja
+      osadnika wp\u0142ywa na efektywn\u0105 warto\u015B\u0107 charyzmy przy interakcjach
+      z danym krajem.\n\nAby schowa\u0107 te informacje, ponownie naci\u015Bnij pzycisk
+      Pomoc."
 --- !u!1 &5426732834749606647
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +487,8 @@ Transform:
   m_Children:
   - {fileID: 5426732834721320160}
   - {fileID: 5426732834919885527}
+  - {fileID: 261468754}
+  - {fileID: 1120611074}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -342,6 +603,10 @@ MonoBehaviour:
     Text: Help
   - Name: game/mainMenu
     Text: Menu
+  - Name: game/clickToContinue
+    Text: Click to continue...
+  - Name: game/loading
+    Text: Loading...
   - Name: action/battleground
     Text: Battleground
   - Name: action/craftMedicine
@@ -379,19 +644,19 @@ MonoBehaviour:
   - Name: action/woodGathering
     Text: Wood gathering
   - Name: action/description/reputation
-    Text: Person's reputation affects their efficiency
+    Text: The reputation of the person being sent affects their efficiency.
   - Name: build/miningEquipment
     Text: Construct mining equipment
   - Name: build/fisherman
-    Text: Rebuild fisherman cottage
+    Text: Rebuild fisherman's cottage
   - Name: build/herbalist
-    Text: Rebuild herbalist cottage
+    Text: Rebuild herbalist's cottage
   - Name: build/hospital
     Text: Expand field hospital
   - Name: build/hunter
-    Text: Rebuild hunter cottage
+    Text: Rebuild hunter's cottage
   - Name: build/lumberjack
-    Text: Rebuild lumberjack cottage
+    Text: Rebuild lumberjack's cottage
   - Name: build/watchtower
     Text: Rebuild watchtower
   - Name: build/waterCollector
@@ -422,6 +687,135 @@ MonoBehaviour:
     Text: Spring
   - Name: chapter/finale
     Text: Finale
+  - Name: event/label/requirements
+    Text: 'Requirements:'
+  - Name: event/label/success
+    Text: 'Success:'
+  - Name: event/label/failure
+    Text: 'Failure:'
+  - Name: event/animals/title
+    Text: Wild animals
+  - Name: event/bandits/title
+    Text: Bandits
+  - Name: event/cold/title
+    Text: Rapid cooling
+  - Name: event/envoyTharros/title
+    Text: Emissary of Tharros
+  - Name: event/envoySalvante/title
+    Text: Emissary of Salvante
+  - Name: event/epidemic/title
+    Text: Epidemic
+  - Name: event/firewood/title
+    Text: Firewood
+  - Name: event/food/title
+    Text: Food supplies
+  - Name: event/foodPreservation/title
+    Text: Food preservation
+  - Name: event/heat/title
+    Text: Heatwave
+  - Name: event/merchant/title
+    Text: Arrival of the merchant
+  - Name: event/water/title
+    Text: Water reserves
+  - Name: event/animals/description
+    Text: Wild animals are getting closer and closer to the village and are eating
+      up the food supplies. You have to supply the inhabitants with basic tools for
+      defense and prepare traps and snares.
+  - Name: event/bandits/description
+    Text: A group of bandits appeared in the area. They will probably try to rob
+      us. We need to set traps and equip ourselves with weapons.
+  - Name: event/cold/description
+    Text: The weather starts to get crazy, it gets very cold. We need extra firewood
+      to keep people from getting sick.
+  - Name: event/envoyTharros/description
+    Text: An envoy from one of the countries has arrived in the village. In exchange
+      for specific goods, he is able to look at your situation more favorably.
+  - Name: event/envoySalvante/description
+    Text: An envoy from one of the countries has arrived in the village. In exchange
+      for specific goods, he is able to look at your situation more favorably.
+  - Name: event/epidemic/description
+    Text: People in the village are starting to get sick. We need to prepare medicine.
+  - Name: event/firewood/description
+    Text: It's too cold. We need firewood to heat the cottages.
+  - Name: event/food/description
+    Text: We need to stockpile food for the next few weeks.
+  - Name: event/foodPreservation/description
+    Text: Our food is slowly spoiling. If we do not preserve it properly, it will
+      not be fit for use.
+  - Name: event/heat/description
+    Text: Temperatures are getting more and more oppressive. We need to prepare additional
+      water supplies.
+  - Name: event/merchant/description
+    Text: A merchant stopped near the village. Maybe it's worth trading with him?
+  - Name: event/water/description
+    Text: We need to accumulate a supply of water for the next few weeks.
+  - Name: messages/ending1/title
+    Text: Death of the villagers
+  - Name: messages/ending2/title
+    Text: Destruction of the village
+  - Name: messages/ending3/title
+    Text: Joining Tharros
+  - Name: messages/ending4/title
+    Text: Joining Salvante
+  - Name: messages/ending5/title
+    Text: Declaration of independent territory
+  - Name: messages/finale/title
+    Text: The truce is coming to an end
+  - Name: messages/fall/title
+    Text: Autumn begins.
+  - Name: messages/prologue/title
+    Text: Prologue
+  - Name: messages/spring/title
+    Text: Spring begins.
+  - Name: messages/winter/title
+    Text: Winter begins.
+  - Name: messages/summer/title
+    Text: Summer begins.
+  - Name: messages/ending1/description
+    Text: Living conditions in the village were worsening day by day. The settlers
+      had less and less strength, were more often ill and suffered from lack of basic
+      resources. With time, the first deaths occurred, and the situation began to
+      deteriorate. In the end, no one managed to survive even until the slowly returning
+      conflict was resolved.
+  - Name: messages/ending2/description
+    Text: The time of truce is coming to an end. The inhabitants have failed to communicate
+      with any of the representatives of the rulers. Both armies enter the disputed
+      areas, the village is completely destroyed. Hiding people pursued by the countries
+      are arrested or killed. Others are robbed of all possessions and left to die.
+  - Name: messages/ending3/description
+    Text: The time of truce comes to an end. The villagers succeed in negotiating
+      voluntary incorporation into the kingdom of Tharros. Most of the inhabitants
+      are pardoned from minor crimes, become citizens of this expansive power, and
+      the village area is taken over and adapted for mining.
+  - Name: messages/ending4/description
+    Text: The time of truce comes to an end. The inhabitants manage to negotiate
+      a voluntary annexation to the merchant state of Salvante. The inhabitants are
+      pardoned of any guilt, become citizens of this rich country, and are given
+      the opportunity to stay on familiar lands. The mining industry begins to expand
+      in the village.
+  - Name: messages/ending5/description
+    Text: The time of truce is coming to an end. The inhabitants manage to negotiate
+      a voluntary annexation to the merchant state of Salvante. The inhabitants are
+      pardoned of any guilt, become citizens of this rich country, and are given
+      the opportunity to stay on familiar lands. The mining industry begins to expand
+      in the village.
+  - Name: messages/prologue/description
+    Text: After a long, bloody, and fruitless territorial war between the kingdom
+      of Tharros and the merchant oligarchy of Salvante, a temporary truce is called.
+      Lead the people - deserters, surviving citizens, exiles - ensure their survival
+      in these disputed lands. Fertile and rich in various natural resources, these
+      lands are also full of dangers, such as dangerous animals and plunderers looking
+      for easy loot.
+  - Name: messages/fall/description
+    Text: Every day it gets colder and colder...
+  - Name: messages/finale/description
+    Text: It's time to resolve...
+  - Name: messages/spring/description
+    Text: Along the borders, troops are slowly gathering...
+  - Name: messages/summer/description
+    Text: It should be safe here for now...
+  - Name: messages/winter/description
+    Text: A thin layer of snow covered the entire area...
   - Name: resource/food
     Text: Food
   - Name: resource/gems
@@ -446,3 +840,26 @@ MonoBehaviour:
     Text: Water
   - Name: resource/wood
     Text: Wood
+  - Name: game/help/description
+    Text: "During each turn, assign citizens to appropriate tasks on the map. Some
+      actions have attributes that will allow you to obtain more materials. \n\nYou
+      can see more details about characters and actions by holding your mouse cursor
+      over them. \n\nKeep an eye on emerging events on the panel on the right. They
+      are crucial to survival.\n\nRebuild your village to gain additional actions
+      or rewards. \n\nCollect reputation to give your settlers a better fate after
+      the truce ends.\n \nEach settler is characterized by a set of stats, his health,
+      his reputation, and:\n<sprite index=1> - Strength\n<sprite index=2> - Gathering\n<sprite
+      index=6> - Processing\n<sprite index=7> - Diplomacy\n<sprite index=5> - Intelligence\n
+      \nEach point increases the number of resources harvested by 20% of the default
+      value per point on actions of that type.  \n\nAdditionally, each diplomacy
+      point gives a +6% bonus to the price of items sold and -6% to the price of
+      items bought.\n\nIn addition to this, each point of intelligence causes another
+      random stat to increase at the beginning of a new chapter.\n\nHealth represents
+      the condition and fitness for work of a given inhabitant. It influences the
+      effective stats of the character. There are several levels of health:\n\nLevel
+      4: No modifiers.\nLevel 3: -1 point to all character stats. \nLevel 2 -2 points
+      to all character stats.\nLevel 1: -4 points to all character stats.\nLevel
+      0: Causes the death of the occupant.\n\nYou can increase a character's health
+      using actions in the field hospital.\n\nThe settler's reputation affects the
+      effective charisma value when interacting with a country.\n\nTo hide this information,
+      press the Help button again."

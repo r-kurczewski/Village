@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Events
+  m_EditorClassIdentifier: 
+  m_GroupName: Events
+  m_Data:
+    m_SerializedData: []
+  m_GUID: dd9591dadf4b85e47aa28c1bae97887a
+  m_SerializeEntries:
+  - m_GUID: d7271922259d3644e90d697b30bf7ce9
+    m_Address: Animals
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - events
+    m_MainAsset: {fileID: 11400000, guid: d7271922259d3644e90d697b30bf7ce9, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: d7271922259d3644e90d697b30bf7ce9, type: 2}
+  - m_GUID: 17e2ab5458cd4c54e98aa3a13a767e1f
+    m_Address: Bandits I
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - events
+    m_MainAsset: {fileID: 11400000, guid: 17e2ab5458cd4c54e98aa3a13a767e1f, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 17e2ab5458cd4c54e98aa3a13a767e1f, type: 2}
+  - m_GUID: d9041afc69d39564481daddc345f5b2c
+    m_Address: Bandits II
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - events
+    m_MainAsset: {fileID: 11400000, guid: d9041afc69d39564481daddc345f5b2c, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: d9041afc69d39564481daddc345f5b2c, type: 2}
+  - m_GUID: a70580612a3d21746aad845f15a5cd78
+    m_Address: Bandits III
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - events
+    m_MainAsset: {fileID: 11400000, guid: a70580612a3d21746aad845f15a5cd78, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: a70580612a3d21746aad845f15a5cd78, type: 2}
+  - m_GUID: 1fefb57b2ac9e2e498bfea0252be3e5e
+    m_Address: Cold
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - events
+    m_MainAsset: {fileID: 11400000, guid: 1fefb57b2ac9e2e498bfea0252be3e5e, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 1fefb57b2ac9e2e498bfea0252be3e5e, type: 2}
+  - m_GUID: 11cda4331a1c20a45a0fd256800a66e4
+    m_Address: Envoy - Salvante I
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - events
+    m_MainAsset: {fileID: 11400000, guid: 11cda4331a1c20a45a0fd256800a66e4, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 11cda4331a1c20a45a0fd256800a66e4, type: 2}
+  - m_GUID: b4da1c06bf4cf6e489fb9e756ac31e37
+    m_Address: Envoy - Salvante II
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - events
+    m_MainAsset: {fileID: 11400000, guid: b4da1c06bf4cf6e489fb9e756ac31e37, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: b4da1c06bf4cf6e489fb9e756ac31e37, type: 2}
+  - m_GUID: d2a18d5722908e640822431398fcbdb5
+    m_Address: Envoy - Tharros I
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - events
+    m_MainAsset: {fileID: 11400000, guid: d2a18d5722908e640822431398fcbdb5, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: d2a18d5722908e640822431398fcbdb5, type: 2}
+  - m_GUID: 9e65e3d25eea9714dbb1fc2942069234
+    m_Address: Envoy - Tharros II
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - events
+    m_MainAsset: {fileID: 11400000, guid: 9e65e3d25eea9714dbb1fc2942069234, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 9e65e3d25eea9714dbb1fc2942069234, type: 2}
+  - m_GUID: 06b17f862b1023041822d8d5a7ec4b8e
+    m_Address: Epidemic
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - events
+    m_MainAsset: {fileID: 11400000, guid: 06b17f862b1023041822d8d5a7ec4b8e, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 06b17f862b1023041822d8d5a7ec4b8e, type: 2}
+  - m_GUID: 3041724d13eafec449a4825b232116a2
+    m_Address: Firewood I
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - events
+    m_MainAsset: {fileID: 11400000, guid: 3041724d13eafec449a4825b232116a2, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 3041724d13eafec449a4825b232116a2, type: 2}
+  - m_GUID: 076fd54e98106e74083d6214fae3d4e7
+    m_Address: Firewood II
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - events
+    m_MainAsset: {fileID: 11400000, guid: 076fd54e98106e74083d6214fae3d4e7, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 076fd54e98106e74083d6214fae3d4e7, type: 2}
+  - m_GUID: 70aec7321b83d3642b2d48236d0f2b09
+    m_Address: Food I
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - events
+    m_MainAsset: {fileID: 11400000, guid: 70aec7321b83d3642b2d48236d0f2b09, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 70aec7321b83d3642b2d48236d0f2b09, type: 2}
+  - m_GUID: 7fa5f0ce12a554b44b97546980ac859e
+    m_Address: Food II
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - events
+    m_MainAsset: {fileID: 11400000, guid: 7fa5f0ce12a554b44b97546980ac859e, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 7fa5f0ce12a554b44b97546980ac859e, type: 2}
+  - m_GUID: 2288dfadcbf30fd488db6d31b0dadc5c
+    m_Address: Food preservation
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - events
+    m_MainAsset: {fileID: 11400000, guid: 2288dfadcbf30fd488db6d31b0dadc5c, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 2288dfadcbf30fd488db6d31b0dadc5c, type: 2}
+  - m_GUID: f7e2dc895aaa87447b668d4b78426295
+    m_Address: Heat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - events
+    m_MainAsset: {fileID: 11400000, guid: f7e2dc895aaa87447b668d4b78426295, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: f7e2dc895aaa87447b668d4b78426295, type: 2}
+  - m_GUID: 791799ae627974f44bad6292cbdc8979
+    m_Address: Merchant
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - events
+    m_MainAsset: {fileID: 11400000, guid: 791799ae627974f44bad6292cbdc8979, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 791799ae627974f44bad6292cbdc8979, type: 2}
+  - m_GUID: 9aa164f31c91b3246bf66a9d20e4aa69
+    m_Address: Water
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - events
+    m_MainAsset: {fileID: 11400000, guid: 9aa164f31c91b3246bf66a9d20e4aa69, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 9aa164f31c91b3246bf66a9d20e4aa69, type: 2}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: c99fc6eb275dc4946a4c65cf931d69b1, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 137935b73425ce645a5e45001fad4513, type: 2}
+    - {fileID: 11400000, guid: 01565eba11de5494db18abcbcac2dc1e, type: 2}

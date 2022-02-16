@@ -168,6 +168,8 @@ MonoBehaviour:
     Text: "Powr\xF3t do menu"
   - Name: game/startGame
     Text: "Rozpocznij gr\u0119"
+  - Name: game/loadGame
+    Text: "Wczytaj gr\u0119"
   - Name: game/exit
     Text: "Zako\u0144cz"
   - Name: game/credits
@@ -589,6 +591,8 @@ MonoBehaviour:
     Text: Back to menu
   - Name: game/startGame
     Text: Start new game
+  - Name: game/loadGame
+    Text: Load game
   - Name: game/exit
     Text: Exit game
   - Name: game/credits

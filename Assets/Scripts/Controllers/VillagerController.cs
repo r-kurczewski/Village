@@ -92,5 +92,10 @@ namespace Village.Controllers
 		{
 			return villagers.Count;
 		}
+
+		public List<Villager> GetVillagers()
+		{
+			return villagers.Select(x=> x.Villager).ToList();
+		}
 	}
 }

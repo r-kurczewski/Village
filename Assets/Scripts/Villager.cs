@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using Village.Controllers;
 using Village.Scriptables;
 using Random = UnityEngine.Random;
 using static Village.Controllers.GameController;
@@ -11,6 +9,7 @@ using static Village.Controllers.GameController;
 [SelectionBase]
 public class Villager : MonoBehaviour
 {
+	[SerializeReference]
 	public VillagerBase villagerBase;
 
 	[SerializeField]
@@ -51,6 +50,11 @@ public class Villager : MonoBehaviour
 		return stats.First(x => x.stat == stat);
 	}
 
+	public void SetStat(VillagerStat stat, int value)
+	{
+		GetStat(stat).Amount = value;
+	}
+
 	public int GetBaseStatValue(VillagerStat stat)
 	{
 		return GetStat(stat).Amount;
@@ -81,11 +85,6 @@ public class Villager : MonoBehaviour
 				Debug.LogWarning("Health error: " + Health);
 				return -4;
 		}
-	}
-
-	public void SetStat(VillagerStat stat, int value)
-	{
-		GetStat(stat).Amount = value;
 	}
 
 	public void ApplyIntelligenceBonus()
@@ -138,5 +137,11 @@ public class Villager : MonoBehaviour
 			diplomacy,
 			intelligence;
 
+	}
+
+	[Serializable]
+	public class SaveData
+	{
+		public VillagerBase villagerBase;
 	}
 }

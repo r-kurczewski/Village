@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Villagers
+  m_EditorClassIdentifier: 
+  m_GroupName: Villagers
+  m_Data:
+    m_SerializedData: []
+  m_GUID: eb54ee42d9f1fbd4aa0e12edbe1ebeb3
+  m_SerializeEntries:
+  - m_GUID: 2455fb0bd75ee7a4c86d2e615b823ec5
+    m_Address: Edmund
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - villagers
+    m_MainAsset: {fileID: 11400000, guid: 2455fb0bd75ee7a4c86d2e615b823ec5, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 2455fb0bd75ee7a4c86d2e615b823ec5, type: 2}
+  - m_GUID: 012be5e19b9316b4eb549a139430c532
+    m_Address: Eleonore
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - villagers
+    m_MainAsset: {fileID: 11400000, guid: 012be5e19b9316b4eb549a139430c532, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 012be5e19b9316b4eb549a139430c532, type: 2}
+  - m_GUID: 5161a2032bb2a58408f8f4af0767d318
+    m_Address: Gisele
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - villagers
+    m_MainAsset: {fileID: 11400000, guid: 5161a2032bb2a58408f8f4af0767d318, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 5161a2032bb2a58408f8f4af0767d318, type: 2}
+  - m_GUID: 270a192ee525ff745887cc73ecfe295e
+    m_Address: Godric
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - villagers
+    m_MainAsset: {fileID: 11400000, guid: 270a192ee525ff745887cc73ecfe295e, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 270a192ee525ff745887cc73ecfe295e, type: 2}
+  - m_GUID: cca8986f11986054cb903e51665c20fa
+    m_Address: Idalia
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - villagers
+    m_MainAsset: {fileID: 11400000, guid: cca8986f11986054cb903e51665c20fa, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: cca8986f11986054cb903e51665c20fa, type: 2}
+  - m_GUID: 3998dea12e5cf7f42b9d1d1c839f070d
+    m_Address: Petra
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - villagers
+    m_MainAsset: {fileID: 11400000, guid: 3998dea12e5cf7f42b9d1d1c839f070d, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 3998dea12e5cf7f42b9d1d1c839f070d, type: 2}
+  - m_GUID: 720886d416b95934e8ef52142b0c8282
+    m_Address: Rudolf
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - villagers
+    m_MainAsset: {fileID: 11400000, guid: 720886d416b95934e8ef52142b0c8282, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 720886d416b95934e8ef52142b0c8282, type: 2}
+  - m_GUID: 9cf42f0bf11b64a458928b4afb43f8d0
+    m_Address: Wilfred
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - villagers
+    m_MainAsset: {fileID: 11400000, guid: 9cf42f0bf11b64a458928b4afb43f8d0, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 9cf42f0bf11b64a458928b4afb43f8d0, type: 2}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: c99fc6eb275dc4946a4c65cf931d69b1, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 8b6c910ea32f4e245a64ad9a7baae12d, type: 2}
+    - {fileID: 11400000, guid: 02c8716294fdc6a4caedf3fc00b05be2, type: 2}

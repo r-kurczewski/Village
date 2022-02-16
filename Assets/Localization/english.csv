@@ -6,6 +6,7 @@ game/music,Music
 game/language,Language
 game/backToMenu,Back to menu
 game/startGame,Start new game
+game/loadGame,Load game
 game/exit,Exit game
 game/credits,Credits
 game/turn,Turn {turn}

@@ -168,5 +168,10 @@ namespace Village.Controllers
 		{
 			AudioController.instance.PlaySound(sound);
 		}
+
+		public List<Villager> GetVillagers()
+		{
+			return villagerController.GetVillagers();
+		}
 	}
 }

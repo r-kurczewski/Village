@@ -6,6 +6,7 @@ game/music,Muzyka
 game/language,Język
 game/backToMenu,Powrót do menu
 game/startGame,Rozpocznij grę
+game/loadGame,Wczytaj grę
 game/exit,Zakończ
 game/credits,Autorzy
 game/currentChapter,{chapter}

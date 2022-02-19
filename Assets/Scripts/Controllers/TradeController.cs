@@ -81,11 +81,22 @@ namespace Village.Controllers
 
 		private int GetTradeMultiplier(Villager villager)
 		{
-			return Mathf.RoundToInt(villager.Diplomacy * TRADE_DISCOUNT * 100);
+			return Mathf.RoundToInt(villager.EffectiveDiplomacy * TRADE_DISCOUNT * 100);
 		}
 		public void LoadTrades(List<TradeOffer> trades)
 		{
 			merchantTrades = trades;
+		}
+
+		public void LoadTrades(List<TradeOffer.SaveData> save, Dictionary<string, ScriptableObject> assets)
+		{
+			merchantTrades = new List<TradeOffer>();
+			foreach (var trade in save)
+			{
+				Resource resource = assets[trade.resourceName] as Resource;
+				merchantTrades.Add(new TradeOffer(resource, trade.tradeMode));
+			}
+			
 		}
 
 		public void ShowTradeWindow()
@@ -160,6 +171,11 @@ namespace Village.Controllers
 				}
 			}
 			return gold;
+		}
+
+		public List<TradeOffer.SaveData> SaveTrades()
+		{
+			return merchantTrades.Select(x => x.Save()).ToList();
 		}
 	}
 }

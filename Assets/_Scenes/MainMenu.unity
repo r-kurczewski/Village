@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.31772873, g: 0.40705436, b: 0.7924528, a: 0.7490196}
+  m_Color: {r: 0.31772873, g: 0.40705436, b: 0.7924528, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1238,7 +1238,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1794347581}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadAssetsScene
+        m_MethodName: LoadCreditsScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1261,7 +1261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.31772873, g: 0.40705436, b: 0.7924528, a: 0.7490196}
+  m_Color: {r: 0.31772873, g: 0.40705436, b: 0.7924528, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1779,7 +1779,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1794347581}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadProlog
+        m_MethodName: StartNewGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1802,7 +1802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.31772873, g: 0.40705436, b: 0.7924528, a: 0.7490196}
+  m_Color: {r: 0.31772873, g: 0.40705436, b: 0.7924528, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1839,6 +1839,7 @@ GameObject:
   - component: {fileID: 1289672241}
   - component: {fileID: 1289672240}
   - component: {fileID: 1289672239}
+  - component: {fileID: 1289672242}
   m_Layer: 5
   m_Name: Load
   m_TagString: Untagged
@@ -1912,7 +1913,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1794347581}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadProlog
+        m_MethodName: LoadPreviousGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1935,7 +1936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.31772873, g: 0.40705436, b: 0.7924528, a: 0.7490196}
+  m_Color: {r: 0.31772873, g: 0.40705436, b: 0.7924528, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1960,6 +1961,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289672237}
   m_CullTransparentMesh: 1
+--- !u!114 &1289672242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289672237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80c660d3a08254441898f0897e6c5ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1289672239}
 --- !u!1 &1312704711
 GameObject:
   m_ObjectHideFlags: 0
@@ -3587,7 +3601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.31772873, g: 0.40705436, b: 0.7924528, a: 0.7490196}
+  m_Color: {r: 0.31772873, g: 0.40705436, b: 0.7924528, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

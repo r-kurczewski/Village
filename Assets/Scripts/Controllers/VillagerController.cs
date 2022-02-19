@@ -6,6 +6,8 @@ using UnityEngine;
 using Village.Scriptables;
 using Village.Views;
 using UnityEngine.Serialization;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace Village.Controllers
 {
@@ -36,11 +38,21 @@ namespace Village.Controllers
 			}
 		}
 
-		public Villager CreateNewVillager(VillagerBase villagerBase)
+		public Villager CreateVillager(VillagerBase villagerBase)
 		{
 			VillagerView view = Instantiate(villagerPrefab, transform);
 			Villager villager = view.GetComponent<Villager>();
 			villager.Load(villagerBase);
+			view.Load(villager, this);
+			villagers.Add(view);
+			return villager;
+		}
+
+		public Villager CreateVillager(Villager.SaveData data, VillagerBase villagerBase)
+		{
+			VillagerView view = Instantiate(villagerPrefab, transform);
+			Villager villager = view.GetComponent<Villager>();
+			villager.Load(data, villagerBase);
 			view.Load(villager, this);
 			villagers.Add(view);
 			return villager;
@@ -51,7 +63,7 @@ namespace Village.Controllers
 			var randomVillagerBases = villagerStartPool.OrderBy(x => UnityEngine.Random.value).Take(count);
 			foreach (var villagerBase in randomVillagerBases)
 			{
-				CreateNewVillager(villagerBase);
+				CreateVillager(villagerBase);
 			}
 		}
 
@@ -88,14 +100,23 @@ namespace Village.Controllers
 			villagers.ForEach(x => x.Villager.Health += value);
 		}
 
+		public void LoadVillagers(List<Villager.SaveData> save, Dictionary<string, ScriptableObject> assets)
+		{
+			foreach (var villagerData in save) 
+			{
+				VillagerBase villagerBase = assets[villagerData.villagerName] as VillagerBase;
+				CreateVillager(villagerData, villagerBase);
+			}
+		}
+
 		public int GetVillagersCount()
 		{
 			return villagers.Count;
 		}
 
-		public List<Villager> GetVillagers()
+		public List<Villager.SaveData> SaveVillagers()
 		{
-			return villagers.Select(x=> x.Villager).ToList();
+			return villagers.Select(x => x.Villager.Save()).ToList();
 		}
 	}
 }

@@ -16,6 +16,9 @@ game/help,Pomoc
 game/mainMenu,Menu
 game/clickToContinue,"Kliknij, aby kontynuować..."
 game/loading,"Ładowanie..."
+trade/sell,Sprzedaj
+trade/buy,Kup
+trade/accept,Akceptuj
 action/battleground,Pobojowisko
 action/craftMedicine,Tworzenie medykamentów
 action/cutTrees,Wycinka drzew

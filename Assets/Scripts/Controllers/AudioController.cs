@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,6 +41,21 @@ namespace Village.Controllers
 			{
 				PlayMusic(music);
 			}
+		}
+
+		public void SetMusic(AudioClip clip)
+		{
+			audioPlayer.clip = clip;
+		}
+
+		public void PlayMusic()
+		{
+			audioPlayer.Play();
+		}
+
+		public void Stop()
+		{
+			audioPlayer.Stop();
 		}
 	}
 }

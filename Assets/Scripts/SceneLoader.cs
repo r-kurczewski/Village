@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Village.Controllers;
 
 public class SceneLoader : MonoBehaviour
 {
-    public void LoadGame()
+	public void LoadGameScene()
 	{
 		SceneManager.LoadScene("GameScene");
 	}
@@ -25,7 +26,7 @@ public class SceneLoader : MonoBehaviour
 		SceneManager.LoadScene("MainMenu");
 	}
 
-	public void LoadAssetsScene()
+	public void LoadCreditsScene()
 	{
 		SceneManager.LoadScene("Assets");
 	}
@@ -38,5 +39,17 @@ public class SceneLoader : MonoBehaviour
 	public void ExitGame()
 	{
 		Application.Quit();
+	}
+
+	public void StartNewGame()
+	{
+		SaveController.save = null;
+		LoadProlog();
+	}
+
+	public void LoadPreviousGame()
+	{
+		SaveController.LoadSaveData();
+		LoadGameScene();
 	}
 }

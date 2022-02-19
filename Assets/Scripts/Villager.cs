@@ -5,6 +5,8 @@ using UnityEngine;
 using Village.Scriptables;
 using Random = UnityEngine.Random;
 using static Village.Controllers.GameController;
+using System.Runtime.Serialization;
+using UnityEngine.AddressableAssets;
 
 [SelectionBase]
 public class Villager : MonoBehaviour
@@ -13,7 +15,12 @@ public class Villager : MonoBehaviour
 	public VillagerBase villagerBase;
 
 	[SerializeField]
-	private List<VillagerStatAmount> stats;
+	private int
+		strength,
+		gathering,
+		crafting,
+		diplomacy,
+		intelligence;
 
 	[SerializeField, Range(0, 4)]
 	private int _health;
@@ -21,48 +28,121 @@ public class Villager : MonoBehaviour
 	[SerializeField]
 	private UnityData references;
 
-	public int BaseStrength => GetBaseStatValue(references.strength);
-	public int BaseGathering => GetBaseStatValue(references.gathering);
-	public int BaseCrafting => GetBaseStatValue(references.crafting);
-	public int BaseDiplomacy => GetBaseStatValue(references.diplomacy);
-	public int BaseIntelligence => GetBaseStatValue(references.intelligence);
-	public int Strength => GetEffectiveStatValue(references.strength);
-	public int Gathering => GetEffectiveStatValue(references.gathering);
-	public int Crafting => GetEffectiveStatValue(references.crafting);
-	public int Diplomacy => GetEffectiveStatValue(references.diplomacy);
-	public int Intelligence => GetEffectiveStatValue(references.intelligence);
+	#region Stats properties
+
+	public int BaseStrength => villagerBase.baseStrength;
+	public int BaseGathering => villagerBase.baseGathering;
+	public int BaseCrafting => villagerBase.baseCrafting;
+	public int BaseDiplomacy => villagerBase.baseDiplomacy;
+	public int BaseIntelligence => villagerBase.baseIntelligence;
+
+	public int Strength => strength;
+	public int Gathering => gathering;
+	public int Crafting => crafting;
+	public int Diplomacy => diplomacy;
+	public int Intelligence => intelligence;
+
+	public int EffectiveStrength => GetEffectiveStatValue(references.strength);
+	public int EffectiveGathering => GetEffectiveStatValue(references.gathering);
+	public int EffectiveCrafting => GetEffectiveStatValue(references.crafting);
+	public int EffectiveDiplomacy => GetEffectiveStatValue(references.diplomacy);
+	public int EffectiveIntelligence => GetEffectiveStatValue(references.intelligence);
+
+	#endregion
 
 	public int Health { get => _health; set => _health = Mathf.Clamp(value, 0, HEALTH_MAX); }
 
-	public void Load(VillagerBase villagerBase)
+	public void Load(VillagerBase vBase)
 	{
-		this.villagerBase = villagerBase;
-		SetStat(references.strength, villagerBase.baseStrength);
-		SetStat(references.gathering, villagerBase.baseGathering);
-		SetStat(references.crafting, villagerBase.baseCrafting);
-		SetStat(references.diplomacy, villagerBase.baseDiplomacy);
-		SetStat(references.intelligence, villagerBase.baseIntelligence);
+		villagerBase = vBase;
+		strength = vBase.baseStrength;
+		gathering = vBase.baseGathering;
+		crafting = vBase.baseCrafting;
+		diplomacy = vBase.baseDiplomacy;
+		intelligence = vBase.baseIntelligence;
 		Health = HEALTH_MAX;
 	}
 
-	private VillagerStatAmount GetStat(VillagerStat stat)
+	public void Load(SaveData data, VillagerBase vBase)
 	{
-		return stats.First(x => x.stat == stat);
+		villagerBase = vBase;
+		strength = data.strength;
+		gathering = data.gathering;
+		crafting = data.crafting;
+		diplomacy = data.diplomacy;
+		intelligence = data.intelligence;
+		Health = data.health;
 	}
 
-	public void SetStat(VillagerStat stat, int value)
+	private ref int GetStatReference(VillagerStat statRef)
 	{
-		GetStat(stat).Amount = value;
+		if (statRef == references.strength)
+		{
+			return ref strength;
+		}
+		else if (statRef == references.gathering)
+		{
+			return ref gathering;
+		}
+		else if (statRef == references.crafting)
+		{
+			return ref crafting;
+		}
+		else if (statRef == references.diplomacy)
+		{
+			return ref diplomacy;
+		}
+		else if (statRef == references.intelligence)
+		{
+			return ref intelligence;
+		}
+		else
+		{
+			throw new InvalidOperationException("Invalid villager stat");
+		}
 	}
 
-	public int GetBaseStatValue(VillagerStat stat)
+	private int GetBaseStat(VillagerStat statRef)
 	{
-		return GetStat(stat).Amount;
+		if (statRef == references.strength)
+		{
+			return villagerBase.baseStrength;
+		}
+		else if (statRef == references.gathering)
+		{
+			return villagerBase.baseGathering;
+		}
+		else if (statRef == references.crafting)
+		{
+			return villagerBase.baseCrafting;
+		}
+		else if (statRef == references.diplomacy)
+		{
+			return villagerBase.baseDiplomacy;
+		}
+		else if (statRef == references.intelligence)
+		{
+			return villagerBase.baseIntelligence;
+		}
+		else
+		{
+			throw new InvalidOperationException("Invalid villager stat");
+		}
+	}
+
+	public int GetStat(VillagerStat statRef)
+	{
+		return GetStatReference(statRef);
+	}
+
+	private void SetStat(VillagerStat stat, int value)
+	{
+		GetStatReference(stat) = value;
 	}
 
 	public int GetEffectiveStatValue(VillagerStat stat)
 	{
-		return Mathf.Clamp(GetBaseStatValue(stat) + GetHealthStatModfier(), 0, STAT_MAX);
+		return Mathf.Clamp(GetStat(stat) + GetHealthStatModfier(), 0, STAT_MAX);
 	}
 
 	private int GetHealthStatModfier()
@@ -89,13 +169,45 @@ public class Villager : MonoBehaviour
 
 	public void ApplyIntelligenceBonus()
 	{
-		var boostableStats = new List<VillagerStatAmount>(stats);
-		boostableStats.Remove(GetStat(references.intelligence));
-		int intelligence = BaseIntelligence;
 		for (int i = 0; i < intelligence; i++)
 		{
-			boostableStats[Random.Range(0, boostableStats.Count)].Amount++;
+			int boostedStat = Random.Range(0, 4);
+			switch (boostedStat)
+			{
+				case 0:
+					strength++;
+					break;
+
+				case 1:
+					gathering++;
+					break;
+
+				case 2:
+					crafting++;
+					break;
+
+				case 3:
+					diplomacy++;
+					break;
+
+				default:
+					Debug.LogError("Invalid number");
+					break;
+			}
 		}
+	}
+
+	public SaveData Save()
+	{
+		var data = new SaveData();
+		data.villagerName = villagerBase.name;
+		data.strength = strength;
+		data.gathering = gathering;
+		data.crafting = crafting;
+		data.diplomacy = diplomacy;
+		data.intelligence = intelligence;
+		data.health = Health;
+		return data;
 	}
 
 	[Serializable]
@@ -142,6 +254,15 @@ public class Villager : MonoBehaviour
 	[Serializable]
 	public class SaveData
 	{
-		public VillagerBase villagerBase;
+		public string villagerName;
+		public int
+			health,
+			strength,
+			gathering,
+			crafting,
+			diplomacy,
+			intelligence;
+
+
 	}
 }

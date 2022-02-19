@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7782a1efc1c938149a0f5c4ed333f0d0, type: 3}
   m_Name: TradeEffect
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 26153c172044d4e409668daab3d895b3, type: 3}
+  icon: {fileID: 21300000, guid: 8321c3a1b1d0bcb48a66045c0ce348b6, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}

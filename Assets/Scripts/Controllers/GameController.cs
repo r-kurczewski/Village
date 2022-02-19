@@ -1,11 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Serialization;
-using UnityEngine.SceneManagement;
-using Village.Views;
 using Village.Scriptables;
 
 namespace Village.Controllers
@@ -28,6 +27,8 @@ namespace Village.Controllers
 		public const int MERCHANT_SELL_ITEMS_COUNT = 4;
 		public const int MERCHANT_BUY_ITEMS_COUNT = 4;
 
+		public bool autoSave = true;
+
 		[SerializeField]
 		private ResourceController resourceController;
 
@@ -46,9 +47,12 @@ namespace Village.Controllers
 		[SerializeField]
 		private TradeController tradeController;
 
-		public GameChapter Chapter => turnController.Chapter;
+		[SerializeField]
+		private GameObject loadingScreen;
 
-		public int Turn => turnController.Turn;
+		private AudioController AudioController => AudioController.instance;
+
+		public GameChapter Chapter => turnController.Chapter;
 
 		private void Awake()
 		{
@@ -60,17 +64,60 @@ namespace Village.Controllers
 		}
 		private void Start()
 		{
+			var save = SaveController.save;
+			if (save != null)
+			{
+				StartCoroutine(ILoadPreviousGame(save));
+			}
+			else
+			{
+				StartNewGame();
+			}
+		}
+
+		private void StartNewGame()
+		{
+			Debug.Log("Starting new game...");
 			villagerController.CreateStartVillagers(START_VILLAGERS);
 			locationController.LoadLoctions();
 			resourceController.LoadResources();
 			TurnUpdate();
+			PlayMusic();
+		}
+
+		private IEnumerator ILoadPreviousGame(SaveController.SaveData save)
+		{
+			Debug.Log("Loading save...");
+			loadingScreen.SetActive(true);
+
+			var assets = new Dictionary<string, ScriptableObject>();
+			var assetsHandle = Addressables.LoadAssetsAsync<ScriptableObject>("village", (asset) =>
+			{
+				assets.Add(asset.name, asset);
+			});
+
+			locationController.LoadLoctions();
+			turnController.LoadTurnAndChapter(save.turn);
+			resourceController.LoadResources(save.resources);
+			locationController.LoadBuildings(save.buildings);
+			eventController.PredictionFactor = save.predictionFactor;
+
+			yield return new WaitUntil(() => assetsHandle.IsDone);
+
+			villagerController.LoadVillagers(save.villagers, assets);
+			eventController.LoadCurrentEvents(save.currentEvents, assets);
+			eventController.LoadChapterEvents(save.chapterEvents, assets);
+			tradeController.LoadTrades(save.merchantTrades, assets);
+			UpdateGUI();
+			PlayMusic();
+
+			loadingScreen.SetActive(false);
 		}
 
 		private void TurnUpdate()
 		{
 			turnController.ChapterUpdate();
 			eventController.EventUpdate();
-			locationController.LocationUpdate();
 			locationController.ApplyTurnBonuses();
 			villagerController.VillagerUpdate();
 			turnController.CheckIfGameEnds();
@@ -96,7 +143,6 @@ namespace Village.Controllers
 		{
 			return eventController.PredictionFactor;
 		}
-
 
 		public int GetResourceAmount(Resource resource)
 		{
@@ -142,6 +188,7 @@ namespace Village.Controllers
 			villagerController.MoveVillagersToPanel();
 			turnController.MoveToNextTurn();
 			TurnUpdate();
+			if(autoSave) SaveController.SaveGameState();
 		}
 
 		public void IncreasePredictionFactor()
@@ -152,26 +199,73 @@ namespace Village.Controllers
 			eventController.EventUpdate();
 		}
 
+		public void SetPredictionFactor(int value)
+		{
+			eventController.PredictionFactor = value;
+		}
+
 		public void UpdateGUI()
 		{
 			resourceController.RefreshGUI();
 			villagerController.RefreshGUI();
+			locationController.RefreshGUI();
 			turnController.RefreshGUI();
+			eventController.RefreshGUI();
+		}
+
+		public void PlayMusic()
+		{
+			AudioController.PlayMusic();
 		}
 
 		public void PlayMusic(AudioClip clip)
 		{
-			AudioController.instance.PlayMusic(clip);
+			AudioController.PlayMusic(clip);
 		}
 
 		public void PlaySound(AudioClip sound)
 		{
-			AudioController.instance.PlaySound(sound);
+			AudioController.PlaySound(sound);
 		}
 
-		public List<Villager> GetVillagers()
+		public void SetMusic(AudioClip clip)
 		{
-			return villagerController.GetVillagers();
+			AudioController.SetMusic(clip);
+		}
+
+		public List<Villager.SaveData> SaveVillagers()
+		{
+			return villagerController.SaveVillagers();
+		}
+
+		public List<Resource.ResourceAmount.SaveData> SaveResources()
+		{
+			return resourceController.SaveResources();
+		}
+
+		public List<GameEvent.SaveData> SaveCurrentEvents()
+		{
+			return eventController.SaveCurrentEvents();
+		}
+
+		public List<GameEvent.SaveData> SaveChapterEvents()
+		{
+			return eventController.SaveChapterEvents();
+		}
+
+		public List<TradeOffer.SaveData> SaveTrades()
+		{
+			return tradeController.SaveTrades();
+		}
+
+		public List<string> SaveBuildings()
+		{
+			return locationController.SaveBuildings();
+		}
+
+		public void ClearSave()
+		{
+			SaveController.ClearSave();
 		}
 	}
 }

@@ -11,7 +11,7 @@ namespace Village.Scriptables
 	[CreateAssetMenu(fileName = "Resource", menuName = "Village/Resource")]
 	public class Resource : Effect
 	{
-		[SerializeField, FormerlySerializedAs("resourceName")]
+		[SerializeField]
 		private string localeResourceName;
 		public int baseCost;
 		public bool tradable = true;
@@ -47,6 +47,20 @@ namespace Village.Scriptables
 			{
 				this.resource = resource;
 				this.amount = amount;
+			}
+			public SaveData Save()
+			{
+				SaveData data = new SaveData();
+				data.resourceName = resource.name;
+				data.amount = amount;
+				return data;
+			}
+
+			[Serializable]
+			public class SaveData
+			{
+				public string resourceName;
+				public int amount;
 			}
 		}
 	}

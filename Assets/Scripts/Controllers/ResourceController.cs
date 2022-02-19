@@ -23,13 +23,18 @@ namespace Village.Controllers
 
 		public void LoadResources()
 		{
-			views = GetComponentsInChildren<ResourceView>().ToList();
 			foreach (var view in views)
 			{
-				view.Reload();
 				resources.Add(new ResourceAmount(view.Resource, 0));
 			}
+		}
 
+		public void LoadResources(List<ResourceAmount.SaveData> save)
+		{
+			for (int i = 0; i < views.Count; i++)
+			{
+				resources.Add(new ResourceAmount(views[i].Resource, save[i].amount));
+			}
 		}
 
 		public void RefreshGUI()
@@ -68,6 +73,11 @@ namespace Village.Controllers
 				.Select(x => new TradeOffer(x, TradeMode.Buy));
 
 			return sell.Concat(buy).ToList();
+		}
+
+		public List<ResourceAmount.SaveData> SaveResources()
+		{
+			return resources.Select(x => x.Save()).ToList();
 		}
 	}
 }

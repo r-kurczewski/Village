@@ -23,7 +23,7 @@ public class TradeOffer
 	public int GetCost(Villager villager)
 	{
 		float cost = resource.baseCost;
-		float villagerBonus = villager.Diplomacy * TRADE_DISCOUNT;
+		float villagerBonus = villager.EffectiveDiplomacy * TRADE_DISCOUNT;
 		if (mode == Sell)
 		{
 			cost *= SELL_VALUE_MULTIPLIER;
@@ -34,5 +34,20 @@ public class TradeOffer
 			cost *= 1 - villagerBonus;
 		}
 		return Mathf.RoundToInt(cost);
+	}
+
+	public SaveData Save()
+	{
+		var data = new SaveData();
+		data.resourceName = resource.name;
+		data.tradeMode = mode;
+		return data;
+	}
+
+	[Serializable]
+	public class SaveData
+	{
+		public string resourceName;
+		public TradeMode tradeMode;
 	}
 }

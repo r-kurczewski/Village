@@ -19,7 +19,7 @@ namespace Village.Scriptables
 		public override float GetMultiplier(Villager villager)
 		{
 			if (villager is null) return 0;
-			return villager.Diplomacy * TRADE_DISCOUNT * 100;
+			return villager.EffectiveDiplomacy * TRADE_DISCOUNT * 100;
 		}
 	}
 }

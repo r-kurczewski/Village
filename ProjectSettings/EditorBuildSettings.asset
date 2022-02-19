@@ -6,22 +6,22 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/_Scenes/MainMenu.unity
     guid: 115438578790b374eba6d0079ff6d6fc
   - enabled: 1
-    path: Assets/Scenes/Settings.unity
+    path: Assets/_Scenes/Settings.unity
     guid: 472347894dadc074caf45f84cf70b7a8
   - enabled: 1
-    path: Assets/Scenes/Assets.unity
+    path: Assets/_Scenes/Assets.unity
     guid: 593d73885bdf98947abf7a1ceb431964
   - enabled: 1
-    path: Assets/Scenes/PrologScene.unity
+    path: Assets/_Scenes/PrologScene.unity
     guid: 8c6a57f60a385684891c597a32b1ddf7
   - enabled: 1
-    path: Assets/Scenes/GameScene.unity
+    path: Assets/_Scenes/GameScene.unity
     guid: 6250ccf61b54bbb45ade4e6ab7d3094e
   - enabled: 1
-    path: Assets/Scenes/EndingScene.unity
+    path: Assets/_Scenes/EndingScene.unity
     guid: 6b0a50b7958f3bc4a8b49466f4f0f3ef
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 600f5b2943dd6cb4487d518598cb6363, type: 2}

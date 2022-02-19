@@ -16,6 +16,9 @@ game/help,Help
 game/mainMenu,Menu
 game/clickToContinue,"Click to continue..."
 game/loading,"Loading..."
+trade/sell,Sell
+trade/buy,Buy
+trade/accept,Accept
 action/battleground,Battleground
 action/craftMedicine,Craft medicine
 action/cutTrees,Cut trees

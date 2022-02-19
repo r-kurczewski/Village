@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Village.Scriptables;
 using Village.Views;
@@ -16,10 +19,10 @@ namespace Village.Controllers
 		public void LoadLoctions()
 		{
 			locations = GetComponentsInChildren<LocationView>();
-			LocationUpdate();
+			RefreshGUI();
 		}
 
-		public void LocationUpdate()
+		public void RefreshGUI()
 		{
 			foreach (var location in locations)
 			{
@@ -46,6 +49,30 @@ namespace Village.Controllers
 				if (view.Location is MapBuilding building)
 				{
 					if (view.Built) building.ApplyTurnBonus();
+				}
+			}
+		}
+
+		public List<string> SaveBuildings()
+		{
+			List<string> buildings = new List<string>();
+			foreach(var view in locations)
+			{
+				if(view.Location is MapBuilding building)
+				{
+					if (view.Built) buildings.Add(building.name);
+				}
+			}
+			return buildings;
+		}
+
+		public void LoadBuildings(List<string> save)
+		{
+			foreach(var view in locations)
+			{
+				if(view.Location is MapBuilding building)
+				{
+					if (save.Contains(building.name)) view.SetAsBuilt();
 				}
 			}
 		}

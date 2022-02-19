@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 546449443}
   - component: {fileID: 546449445}
   - component: {fileID: 546449444}
+  - component: {fileID: 500191189955274024}
   m_Layer: 0
   m_Name: LabelRight
   m_TagString: Untagged
@@ -65,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Kupno
+  m_text: Buy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -134,6 +135,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &500191189955274024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546449442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: trade/buy
+  FallbackText: Buy
 --- !u!1 &877666654
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +369,7 @@ GameObject:
   - component: {fileID: 1491049037}
   - component: {fileID: 1491049039}
   - component: {fileID: 1491049038}
+  - component: {fileID: 719900457083739732}
   m_Layer: 0
   m_Name: LabelLeft
   m_TagString: Untagged
@@ -408,7 +424,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Sprzeda\u017C"
+  m_text: Sell
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -477,6 +493,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &719900457083739732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491049036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: trade/sell
+  FallbackText: Sell
 --- !u!1 &322160916438817777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,6 +1594,7 @@ MonoBehaviour:
   discountLabel: {fileID: 8235371821812871248}
   villagerIcon: {fileID: 5017912073889020522}
   acceptButton: {fileID: 1005054924}
+  raycastBlock: {fileID: 0}
   merchantTrades: []
 --- !u!1 &4346908339806527696
 GameObject:
@@ -2120,6 +2151,7 @@ GameObject:
   - component: {fileID: 8753511277556319865}
   - component: {fileID: 1545747400099703263}
   - component: {fileID: 4321811503861533858}
+  - component: {fileID: 5565635240127680246}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2174,7 +2206,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Akceptuj
+  m_text: Accept
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 107fb786f0aab054a8a2ba06b2bcb977, type: 2}
@@ -2243,6 +2275,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5565635240127680246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6926858027122218589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: trade/accept
+  FallbackText: Accept
 --- !u!1 &7076645498386815078
 GameObject:
   m_ObjectHideFlags: 0

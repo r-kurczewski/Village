@@ -32,17 +32,23 @@ namespace Village.Controllers
 				// New chapter begins
 				if (turn == selected.chapterTurnStart)
 				{
-					chapter = selected;
-					references.panel.color = selected.color;
-					references.view.SetChapterName(selected.ChapterName);
-					instance.PlayMusic(selected.chapterMusic);
+					LoadChapterDetails(selected);
 					LoadChapterMessage(chapter.chapterStartMessage);
 					instance.LoadChapterEvents();
 					instance.ApplyIntelligenceBonus();
+					instance.PlayMusic();
 					break;
 				}
 				else selected = selected.nextChapter;
 			}
+		}
+
+		private void LoadChapterDetails(GameChapter selected)
+		{
+			chapter = selected;
+			references.panel.color = selected.color;
+			references.view.SetChapterName(selected.ChapterName);
+			instance.SetMusic(selected.chapterMusic);
 		}
 
 		public void CheckIfGameEnds()
@@ -51,6 +57,8 @@ namespace Village.Controllers
 			int villagersCount = instance.GetVillagersCount();
 			if (villagersCount == 0 || lastTurn)
 			{
+				instance.autoSave = false;
+				instance.ClearSave();
 				int reputationA = instance.GetResourceAmount(references.countryAReputation);
 				int reputationB = instance.GetResourceAmount(references.countryBReputation);
 				EndingLoader.ending = SelectEnding(villagersCount, reputationA, reputationB);
@@ -94,6 +102,22 @@ namespace Village.Controllers
 				}
 			}
 			return ending;
+		}
+
+		public void LoadTurnAndChapter(int turn)
+		{
+			this.turn = turn;
+			LoadChapter();
+		}
+		public void LoadChapter()
+		{
+			GameChapter selected = chapter;
+			while (turn < selected.chapterTurnStart || turn >= selected.nextChapter.chapterTurnStart)
+			{
+				selected = selected.nextChapter;
+				LoadChapterDetails(selected);
+			}
+			LoadChapterDetails(selected);
 		}
 
 		public void MoveToNextTurn()

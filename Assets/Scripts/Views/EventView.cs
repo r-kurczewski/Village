@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Village.Controllers;
 using static Village.Controllers.GameController;
 
 namespace Village.Views
@@ -13,9 +14,11 @@ namespace Village.Views
 		[SerializeField]
 		private GameEvent gameEvent;
 
-		public int turnsLeft;
+		public int startTurn;
 
 		public GameEvent Event => gameEvent;
+
+		public int TurnsLeft => startTurn + gameEvent.eventBase.turnDuration - instance.GetCurrentTurn();
 
 		#region Unity referencess
 
@@ -41,8 +44,7 @@ namespace Village.Views
 		public void Load(GameEvent gameEvent)
 		{
 			this.gameEvent = gameEvent;
-
-			turnsLeft = gameEvent.eventBase.turnDuration + instance.GetPredictionFactor();
+			startTurn = gameEvent.turn;
 
 			titleText.text = gameEvent.eventBase.Title;
 			descriptionText.text = gameEvent.eventBase.Description;
@@ -82,7 +84,7 @@ namespace Village.Views
 
 		public void RefreshData()
 		{
-			turnText.text = turnsLeft.ToString();
+			turnText.text = TurnsLeft.ToString();
 		}
 
 		public void ChangeDetailsVisibility(bool show)

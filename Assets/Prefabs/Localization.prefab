@@ -188,6 +188,8 @@ MonoBehaviour:
     Text: "Kliknij, aby kontynuowa\u0107..."
   - Name: game/loading
     Text: "\u0141adowanie..."
+  - Name: game/simplifyTooltips
+    Text: Uproszczone podpowiedzi
   - Name: trade/sell
     Text: Sprzedaj
   - Name: trade/buy
@@ -512,7 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: English
+  currentLanguage: Polish
   detectLanguage: 1
   defaultLanguage: English
   saveLoad: 1
@@ -617,6 +619,8 @@ MonoBehaviour:
     Text: Click to continue...
   - Name: game/loading
     Text: Loading...
+  - Name: game/simplifyTooltips
+    Text: Simplified tooltips
   - Name: trade/sell
     Text: Sell
   - Name: trade/buy

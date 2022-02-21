@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.Serialization;
 using Village.Scriptables;
 
@@ -49,6 +50,8 @@ namespace Village.Controllers
 
 		[SerializeField]
 		private GameObject loadingScreen;
+		
+		private AsyncOperationHandle<IList<ScriptableObject>> assetsHandle;
 
 		private AudioController AudioController => AudioController.instance;
 
@@ -64,10 +67,9 @@ namespace Village.Controllers
 		}
 		private void Start()
 		{
-			var save = SaveController.save;
-			if (save != null)
+			if (SaveController.SaveExists)
 			{
-				StartCoroutine(ILoadPreviousGame(save));
+				StartCoroutine(ILoadPreviousGame(SaveController.LoadSaveData()));
 			}
 			else
 			{
@@ -83,6 +85,7 @@ namespace Village.Controllers
 			resourceController.LoadResources();
 			TurnUpdate();
 			PlayMusic();
+			SaveController.SaveGameState();
 		}
 
 		private IEnumerator ILoadPreviousGame(SaveController.SaveData save)
@@ -91,7 +94,7 @@ namespace Village.Controllers
 			loadingScreen.SetActive(true);
 
 			var assets = new Dictionary<string, ScriptableObject>();
-			var assetsHandle = Addressables.LoadAssetsAsync<ScriptableObject>("village", (asset) =>
+			assetsHandle = Addressables.LoadAssetsAsync<ScriptableObject>("village", (asset) =>
 			{
 				assets.Add(asset.name, asset);
 			});

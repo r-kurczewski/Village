@@ -46,11 +46,12 @@ namespace Village.Views.Tooltips
 			actionName.text = slot.Action.ActionName;
 
 			bool hasDescription = slot.Action.Description != null;
+			bool hideDescription = PlayerPrefs.GetInt(GameSettings.hideTooltipsString) != 0;
 			if (hasDescription)
 			{
 				actionDescription.text = slot.Action.Description;
 			}
-			actionDescription.transform.parent.gameObject.SetActive(hasDescription);
+			actionDescription.transform.parent.gameObject.SetActive(hasDescription && !hideDescription);
 
 			if (slot.Action.Stat1)
 			{

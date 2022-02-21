@@ -10,10 +10,11 @@ using UnityEngine.UI;
 
 public class GameSettings : MonoBehaviour
 {
-	private const string languageString = "language";
-	private const string musicVolumeString = "musicVolume";
-	private const string resolutionString = "resolution";
-	private const string fullscreenString = "fullscreen";
+	public const string languageString = "language";
+	public const string musicVolumeString = "musicVolume";
+	public const string resolutionString = "resolution";
+	public const string fullscreenString = "fullscreen";
+	public const string hideTooltipsString = "hideAdvancedTooltips";
 
 	[SerializeField]
 	private TMP_Dropdown resolution;
@@ -27,11 +28,20 @@ public class GameSettings : MonoBehaviour
 	[SerializeField]
 	private Slider music;
 
+	[SerializeField]
+	private Toggle hideTooltips;
+
 	private void Start()
 	{
 		LoadResolutions();
 		LoadMusicVolume();
 		LoadLanguages();
+		LoadHideTooltips();
+	}
+
+	public void LoadHideTooltips()
+	{
+		hideTooltips.isOn = PlayerPrefs.GetInt(hideTooltipsString) != 0;
 	}
 
 	public void LoadResolutions()
@@ -39,7 +49,6 @@ public class GameSettings : MonoBehaviour
 		resolution.ClearOptions();
 		var resolutions = Screen.resolutions.Select(x => $"{x.width}x{x.height}").ToList();
 		resolution.AddOptions(resolutions);
-		//var currentResolution = $"{Screen.width}x{Screen.height}";
 		var currentResolution = PlayerPrefs.GetString("resolution");
 		var currentResolutionIndex = resolution.options.IndexOf(resolution.options.FirstOrDefault(x => x.text == currentResolution));
 		resolution.SetValueWithoutNotify(currentResolutionIndex);
@@ -65,7 +74,7 @@ public class GameSettings : MonoBehaviour
 		var res = option.text.Split('x').Select(x => int.Parse(x)).ToArray();
 		PlayerPrefs.SetString(resolutionString, option.text);
 		PlayerPrefs.SetInt(fullscreenString, fullscreen.isOn ? 1 : 0);
-		Screen.SetResolution(res[1], res[1], fullscreen.isOn);
+		Screen.SetResolution(res[0], res[1], fullscreen.isOn);
 	}
 
 	public void ChangeVolume()
@@ -79,6 +88,11 @@ public class GameSettings : MonoBehaviour
 		string lang = language.options[language.value].text;
 		PlayerPrefs.SetString(languageString, lang);
 		LeanLocalization.SetCurrentLanguageAll(lang);
+	}
+
+	public void ChangeAdavancedTooltips()
+	{
+		PlayerPrefs.SetInt(hideTooltipsString, hideTooltips.isOn ? 1 : 0);
 	}
 }
 

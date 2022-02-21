@@ -43,7 +43,7 @@ public class SceneLoader : MonoBehaviour
 
 	public void StartNewGame()
 	{
-		SaveController.save = null;
+		SaveController.ClearSave();
 		LoadProlog();
 	}
 

@@ -131,7 +131,7 @@ namespace Village.Controllers
 				Destroy(ev.gameObject);
 			}
 
-			Debug.Log("Loading events from turn " + turnToLoad);
+			//Debug.Log("Loading events from turn " + turnToLoad);
 			var newEvents = chapterEvents.Where(x => x.turn == turnToLoad).ToList();
 			foreach (var newEvent in newEvents)
 			{

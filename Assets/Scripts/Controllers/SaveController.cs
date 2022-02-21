@@ -17,23 +17,25 @@ namespace Village.Controllers
 		public static void SaveGameState()
 		{
 			var gController = GameController.instance;
-			SaveData data = new SaveData();
-			data.turn = gController.GetCurrentTurn();
-			data.predictionFactor = gController.GetPredictionFactor();
-			data.villagers = gController.SaveVillagers();
-			data.resources = gController.SaveResources();
-			data.currentEvents = gController.SaveCurrentEvents();
-			data.chapterEvents = gController.SaveChapterEvents();
-			data.merchantTrades = gController.SaveTrades();
-			data.buildings = gController.SaveBuildings();
+			SaveData data = new SaveData
+			{
+				turn = gController.GetCurrentTurn(),
+				predictionFactor = gController.GetPredictionFactor(),
+				villagers = gController.SaveVillagers(),
+				resources = gController.SaveResources(),
+				currentEvents = gController.SaveCurrentEvents(),
+				chapterEvents = gController.SaveChapterEvents(),
+				merchantTrades = gController.SaveTrades(),
+				buildings = gController.SaveBuildings()
+			};
 			SaveGame.Save(saveFileName, data);
 			Debug.Log("Saving state...");
 		}
 
-		public static void LoadSaveData()
+		public static SaveData LoadSaveData()
 		{
 			save = SaveGame.Load<SaveData>(saveFileName);
-			Debug.Log("Loaded save.");
+			return save;
 		}
 
 		public static bool SaveExists => SaveGame.Exists(saveFileName);

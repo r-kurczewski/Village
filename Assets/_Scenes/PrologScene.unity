@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: GameScene
-  delay: 0.1
+  delay: 0
 --- !u!1001 &334626387
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ game/help,Help
 game/mainMenu,Menu
 game/clickToContinue,"Click to continue..."
 game/loading,"Loading..."
+game/simplifyTooltips,Simplified tooltips
 trade/sell,Sell
 trade/buy,Buy
 trade/accept,Accept

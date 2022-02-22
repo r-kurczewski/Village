@@ -6,15 +6,19 @@ using System.Text;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
+using Village.Controllers;
 
 public class GameSettings : MonoBehaviour
 {
-	public const string languageString = "language";
-	public const string musicVolumeString = "musicVolume";
-	public const string resolutionString = "resolution";
-	public const string fullscreenString = "fullscreen";
-	public const string hideTooltipsString = "hideAdvancedTooltips";
+	private const string languageString = "language";
+	private const string masterVolumeString = "masterVolume";
+	private const string musicVolumeString = "musicVolume";
+	private const string effectsVolumeString = "effectsVolume";
+	private const string resolutionString = "resolution";
+	private const string fullscreenString = "fullscreen";
+	private const string hideTooltipsString = "hideAdvancedTooltips";
 
 	[SerializeField]
 	private TMP_Dropdown resolution;
@@ -26,7 +30,13 @@ public class GameSettings : MonoBehaviour
 	private Toggle fullscreen;
 
 	[SerializeField]
+	private Slider master;
+
+	[SerializeField]
 	private Slider music;
+
+	[SerializeField]
+	private Slider effects;
 
 	[SerializeField]
 	private Toggle hideTooltips;
@@ -34,17 +44,29 @@ public class GameSettings : MonoBehaviour
 	private void Start()
 	{
 		LoadResolutions();
-		LoadMusicVolume();
 		LoadLanguages();
 		LoadHideTooltips();
-	}
 
-	public void LoadHideTooltips()
+		LoadMasterVolume();
+		LoadMusicVolume();
+		LoadEffectsVolume();
+	}
+	public static bool SimplifiedTooltips => PlayerPrefs.GetInt(hideTooltipsString) != 0;
+
+	public static bool FullScreen => PlayerPrefs.GetInt("fullscreen") != 0;
+
+	public static float MasterVolume => PlayerPrefs.GetFloat(masterVolumeString);
+
+	public static float MusicVolume => PlayerPrefs.GetFloat(musicVolumeString);
+
+	public static float EffectsVolume => PlayerPrefs.GetFloat(effectsVolumeString);
+
+	private void LoadHideTooltips()
 	{
-		hideTooltips.isOn = PlayerPrefs.GetInt(hideTooltipsString) != 0;
+		hideTooltips.isOn = SimplifiedTooltips;
 	}
 
-	public void LoadResolutions()
+	private void LoadResolutions()
 	{
 		resolution.ClearOptions();
 		var resolutions = Screen.resolutions.Select(x => $"{x.width}x{x.height}").ToList();
@@ -52,10 +74,10 @@ public class GameSettings : MonoBehaviour
 		var currentResolution = PlayerPrefs.GetString("resolution");
 		var currentResolutionIndex = resolution.options.IndexOf(resolution.options.FirstOrDefault(x => x.text == currentResolution));
 		resolution.SetValueWithoutNotify(currentResolutionIndex);
-		fullscreen.isOn = PlayerPrefs.GetInt("fullscreen") != 0;
+		fullscreen.isOn = FullScreen;
 	}
 
-	public void LoadLanguages()
+	private void LoadLanguages()
 	{
 		var langNames = LeanLocalization.CurrentLanguages.Keys.Select(x => new TMP_Dropdown.OptionData(x));
 		var selectedLang = LeanLocalization.Instances.First().CurrentLanguage;
@@ -63,9 +85,25 @@ public class GameSettings : MonoBehaviour
 		language.SetValueWithoutNotify(language.options.IndexOf(language.options.First(x => x.text == selectedLang)));
 	}
 
-	public void LoadMusicVolume()
+	private void LoadMasterVolume()
 	{
-		music.value = PlayerPrefs.GetFloat(musicVolumeString);
+		float volume = MasterVolume;
+		master.value = volume;
+		AudioController.instance.SetMasterVolume(volume);
+	}
+
+	private void LoadMusicVolume()
+	{
+		float volume = MusicVolume;
+		music.value = volume;
+		AudioController.instance.SetMasterVolume(volume);
+	}
+
+	private void LoadEffectsVolume()
+	{
+		float volume = EffectsVolume;
+		effects.value = volume;
+		AudioController.instance.SetEffectsVolume(volume);
 	}
 
 	public void ChangeResolution()
@@ -77,10 +115,25 @@ public class GameSettings : MonoBehaviour
 		Screen.SetResolution(res[0], res[1], fullscreen.isOn);
 	}
 
-	public void ChangeVolume()
+	public void ChangeMasterVolume()
 	{
-		AudioListener.volume = music.value;
-		PlayerPrefs.SetFloat(musicVolumeString, music.value);
+		float volume = master.value;
+		AudioController.instance.SetMasterVolume(volume);
+		PlayerPrefs.SetFloat(masterVolumeString, volume);
+	}
+
+	public void ChangeMusicVolume()
+	{
+		float volume = music.value;
+		AudioController.instance.SetMusicVolume(volume);
+		PlayerPrefs.SetFloat(musicVolumeString, volume);
+	}
+
+	public void ChangeEffectsVolume()
+	{
+		float volume = effects.value;
+		AudioController.instance.SetEffectsVolume(volume);
+		PlayerPrefs.SetFloat(effectsVolumeString, volume);
 	}
 
 	public void ChangeLanguage()

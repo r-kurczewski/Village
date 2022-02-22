@@ -56,6 +56,11 @@ namespace Village.Scriptables
 				return data;
 			}
 
+			public override string ToString()
+			{
+				return $"{resource.name} ({amount})";
+			}
+
 			[Serializable]
 			public class SaveData
 			{

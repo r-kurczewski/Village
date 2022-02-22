@@ -2,13 +2,28 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace Village.Controllers
 {
 	public class AudioController : MonoBehaviour
 	{
+		private const string masterVolumeString = "masterVol";
+		private const string musicVolumeString = "musicVol";
+		private const string soundEffectsVolumeString = "effectsVol";
+
 		public static AudioController instance;
-		private AudioSource audioPlayer;
+
+		[SerializeField]
+		private AudioMixer mixer;
+		
+		[SerializeField]
+		private AudioSource music;
+
+		[SerializeField]
+		private AudioSource soundEffects;
+
+		private float LinearToVolume(float value) => (float)Math.Log10(value) * 20;
 
 		private void Awake()
 		{
@@ -17,27 +32,32 @@ namespace Village.Controllers
 				Destroy(gameObject);
 				return;
 			}
-			instance = this;
-
-			audioPlayer = GetComponent<AudioSource>();
+			else instance = this;
 
 			DontDestroyOnLoad(gameObject);
 		}
 
+		private void Start()
+		{
+			SetMasterVolume(GameSettings.MasterVolume);
+			SetMusicVolume(GameSettings.MusicVolume);
+			SetEffectsVolume(GameSettings.EffectsVolume);
+		}
+
 		public void PlayMusic(AudioClip clip)
 		{
-			audioPlayer.clip = clip;
-			audioPlayer.Play();
+			music.clip = clip;
+			music.Play();
 		}
 
 		public void PlaySound(AudioClip sound)
 		{
-			audioPlayer.PlayOneShot(sound);
+			soundEffects.PlayOneShot(sound);
 		}
 
 		public void PlayMusicIfChanged(AudioClip music)
 		{
-			if(audioPlayer.clip != music)
+			if(this.music.clip != music)
 			{
 				PlayMusic(music);
 			}
@@ -45,17 +65,32 @@ namespace Village.Controllers
 
 		public void SetMusic(AudioClip clip)
 		{
-			audioPlayer.clip = clip;
+			music.clip = clip;
 		}
 
 		public void PlayMusic()
 		{
-			audioPlayer.Play();
+			music.Play();
 		}
 
-		public void Stop()
+		public void StopMusic()
 		{
-			audioPlayer.Stop();
+			music.Stop();
+		}
+
+		public void SetMasterVolume(float volume)
+		{
+			mixer.SetFloat(masterVolumeString, LinearToVolume(volume));
+		}
+
+		public void SetMusicVolume(float volume)
+		{
+			mixer.SetFloat(musicVolumeString, LinearToVolume(volume));
+		}
+
+		public void SetEffectsVolume(float volume)
+		{
+			mixer.SetFloat(soundEffectsVolumeString, LinearToVolume(volume));
 		}
 	}
 }

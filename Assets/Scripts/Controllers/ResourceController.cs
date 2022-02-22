@@ -48,12 +48,13 @@ namespace Village.Controllers
 
 		public void AddRemoveResource(Resource resource, int amount)
 		{
-			resources.First(x => x.resource == resource).Amount += amount;
+			resources.First(x => x.resource.ResourceName == resource.ResourceName).Amount += amount;
 		}
 
 		public int GetResourceAmount(Resource resource)
 		{
-			return resources.First(x => x.resource == resource).Amount;
+			var a = resources;
+			return resources.First(x => x.resource.ResourceName == resource.ResourceName).Amount;
 		}
 
 		public List<TradeOffer> GenerateTrades()

@@ -2,7 +2,10 @@ game/settings,Settings
 game/resolution,Resolution
 game/fullscreen,Fullscreen
 game/save,Save
+game/audio,Audio
+game/masterSound,Master
 game/music,Music
+game/sfx,Effects
 game/language,Language
 game/backToMenu,Back to menu
 game/startGame,Start new game

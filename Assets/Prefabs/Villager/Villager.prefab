@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 4125827751447017467}
   - component: {fileID: 2136132191754573737}
   - component: {fileID: 3030878898432219112}
+  - component: {fileID: 2401129246529419812}
   m_Layer: 5
   m_Name: Villager
   m_TagString: Untagged
@@ -321,17 +322,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   villagerBase: {fileID: 0}
-  stats:
-  - stat: {fileID: 11400000, guid: 4ed32862a36be7746b14073449606be5, type: 2}
-    amount: 0
-  - stat: {fileID: 11400000, guid: be6ca4d07de74d24aa2007710badd6cc, type: 2}
-    amount: 0
-  - stat: {fileID: 11400000, guid: 059d52fc42c7b2946a03304d4c1416fe, type: 2}
-    amount: 0
-  - stat: {fileID: 11400000, guid: f88959040f03e404491774af1e4e7953, type: 2}
-    amount: 0
-  - stat: {fileID: 11400000, guid: 5370ec057d4122a40ae19428b07211c1, type: 2}
-    amount: 0
+  strength: 0
+  gathering: 0
+  crafting: 0
+  diplomacy: 0
+  intelligence: 0
   _health: 0
   references:
     strength: {fileID: 11400000, guid: 4ed32862a36be7746b14073449606be5, type: 2}
@@ -383,6 +378,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: 0, y: -0.6, z: 0, w: 0}
   m_Softness: {x: 0, y: 0}
+--- !u!114 &2401129246529419812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136132191754573743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 1
 --- !u!1 &2490433635502999989
 GameObject:
   m_ObjectHideFlags: 0

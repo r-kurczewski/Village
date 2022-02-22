@@ -160,8 +160,14 @@ MonoBehaviour:
     Text: "Pe\u0142ny ekran"
   - Name: game/save
     Text: Zapisz
+  - Name: game/audio
+    Text: "D\u017Awi\u0119k"
+  - Name: game/masterSound
+    Text: "Og\xF3lny"
   - Name: game/music
     Text: Muzyka
+  - Name: game/sfx
+    Text: Efekty
   - Name: game/language
     Text: "J\u0119zyk"
   - Name: game/backToMenu
@@ -514,7 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: Polish
+  currentLanguage: English
   detectLanguage: 1
   defaultLanguage: English
   saveLoad: 1
@@ -591,8 +597,14 @@ MonoBehaviour:
     Text: Fullscreen
   - Name: game/save
     Text: Save
+  - Name: game/audio
+    Text: Audio
+  - Name: game/masterSound
+    Text: Master
   - Name: game/music
     Text: Music
+  - Name: game/sfx
+    Text: Effects
   - Name: game/language
     Text: Language
   - Name: game/backToMenu

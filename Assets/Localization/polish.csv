@@ -2,7 +2,10 @@ game/settings,Ustawienia
 game/resolution,Rozdzielczość
 game/fullscreen,Pełny ekran
 game/save,Zapisz
+game/audio,Dźwięk
+game/masterSound,Ogólny
 game/music,Muzyka
+game/sfx,Efekty
 game/language,Język
 game/backToMenu,Powrót do menu
 game/startGame,Rozpocznij grę

@@ -8,6 +8,7 @@ using Village.Views;
 using UnityEngine.Serialization;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.UI;
 
 namespace Village.Controllers
 {
@@ -24,9 +25,20 @@ namespace Village.Controllers
 
 		public List<VillagerView> villagers;
 
+		[SerializeField]
+		private LayoutGroup layout;
+
 		public void PutVillager(VillagerView villager)
 		{
 			villager.transform.SetParent(transform);
+			RefreshLayout();
+		}
+
+		private void RefreshLayout()
+		{
+			Canvas.ForceUpdateCanvases();
+			layout.enabled = false;
+			layout.enabled = true;
 		}
 
 		public void MoveVillagersToPanel()
@@ -93,6 +105,8 @@ namespace Village.Controllers
 		public void RefreshGUI()
 		{
 			villagers.ForEach(x => x.SetHealth(x.Villager.Health));
+			RefreshLayout();
+			
 		}
 
 		public void AddRemoveVillagersHealth(int value)

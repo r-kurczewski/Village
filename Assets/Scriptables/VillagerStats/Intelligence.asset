@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607d89a4a34a5b441ad317a8aa843c72, type: 3}
   m_Name: Intelligence
   m_EditorClassIdentifier: 
-  statName: Inteligencja
-  statIcon: {fileID: 21300000, guid: 4ec095573eb3bc648ba30239ca6ee882, type: 3}
-  statColor: {r: 0.8246074, g: 0.5, b: 1, a: 1}
+  icon: {fileID: 21300000, guid: 7c148a465885d284384d1644d6ccd987, type: 3}
+  backgroundIcon: {fileID: 21300000, guid: 4ec095573eb3bc648ba30239ca6ee882, type: 3}
+  color: {r: 0.8235295, g: 0.5019608, b: 1, a: 1}

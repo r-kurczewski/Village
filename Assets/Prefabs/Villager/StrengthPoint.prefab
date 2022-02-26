@@ -22,7 +22,7 @@ PrefabInstance:
     - target: {fileID: 435711230064951215, guid: a368ffecd0fe91c4d80fc2b430dcd84b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ef78869023bc15f48a12355d5c846513, type: 3}
+      objectReference: {fileID: 21300000, guid: b9daa7b241b690542a2c84593e0cb6c9, type: 3}
     - target: {fileID: 3846525036127725469, guid: a368ffecd0fe91c4d80fc2b430dcd84b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -114,6 +114,14 @@ PrefabInstance:
     - target: {fileID: 5544621195948295131, guid: a368ffecd0fe91c4d80fc2b430dcd84b, type: 3}
       propertyPath: m_Pivot.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5544621195948295131, guid: a368ffecd0fe91c4d80fc2b430dcd84b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5544621195948295131, guid: a368ffecd0fe91c4d80fc2b430dcd84b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7971573883007445988, guid: a368ffecd0fe91c4d80fc2b430dcd84b, type: 3}
       propertyPath: m_Name

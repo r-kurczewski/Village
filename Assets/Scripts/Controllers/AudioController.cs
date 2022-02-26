@@ -22,6 +22,8 @@ namespace Village.Controllers
 
 		[SerializeField]
 		private AudioSource soundEffects;
+		
+		private bool blockSound;
 
 		private float LinearToVolume(float value) => (float)Math.Log10(value) * 20;
 
@@ -52,6 +54,11 @@ namespace Village.Controllers
 
 		public void PlaySound(AudioClip sound)
 		{
+			if (blockSound)
+			{
+				blockSound = false;
+				return;
+			}
 			soundEffects.PlayOneShot(sound);
 		}
 

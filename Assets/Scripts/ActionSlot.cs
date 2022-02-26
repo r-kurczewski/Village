@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Village.Controllers;
 using Village.Views;
 using Village.Views.Tooltips;
 
@@ -14,6 +15,9 @@ public class ActionSlot : Tooltiped, IDropHandler, IPointerClickHandler
 
 	[SerializeField]
 	private Image icon;
+
+	[SerializeField]
+	private AudioClip putVillagerSound;
 
 	public IAction Action => action;
 
@@ -34,6 +38,7 @@ public class ActionSlot : Tooltiped, IDropHandler, IPointerClickHandler
 		{
 			villager.transform.SetParent(transform);
 			villager.transform.localPosition = Vector2.zero;
+			AudioController.instance.PlaySound(putVillagerSound);
 		}
 	}
 

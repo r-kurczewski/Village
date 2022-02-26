@@ -55,8 +55,8 @@ namespace Village.Views.Tooltips
 
 			if (slot.Action.Stat1)
 			{
-				statIcon1.sprite = slot.Action.Stat1.statIcon;
-				statIcon1.color = slot.Action.Stat1.statColor;
+				statIcon1.sprite = slot.Action.Stat1.backgroundIcon;
+				statIcon1.color = slot.Action.Stat1.color;
 			}
 			else
 			{
@@ -67,8 +67,8 @@ namespace Village.Views.Tooltips
 			if (slot.Action.Stat2)
 			{
 				statIcon2.gameObject.SetActive(true);
-				statIcon2.sprite = slot.Action.Stat2.statIcon;
-				statIcon2.color = slot.Action.Stat2.statColor;
+				statIcon2.sprite = slot.Action.Stat2.backgroundIcon;
+				statIcon2.color = slot.Action.Stat2.color;
 			}
 			else statIcon2.gameObject.SetActive(false);
 

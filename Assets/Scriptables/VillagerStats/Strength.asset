@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607d89a4a34a5b441ad317a8aa843c72, type: 3}
   m_Name: Strength
   m_EditorClassIdentifier: 
-  statName: "Si\u0142a"
-  statIcon: {fileID: 21300000, guid: 840c9607685597241906b3485dd48239, type: 3}
-  statColor: {r: 1, g: 0.3921569, b: 0.2509804, a: 1}
+  icon: {fileID: 21300000, guid: b9daa7b241b690542a2c84593e0cb6c9, type: 3}
+  backgroundIcon: {fileID: 21300000, guid: 840c9607685597241906b3485dd48239, type: 3}
+  color: {r: 1, g: 0.39215687, b: 0.2509804, a: 1}

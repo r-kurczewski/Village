@@ -281,7 +281,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 80, y: 80}
+  m_SizeDelta: {x: 0, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2136132191754573736
 CanvasRenderer:
@@ -309,6 +309,7 @@ MonoBehaviour:
   healthBar: {fileID: 7093668046160082946}
   dragParent: {fileID: 0}
   controller: {fileID: 0}
+  takeVillagerSound: {fileID: 8300000, guid: 9872e481ff15e6d49bb01f974241bc65, type: 3}
 --- !u!114 &4125827751447017467
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36a3117729ddb544fba8970ddac3e081, type: 3}
-  m_Name: Water Collector
+  m_Name: Well
   m_EditorClassIdentifier: 
   basicActions: []
-  LocaleBuildActionName: build/waterCollector
-  localeBuildingDescription: building/waterCollector
+  LocaleBuildActionName: build/well
+  localeBuildingDescription: building/well
   buildingCost:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
-    amount: 40
+    amount: 30
   - resource: {fileID: 11400000, guid: 389ae6ddb3eee6e4c94fe350940428df, type: 2}
     amount: 15
+  - resource: {fileID: 11400000, guid: 276a9847a78915b46bb48e7d72a033e5, type: 2}
+    amount: 5
   buildingAction: []
   resource:
     resource: {fileID: 11400000, guid: 9d3db97e89f3adb42808e15635bb1c4e, type: 2}

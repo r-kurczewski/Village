@@ -2,6 +2,7 @@ game/settings,Settings
 game/resolution,Resolution
 game/fullscreen,Fullscreen
 game/save,Save
+game/apply,Apply
 game/audio,Audio
 game/masterSound,Master
 game/music,Music
@@ -15,7 +16,7 @@ game/credits,Credits
 game/turn,Turn {turn}
 game/currentChapter,{chapter}
 game/endTurn,End turn
-game/help,Help
+game/helpButton,Help
 game/mainMenu,Menu
 game/clickToContinue,"Click to continue..."
 game/loading,"Loading..."
@@ -49,7 +50,7 @@ build/hospital,Expand field hospital
 build/hunter,Rebuild hunter's cottage
 build/lumberjack,Rebuild lumberjack's cottage
 build/watchtower,Rebuild watchtower
-build/waterCollector,Build water collector
+build/well,Fix the well
 building/miningEquipment,Allows sending people to mine gems.
 building/fisherman,Unlocks new method of collecting food.
 building/herbalist,Unlocks preparing food and crafting medicine.
@@ -57,7 +58,7 @@ building/hospital,"Unlocks additional, better treatment."
 building/hunter,Unlocks leather tanning.
 building/lumberjack,Adds better way of collecting the wood
 building/watchtower,Allows to see incoming events earlier.
-building/waterCollector,"Gives small, pernament water gain."
+building/well,"Gives small, pernament water gain."
 chapter/summer,Summer
 chapter/fall,Fall
 chapter/winter,Winter
@@ -76,9 +77,9 @@ event/firewood/title,Firewood
 event/food/title,Food supplies
 event/foodPreservation/title,Food preservation
 event/heat/title,Heatwave
-event/merchant/title,Arrival of the merchant
+event/merchant/title,Merchant arrives
 event/water/title,Water reserves
-event/animals/description,"Wild animals are getting closer and closer to the village and are eating up the food supplies. You have to supply the inhabitants with basic tools for defense and prepare traps and snares."
+event/animals/description,"Wild animals are eating up the food supplies. We need to supply the villagers in basic tools for defense and prepare traps and snares."
 event/bandits/description,"A group of bandits appeared in the area. They will probably try to rob us. We need to set traps and equip ourselves with weapons."
 event/cold/description,"The weather starts to get crazy, it gets very cold. We need extra firewood to keep people from getting sick."
 event/envoyTharros/description,"An envoy from one of the countries has arrived in the village. In exchange for specific goods, he is able to look at your situation more favorably."
@@ -126,7 +127,7 @@ resource/water,Water
 resource/wood,Wood
 game/help/description,"During each turn, assign citizens to appropriate tasks on the map. Some actions have attributes that will allow you to obtain more materials. 
 
-You can see more details about characters and actions by holding your mouse cursor over them. 
+You can see more details about characters and actions by hovering your mouse cursor over them. 
 
 Keep an eye on emerging events on the panel on the right. They are crucial to survival.
 
@@ -135,11 +136,11 @@ Rebuild your village to gain additional actions or rewards.
 Collect reputation to give your settlers a better fate after the truce ends.
  
 Each settler is characterized by a set of stats, his health, his reputation, and:
-<sprite index=1> - Strength
-<sprite index=2> - Gathering
-<sprite index=6> - Processing
-<sprite index=7> - Diplomacy
-<sprite index=5> - Intelligence
+<sprite index=1>  Strength
+<sprite index=2>  Gathering
+<sprite index=6>  Processing
+<sprite index=7>  Diplomacy
+<sprite index=5>  Intelligence
  
 Each point increases the number of resources harvested by 20% of the default value per point on actions of that type.  
 

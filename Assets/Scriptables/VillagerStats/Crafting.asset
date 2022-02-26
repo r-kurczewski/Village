@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607d89a4a34a5b441ad317a8aa843c72, type: 3}
   m_Name: Crafting
   m_EditorClassIdentifier: 
-  statName: "Przetw\xF3rstwo"
-  statIcon: {fileID: 21300000, guid: 664f7e24acbd50c48b814cfaa74e7605, type: 3}
-  statColor: {r: 1, g: 0.9162303, b: 0.5, a: 1}
+  icon: {fileID: 21300000, guid: cf9b32e5ad12aa249ae7a7896811f8a7, type: 3}
+  backgroundIcon: {fileID: 21300000, guid: 664f7e24acbd50c48b814cfaa74e7605, type: 3}
+  color: {r: 1, g: 0.91764706, b: 0.5019608, a: 1}

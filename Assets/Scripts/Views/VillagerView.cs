@@ -29,6 +29,9 @@ namespace Village.Views
 		[SerializeField]
 		private VillagerController controller;
 
+		[SerializeField]
+		private AudioClip takeVillagerSound;
+
 		public Villager Villager => villager;
 
 		public void Load(Villager villager, VillagerController controller)
@@ -55,6 +58,8 @@ namespace Village.Views
 			rt.SetParent(dragParent);
 			GetComponent<Image>().raycastTarget = false;
 			blockTooltip = true;
+
+			AudioController.instance.PlaySound(takeVillagerSound);
 		}
 
 		public void OnDrag(PointerEventData eventData)
@@ -65,7 +70,11 @@ namespace Village.Views
 		public void OnEndDrag(PointerEventData eventData)
 		{
 			var slot = eventData.pointerCurrentRaycast.gameObject?.GetComponent<ActionSlot>();
-			if (!slot) MoveToPanel();
+			if (!slot)
+			{
+				MoveToPanel();
+				AudioController.instance.PlaySound(takeVillagerSound);
+			}
 			GetComponent<Image>().raycastTarget = true;
 		}
 

@@ -18,6 +18,9 @@ namespace Village.Controllers
 		private int turn = 1;
 
 		[SerializeField]
+		private AudioClip newTurnSound;
+
+		[SerializeField]
 		private UnityData references;
 
 		public int Turn => turn;
@@ -123,6 +126,7 @@ namespace Village.Controllers
 		public void MoveToNextTurn()
 		{
 			turn++;
+			AudioController.instance.PlaySound(newTurnSound);
 		}
 
 		public void RefreshGUI()

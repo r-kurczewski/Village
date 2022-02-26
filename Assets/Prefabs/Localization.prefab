@@ -160,6 +160,8 @@ MonoBehaviour:
     Text: "Pe\u0142ny ekran"
   - Name: game/save
     Text: Zapisz
+  - Name: game/apply
+    Text: Zastosuj
   - Name: game/audio
     Text: "D\u017Awi\u0119k"
   - Name: game/masterSound
@@ -186,7 +188,7 @@ MonoBehaviour:
     Text: Tura {turn}
   - Name: game/endTurn
     Text: "Zako\u0144cz tur\u0119"
-  - Name: game/help
+  - Name: game/helpButton
     Text: Pomoc
   - Name: game/mainMenu
     Text: Menu
@@ -254,8 +256,8 @@ MonoBehaviour:
     Text: "Odbuduj chatk\u0119 drwala"
   - Name: build/watchtower
     Text: "Odbuduj wie\u017C\u0119 obserwacyjn\u0105"
-  - Name: build/waterCollector
-    Text: "Zbuduj zbiornik na deszcz\xF3wk\u0119"
+  - Name: build/well
+    Text: "Napraw studni\u0119"
   - Name: building/miningEquipment
     Text: "Pozwala na wysy\u0142anie ludzi w celu wydobycia kamieni szlachetnych."
   - Name: building/fisherman
@@ -263,14 +265,14 @@ MonoBehaviour:
   - Name: building/herbalist
     Text: "Pozwala na wytwarzanie lekarstw oraz obr\xF3bk\u0119 \u017Cywno\u015Bci."
   - Name: building/hospital
-    Text: "Umo\u017Cliwia stosowanie wzmocnionych kuracji."
+    Text: "Umo\u017Cliwia stosowanie dodatkowych, wzmocnionych kuracji."
   - Name: building/hunter
     Text: "Odblokowywuje mo\u017Cliwo\u015B\u0107 wyprawiania sk\xF3ry."
   - Name: building/lumberjack
     Text: "Dodaje efektywniejsz\u0105 metod\u0119 pozyskiwania drewna."
   - Name: building/watchtower
     Text: "Pozwala na wcze\u015Bniejsze wykrywanie nadchodz\u0105cych wydarze\u0144."
-  - Name: building/waterCollector
+  - Name: building/well
     Text: "Daje sta\u0142y, niewielki przyrost wody."
   - Name: chapter/summer
     Text: Lato
@@ -313,10 +315,9 @@ MonoBehaviour:
   - Name: event/water/title
     Text: Zapasy wody
   - Name: event/animals/description
-    Text: "Dzikie zwierz\u0119ta zbli\u017Caj\u0105 si\u0119 coraz bli\u017Cej wioski
-      i wy\u017Ceraj\u0105 zapasy \u017Cywno\u015Bci. Trzeba zaopatrzy\u0107 mieszka\u0144c\xF3w
-      w podstawowe narz\u0119dzia do obrony oraz przygotowa\u0107 pu\u0142apki i
-      sid\u0142a."
+    Text: "Dzikie zwierz\u0119ta wy\u017Ceraj\u0105 zapasy \u017Cywno\u015Bci. Trzeba
+      zaopatrzy\u0107 mieszka\u0144c\xF3w w podstawowe narz\u0119dzia do obrony oraz
+      przygotowa\u0107 pu\u0142apki i sid\u0142a."
   - Name: event/bandits/description
     Text: "W okolicy pojawi\u0142a si\u0119 grupka bandyt\xF3w. Prawdopodobnie b\u0119d\u0105
       chcieli nas ograbi\u0107. Musimy zastawi\u0107 pu\u0142apki i wyposa\u017Cy\u0107
@@ -450,29 +451,28 @@ MonoBehaviour:
     Text: "Podczas ka\u017Cdej tury przydzielaj mieszka\u0144c\xF3w do odpowiednich
       zada\u0144 na mapie. Niekt\xF3re akcje maj\u0105 atrybuty, kt\xF3re pozwal\u0105
       ci uzyska\u0107 wi\u0119cej materia\u0142\xF3w. \n\nWi\u0119cej szczeg\xF3\u0142\xF3w
-      odno\u015Bnie postaci i akcji zobaczysz przytrzymuj\u0105c na nich kursor myszy.
-      \n\nPilnuj pojawiaj\u0105cych si\u0119 wydarze\u0144 na panelu po prawej. S\u0105
-      kluczowe do przetrwania.\n\nOdbuduj wiosk\u0119, aby zyska\u0107 dodatkowe
+      odno\u015Bnie postaci i akcji zobaczysz naje\u017Cd\u017Caj\u0105c na nie kursorem
+      myszy. \n\nPilnuj pojawiaj\u0105cych si\u0119 wydarze\u0144 na panelu po prawej.
+      S\u0105 kluczowe do przetrwania.\n\nOdbuduj wiosk\u0119, aby zyska\u0107 dodatkowe
       akcje lub profity. \n\nZbieraj reputacj\u0119, aby zapewni\u0107 twoim osadnikom
       lepszy los po zako\u0144czeniu rozejmu.\n \nKa\u017Cdego osadnika charakteryzuje
-      zestaw statystyk, jego zdrowie, jego reputacja, a tak\u017Ce:\n<sprite index=1>
-      - Si\u0142a\n<sprite index=2> - Zbieractwo\n<sprite index=6> - Przetw\xF3rstwo\n<sprite
-      index=7> - Dyplomacja\n<sprite index=5> - Inteligencja\n \nKa\u017Cdy punkt
-      zwi\u0119ksza liczb\u0119 zbieranych zasob\xF3w o 20% domy\u015Blnej warto\u015Bci
-      za ka\u017Cdy punkt przy akcjach danego typu.  \n\nDodatkowo ka\u017Cdy punkt
-      dyplomacji daje bonus +6% do ceny sprzedawanych przedmiot\xF3w oraz -6% do
-      ceny kupowanych przedmiot\xF3w.\n\nOpr\xF3cz tego ka\u017Cdy punkt inteligencji
-      powoduje dodatkowo wzrost innej, losowej statystyki na pocz\u0105tku nowego
-      rozdzia\u0142u.\n\nZdrowie reprezentuje stan i przydatno\u015B\u0107 do pracy
-      danego mieszka\u0144ca. Wp\u0142ywa ono na efektywne statystyki postaci. Wyszczeg\xF3lnia
-      si\u0119 kilka poziom\xF3w zdrowia:\n\nPoziom 4: Brak modyfikator\xF3w.\nPoziom
-      3: -1 punkt do wszystkich statystyk postaci. \nPoziom 2 -2 punkty do wszystkich
-      statystyk postaci.\nPoziom 1: -4 punkty do wszystkich statystyk postaci.\nPoziom
-      0: Powoduje \u015Bmier\u0107 mieszka\u0144ca.\n\nZdrowie postaci mo\u017Cesz
-      zwi\u0119ksza\u0107 u\u017Cywaj\u0105c akcji w szpitalu polowym.\n\nReputacja
-      osadnika wp\u0142ywa na efektywn\u0105 warto\u015B\u0107 charyzmy przy interakcjach
-      z danym krajem.\n\nAby schowa\u0107 te informacje, ponownie naci\u015Bnij pzycisk
-      Pomoc."
+      zestaw statystyk, jego zdrowie, jego reputacja, a tak\u017Ce:\n<sprite index=1> 
+      Si\u0142a\n<sprite index=2>  Zbieractwo\n<sprite index=6>  Przetw\xF3rstwo\n<sprite
+      index=7>  Dyplomacja\n<sprite index=5>  Inteligencja\n \nKa\u017Cdy punkt zwi\u0119ksza
+      liczb\u0119 zbieranych zasob\xF3w o 20% domy\u015Blnej warto\u015Bci za ka\u017Cdy
+      punkt przy akcjach danego typu.  \n\nDodatkowo ka\u017Cdy punkt dyplomacji
+      daje bonus +6% do ceny sprzedawanych przedmiot\xF3w oraz -6% do ceny kupowanych
+      przedmiot\xF3w.\n\nOpr\xF3cz tego ka\u017Cdy punkt inteligencji powoduje dodatkowo
+      wzrost innej, losowej statystyki na pocz\u0105tku nowego rozdzia\u0142u.\n\nZdrowie
+      reprezentuje stan i przydatno\u015B\u0107 do pracy danego mieszka\u0144ca.
+      Wp\u0142ywa ono na efektywne statystyki postaci. Wyszczeg\xF3lnia si\u0119
+      kilka poziom\xF3w zdrowia:\n\nPoziom 4: Brak modyfikator\xF3w.\nPoziom 3: -1
+      punkt do wszystkich statystyk postaci. \nPoziom 2 -2 punkty do wszystkich statystyk
+      postaci.\nPoziom 1: -4 punkty do wszystkich statystyk postaci.\nPoziom 0: Powoduje
+      \u015Bmier\u0107 mieszka\u0144ca.\n\nZdrowie postaci mo\u017Cesz zwi\u0119ksza\u0107
+      u\u017Cywaj\u0105c akcji w szpitalu polowym.\n\nReputacja osadnika wp\u0142ywa
+      na efektywn\u0105 warto\u015B\u0107 charyzmy przy interakcjach z danym krajem.\n\nAby
+      schowa\u0107 te informacje, ponownie naci\u015Bnij pzycisk Pomoc."
 --- !u!1 &5426732834749606647
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: English
+  currentLanguage: Polish
   detectLanguage: 1
   defaultLanguage: English
   saveLoad: 1
@@ -597,6 +597,8 @@ MonoBehaviour:
     Text: Fullscreen
   - Name: game/save
     Text: Save
+  - Name: game/apply
+    Text: Apply
   - Name: game/audio
     Text: Audio
   - Name: game/masterSound
@@ -623,7 +625,7 @@ MonoBehaviour:
     Text: '{chapter}'
   - Name: game/endTurn
     Text: End turn
-  - Name: game/help
+  - Name: game/helpButton
     Text: Help
   - Name: game/mainMenu
     Text: Menu
@@ -691,8 +693,8 @@ MonoBehaviour:
     Text: Rebuild lumberjack's cottage
   - Name: build/watchtower
     Text: Rebuild watchtower
-  - Name: build/waterCollector
-    Text: Build water collector
+  - Name: build/well
+    Text: Fix the well
   - Name: building/miningEquipment
     Text: Allows sending people to mine gems.
   - Name: building/fisherman
@@ -707,7 +709,7 @@ MonoBehaviour:
     Text: Adds better way of collecting the wood
   - Name: building/watchtower
     Text: Allows to see incoming events earlier.
-  - Name: building/waterCollector
+  - Name: building/well
     Text: Gives small, pernament water gain.
   - Name: chapter/summer
     Text: Summer
@@ -746,13 +748,12 @@ MonoBehaviour:
   - Name: event/heat/title
     Text: Heatwave
   - Name: event/merchant/title
-    Text: Arrival of the merchant
+    Text: Merchant arrives
   - Name: event/water/title
     Text: Water reserves
   - Name: event/animals/description
-    Text: Wild animals are getting closer and closer to the village and are eating
-      up the food supplies. You have to supply the inhabitants with basic tools for
-      defense and prepare traps and snares.
+    Text: Wild animals are eating up the food supplies. We need to supply the villagers
+      in basic tools for defense and prepare traps and snares.
   - Name: event/bandits/description
     Text: A group of bandits appeared in the area. They will probably try to rob
       us. We need to set traps and equip ourselves with weapons.
@@ -875,13 +876,13 @@ MonoBehaviour:
   - Name: game/help/description
     Text: "During each turn, assign citizens to appropriate tasks on the map. Some
       actions have attributes that will allow you to obtain more materials. \n\nYou
-      can see more details about characters and actions by holding your mouse cursor
+      can see more details about characters and actions by hovering your mouse cursor
       over them. \n\nKeep an eye on emerging events on the panel on the right. They
       are crucial to survival.\n\nRebuild your village to gain additional actions
       or rewards. \n\nCollect reputation to give your settlers a better fate after
       the truce ends.\n \nEach settler is characterized by a set of stats, his health,
-      his reputation, and:\n<sprite index=1> - Strength\n<sprite index=2> - Gathering\n<sprite
-      index=6> - Processing\n<sprite index=7> - Diplomacy\n<sprite index=5> - Intelligence\n
+      his reputation, and:\n<sprite index=1>  Strength\n<sprite index=2>  Gathering\n<sprite
+      index=6>  Processing\n<sprite index=7>  Diplomacy\n<sprite index=5>  Intelligence\n
       \nEach point increases the number of resources harvested by 20% of the default
       value per point on actions of that type.  \n\nAdditionally, each diplomacy
       point gives a +6% bonus to the price of items sold and -6% to the price of

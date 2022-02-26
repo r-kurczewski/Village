@@ -2,6 +2,7 @@ game/settings,Ustawienia
 game/resolution,Rozdzielczość
 game/fullscreen,Pełny ekran
 game/save,Zapisz
+game/apply,Zastosuj
 game/audio,Dźwięk
 game/masterSound,Ogólny
 game/music,Muzyka
@@ -15,7 +16,7 @@ game/credits,Autorzy
 game/currentChapter,{chapter}
 game/turn,Tura {turn}
 game/endTurn,Zakończ turę
-game/help,Pomoc
+game/helpButton,Pomoc
 game/mainMenu,Menu
 game/clickToContinue,"Kliknij, aby kontynuować..."
 game/loading,"Ładowanie..."
@@ -49,15 +50,15 @@ build/hospital,Rozbuduj szpital polowy
 build/hunter,Odbuduj chatkę myśliwską
 build/lumberjack,Odbuduj chatkę drwala
 build/watchtower,Odbuduj wieżę obserwacyjną
-build/waterCollector,Zbuduj zbiornik na deszczówkę
+build/well,Napraw studnię
 building/miningEquipment,Pozwala na wysyłanie ludzi w celu wydobycia kamieni szlachetnych.
 building/fisherman,Odblokuje dodatkową akcję do pozyskiwania żywności.
 building/herbalist,Pozwala na wytwarzanie lekarstw oraz obróbkę żywności.
-building/hospital,Umożliwia stosowanie wzmocnionych kuracji.
+building/hospital,"Umożliwia stosowanie dodatkowych, wzmocnionych kuracji."
 building/hunter,Odblokowywuje możliwość wyprawiania skóry.
 building/lumberjack,Dodaje efektywniejszą metodę pozyskiwania drewna.
 building/watchtower,Pozwala na wcześniejsze wykrywanie nadchodzących wydarzeń.
-building/waterCollector,"Daje stały, niewielki przyrost wody."
+building/well,"Daje stały, niewielki przyrost wody."
 chapter/summer,Lato
 chapter/fall,Jesień
 chapter/winter,Zima
@@ -78,7 +79,7 @@ event/foodPreservation/title,Konserwacja żywności
 event/heat/title,Fale upałów
 event/merchant/title,Przybycie handlarza
 event/water/title,Zapasy wody
-event/animals/description,"Dzikie zwierzęta zbliżają się coraz bliżej wioski i wyżerają zapasy żywności. Trzeba zaopatrzyć mieszkańców w podstawowe narzędzia do obrony oraz przygotować pułapki i sidła."
+event/animals/description,"Dzikie zwierzęta wyżerają zapasy żywności. Trzeba zaopatrzyć mieszkańców w podstawowe narzędzia do obrony oraz przygotować pułapki i sidła."
 event/bandits/description,"W okolicy pojawiła się grupka bandytów. Prawdopodobnie będą chcieli nas ograbić. Musimy zastawić pułapki i wyposażyć się w broń."
 event/cold/description,"Pogoda zaczyna wariować, robi się bardzo zimno. Potrzebujemy dodatkowy zapas drewna na opał, aby ludzie nie pochorowali się."
 event/envoyTharros/description,"Do wioski przybył wysłannik jednego z państw. W zamian za konkretne dobra jest w stanie przychylniej spojrzeć na twoją sytuację."
@@ -126,7 +127,7 @@ resource/water,Woda
 resource/wood,Drewno
 game/help/description,"Podczas każdej tury przydzielaj mieszkańców do odpowiednich zadań na mapie. Niektóre akcje mają atrybuty, które pozwalą ci uzyskać więcej materiałów. 
 
-Więcej szczegółów odnośnie postaci i akcji zobaczysz przytrzymując na nich kursor myszy. 
+Więcej szczegółów odnośnie postaci i akcji zobaczysz najeżdżając na nie kursorem myszy. 
 
 Pilnuj pojawiających się wydarzeń na panelu po prawej. Są kluczowe do przetrwania.
 
@@ -135,11 +136,11 @@ Odbuduj wioskę, aby zyskać dodatkowe akcje lub profity.
 Zbieraj reputację, aby zapewnić twoim osadnikom lepszy los po zakończeniu rozejmu.
  
 Każdego osadnika charakteryzuje zestaw statystyk, jego zdrowie, jego reputacja, a także:
-<sprite index=1> - Siła
-<sprite index=2> - Zbieractwo
-<sprite index=6> - Przetwórstwo
-<sprite index=7> - Dyplomacja
-<sprite index=5> - Inteligencja
+<sprite index=1>  Siła
+<sprite index=2>  Zbieractwo
+<sprite index=6>  Przetwórstwo
+<sprite index=7>  Dyplomacja
+<sprite index=5>  Inteligencja
  
 Każdy punkt zwiększa liczbę zbieranych zasobów o 20% domyślnej wartości za każdy punkt przy akcjach danego typu.  
 

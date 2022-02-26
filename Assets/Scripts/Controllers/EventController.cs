@@ -32,6 +32,9 @@ namespace Village.Controllers
 		[SerializeField]
 		private List<GameEvent> chapterEvents;
 
+		[SerializeField]
+		private AudioClip newEventsSound;
+
 		public List<GameEvent.SaveData> SaveCurrentEvents()
 		{
 			return currentEvents.Select(x => x.Event.Save()).ToList();
@@ -58,7 +61,7 @@ namespace Village.Controllers
 
 		public bool MerchantAvailable()
 		{
-			return currentEvents.Select(x => x.Event.eventBase).Contains(merchantEvent);
+			return currentEvents.Select(x => x.Event.eventBase).Any(x=> x.name==merchantEvent.name);
 		}
 
 		public void LoadChapterEvents()
@@ -133,6 +136,12 @@ namespace Village.Controllers
 
 			//Debug.Log("Loading events from turn " + turnToLoad);
 			var newEvents = chapterEvents.Where(x => x.turn == turnToLoad).ToList();
+
+			if(newEvents.Count > 0)
+			{
+				AudioController.instance.PlaySound(newEventsSound);
+			}
+
 			foreach (var newEvent in newEvents)
 			{
 				AddEvent(newEvent);

@@ -8,7 +8,8 @@ namespace Village.Scriptables
 	[CreateAssetMenu(fileName = "Stat", menuName = "Village/VillagerStat")]
 	public class VillagerStat : ScriptableObject
 	{
-		public Sprite statIcon;
-		public Color statColor;
+		public Sprite icon;
+		public Sprite backgroundIcon;
+		public Color color;
 	}
 }

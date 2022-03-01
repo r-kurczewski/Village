@@ -1083,6 +1083,10 @@ PrefabInstance:
       value: Tooltips
       objectReference: {fileID: 0}
     - target: {fileID: 5586554181961508118, guid: 6fadce7c833d2a84991bbb28c912ec57, type: 3}
+      propertyPath: m_IsOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586554181961508118, guid: 6fadce7c833d2a84991bbb28c912ec57, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}

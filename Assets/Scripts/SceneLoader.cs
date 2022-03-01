@@ -31,6 +31,11 @@ public class SceneLoader : MonoBehaviour
 		SceneManager.LoadScene("Assets");
 	}
 
+	public void LoadCreditsScene2()
+	{
+		SceneManager.LoadScene("NewCredits");
+	}
+
 	public void LoadSettings()
 	{
 		SceneManager.LoadScene("Settings");

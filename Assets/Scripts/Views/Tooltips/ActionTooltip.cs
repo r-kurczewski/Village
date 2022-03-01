@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Village.Controllers;
 using Village.Scriptables;
 using static Village.Scriptables.Effect;
 using static Village.Scriptables.Resource;
@@ -26,13 +27,19 @@ namespace Village.Views.Tooltips
 		private Sprite defaultIcon;
 
 		[SerializeField]
-		private Color defaultColor;
-
-		[SerializeField]
 		private Transform effectsParent;
 
 		[SerializeField]
 		private EffectView actionResultPrefab;
+
+		[SerializeField]
+		private Color defaultValue;
+
+		[SerializeField]
+		private Color effectiveValue;
+
+		[SerializeField]
+		private Color missingValue;
 
 		public override void Load(ActionSlot slot)
 		{
@@ -61,7 +68,7 @@ namespace Village.Views.Tooltips
 			else
 			{
 				statIcon1.sprite = defaultIcon;
-				statIcon1.color = defaultColor;
+				statIcon1.color = defaultValue;
 			}
 
 			if (slot.Action.Stat2)
@@ -80,7 +87,7 @@ namespace Village.Views.Tooltips
 			foreach (var eff in slot.Action.Effects)
 			{
 				float multiplier = slot.Action.GetMultiplier(slot.Villager);
-				LoadEffect(eff, multiplier); 
+				LoadEffect(eff, multiplier);
 			}
 
 			RefreshLayout();
@@ -99,7 +106,18 @@ namespace Village.Views.Tooltips
 			var actionResult = Instantiate(actionResultPrefab, effectsParent);
 			actionResult.SetIcon(eff.effect.icon);
 			actionResult.SetIconColor(eff.effect.color);
-			actionResult.SetAmount(Mathf.RoundToInt(eff.value * multiplier));
+			int effectiveAmount = Mathf.RoundToInt(eff.value * multiplier);
+			actionResult.SetAmount(effectiveAmount);
+			if (effectiveAmount > eff.value)
+			{
+				actionResult.SetFontColor(effectiveValue);
+				//actionResult.SetBold(true);
+			}
+			else
+			{
+				actionResult.SetFontColor(defaultValue);
+				//actionResult.SetBold(false);
+			}
 		}
 
 		private void LoadCost(ResourceAmount res)
@@ -108,9 +126,19 @@ namespace Village.Views.Tooltips
 			actionResult.SetIcon(res.resource.icon);
 			actionResult.SetIconColor(res.resource.color);
 			actionResult.SetAmount(-res.Amount);
+			if(GameController.instance.GetResourceAmount(res.resource) < res.Amount)
+			{
+				actionResult.SetFontColor(missingValue);
+				//actionResult.SetBold(true);
+			}
+			else
+			{
+				actionResult.SetFontColor(defaultValue);
+				//actionResult.SetBold(false);
+			}
 		}
 
-		
+
 
 		private void RefreshLayout()
 		{

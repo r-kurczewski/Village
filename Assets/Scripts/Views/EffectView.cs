@@ -35,5 +35,17 @@ namespace Village.Views
 			amountText.color = color;
 		}
 
+		public void SetBold(bool bold)
+		{
+			if (bold)
+			{
+				amountText.fontStyle = FontStyles.Bold;
+			}
+			else
+			{
+				amountText.fontStyle = FontStyles.Normal;
+			}
+		}
+
 	}
 }

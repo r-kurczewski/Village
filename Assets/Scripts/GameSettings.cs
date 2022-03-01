@@ -51,15 +51,15 @@ public class GameSettings : MonoBehaviour
 		LoadMusicVolume();
 		LoadEffectsVolume();
 	}
-	public static bool SimplifiedTooltips => PlayerPrefs.GetInt(hideTooltipsString) != 0;
+	public static bool SimplifiedTooltips => PlayerPrefs.GetInt(hideTooltipsString, defaultValue: 0) != 0;
 
-	public static bool FullScreen => PlayerPrefs.GetInt("fullscreen") != 0;
+	public static bool FullScreen => PlayerPrefs.GetInt("fullscreen", defaultValue: Screen.fullScreen ? 1 : 0) != 0;
 
-	public static float MasterVolume => PlayerPrefs.GetFloat(masterVolumeString);
+	public static float MasterVolume => PlayerPrefs.GetFloat(masterVolumeString, defaultValue: 1);
 
-	public static float MusicVolume => PlayerPrefs.GetFloat(musicVolumeString);
+	public static float MusicVolume => PlayerPrefs.GetFloat(musicVolumeString, defaultValue: 1);
 
-	public static float EffectsVolume => PlayerPrefs.GetFloat(effectsVolumeString);
+	public static float EffectsVolume => PlayerPrefs.GetFloat(effectsVolumeString, defaultValue: 1);
 
 	private void LoadHideTooltips()
 	{
@@ -96,7 +96,7 @@ public class GameSettings : MonoBehaviour
 	{
 		float volume = MusicVolume;
 		music.value = volume;
-		AudioController.instance.SetMasterVolume(volume);
+		AudioController.instance.SetMusicVolume(volume);
 	}
 
 	private void LoadEffectsVolume()

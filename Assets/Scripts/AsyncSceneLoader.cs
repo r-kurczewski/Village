@@ -11,8 +11,11 @@ public class AsyncSceneLoader : MonoBehaviour
 	[SerializeField]
 	private float delay;
 
+	[SerializeField]
+	private ThreadPriority loadingPriority;
+
 	private AsyncOperation loading;
-	bool changeScene = false;
+	private bool changeScene = false;
 
 	private void Start()
 	{
@@ -22,9 +25,13 @@ public class AsyncSceneLoader : MonoBehaviour
 	public IEnumerator IStartLoading(string sceneName, float delay)
 	{
 		yield return new WaitForSeconds(delay);
+		var prevPriority = Application.backgroundLoadingPriority;
+		Application.backgroundLoadingPriority = loadingPriority;
 		loading = SceneManager.LoadSceneAsync(sceneName);
+		loading.completed += (loading) => Application.backgroundLoadingPriority = prevPriority;
+		loading.priority = -1;
 		loading.allowSceneActivation = changeScene;
-		StartCoroutine(IChangeScene());
+		StartCoroutine(IChangeScene(prevPriority));
 	}
 
 	public void AllowChangingScene()
@@ -32,7 +39,7 @@ public class AsyncSceneLoader : MonoBehaviour
 		changeScene = true;
 	}
 
-	private IEnumerator IChangeScene()
+	private IEnumerator IChangeScene(ThreadPriority prevPriority)
 	{
 		yield return new WaitUntil(() => changeScene);
 		loading.allowSceneActivation = true;

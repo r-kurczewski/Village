@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Village.Controllers;
 using static Village.Controllers.GameController;
@@ -13,6 +14,9 @@ namespace Village.Views
 	{
 		[SerializeField]
 		private GameEvent gameEvent;
+
+		[SerializeField]
+		private Color fontColor;
 
 		public int startTurn;
 
@@ -56,7 +60,7 @@ namespace Village.Views
 				reqView.SetAmount(req.Amount);
 				reqView.SetIcon(req.resource.icon);
 				reqView.SetIconColor(req.resource.color);
-				reqView.SetFontColor(Color.black);
+				reqView.SetFontColor(fontColor);
 			}
 
 			success.SetActive(gameEvent.eventBase.onSuccess.Count > 0);
@@ -66,7 +70,7 @@ namespace Village.Views
 				reqView.SetAmount(req.value);
 				reqView.SetIcon(req.effect.icon);
 				reqView.SetIconColor(req.effect.color);
-				reqView.SetFontColor(Color.black);
+				reqView.SetFontColor(fontColor);
 			}
 
 			failure.SetActive(gameEvent.eventBase.onFailure.Count > 0);
@@ -76,7 +80,7 @@ namespace Village.Views
 				reqView.SetAmount(req.value);
 				reqView.SetIcon(req.effect.icon);
 				reqView.SetIconColor(req.effect.color);
-				reqView.SetFontColor(Color.black);
+				reqView.SetFontColor(fontColor);
 			}
 			RefreshData();
 			RefreshLayout();
@@ -96,6 +100,7 @@ namespace Village.Views
 		{
 			contentParent.SetActive(!contentParent.activeSelf);
 			RefreshLayout();
+			EventSystem.current.SetSelectedGameObject(null);
 		}
 
 		private void RefreshLayout()

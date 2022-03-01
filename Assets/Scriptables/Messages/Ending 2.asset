@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ae9a3226242774ebdf30de13be3a69, type: 3}
   m_Name: Ending 2
   m_EditorClassIdentifier: 
-  localeTitle: messagestitle2/title
+  localeTitle: messages/ending2/title
   music: {fileID: 8300000, guid: 8a14291c4112b5349952a7ee6167f146, type: 3}
   backgroundColor: {r: 0.078, g: 0.078, b: 0.078, a: 1}
   localeMessages:

@@ -133,12 +133,12 @@ Keep an eye on emerging events on the panel on the right. They are crucial to su
 
 Rebuild your village to gain additional actions or rewards. 
 
-Collect reputation to give your settlers a better fate after the truce ends.
+Increase esteem of countries to give your settlers a better fate after the truce ends.
  
 Each settler is characterized by a set of stats, his health, his reputation, and:
 <sprite index=1>  Strength
 <sprite index=2>  Gathering
-<sprite index=6>  Processing
+<sprite index=6>  Crafting
 <sprite index=7>  Diplomacy
 <sprite index=5>  Intelligence
  
@@ -154,7 +154,7 @@ Level 4: No modifiers.
 Level 3: -1 point to all character stats. 
 Level 2 -2 points to all character stats.
 Level 1: -4 points to all character stats.
-Level 0: Causes the death of the occupant.
+Level 0: Causes the death of the villager.
 
 You can increase a character's health using actions in the field hospital.
 

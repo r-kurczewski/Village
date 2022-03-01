@@ -62,7 +62,7 @@ public abstract class Tooltiped : MonoBehaviour, IPointerEnterHandler, IPointerE
 		tooltipShown = true;
 	}
 
-	private void HideTooltip()
+	protected void HideTooltip()
 	{
 		tooltip.SetActive(false);
 		tooltipShown = false;

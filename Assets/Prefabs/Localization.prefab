@@ -454,10 +454,10 @@ MonoBehaviour:
       odno\u015Bnie postaci i akcji zobaczysz naje\u017Cd\u017Caj\u0105c na nie kursorem
       myszy. \n\nPilnuj pojawiaj\u0105cych si\u0119 wydarze\u0144 na panelu po prawej.
       S\u0105 kluczowe do przetrwania.\n\nOdbuduj wiosk\u0119, aby zyska\u0107 dodatkowe
-      akcje lub profity. \n\nZbieraj reputacj\u0119, aby zapewni\u0107 twoim osadnikom
-      lepszy los po zako\u0144czeniu rozejmu.\n \nKa\u017Cdego osadnika charakteryzuje
-      zestaw statystyk, jego zdrowie, jego reputacja, a tak\u017Ce:\n<sprite index=1> 
-      Si\u0142a\n<sprite index=2>  Zbieractwo\n<sprite index=6>  Przetw\xF3rstwo\n<sprite
+      akcje lub profity. \n\nZwi\u0119kszaj uznanie pa\u0144stw, aby zapewni\u0107
+      twoim osadnikom lepszy los po zako\u0144czeniu rozejmu.\n \nKa\u017Cdego osadnika
+      charakteryzuje zestaw statystyk, jego zdrowie, jego reputacja, a tak\u017Ce:\n<sprite
+      index=1>  Si\u0142a\n<sprite index=2>  Zbieractwo\n<sprite index=6>  Przetw\xF3rstwo\n<sprite
       index=7>  Dyplomacja\n<sprite index=5>  Inteligencja\n \nKa\u017Cdy punkt zwi\u0119ksza
       liczb\u0119 zbieranych zasob\xF3w o 20% domy\u015Blnej warto\u015Bci za ka\u017Cdy
       punkt przy akcjach danego typu.  \n\nDodatkowo ka\u017Cdy punkt dyplomacji
@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: Polish
+  currentLanguage: English
   detectLanguage: 1
   defaultLanguage: English
   saveLoad: 1
@@ -879,20 +879,20 @@ MonoBehaviour:
       can see more details about characters and actions by hovering your mouse cursor
       over them. \n\nKeep an eye on emerging events on the panel on the right. They
       are crucial to survival.\n\nRebuild your village to gain additional actions
-      or rewards. \n\nCollect reputation to give your settlers a better fate after
-      the truce ends.\n \nEach settler is characterized by a set of stats, his health,
-      his reputation, and:\n<sprite index=1>  Strength\n<sprite index=2>  Gathering\n<sprite
-      index=6>  Processing\n<sprite index=7>  Diplomacy\n<sprite index=5>  Intelligence\n
-      \nEach point increases the number of resources harvested by 20% of the default
-      value per point on actions of that type.  \n\nAdditionally, each diplomacy
-      point gives a +6% bonus to the price of items sold and -6% to the price of
-      items bought.\n\nIn addition to this, each point of intelligence causes another
-      random stat to increase at the beginning of a new chapter.\n\nHealth represents
-      the condition and fitness for work of a given inhabitant. It influences the
-      effective stats of the character. There are several levels of health:\n\nLevel
+      or rewards. \n\nIncrease esteem of countries to give your settlers a better
+      fate after the truce ends.\n \nEach settler is characterized by a set of stats,
+      his health, his reputation, and:\n<sprite index=1>  Strength\n<sprite index=2> 
+      Gathering\n<sprite index=6>  Crafting\n<sprite index=7>  Diplomacy\n<sprite
+      index=5>  Intelligence\n \nEach point increases the number of resources harvested
+      by 20% of the default value per point on actions of that type.  \n\nAdditionally,
+      each diplomacy point gives a +6% bonus to the price of items sold and -6% to
+      the price of items bought.\n\nIn addition to this, each point of intelligence
+      causes another random stat to increase at the beginning of a new chapter.\n\nHealth
+      represents the condition and fitness for work of a given inhabitant. It influences
+      the effective stats of the character. There are several levels of health:\n\nLevel
       4: No modifiers.\nLevel 3: -1 point to all character stats. \nLevel 2 -2 points
       to all character stats.\nLevel 1: -4 points to all character stats.\nLevel
-      0: Causes the death of the occupant.\n\nYou can increase a character's health
+      0: Causes the death of the villager.\n\nYou can increase a character's health
       using actions in the field hospital.\n\nThe settler's reputation affects the
       effective charisma value when interacting with a country.\n\nTo hide this information,
       press the Help button again."

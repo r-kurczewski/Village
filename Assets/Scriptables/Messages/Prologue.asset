@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localeTitle: messages/prologue/title
   music: {fileID: 8300000, guid: 7ed65f11639376f4ca50a2cf1255e24a, type: 3}
-  backgroundColor: {r: 0.078, g: 0.078, b: 0.078, a: 1}
+  backgroundColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   localeMessages:
   - messages/prologue/description

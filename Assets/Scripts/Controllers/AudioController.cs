@@ -62,11 +62,11 @@ namespace Village.Controllers
 			soundEffects.PlayOneShot(sound);
 		}
 
-		public void PlayMusicIfChanged(AudioClip music)
+		public void PlayMusicIfChanged(AudioClip clip)
 		{
-			if(this.music.clip != music)
+			if(music.clip != clip)
 			{
-				PlayMusic(music);
+				PlayMusic(clip);
 			}
 		}
 

@@ -29,6 +29,7 @@ public class ActionSlot : Tooltiped, IDropHandler, IPointerClickHandler
 	{
 		this.action = action;
 		icon.sprite = action.Icon;
+		name = action.ActionName;
 	}
 
 	public void OnDrop(PointerEventData eventData)

@@ -17,6 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 99bbe30432be9df4b8156b51b26e56a7, type: 3}
   stat1: {fileID: 11400000, guid: 4ed32862a36be7746b14073449606be5, type: 2}
   stat2: {fileID: 0}
+  executionPriority: 5
   costs: []
   effects:
   - effect: {fileID: 11400000, guid: 9d3db97e89f3adb42808e15635bb1c4e, type: 2}

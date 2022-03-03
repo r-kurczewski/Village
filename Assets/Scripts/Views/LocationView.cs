@@ -24,15 +24,15 @@ namespace Village.Views
 
 		public bool Built => isBuilt;
 
-		public void Start()
-		{
-			Clear();
-			if (location)
-			{
-				Load(location);
-			}
-			else Debug.LogWarning("No location set.", this);
-		}
+		//public void Start()
+		//{
+		//	Clear();
+		//	if (location)
+		//	{
+		//		Load(location);
+		//	}
+		//	else Debug.LogWarning("No location set.", this);
+		//}
 
 		private void Clear()
 		{
@@ -40,6 +40,11 @@ namespace Village.Views
 			{
 				Destroy(obj.gameObject);
 			}
+		}
+
+		public void Load()
+		{
+			Load(location);
 		}
 
 		public void Load(MapLocation location)

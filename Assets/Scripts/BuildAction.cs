@@ -1,4 +1,5 @@
 using Lean.Localization;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Village.Scriptables;
@@ -9,7 +10,8 @@ using static Village.Scriptables.Resource;
 
 public class BuildAction : IAction
 {
-	public Action buildBaseAction;
+	[SerializeField]
+	private Action buildBaseAction;
 	private LocationView buildingView;
 	private MapBuilding buildingBase;
 
@@ -23,12 +25,14 @@ public class BuildAction : IAction
 	public string ActionName => LeanLocalization.GetTranslationText(buildingBase.LocaleBuildActionName);
 	public string Description => LeanLocalization.GetTranslationText(buildingBase.localeBuildingDescription);
 	public Sprite Icon => buildBaseAction.icon;
+	public int ExecutionPriority => buildBaseAction.ExecutionPriority;
 	public List<EffectAmount> Effects => new List<EffectAmount>();
 	public List<ResourceAmount> Costs => buildingBase.buildingCost;
 	public VillagerStat Stat1 => buildBaseAction.stat1;
 	public VillagerStat Stat2 => buildBaseAction.stat2;
 
-	public void Execute(Villager target)
+
+	public IEnumerator Execute(Villager target)
 	{
 		if (IsCostCorrect())
 		{
@@ -40,6 +44,7 @@ public class BuildAction : IAction
 			}
 			else Debug.LogWarning("Trying to build not-building location!");
 		}
+		yield break;
 	}
 
 	protected void ApplyCosts()

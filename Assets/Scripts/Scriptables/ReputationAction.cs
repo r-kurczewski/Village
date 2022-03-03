@@ -14,7 +14,7 @@ namespace Village.Scriptables
 
 		public Country country;
 
-		public override void Execute(Villager target)
+		public override IEnumerator Execute(Villager target)
 		{
 			float multiplier = GetMultiplier(target);
 			if (IsCostCorrect())
@@ -22,6 +22,7 @@ namespace Village.Scriptables
 				ApplyCosts();
 				ApplyEffects(multiplier);
 			}
+			yield break;
 		}
 
 		public override float GetMultiplier(Villager villager)

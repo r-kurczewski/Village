@@ -37,7 +37,12 @@ namespace Village.Controllers
 		private Image raycastBlock;
 
 		[SerializeField]
+		private bool _tradeActive;
+
+		[SerializeField]
 		private List<TradeOffer> merchantTrades;
+
+		public bool TradeActive { get => _tradeActive; private set { _tradeActive = value; } }
 
 		private Villager villager;
 
@@ -83,6 +88,7 @@ namespace Village.Controllers
 		{
 			return Mathf.RoundToInt(villager.EffectiveDiplomacy * TRADE_DISCOUNT * 100);
 		}
+
 		public void LoadTrades(List<TradeOffer> trades)
 		{
 			merchantTrades = trades;
@@ -103,13 +109,16 @@ namespace Village.Controllers
 		{
 			gameObject.SetActive(true);
 			raycastBlock.enabled = true;
+			TradeActive = true;
 		}
 
 		public void HideTradeWindow()
 		{
 			gameObject.SetActive(false);
 			raycastBlock.enabled = false;
+			TradeActive = false;
 		}
+
 		public void LoadTradeWindow(Villager villager)
 		{
 			Load(merchantTrades, villager);

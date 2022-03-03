@@ -15,6 +15,7 @@ MonoBehaviour:
   localeTitle: event/heat/title
   localeDescription: event/heat/description
   turnDuration: 3
+  eventPriority: 2
   requirements:
   - resource: {fileID: 11400000, guid: 9d3db97e89f3adb42808e15635bb1c4e, type: 2}
     amount: 30

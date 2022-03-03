@@ -15,6 +15,7 @@ MonoBehaviour:
   localeTitle: event/envoyTharros/title
   localeDescription: event/envoyTharros/description
   turnDuration: 3
+  eventPriority: 2
   requirements:
   - resource: {fileID: 11400000, guid: 276a9847a78915b46bb48e7d72a033e5, type: 2}
     amount: 20

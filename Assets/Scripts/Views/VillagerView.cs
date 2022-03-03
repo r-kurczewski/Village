@@ -58,19 +58,16 @@ namespace Village.Views
 			rt.SetParent(dragParent);
 			GetComponent<Image>().raycastTarget = false;
 			blockTooltip = true;
-			Debug.Log("Beg");
 			AudioController.instance.PlaySound(takeVillagerSound);
 		}
 
 		public void OnDrag(PointerEventData eventData)
 		{
 			transform.position = ClampedMousePos(Input.mousePosition);
-			Debug.Log("Mid");
 		}
 
 		public void OnEndDrag(PointerEventData eventData)
 		{
-			Debug.Log("End");
 			var slot = eventData.pointerCurrentRaycast.gameObject?.GetComponent<ActionSlot>();
 			if (!slot)
 			{

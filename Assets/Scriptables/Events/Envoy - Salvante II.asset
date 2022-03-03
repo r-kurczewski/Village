@@ -15,6 +15,7 @@ MonoBehaviour:
   localeTitle: event/envoySalvante/title
   localeDescription: event/envoySalvante/description
   turnDuration: 3
+  eventPriority: 2
   requirements:
   - resource: {fileID: 11400000, guid: 89ccf5a1788e2dc4487261ed0aea1f86, type: 2}
     amount: 10

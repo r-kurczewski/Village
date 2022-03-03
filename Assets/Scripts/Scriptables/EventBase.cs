@@ -22,6 +22,8 @@ namespace Village.Scriptables
 
 		public int turnDuration;
 
+		public int eventPriority;
+
 		public List<ResourceAmount> requirements;
 
 		public List<EffectAmount> onSuccess;

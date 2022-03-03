@@ -9,11 +9,18 @@ namespace Village.Scriptables
 	[CreateAssetMenu(fileName = "TradeAction", menuName = "Village/Action/TradeAction")]
 	public class TradeAction : Action
 	{
-		public override void Execute(Villager target)
+		public override IEnumerator Execute(Villager target)
 		{
-			if (!target) return;
+			if (!target) yield break;
 
 			instance.LoadTradeWindow(target);
+
+			// TODO: trade wait implementation
+			while(instance.GetTradeActive())
+			{
+				yield return null;
+			}
+			Debug.Log("trading ended");
 		}
 
 		public override float GetMultiplier(Villager villager)

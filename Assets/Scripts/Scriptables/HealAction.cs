@@ -14,15 +14,14 @@ namespace Village.Scriptables
 
 		public int HealStrength => effects.FirstOrDefault(x => x.effect == heal).value;
 
-		public override void Execute(Villager target)
+		public override IEnumerator Execute(Villager target)
 		{
 			if (IsCostCorrect())
 			{
 				ApplyCosts();
 				target.Health += HealStrength;
 			}
+			yield break;
 		}
-
-		//public Action<IEnumerable<Villager>, int> OnApply;
 	}
 }

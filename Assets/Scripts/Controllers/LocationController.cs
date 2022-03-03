@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -16,28 +17,43 @@ namespace Village.Controllers
 		[SerializeField]
 		private LocationView merchantLocation;
 
+		public List<ActionSlot> actionSlots;
+
 		public void LoadLoctions()
 		{
 			locations = GetComponentsInChildren<LocationView>();
+			foreach (var location in locations)
+			{
+				location.Load();
+			}
+			actionSlots = locations
+				.SelectMany(x => x.GetComponentsInChildren<ActionSlot>())
+				.OrderByDescending(x => x.Action.ExecutionPriority)
+				.ToList();
 			RefreshGUI();
 		}
 
 		public void RefreshGUI()
 		{
-			foreach (var location in locations)
-			{
-				location.Reload();
-			}
 			merchantLocation.SetVisibility(instance.MerchantAvailable());
+			actionSlots = locations
+				.SelectMany(x => x.GetComponentsInChildren<ActionSlot>())
+				.OrderByDescending(x => x.Action.ExecutionPriority)
+				.ToList();
 		}
 
-		public void ExecuteVillagerActions()
+		public IEnumerator IExecuteVillagerActions()
 		{
-			foreach (var location in locations)
+			foreach (var actionSlot in actionSlots)
 			{
-				foreach (var slot in location.GetComponentsInChildren<ActionSlot>())
+				Debug.Log(actionSlot.Action.ActionName);
+				if (actionSlot.Villager)
 				{
-					if (slot.Villager) slot.Action.Execute(slot.Villager);
+					var actionEnum = actionSlot.Action.Execute(actionSlot.Villager);
+					while (actionEnum.MoveNext())
+					{
+						yield return null;
+					}
 				}
 			}
 		}
@@ -56,9 +72,9 @@ namespace Village.Controllers
 		public List<string> SaveBuildings()
 		{
 			List<string> buildings = new List<string>();
-			foreach(var view in locations)
+			foreach (var view in locations)
 			{
-				if(view.Location is MapBuilding building)
+				if (view.Location is MapBuilding building)
 				{
 					if (view.Built) buildings.Add(building.name);
 				}
@@ -68,9 +84,9 @@ namespace Village.Controllers
 
 		public void LoadBuildings(List<string> save)
 		{
-			foreach(var view in locations)
+			foreach (var view in locations)
 			{
-				if(view.Location is MapBuilding building)
+				if (view.Location is MapBuilding building)
 				{
 					if (save.Contains(building.name)) view.SetAsBuilt();
 				}

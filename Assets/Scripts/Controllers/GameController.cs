@@ -69,7 +69,8 @@ namespace Village.Controllers
 		{
 			if (SaveController.SaveExists)
 			{
-				StartCoroutine(ILoadPreviousGame(SaveController.LoadSaveData()));
+				SaveController.SaveData save = SaveController.LoadSaveData();
+				StartCoroutine(ILoadPreviousGame(save));
 			}
 			else
 			{
@@ -179,6 +180,11 @@ namespace Village.Controllers
 			tradeController.ShowTradeWindow();
 		}
 
+		public bool GetTradeActive()
+		{
+			return tradeController.TradeActive;
+		}
+
 		public int GetCurrentTurn()
 		{
 			return turnController.Turn;
@@ -186,8 +192,16 @@ namespace Village.Controllers
 
 		public void EndTurn()
 		{
+			StartCoroutine(IEndTurn());
+		}
+
+		private IEnumerator IEndTurn()
+		{
 			turnController.CheckIfGameEnds();
-			locationController.ExecuteVillagerActions();
+			var actionEnum = locationController.IExecuteVillagerActions();
+			
+			while (actionEnum.MoveNext()) yield return null;
+
 			villagerController.MoveVillagersToPanel();
 			turnController.MoveToNextTurn();
 			TurnUpdate();

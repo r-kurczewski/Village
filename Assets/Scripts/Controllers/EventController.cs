@@ -67,7 +67,10 @@ namespace Village.Controllers
 		public void LoadChapterEvents()
 		{
 			GameChapter chapter = instance.Chapter;
-			chapterEvents = chapter.GenerateEventList().OrderBy(x => x.turn).ToList();
+			chapterEvents = chapter.GenerateEventList()
+				.OrderBy(x => x.turn)
+				.ThenByDescending(x=> x.eventBase.eventPriority)
+				.ToList();
 		}
 
 		public void LoadChapterEvents(List<GameEvent.SaveData> events, Dictionary<string, ScriptableObject> assets)
@@ -91,10 +94,20 @@ namespace Village.Controllers
 
 		public void RefreshGUI()
 		{
-			foreach(var ev in currentEvents)
+			SortEvents();
+			foreach (var ev in currentEvents)
 			{
+				ev.transform.SetSiblingIndex(currentEvents.IndexOf(ev));
 				ev.RefreshData();
 			}
+		}
+
+		public void SortEvents()
+		{
+			currentEvents = currentEvents
+				.OrderBy(x => x.TurnsLeft)
+				.ThenByDescending(x => x.Event.eventBase.eventPriority)
+				.ToList();
 		}
 
 		public void EventUpdate()
@@ -134,7 +147,6 @@ namespace Village.Controllers
 				Destroy(ev.gameObject);
 			}
 
-			//Debug.Log("Loading events from turn " + turnToLoad);
 			var newEvents = chapterEvents.Where(x => x.turn == turnToLoad).ToList();
 
 			if(newEvents.Count > 0)

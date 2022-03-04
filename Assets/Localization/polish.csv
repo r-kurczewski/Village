@@ -21,6 +21,14 @@ game/mainMenu,Menu
 game/clickToContinue,"Kliknij, aby kontynuować..."
 game/loading,"Ładowanie..."
 game/simplifyTooltips,Uproszczone podpowiedzi
+credits/gameCreator,Twórca gry
+credits/music,Muzyka
+credits/sounds,Dźwięk
+credits/specialThanks,"Specjalne 
+podziękowania"
+credits/graphics,Grafika
+credits/fonts,Czcionki
+credits/testers,Testerzy
 trade/sell,Sprzedaj
 trade/buy,Kup
 trade/accept,Akceptuj

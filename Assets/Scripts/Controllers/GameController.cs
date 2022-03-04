@@ -198,10 +198,7 @@ namespace Village.Controllers
 		private IEnumerator IEndTurn()
 		{
 			turnController.CheckIfGameEnds();
-			var actionEnum = locationController.IExecuteVillagerActions();
-			
-			while (actionEnum.MoveNext()) yield return null;
-
+			yield return locationController.IExecuteVillagerActions();
 			villagerController.MoveVillagersToPanel();
 			turnController.MoveToNextTurn();
 			TurnUpdate();

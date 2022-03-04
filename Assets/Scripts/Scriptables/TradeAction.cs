@@ -15,12 +15,7 @@ namespace Village.Scriptables
 
 			instance.LoadTradeWindow(target);
 
-			// TODO: trade wait implementation
-			while(instance.GetTradeActive())
-			{
-				yield return null;
-			}
-			Debug.Log("trading ended");
+			yield return new WaitWhile(() => instance.GetTradeActive());
 		}
 
 		public override float GetMultiplier(Villager villager)

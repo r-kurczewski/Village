@@ -5,8 +5,6 @@ using UnityEngine;
 using Village.Scriptables;
 using Random = UnityEngine.Random;
 using static Village.Controllers.GameController;
-using System.Runtime.Serialization;
-using UnityEngine.AddressableAssets;
 
 [SelectionBase]
 public class Villager : MonoBehaviour

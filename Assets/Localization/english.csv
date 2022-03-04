@@ -13,7 +13,7 @@ game/startGame,Start new game
 game/loadGame,Load game
 game/exit,Exit game
 game/credits,Credits
-game/turn,Turn {turn}
+game/turn,{turn}
 game/currentChapter,{chapter}
 game/endTurn,End turn
 game/helpButton,Help
@@ -21,6 +21,13 @@ game/mainMenu,Menu
 game/clickToContinue,"Click to continue..."
 game/loading,"Loading..."
 game/simplifyTooltips,Simplified tooltips
+credits/gameCreator,Game creator
+credits/music,Music
+credits/sounds,Sounds
+credits/specialThanks,Special Thanks
+credits/graphics,Graphics
+credits/fonts,Fonts
+credits/testers,Testers
 trade/sell,Sell
 trade/buy,Buy
 trade/accept,Accept

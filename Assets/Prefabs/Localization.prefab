@@ -198,6 +198,20 @@ MonoBehaviour:
     Text: "\u0141adowanie..."
   - Name: game/simplifyTooltips
     Text: Uproszczone podpowiedzi
+  - Name: credits/gameCreator
+    Text: "Tw\xF3rca gry"
+  - Name: credits/music
+    Text: Muzyka
+  - Name: credits/sounds
+    Text: "D\u017Awi\u0119k"
+  - Name: credits/specialThanks
+    Text: "Specjalne \npodzi\u0119kowania"
+  - Name: credits/graphics
+    Text: Grafika
+  - Name: credits/fonts
+    Text: Czcionki
+  - Name: credits/testers
+    Text: Testerzy
   - Name: trade/sell
     Text: Sprzedaj
   - Name: trade/buy
@@ -520,7 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: English
+  currentLanguage: Polish
   detectLanguage: 1
   defaultLanguage: English
   saveLoad: 1
@@ -620,7 +634,7 @@ MonoBehaviour:
   - Name: game/credits
     Text: Credits
   - Name: game/turn
-    Text: Turn {turn}
+    Text: '{turn}'
   - Name: game/currentChapter
     Text: '{chapter}'
   - Name: game/endTurn
@@ -635,6 +649,20 @@ MonoBehaviour:
     Text: Loading...
   - Name: game/simplifyTooltips
     Text: Simplified tooltips
+  - Name: credits/gameCreator
+    Text: Game creator
+  - Name: credits/music
+    Text: Music
+  - Name: credits/sounds
+    Text: Sounds
+  - Name: credits/specialThanks
+    Text: Special Thanks
+  - Name: credits/graphics
+    Text: Graphics
+  - Name: credits/fonts
+    Text: Fonts
+  - Name: credits/testers
+    Text: Testers
   - Name: trade/sell
     Text: Sell
   - Name: trade/buy

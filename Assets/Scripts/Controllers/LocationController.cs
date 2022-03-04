@@ -46,14 +46,9 @@ namespace Village.Controllers
 		{
 			foreach (var actionSlot in actionSlots)
 			{
-				Debug.Log(actionSlot.Action.ActionName);
 				if (actionSlot.Villager)
 				{
-					var actionEnum = actionSlot.Action.Execute(actionSlot.Villager);
-					while (actionEnum.MoveNext())
-					{
-						yield return null;
-					}
+					yield return actionSlot.Action.Execute(actionSlot.Villager);
 				}
 			}
 		}

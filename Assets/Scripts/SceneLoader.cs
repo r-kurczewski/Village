@@ -28,11 +28,6 @@ public class SceneLoader : MonoBehaviour
 
 	public void LoadCreditsScene()
 	{
-		SceneManager.LoadScene("Assets");
-	}
-
-	public void LoadCreditsScene2()
-	{
 		SceneManager.LoadScene("NewCredits");
 	}
 

@@ -135,7 +135,7 @@ namespace Village.Controllers
 
 		public void AddRemoveVillagersHealth(int value)
 		{
-			villagerController.AddRemoveVillagersHealth(value);
+			villagerController.AddRemoveVillagersHealth(value, playSound: true);
 		}
 
 		public void AddRemoveResource(Resource resource, int amount)

@@ -184,8 +184,10 @@ MonoBehaviour:
     Text: Autorzy
   - Name: game/currentChapter
     Text: '{chapter}'
+  - Name: game/turnLabel
+    Text: Tura
   - Name: game/turn
-    Text: Tura {turn}
+    Text: '{turn}'
   - Name: game/endTurn
     Text: "Zako\u0144cz tur\u0119"
   - Name: game/helpButton
@@ -534,7 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: Polish
+  currentLanguage: English
   detectLanguage: 1
   defaultLanguage: English
   saveLoad: 1
@@ -633,6 +635,8 @@ MonoBehaviour:
     Text: Exit game
   - Name: game/credits
     Text: Credits
+  - Name: game/turnLabel
+    Text: Turn
   - Name: game/turn
     Text: '{turn}'
   - Name: game/currentChapter

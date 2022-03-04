@@ -28,6 +28,9 @@ namespace Village.Controllers
 		[SerializeField]
 		private LayoutGroup layout;
 
+		[SerializeField]
+		private AudioClip loseHealthSound;
+
 		public void PutVillager(VillagerView villager)
 		{
 			villager.transform.SetParent(transform);
@@ -45,7 +48,7 @@ namespace Village.Controllers
 		{
 			foreach (var villager in villagers)
 			{
-				villager.MoveToPanel();
+				villager.MoveToPanel(playSound: false);
 				PutVillager(villager);
 			}
 		}
@@ -109,9 +112,10 @@ namespace Village.Controllers
 			
 		}
 
-		public void AddRemoveVillagersHealth(int value)
+		public void AddRemoveVillagersHealth(int value, bool playSound)
 		{
 			villagers.ForEach(x => x.Villager.Health += value);
+			AudioController.instance.PlaySound(loseHealthSound);
 		}
 
 		public void LoadVillagers(List<Villager.SaveData> save, Dictionary<string, ScriptableObject> assets)

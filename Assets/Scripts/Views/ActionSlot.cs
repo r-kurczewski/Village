@@ -47,7 +47,7 @@ namespace Village.Views
 
 		public void OnPointerClick(PointerEventData eventData)
 		{
-			if (VillagerView) VillagerView.MoveToPanel();
+			if (VillagerView) VillagerView.MoveToPanel(playSound: true);
 		}
 
 		protected override void LoadTooltipData()

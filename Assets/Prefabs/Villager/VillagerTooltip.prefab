@@ -1056,7 +1056,7 @@ GameObject:
   - component: {fileID: 677428507005285149}
   m_Layer: 2
   m_Name: VillagerTooltip
-  m_TagString: Untagged
+  m_TagString: Tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1933,11 +1933,11 @@ PrefabInstance:
     - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
+      objectReference: {fileID: 11400000, guid: dfffce3f5215cd046931496ebf7fccd0, type: 2}
     - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
+      objectReference: {fileID: 349511989436311494, guid: dfffce3f5215cd046931496ebf7fccd0, type: 2}
     - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
       propertyPath: m_VerticalAlignment
       value: 4096
@@ -2528,7 +2528,7 @@ PrefabInstance:
     - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
+      objectReference: {fileID: 11400000, guid: dfffce3f5215cd046931496ebf7fccd0, type: 2}
     - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
       propertyPath: m_fontStyle
       value: 1
@@ -2540,7 +2540,7 @@ PrefabInstance:
     - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
+      objectReference: {fileID: 349511989436311494, guid: dfffce3f5215cd046931496ebf7fccd0, type: 2}
     - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
       propertyPath: m_VerticalAlignment
       value: 4096

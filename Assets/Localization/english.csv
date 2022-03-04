@@ -13,6 +13,7 @@ game/startGame,Start new game
 game/loadGame,Load game
 game/exit,Exit game
 game/credits,Credits
+game/turnLabel,Turn
 game/turn,{turn}
 game/currentChapter,{chapter}
 game/endTurn,End turn

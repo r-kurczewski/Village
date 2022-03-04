@@ -8,12 +8,6 @@ namespace Village.Views
 {
 	public class TurnView : MonoBehaviour
 	{
-		[SerializeField]
-		private TMP_Text turnLabel;
-
-		[SerializeField]
-		private TMP_Text seasonLabel;
-
 		public void SetTurn(int turn)
 		{
 			LeanLocalization.SetToken("turn", turn.ToString());

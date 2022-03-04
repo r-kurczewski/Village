@@ -14,7 +14,8 @@ game/loadGame,Wczytaj grę
 game/exit,Zakończ
 game/credits,Autorzy
 game/currentChapter,{chapter}
-game/turn,Tura {turn}
+game/turnLabel,Tura
+game/turn,{turn}
 game/endTurn,Zakończ turę
 game/helpButton,Pomoc
 game/mainMenu,Menu

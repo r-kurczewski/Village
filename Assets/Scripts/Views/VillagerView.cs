@@ -71,8 +71,8 @@ namespace Village.Views
 			var slot = eventData.pointerCurrentRaycast.gameObject?.GetComponent<ActionSlot>();
 			if (!slot)
 			{
-				MoveToPanel();
-				AudioController.instance.PlaySound(takeVillagerSound);
+				MoveToPanel(playSound: true);
+
 			}
 			GetComponent<Image>().raycastTarget = true;
 		}
@@ -82,11 +82,12 @@ namespace Village.Views
 			healthBar.value = value;
 		}
 
-		public void MoveToPanel()
+		public void MoveToPanel(bool playSound)
 		{
 			GetComponent<Image>().raycastTarget = true;
 			blockTooltip = false;
 			controller.PutVillager(this);
+			if(playSound) AudioController.instance.PlaySound(takeVillagerSound);
 		}
 
 		private Vector2 ClampedMousePos(Vector2 mousePos)

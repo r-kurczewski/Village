@@ -6,6 +6,8 @@ using System.Linq;
 using static Village.Scriptables.Resource;
 using Village.Views;
 using System.IO;
+using BayatGames.SaveGameFree.Serializers;
+using System.Runtime.Serialization;
 
 namespace Village.Controllers
 {
@@ -35,7 +37,11 @@ namespace Village.Controllers
 		public static SaveData LoadSaveData()
 		{
 			save = SaveGame.Load<SaveData>(saveFileName);
-			return save;
+			if (save == null)
+			{
+				throw new InvalidDataException("There was a problem with loading save.");
+			}
+			else return save;
 		}
 
 		public static bool SaveExists => SaveGame.Exists(saveFileName);

@@ -115,10 +115,11 @@ namespace Village.Controllers
 		public void LoadChapter()
 		{
 			GameChapter selected = chapter;
-			while (turn < selected.chapterTurnStart || turn >= selected.nextChapter.chapterTurnStart)
+			while (turn < selected.chapterTurnStart || turn >= (selected.nextChapter?.chapterTurnStart ?? int.MaxValue))
 			{
 				selected = selected.nextChapter;
-				LoadChapterDetails(selected);
+				int num = selected.nextChapter?.chapterTurnStart ?? -1;
+				bool cond = turn < num;
 			}
 			LoadChapterDetails(selected);
 		}

@@ -6921,6 +6921,38 @@ PrefabInstance:
       value: 0.990566
       objectReference: {fileID: 0}
     - target: {fileID: 5715605487689930210, guid: 6d5e591fffb795e468a96587462f6da4, type: 3}
+      propertyPath: negativeColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715605487689930210, guid: 6d5e591fffb795e468a96587462f6da4, type: 3}
+      propertyPath: negativeColor.b
+      value: 0.4438857
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715605487689930210, guid: 6d5e591fffb795e468a96587462f6da4, type: 3}
+      propertyPath: negativeColor.g
+      value: 0.4438857
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715605487689930210, guid: 6d5e591fffb795e468a96587462f6da4, type: 3}
+      propertyPath: negativeColor.r
+      value: 0.990566
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715605487689930210, guid: 6d5e591fffb795e468a96587462f6da4, type: 3}
+      propertyPath: negativeValue.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715605487689930210, guid: 6d5e591fffb795e468a96587462f6da4, type: 3}
+      propertyPath: negativeValue.b
+      value: 0.4438857
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715605487689930210, guid: 6d5e591fffb795e468a96587462f6da4, type: 3}
+      propertyPath: negativeValue.g
+      value: 0.4438857
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715605487689930210, guid: 6d5e591fffb795e468a96587462f6da4, type: 3}
+      propertyPath: negativeValue.r
+      value: 0.990566
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715605487689930210, guid: 6d5e591fffb795e468a96587462f6da4, type: 3}
       propertyPath: effectiveValue.a
       value: 1
       objectReference: {fileID: 0}

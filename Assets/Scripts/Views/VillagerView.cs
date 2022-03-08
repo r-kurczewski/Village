@@ -8,14 +8,14 @@ using Village.Views.Tooltips;
 namespace Village.Views
 {
 	[SelectionBase]
-	public class VillagerView : Tooltiped, IBeginDragHandler, IDragHandler, IEndDragHandler
+	public class VillagerView : Tooltiped, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
 	{
-		private const int dragSpriteSize = 30;
+		public const int dragSpriteSize = 30;
 
 		public static VillagerView draggedVillager;
 
 		[SerializeField]
-		private Villager villager;
+		private Villager _villager;
 
 		[SerializeField]
 		private Image icon;
@@ -32,11 +32,17 @@ namespace Village.Views
 		[SerializeField]
 		private AudioClip takeVillagerSound;
 
-		public Villager Villager => villager;
+		public Villager Villager => _villager;
+
+		public Transform PrevParent { get; private set; }
+
+		public int? PrevSiblingIndex { get; private set; }
+
+		public VillagerView PlaceholderClone { get; private set; }
 
 		public void Load(Villager villager, VillagerController controller)
 		{
-			this.villager = villager;
+			this._villager = villager;
 			this.controller = controller;
 			this.dragParent = controller.dragParent;
 
@@ -52,10 +58,22 @@ namespace Village.Views
 
 		public void OnBeginDrag(PointerEventData eventData)
 		{
+			PrevParent = transform.parent;
+			PrevSiblingIndex = transform.GetSiblingIndex();
 			draggedVillager = this;
+			var slot = GetComponentInParent<ActionSlot>();
 			var rt = GetComponent<RectTransform>();
+
+			if (!slot)
+			{
+				PlaceholderClone = Instantiate(this, transform.parent);
+				PlaceholderClone.transform.SetSiblingIndex(PrevSiblingIndex.Value);
+			}
+
 			rt.sizeDelta = Vector2.one * dragSpriteSize;
 			rt.SetParent(dragParent);
+			controller.RefreshGUI();
+
 			GetComponent<Image>().raycastTarget = false;
 			blockTooltip = true;
 			AudioController.instance.PlaySound(takeVillagerSound);
@@ -68,13 +86,61 @@ namespace Village.Views
 
 		public void OnEndDrag(PointerEventData eventData)
 		{
-			var slot = eventData.pointerCurrentRaycast.gameObject?.GetComponent<ActionSlot>();
-			if (!slot)
+			var slot = eventData.pointerCurrentRaycast.gameObject?.GetComponentInParent<ActionSlot>();
+			var villager = eventData.pointerCurrentRaycast.gameObject?.GetComponentInParent<Villager>();
+
+			if (!slot && !villager)
 			{
 				MoveToPanel(playSound: true);
-
 			}
+			if(PlaceholderClone) Destroy(PlaceholderClone.gameObject);
 			GetComponent<Image>().raycastTarget = true;
+		}
+
+		//public void OnDrop(PointerEventData eventData)
+		//{
+		//	VillagerView dropped = eventData.pointerDrag.GetComponent<VillagerView>();
+		//	ActionSlot slot = transform.parent.GetComponent<ActionSlot>();
+
+		//	//if dropped on villager in a slot
+		//	if (slot)
+		//	{
+		//		Debug.Log($"{dropped.Villager.name} on {Villager.name}");
+		//		transform.SetParent(dropped.PrevParent);
+		//		transform.localPosition = Vector2.zero;
+		//		slot.PutVillager(dropped);
+
+		//		// if dropped villager was in villagers panel
+		//		if (dropped.PrevParent == controller.transform)
+		//		{
+		//			transform.SetSiblingIndex(dropped.PrevSiblingIndex);
+		//			controller.RefreshGUI();
+		//		}
+		//	}
+		//}
+
+		public void OnDrop(PointerEventData eventData)
+		{
+			VillagerView dropped = eventData.pointerDrag.GetComponent<VillagerView>();
+			var droppedSize = dropped.GetComponent<RectTransform>().sizeDelta;
+
+			var parent = transform.parent;
+			var size = transform.GetComponent<RectTransform>().sizeDelta;
+			var index = transform.GetSiblingIndex();
+
+			Debug.Log($"{dropped.Villager.name} on {Villager.name}");
+
+			transform.SetParent(dropped.PrevParent);
+			transform.localPosition = Vector2.zero;
+			transform.GetComponent<RectTransform>().sizeDelta = droppedSize;
+			transform.SetSiblingIndex(dropped.PrevSiblingIndex.Value);
+			
+			dropped.transform.SetParent(parent);
+			dropped.transform.localPosition = Vector2.zero;
+			dropped.transform.GetComponent<RectTransform>().sizeDelta = size;
+			dropped.transform.SetSiblingIndex(index < dropped.PrevSiblingIndex ? index : index + 1);
+
+			controller.RefreshGUI();
 		}
 
 		public void SetHealth(int value)
@@ -87,7 +153,7 @@ namespace Village.Views
 			GetComponent<Image>().raycastTarget = true;
 			blockTooltip = false;
 			controller.PutVillager(this);
-			if(playSound) AudioController.instance.PlaySound(takeVillagerSound);
+			if (playSound) AudioController.instance.PlaySound(takeVillagerSound);
 		}
 
 		private Vector2 ClampedMousePos(Vector2 mousePos)
@@ -99,7 +165,7 @@ namespace Village.Views
 		}
 		protected override void LoadTooltipData()
 		{
-			VillagerTooltip.instance.Load(villager);
+			VillagerTooltip.instance.Load(_villager);
 		}
 
 		protected override void SetTooltipObject()

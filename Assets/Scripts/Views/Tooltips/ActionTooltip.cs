@@ -8,6 +8,7 @@ using Village.Controllers;
 using Village.Scriptables;
 using static Village.Scriptables.Effect;
 using static Village.Scriptables.Resource;
+using UnityEngine.Serialization;
 
 namespace Village.Views.Tooltips
 {
@@ -39,7 +40,7 @@ namespace Village.Views.Tooltips
 		private Color effectiveValue;
 
 		[SerializeField]
-		private Color missingValue;
+		private Color negativeValue;
 
 		public override void Load(ActionSlot slot)
 		{
@@ -111,12 +112,14 @@ namespace Village.Views.Tooltips
 			if (effectiveAmount > eff.value)
 			{
 				actionResult.SetFontColor(effectiveValue);
-				//actionResult.SetBold(true);
+			}
+			else if (effectiveAmount < eff.value)
+			{
+				actionResult.SetFontColor(negativeValue);
 			}
 			else
 			{
 				actionResult.SetFontColor(defaultValue);
-				//actionResult.SetBold(false);
 			}
 		}
 
@@ -128,7 +131,7 @@ namespace Village.Views.Tooltips
 			actionResult.SetAmount(-res.Amount);
 			if(GameController.instance.GetResourceAmount(res.resource) < res.Amount)
 			{
-				actionResult.SetFontColor(missingValue);
+				actionResult.SetFontColor(negativeValue);
 				//actionResult.SetBold(true);
 			}
 			else

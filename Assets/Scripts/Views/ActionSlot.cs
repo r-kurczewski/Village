@@ -36,13 +36,18 @@ namespace Village.Views
 
 		public void OnDrop(PointerEventData eventData)
 		{
-			VillagerView villager = eventData.pointerDrag.GetComponent<VillagerView>();
-			if (villager)
+			VillagerView dropped = eventData.pointerDrag.GetComponent<VillagerView>();
+			if (dropped)
 			{
-				villager.transform.SetParent(transform);
-				villager.transform.localPosition = Vector2.zero;
+				PutVillager(dropped);
 				AudioController.instance.PlaySound(putVillagerSound);
 			}
+		}
+
+		public void PutVillager(VillagerView dropped)
+		{
+			dropped.transform.SetParent(transform);
+			dropped.transform.localPosition = Vector2.zero;
 		}
 
 		public void OnPointerClick(PointerEventData eventData)

@@ -764,7 +764,7 @@ MonoBehaviour:
   - Name: event/bandits/title
     Text: Bandits
   - Name: event/cold/title
-    Text: Rapid cooling
+    Text: Sudden cold
   - Name: event/envoyTharros/title
     Text: Emissary of Tharros
   - Name: event/envoySalvante/title
@@ -790,14 +790,14 @@ MonoBehaviour:
     Text: A group of bandits appeared in the area. They will probably try to rob
       us. We need to set traps and equip ourselves with weapons.
   - Name: event/cold/description
-    Text: The weather starts to get crazy, it gets very cold. We need extra firewood
-      to keep people from getting sick.
+    Text: The weather is starting to get crazy, it's getting extremely cold. We need
+      warm clothes and a bunch of firewood so people don't get sick.
   - Name: event/envoyTharros/description
     Text: An envoy from one of the countries has arrived in the village. In exchange
-      for specific goods, he is able to look at your situation more favorably.
+      for specific goods, they are able to look at your situation more favorably.
   - Name: event/envoySalvante/description
     Text: An envoy from one of the countries has arrived in the village. In exchange
-      for specific goods, he is able to look at your situation more favorably.
+      for specific goods, there are able to look at your situation more favorably.
   - Name: event/epidemic/description
     Text: People in the village are starting to get sick. We need to prepare medicine.
   - Name: event/firewood/description

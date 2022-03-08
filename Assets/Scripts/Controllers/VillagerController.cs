@@ -134,6 +134,11 @@ namespace Village.Controllers
 			return villagers.Count;
 		}
 
+		public void SortVillagers()
+		{
+			villagers = villagers.OrderBy(x => x.SortIndex).ToList();
+		}
+
 		public List<Villager.SaveData> SaveVillagers()
 		{
 			return villagers.Select(x => x.Villager.Save()).ToList();

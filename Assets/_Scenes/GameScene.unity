@@ -7118,7 +7118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5715605488862507459, guid: 6d5e591fffb795e468a96587462f6da4, type: 3}
       propertyPath: m_Padding.m_Right
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5715605488862507518, guid: 6d5e591fffb795e468a96587462f6da4, type: 3}
       propertyPath: m_Name
@@ -8294,7 +8294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 111478343592724694, guid: 6318394160a46a84c9e85a2061519cf9, type: 3}
       propertyPath: isBuilt
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1768538392744870944, guid: 6318394160a46a84c9e85a2061519cf9, type: 3}
       propertyPath: isBuilt

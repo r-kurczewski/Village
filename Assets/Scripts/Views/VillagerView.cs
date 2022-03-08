@@ -36,7 +36,9 @@ namespace Village.Views
 
 		public Transform PrevParent { get; private set; }
 
-		public int? PrevSiblingIndex { get; private set; }
+		public int PrevSiblingIndex { get; private set; }
+
+		public int SortIndex;
 
 		public VillagerView PlaceholderClone { get; private set; }
 
@@ -49,6 +51,7 @@ namespace Village.Views
 			icon.sprite = villager.villagerBase.avatar;
 			healthBar.value = villager.Health;
 			name = villager.villagerBase.villagerName;
+			SortIndex = transform.GetSiblingIndex();
 		}
 
 		public void SetHealtBarVisibility(bool visibilty)
@@ -67,7 +70,7 @@ namespace Village.Views
 			if (!slot)
 			{
 				PlaceholderClone = Instantiate(this, transform.parent);
-				PlaceholderClone.transform.SetSiblingIndex(PrevSiblingIndex.Value);
+				PlaceholderClone.transform.SetSiblingIndex(PrevSiblingIndex);
 			}
 
 			rt.sizeDelta = Vector2.one * dragSpriteSize;
@@ -97,49 +100,33 @@ namespace Village.Views
 			GetComponent<Image>().raycastTarget = true;
 		}
 
-		//public void OnDrop(PointerEventData eventData)
-		//{
-		//	VillagerView dropped = eventData.pointerDrag.GetComponent<VillagerView>();
-		//	ActionSlot slot = transform.parent.GetComponent<ActionSlot>();
-
-		//	//if dropped on villager in a slot
-		//	if (slot)
-		//	{
-		//		Debug.Log($"{dropped.Villager.name} on {Villager.name}");
-		//		transform.SetParent(dropped.PrevParent);
-		//		transform.localPosition = Vector2.zero;
-		//		slot.PutVillager(dropped);
-
-		//		// if dropped villager was in villagers panel
-		//		if (dropped.PrevParent == controller.transform)
-		//		{
-		//			transform.SetSiblingIndex(dropped.PrevSiblingIndex);
-		//			controller.RefreshGUI();
-		//		}
-		//	}
-		//}
-
 		public void OnDrop(PointerEventData eventData)
 		{
 			VillagerView dropped = eventData.pointerDrag.GetComponent<VillagerView>();
-			var droppedSize = dropped.GetComponent<RectTransform>().sizeDelta;
 
 			var parent = transform.parent;
 			var size = transform.GetComponent<RectTransform>().sizeDelta;
 			var index = transform.GetSiblingIndex();
 
-			Debug.Log($"{dropped.Villager.name} on {Villager.name}");
+			var droppedSize = dropped.GetComponent<RectTransform>().sizeDelta;
+			int droppedIndex = index < dropped.PrevSiblingIndex ? index : index + 1;
+			//Debug.Log($"{dropped.Villager.name} on {Villager.name}");
 
 			transform.SetParent(dropped.PrevParent);
 			transform.localPosition = Vector2.zero;
 			transform.GetComponent<RectTransform>().sizeDelta = droppedSize;
-			transform.SetSiblingIndex(dropped.PrevSiblingIndex.Value);
-			
+			transform.SetSiblingIndex(dropped.PrevSiblingIndex);
+
 			dropped.transform.SetParent(parent);
 			dropped.transform.localPosition = Vector2.zero;
 			dropped.transform.GetComponent<RectTransform>().sizeDelta = size;
-			dropped.transform.SetSiblingIndex(index < dropped.PrevSiblingIndex ? index : index + 1);
+			dropped.transform.SetSiblingIndex(droppedIndex);
 
+			var temp = dropped.SortIndex;
+			dropped.SortIndex = SortIndex;
+			SortIndex = temp;
+			
+			controller.SortVillagers();
 			controller.RefreshGUI();
 		}
 

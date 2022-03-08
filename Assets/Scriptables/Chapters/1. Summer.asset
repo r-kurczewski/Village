@@ -33,5 +33,5 @@ MonoBehaviour:
     turn: 12
     possibleDelay: 3
   - eventBase: {fileID: 11400000, guid: f7e2dc895aaa87447b668d4b78426295, type: 2}
-    turn: 22
-    possibleDelay: 2
+    turn: 20
+    possibleDelay: 1

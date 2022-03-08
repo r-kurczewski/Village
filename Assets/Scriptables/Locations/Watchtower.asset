@@ -21,5 +21,5 @@ MonoBehaviour:
   - resource: {fileID: 11400000, guid: 211dcfd509658244d9bbcba6f056f2bc, type: 2}
     amount: 20
   - resource: {fileID: 11400000, guid: 276a9847a78915b46bb48e7d72a033e5, type: 2}
-    amount: 8
+    amount: 5
   buildingAction: []

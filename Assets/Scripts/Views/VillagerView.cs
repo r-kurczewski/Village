@@ -92,12 +92,13 @@ namespace Village.Views
 			var slot = eventData.pointerCurrentRaycast.gameObject?.GetComponentInParent<ActionSlot>();
 			var villager = eventData.pointerCurrentRaycast.gameObject?.GetComponentInParent<Villager>();
 
-			if (!slot && !villager)
+			if (!slot && !villager) // if wrong placement
 			{
 				MoveToPanel(playSound: true);
 			}
 			if(PlaceholderClone) Destroy(PlaceholderClone.gameObject);
 			GetComponent<Image>().raycastTarget = true;
+			
 		}
 
 		public void OnDrop(PointerEventData eventData)
@@ -112,10 +113,10 @@ namespace Village.Views
 			int droppedIndex = index < dropped.PrevSiblingIndex ? index : index + 1;
 			//Debug.Log($"{dropped.Villager.name} on {Villager.name}");
 
-			transform.SetParent(dropped.PrevParent);
-			transform.localPosition = Vector2.zero;
-			transform.GetComponent<RectTransform>().sizeDelta = droppedSize;
-			transform.SetSiblingIndex(dropped.PrevSiblingIndex);
+			this.transform.SetParent(dropped.PrevParent);
+			this.transform.localPosition = Vector2.zero;
+			this.transform.GetComponent<RectTransform>().sizeDelta = droppedSize;
+			this.transform.SetSiblingIndex(dropped.PrevSiblingIndex);
 
 			dropped.transform.SetParent(parent);
 			dropped.transform.localPosition = Vector2.zero;
@@ -125,7 +126,10 @@ namespace Village.Views
 			var temp = dropped.SortIndex;
 			dropped.SortIndex = SortIndex;
 			SortIndex = temp;
-			
+
+			dropped.blockTooltip = dropped.GetComponentInParent<ActionSlot>() == true;
+			this.blockTooltip = GetComponentInParent<ActionSlot>() == true;
+
 			controller.SortVillagers();
 			controller.RefreshGUI();
 		}

@@ -340,7 +340,8 @@ MonoBehaviour:
       si\u0119 w bro\u0144."
   - Name: event/cold/description
     Text: "Pogoda zaczyna wariowa\u0107, robi si\u0119 bardzo zimno. Potrzebujemy
-      dodatkowy zapas drewna na opa\u0142, aby ludzie nie pochorowali si\u0119."
+      ciep\u0142ych ubra\u0144 i zapasu drewna na opa\u0142, aby ludzie nie pochorowali
+      si\u0119."
   - Name: event/envoyTharros/description
     Text: "Do wioski przyby\u0142 wys\u0142annik jednego z pa\u0144stw. W zamian
       za konkretne dobra jest w stanie przychylniej spojrze\u0107 na twoj\u0105 sytuacj\u0119."
@@ -418,9 +419,9 @@ MonoBehaviour:
     Text: "Czas rozejmu dobiega ko\u0144ca. Dzi\u0119ki staraniom mieszkanc\xF3w
       udaje si\u0119 og\u0142oszenie terenu neutralnego, otrzymuj\u0105 oni mo\u017Cliwo\u015B\u0107
       zostania na znanych im ziemiach pod warunkiem sta\u0142ych dostaw cennego kruszca
-      do obu pa\u0144stw. Mieszkancy mog\u0105 dzieki temu wie\u015B\u0107 spokojne,
-      skromne \u017Cycie. Nie wiadomo jednak, czy i na jak d\u0142ugo ten stan da
-      si\u0119 utrzyma\u0107."
+      do obu pa\u0144stw. Mieszka\u0144cy mog\u0105 dzi\u0119ki temu wie\u015B\u0107
+      spokojne, skromne \u017Cycie. Nie wiadomo jednak, czy i na jak d\u0142ugo ten
+      stan da si\u0119 utrzyma\u0107."
   - Name: messages/prologue/description
     Text: "Po d\u0142ugiej, krwawej i bezowocnej wojnie terytorialnej mi\u0119dzy
       kr\xF3lestwem Tharros i oligarchi\u0105 kupieck\u0105 Salvante nastaje tymczasowy
@@ -859,11 +860,11 @@ MonoBehaviour:
       the opportunity to stay on familiar lands. The mining industry begins to expand
       in the village.
   - Name: messages/ending5/description
-    Text: The time of truce is coming to an end. The inhabitants manage to negotiate
-      a voluntary annexation to the merchant state of Salvante. The inhabitants are
-      pardoned of any guilt, become citizens of this rich country, and are given
-      the opportunity to stay on familiar lands. The mining industry begins to expand
-      in the village.
+    Text: The time of truce is coming to an end. Thanks to the efforts of the inhabitants,
+      a neutral territory has been established and they are allowed to stay on the
+      lands they know on condition of a continuous supply of precious stones to both
+      countries. The inhabitants can thus lead a peaceful, modest life. It is not
+      clear, however, whether and for how long this state of affairs can be maintained.
   - Name: messages/prologue/description
     Text: After a long, bloody, and fruitless territorial war between the kingdom
       of Tharros and the merchant oligarchy of Salvante, a temporary truce is called.

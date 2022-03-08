@@ -17,10 +17,12 @@ MonoBehaviour:
   turnDuration: 3
   eventPriority: 2
   requirements:
-  - resource: {fileID: 11400000, guid: 276a9847a78915b46bb48e7d72a033e5, type: 2}
-    amount: 10
   - resource: {fileID: 11400000, guid: 389ae6ddb3eee6e4c94fe350940428df, type: 2}
     amount: 10
+  - resource: {fileID: 11400000, guid: 0f76ab08f0674984fa3c0712680d9969, type: 2}
+    amount: 8
+  - resource: {fileID: 11400000, guid: 276a9847a78915b46bb48e7d72a033e5, type: 2}
+    amount: 5
   - resource: {fileID: 11400000, guid: a6dbb00f31de2fa45bb514a060ce9b25, type: 2}
     amount: 30
   onSuccess:

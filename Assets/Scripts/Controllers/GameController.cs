@@ -126,8 +126,8 @@ namespace Village.Controllers
 		private void TurnUpdate()
 		{
 			turnController.ChapterUpdate();
-			eventController.EventUpdate();
 			locationController.ApplyTurnBonuses();
+			eventController.EventUpdate();
 			villagerController.VillagerUpdate();
 			turnController.CheckIfGameEnds();
 			UpdateGUI();

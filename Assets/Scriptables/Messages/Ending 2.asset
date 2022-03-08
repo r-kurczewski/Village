@@ -16,4 +16,4 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: 8a14291c4112b5349952a7ee6167f146, type: 3}
   backgroundColor: {r: 0.078, g: 0.078, b: 0.078, a: 1}
   localeMessages:
-  - messages/ending1/description
+  - messages/ending2/description

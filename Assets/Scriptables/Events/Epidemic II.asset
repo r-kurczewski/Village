@@ -10,17 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce2ee1299a4cc6e4e9be60473b9cf415, type: 3}
-  m_Name: Cold
+  m_Name: Epidemic II
   m_EditorClassIdentifier: 
-  localeTitle: event/cold/title
-  localeDescription: event/cold/description
-  turnDuration: 3
+  localeTitle: event/epidemic/title
+  localeDescription: event/epidemic/description
+  turnDuration: 2
   eventPriority: 2
   requirements:
-  - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
-    amount: 20
-  - resource: {fileID: 11400000, guid: 389ae6ddb3eee6e4c94fe350940428df, type: 2}
-    amount: 15
+  - resource: {fileID: 11400000, guid: 89ccf5a1788e2dc4487261ed0aea1f86, type: 2}
+    amount: 10
   onSuccess: []
   onFailure:
   - effect: {fileID: 11400000, guid: 627e18a2cdad1cb4cb5979acfcf0ddc8, type: 2}

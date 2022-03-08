@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -52,7 +53,7 @@ namespace Village.Controllers
 			var view = Instantiate(eventPrefab, contentParent);
 			view.Load(gameEvent);
 			currentEvents.Add(view);
-			if (gameEvent.eventBase == merchantEvent && !saveLoad)
+			if (gameEvent.eventBase.name == merchantEvent.name && !saveLoad)
 			{
 				instance.LoadNewMerchantTrades();
 			}
@@ -73,21 +74,21 @@ namespace Village.Controllers
 				.ToList();
 		}
 
-		public void LoadChapterEvents(List<GameEvent.SaveData> events, Dictionary<string, ScriptableObject> assets)
+		public void LoadChapterEvents(List<GameEvent.SaveData> events)
 		{
 			chapterEvents = new List<GameEvent>();
 			foreach (var ev in events)
 			{
-				EventBase eventBase = assets[ev.eventName] as EventBase;
+				EventBase eventBase = AssetManager.instance.GetAsset<EventBase>(ev.eventName);
 				chapterEvents.Add(new GameEvent(eventBase, ev.turn));
 			}
 		}
 
-		public void LoadCurrentEvents(List<GameEvent.SaveData> events, Dictionary<string, ScriptableObject> assets)
+		public void LoadCurrentEvents(List<GameEvent.SaveData> events)
 		{
 			foreach (var ev in events)
 			{
-				EventBase evBase = assets[ev.eventName] as EventBase;
+				EventBase evBase = AssetManager.instance.GetAsset<EventBase>(ev.eventName);
 				AddEvent(new GameEvent(evBase, ev.turn), saveLoad: true);
 			}
 		}

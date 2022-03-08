@@ -36,8 +36,12 @@ namespace Village.Controllers
 		public void RefreshGUI()
 		{
 			merchantLocation.SetVisibility(instance.MerchantAvailable());
+			foreach (var view in locations)
+			{
+				view.Reload();
+			}
 			actionSlots = locations
-				.SelectMany(x => x.GetComponentsInChildren<ActionSlot>())
+				.SelectMany(x => x.ActionSlots)
 				.OrderByDescending(x => x.Action.ExecutionPriority)
 				.ToList();
 		}

@@ -112,14 +112,13 @@ namespace Village.Controllers
 			this.turn = turn;
 			LoadChapter();
 		}
+
 		public void LoadChapter()
 		{
 			GameChapter selected = chapter;
 			while (turn < selected.chapterTurnStart || turn >= (selected.nextChapter?.chapterTurnStart ?? int.MaxValue))
 			{
 				selected = selected.nextChapter;
-				int num = selected.nextChapter?.chapterTurnStart ?? -1;
-				bool cond = turn < num;
 			}
 			LoadChapterDetails(selected);
 		}

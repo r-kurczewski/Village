@@ -22,79 +22,69 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - events
-    m_MainAsset: {fileID: 11400000, guid: d7271922259d3644e90d697b30bf7ce9, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: d7271922259d3644e90d697b30bf7ce9, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 17e2ab5458cd4c54e98aa3a13a767e1f
     m_Address: Bandits I
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - events
-    m_MainAsset: {fileID: 11400000, guid: 17e2ab5458cd4c54e98aa3a13a767e1f, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 17e2ab5458cd4c54e98aa3a13a767e1f, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: d9041afc69d39564481daddc345f5b2c
     m_Address: Bandits II
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - events
-    m_MainAsset: {fileID: 11400000, guid: d9041afc69d39564481daddc345f5b2c, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: d9041afc69d39564481daddc345f5b2c, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: a70580612a3d21746aad845f15a5cd78
     m_Address: Bandits III
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - events
-    m_MainAsset: {fileID: 11400000, guid: a70580612a3d21746aad845f15a5cd78, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: a70580612a3d21746aad845f15a5cd78, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 1fefb57b2ac9e2e498bfea0252be3e5e
     m_Address: Cold
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - events
-    m_MainAsset: {fileID: 11400000, guid: 1fefb57b2ac9e2e498bfea0252be3e5e, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 1fefb57b2ac9e2e498bfea0252be3e5e, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 11cda4331a1c20a45a0fd256800a66e4
     m_Address: Envoy - Salvante I
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - events
-    m_MainAsset: {fileID: 11400000, guid: 11cda4331a1c20a45a0fd256800a66e4, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 11cda4331a1c20a45a0fd256800a66e4, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: b4da1c06bf4cf6e489fb9e756ac31e37
     m_Address: Envoy - Salvante II
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - events
-    m_MainAsset: {fileID: 11400000, guid: b4da1c06bf4cf6e489fb9e756ac31e37, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: b4da1c06bf4cf6e489fb9e756ac31e37, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: d2a18d5722908e640822431398fcbdb5
     m_Address: Envoy - Tharros I
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - events
-    m_MainAsset: {fileID: 11400000, guid: d2a18d5722908e640822431398fcbdb5, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: d2a18d5722908e640822431398fcbdb5, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 9e65e3d25eea9714dbb1fc2942069234
     m_Address: Envoy - Tharros II
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - events
-    m_MainAsset: {fileID: 11400000, guid: 9e65e3d25eea9714dbb1fc2942069234, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 9e65e3d25eea9714dbb1fc2942069234, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 06b17f862b1023041822d8d5a7ec4b8e
-    m_Address: Epidemic
+    m_Address: Epidemic II
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - events
     m_MainAsset: {fileID: 11400000, guid: 06b17f862b1023041822d8d5a7ec4b8e, type: 2}
     m_TargetAsset: {fileID: 11400000, guid: 06b17f862b1023041822d8d5a7ec4b8e, type: 2}
   - m_GUID: 3041724d13eafec449a4825b232116a2
@@ -102,31 +92,27 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - events
-    m_MainAsset: {fileID: 11400000, guid: 3041724d13eafec449a4825b232116a2, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 3041724d13eafec449a4825b232116a2, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 076fd54e98106e74083d6214fae3d4e7
     m_Address: Firewood II
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - events
-    m_MainAsset: {fileID: 11400000, guid: 076fd54e98106e74083d6214fae3d4e7, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 076fd54e98106e74083d6214fae3d4e7, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 70aec7321b83d3642b2d48236d0f2b09
     m_Address: Food I
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - events
-    m_MainAsset: {fileID: 11400000, guid: 70aec7321b83d3642b2d48236d0f2b09, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 70aec7321b83d3642b2d48236d0f2b09, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 7fa5f0ce12a554b44b97546980ac859e
     m_Address: Food II
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - events
     m_MainAsset: {fileID: 11400000, guid: 7fa5f0ce12a554b44b97546980ac859e, type: 2}
     m_TargetAsset: {fileID: 11400000, guid: 7fa5f0ce12a554b44b97546980ac859e, type: 2}
   - m_GUID: 2288dfadcbf30fd488db6d31b0dadc5c
@@ -134,158 +120,138 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - events
-    m_MainAsset: {fileID: 11400000, guid: 2288dfadcbf30fd488db6d31b0dadc5c, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 2288dfadcbf30fd488db6d31b0dadc5c, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: f7e2dc895aaa87447b668d4b78426295
     m_Address: Heat
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - events
-    m_MainAsset: {fileID: 11400000, guid: f7e2dc895aaa87447b668d4b78426295, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: f7e2dc895aaa87447b668d4b78426295, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 791799ae627974f44bad6292cbdc8979
     m_Address: Merchant
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - events
-    m_MainAsset: {fileID: 11400000, guid: 791799ae627974f44bad6292cbdc8979, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 791799ae627974f44bad6292cbdc8979, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 9aa164f31c91b3246bf66a9d20e4aa69
     m_Address: Thirst
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - events
-    m_MainAsset: {fileID: 11400000, guid: 9aa164f31c91b3246bf66a9d20e4aa69, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 9aa164f31c91b3246bf66a9d20e4aa69, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 2455fb0bd75ee7a4c86d2e615b823ec5
     m_Address: Edmund
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - villagers
-    m_MainAsset: {fileID: 11400000, guid: 2455fb0bd75ee7a4c86d2e615b823ec5, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 2455fb0bd75ee7a4c86d2e615b823ec5, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 012be5e19b9316b4eb549a139430c532
     m_Address: Eleonore
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - villagers
-    m_MainAsset: {fileID: 11400000, guid: 012be5e19b9316b4eb549a139430c532, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 012be5e19b9316b4eb549a139430c532, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 5161a2032bb2a58408f8f4af0767d318
     m_Address: Gisele
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - villagers
-    m_MainAsset: {fileID: 11400000, guid: 5161a2032bb2a58408f8f4af0767d318, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 5161a2032bb2a58408f8f4af0767d318, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 270a192ee525ff745887cc73ecfe295e
     m_Address: Godric
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - villagers
-    m_MainAsset: {fileID: 11400000, guid: 270a192ee525ff745887cc73ecfe295e, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 270a192ee525ff745887cc73ecfe295e, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: cca8986f11986054cb903e51665c20fa
     m_Address: Idalia
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - villagers
-    m_MainAsset: {fileID: 11400000, guid: cca8986f11986054cb903e51665c20fa, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: cca8986f11986054cb903e51665c20fa, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 3998dea12e5cf7f42b9d1d1c839f070d
     m_Address: Petra
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - villagers
-    m_MainAsset: {fileID: 11400000, guid: 3998dea12e5cf7f42b9d1d1c839f070d, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 3998dea12e5cf7f42b9d1d1c839f070d, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 720886d416b95934e8ef52142b0c8282
     m_Address: Rudolf
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - villagers
-    m_MainAsset: {fileID: 11400000, guid: 720886d416b95934e8ef52142b0c8282, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 720886d416b95934e8ef52142b0c8282, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 9cf42f0bf11b64a458928b4afb43f8d0
     m_Address: Wilfred
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    - villagers
-    m_MainAsset: {fileID: 11400000, guid: 9cf42f0bf11b64a458928b4afb43f8d0, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 9cf42f0bf11b64a458928b4afb43f8d0, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 45064975a6a06084b884e05747925761
     m_Address: Food
     m_ReadOnly: 0
     m_SerializedLabels:
-    - resources
     - village
-    m_MainAsset: {fileID: 11400000, guid: 45064975a6a06084b884e05747925761, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 45064975a6a06084b884e05747925761, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 589a88112db49c24cafc4f7b46447af5
     m_Address: Gems
     m_ReadOnly: 0
     m_SerializedLabels:
-    - resources
     - village
-    m_MainAsset: {fileID: 11400000, guid: 589a88112db49c24cafc4f7b46447af5, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 589a88112db49c24cafc4f7b46447af5, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: a6dbb00f31de2fa45bb514a060ce9b25
     m_Address: Gold
     m_ReadOnly: 0
     m_SerializedLabels:
-    - resources
     - village
-    m_MainAsset: {fileID: 11400000, guid: a6dbb00f31de2fa45bb514a060ce9b25, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: a6dbb00f31de2fa45bb514a060ce9b25, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 0f76ab08f0674984fa3c0712680d9969
     m_Address: Herbs
     m_ReadOnly: 0
     m_SerializedLabels:
-    - resources
     - village
-    m_MainAsset: {fileID: 11400000, guid: 0f76ab08f0674984fa3c0712680d9969, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 0f76ab08f0674984fa3c0712680d9969, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 389ae6ddb3eee6e4c94fe350940428df
     m_Address: Material
     m_ReadOnly: 0
     m_SerializedLabels:
-    - resources
     - village
-    m_MainAsset: {fileID: 11400000, guid: 389ae6ddb3eee6e4c94fe350940428df, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 389ae6ddb3eee6e4c94fe350940428df, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 89ccf5a1788e2dc4487261ed0aea1f86
     m_Address: Medicine
     m_ReadOnly: 0
     m_SerializedLabels:
-    - resources
     - village
-    m_MainAsset: {fileID: 11400000, guid: 89ccf5a1788e2dc4487261ed0aea1f86, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 89ccf5a1788e2dc4487261ed0aea1f86, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 276a9847a78915b46bb48e7d72a033e5
     m_Address: Metal
     m_ReadOnly: 0
     m_SerializedLabels:
-    - resources
     - village
-    m_MainAsset: {fileID: 11400000, guid: 276a9847a78915b46bb48e7d72a033e5, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 276a9847a78915b46bb48e7d72a033e5, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: f77db6335bfa7664f927a025e5f4cc62
     m_Address: Salvante reputation
     m_ReadOnly: 0
     m_SerializedLabels:
-    - resources
     - village
     m_MainAsset: {fileID: 11400000, guid: f77db6335bfa7664f927a025e5f4cc62, type: 2}
     m_TargetAsset: {fileID: 11400000, guid: f77db6335bfa7664f927a025e5f4cc62, type: 2}
@@ -293,34 +259,51 @@ MonoBehaviour:
     m_Address: Stone
     m_ReadOnly: 0
     m_SerializedLabels:
-    - resources
     - village
-    m_MainAsset: {fileID: 11400000, guid: 211dcfd509658244d9bbcba6f056f2bc, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 211dcfd509658244d9bbcba6f056f2bc, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 8e622f24acd0b0844b4248fdbb7b13c1
     m_Address: Tharros reputation
     m_ReadOnly: 0
     m_SerializedLabels:
-    - resources
     - village
-    m_MainAsset: {fileID: 11400000, guid: 8e622f24acd0b0844b4248fdbb7b13c1, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 8e622f24acd0b0844b4248fdbb7b13c1, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 9d3db97e89f3adb42808e15635bb1c4e
     m_Address: Water
     m_ReadOnly: 0
     m_SerializedLabels:
-    - resources
     - village
-    m_MainAsset: {fileID: 11400000, guid: 9d3db97e89f3adb42808e15635bb1c4e, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 9d3db97e89f3adb42808e15635bb1c4e, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: b03b648a2d79ba046a7c65b8e7a3fa05
     m_Address: Wood
     m_ReadOnly: 0
     m_SerializedLabels:
-    - resources
     - village
-    m_MainAsset: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 1f81c9501500b6e4186fb0ee5753741f
+    m_Address: Baldwin
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - village
+    m_MainAsset: {fileID: 11400000, guid: 1f81c9501500b6e4186fb0ee5753741f, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 1f81c9501500b6e4186fb0ee5753741f, type: 2}
+  - m_GUID: 830ee09c3c6c27645b235cb6c8f8bba1
+    m_Address: Thirst II
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - village
+    m_MainAsset: {fileID: 11400000, guid: 830ee09c3c6c27645b235cb6c8f8bba1, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 830ee09c3c6c27645b235cb6c8f8bba1, type: 2}
+  - m_GUID: 1436dfafce2599a4687a49ddf00ebfb1
+    m_Address: Epidemic I
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - village
+    m_MainAsset: {fileID: 11400000, guid: 1436dfafce2599a4687a49ddf00ebfb1, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 1436dfafce2599a4687a49ddf00ebfb1, type: 2}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c99fc6eb275dc4946a4c65cf931d69b1, type: 2}
   m_SchemaSet:

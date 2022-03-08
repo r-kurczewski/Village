@@ -22,24 +22,20 @@ namespace Village.Views
 
 		public MapLocation Location => location;
 
-		public bool Built => isBuilt;
+		[SerializeField]
+		private List<ActionSlot> _slots;
 
-		//public void Start()
-		//{
-		//	Clear();
-		//	if (location)
-		//	{
-		//		Load(location);
-		//	}
-		//	else Debug.LogWarning("No location set.", this);
-		//}
+		public List<ActionSlot> ActionSlots => _slots;
+
+		public bool Built => isBuilt;
 
 		private void Clear()
 		{
-			foreach (Transform obj in transform)
+			foreach (var slot in _slots)
 			{
-				Destroy(obj.gameObject);
+				Destroy(slot.gameObject);
 			}
+			_slots.Clear();
 		}
 
 		public void Load()
@@ -91,6 +87,7 @@ namespace Village.Views
 		private void LoadAction(IAction action)
 		{
 			var actionSlot = Instantiate(actionSlotPrefab, transform);
+			_slots.Add(actionSlot);
 			actionSlot.Load(action);
 		}
 

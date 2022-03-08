@@ -17,11 +17,11 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: a4f70c4b5ac373d44af69302cb37a091, type: 3}
   stat1: {fileID: 11400000, guid: f88959040f03e404491774af1e4e7953, type: 2}
   stat2: {fileID: 0}
-  executionPriority: 2
+  executionPriority: 1
   costs:
   - resource: {fileID: 11400000, guid: 589a88112db49c24cafc4f7b46447af5, type: 2}
     amount: 3
   effects:
   - effect: {fileID: 11400000, guid: f77db6335bfa7664f927a025e5f4cc62, type: 2}
-    value: 20
+    value: 10
   country: 1

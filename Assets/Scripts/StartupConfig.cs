@@ -19,6 +19,8 @@ namespace Village
             if (!finished)
             {
                 SaveGame.Encode = saveEncode;
+                //QualitySettings.vSyncCount = 0;
+                //Application.targetFrameRate = 60;
                 finished = true;
             }
 		}

@@ -15,5 +15,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 982ec4fb418f9dc4d83d7eab869e1555, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
   localeResourceName: resource/stone
-  baseCost: 4
+  baseCost: 6
   tradable: 1

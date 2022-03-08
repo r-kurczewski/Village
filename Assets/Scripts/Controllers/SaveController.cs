@@ -31,7 +31,6 @@ namespace Village.Controllers
 				buildings = gController.SaveBuildings()
 			};
 			SaveGame.Save(saveFileName, data);
-			Debug.Log("Saving state...");
 		}
 
 		public static SaveData LoadSaveData()

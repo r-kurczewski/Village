@@ -18,10 +18,10 @@ MonoBehaviour:
   localeBuildingDescription: building/lumberjack
   buildingCost:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
-    amount: 20
+    amount: 15
   - resource: {fileID: 11400000, guid: 211dcfd509658244d9bbcba6f056f2bc, type: 2}
-    amount: 5
+    amount: 10
   - resource: {fileID: 11400000, guid: 276a9847a78915b46bb48e7d72a033e5, type: 2}
-    amount: 3
+    amount: 5
   buildingAction:
   - {fileID: 11400000, guid: 5b93de760ec629c418a534d4b914b910, type: 2}

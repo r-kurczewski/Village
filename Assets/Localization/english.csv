@@ -77,7 +77,7 @@ event/label/success,Success:
 event/label/failure,Failure:
 event/animals/title,Wild animals
 event/bandits/title,Bandits
-event/cold/title,Rapid cooling
+event/cold/title,Sudden cold
 event/envoyTharros/title,Emissary of Tharros
 event/envoySalvante/title,Emissary of Salvante
 event/epidemic/title,Epidemic
@@ -89,9 +89,9 @@ event/merchant/title,Merchant arrives
 event/water/title,Water reserves
 event/animals/description,"Wild animals are eating up the food supplies. We need to supply the villagers in basic tools for defense and prepare traps and snares."
 event/bandits/description,"A group of bandits appeared in the area. They will probably try to rob us. We need to set traps and equip ourselves with weapons."
-event/cold/description,"The weather starts to get crazy, it gets very cold. We need extra firewood to keep people from getting sick."
-event/envoyTharros/description,"An envoy from one of the countries has arrived in the village. In exchange for specific goods, he is able to look at your situation more favorably."
-event/envoySalvante/description,"An envoy from one of the countries has arrived in the village. In exchange for specific goods, he is able to look at your situation more favorably."
+event/cold/description,"The weather is starting to get crazy, it's getting extremely cold. We need warm clothes and a bunch of firewood so people don't get sick."
+event/envoyTharros/description,"An envoy from one of the countries has arrived in the village. In exchange for specific goods, they are able to look at your situation more favorably."
+event/envoySalvante/description,"An envoy from one of the countries has arrived in the village. In exchange for specific goods, there are able to look at your situation more favorably."
 event/epidemic/description,"People in the village are starting to get sick. We need to prepare medicine."
 event/firewood/description,"It's too cold. We need firewood to heat the cottages."
 event/food/description,"We need to stockpile food for the next few weeks."

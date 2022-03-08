@@ -17,7 +17,7 @@ MonoBehaviour:
   CountryAReputation: -2
   CountryBReputation: 1
   baseStrength: 0
-  baseGathering: 2
-  baseCrafting: 0
+  baseGathering: 3
+  baseCrafting: 1
   baseDiplomacy: 1
-  baseIntelligence: 2
+  baseIntelligence: 1

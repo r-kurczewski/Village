@@ -9,6 +9,7 @@ using UnityEngine.Serialization;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
+using System.Threading.Tasks;
 
 namespace Village.Controllers
 {
@@ -78,7 +79,8 @@ namespace Village.Controllers
 			var randomVillagerBases = villagerStartPool.OrderBy(x => UnityEngine.Random.value).Take(count);
 			foreach (var villagerBase in randomVillagerBases)
 			{
-				CreateVillager(villagerBase);
+				var villager = CreateVillager(villagerBase);
+				villager.Health = GameController.VILLAGER_START_HEALTH;
 			}
 		}
 
@@ -118,11 +120,11 @@ namespace Village.Controllers
 			AudioController.instance.PlaySound(loseHealthSound);
 		}
 
-		public void LoadVillagers(List<Villager.SaveData> save, Dictionary<string, ScriptableObject> assets)
+		public void LoadVillagers(List<Villager.SaveData> save)
 		{
 			foreach (var villagerData in save) 
 			{
-				VillagerBase villagerBase = assets[villagerData.villagerName] as VillagerBase;
+				VillagerBase villagerBase = AssetManager.instance.GetAsset<VillagerBase>(villagerData.villagerName);
 				CreateVillager(villagerData, villagerBase);
 			}
 		}

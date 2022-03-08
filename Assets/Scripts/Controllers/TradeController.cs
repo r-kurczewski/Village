@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -94,12 +95,12 @@ namespace Village.Controllers
 			merchantTrades = trades;
 		}
 
-		public void LoadTrades(List<TradeOffer.SaveData> save, Dictionary<string, ScriptableObject> assets)
+		public void LoadTrades(List<TradeOffer.SaveData> save)
 		{
 			merchantTrades = new List<TradeOffer>();
 			foreach (var trade in save)
 			{
-				Resource resource = assets[trade.resourceName] as Resource;
+				Resource resource = AssetManager.instance.GetAsset<Resource>(trade.resourceName);
 				merchantTrades.Add(new TradeOffer(resource, trade.tradeMode));
 			}
 			
@@ -160,7 +161,6 @@ namespace Village.Controllers
 					instance.AddRemoveResource(view.Offer.resource, view.TradeCount);
 				}
 				HideTradeWindow();
-				instance.UpdateGUI();
 			}
 		}
 

@@ -20,8 +20,8 @@ MonoBehaviour:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
     amount: 20
   - resource: {fileID: 11400000, guid: 389ae6ddb3eee6e4c94fe350940428df, type: 2}
-    amount: 6
+    amount: 5
   - resource: {fileID: 11400000, guid: 276a9847a78915b46bb48e7d72a033e5, type: 2}
-    amount: 1
+    amount: 2
   buildingAction:
   - {fileID: 11400000, guid: afe6762b4b2202049a0b6e50c769dce8, type: 2}

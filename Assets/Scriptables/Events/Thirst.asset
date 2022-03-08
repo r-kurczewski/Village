@@ -15,6 +15,7 @@ MonoBehaviour:
   localeTitle: event/water/title
   localeDescription: event/water/description
   turnDuration: 3
+  eventPriority: 0
   requirements:
   - resource: {fileID: 11400000, guid: 9d3db97e89f3adb42808e15635bb1c4e, type: 2}
     amount: 20

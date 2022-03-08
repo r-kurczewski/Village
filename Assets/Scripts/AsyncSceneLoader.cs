@@ -28,10 +28,12 @@ public class AsyncSceneLoader : MonoBehaviour
 		var prevPriority = Application.backgroundLoadingPriority;
 		Application.backgroundLoadingPriority = loadingPriority;
 		loading = SceneManager.LoadSceneAsync(sceneName);
-		loading.completed += (loading) => Application.backgroundLoadingPriority = prevPriority;
-		loading.priority = -1;
+		loading.completed += (loading) =>
+		{
+			Application.backgroundLoadingPriority = prevPriority;
+		};
 		loading.allowSceneActivation = changeScene;
-		StartCoroutine(IChangeScene(prevPriority));
+		StartCoroutine(IChangeScene());
 	}
 
 	public void AllowChangingScene()
@@ -39,8 +41,13 @@ public class AsyncSceneLoader : MonoBehaviour
 		changeScene = true;
 	}
 
-	private IEnumerator IChangeScene(ThreadPriority prevPriority)
+	private IEnumerator IChangeScene()
 	{
+		while(loading.progress <= 0.89f)
+		{
+			yield return null;
+		}
+		Debug.Log($"Scene {sceneName} loaded.");
 		yield return new WaitUntil(() => changeScene);
 		loading.allowSceneActivation = true;
 	}

@@ -19,7 +19,7 @@ MonoBehaviour:
   nextChapter: {fileID: 11400000, guid: 81d480bafd5f1b04a90951f6fdfec2bf, type: 2}
   chapterStartMessage: {fileID: 11400000, guid: 91aeb44fa010af04bba2665ba0359885, type: 2}
   periodicEvents:
-  - eventBase: {fileID: 11400000, guid: 9aa164f31c91b3246bf66a9d20e4aa69, type: 2}
+  - eventBase: {fileID: 11400000, guid: 830ee09c3c6c27645b235cb6c8f8bba1, type: 2}
     turn: 2
     period: 4
   - eventBase: {fileID: 11400000, guid: 7fa5f0ce12a554b44b97546980ac859e, type: 2}
@@ -29,17 +29,17 @@ MonoBehaviour:
     turn: 1
     period: 5
   events:
-  - eventBase: {fileID: 11400000, guid: 06b17f862b1023041822d8d5a7ec4b8e, type: 2}
-    turn: 0
-    possibleDelay: 2
-  - eventBase: {fileID: 11400000, guid: 06b17f862b1023041822d8d5a7ec4b8e, type: 2}
-    turn: 10
+  - eventBase: {fileID: 11400000, guid: 1fefb57b2ac9e2e498bfea0252be3e5e, type: 2}
+    turn: 4
     possibleDelay: 2
   - eventBase: {fileID: 11400000, guid: 791799ae627974f44bad6292cbdc8979, type: 2}
     turn: 5
     possibleDelay: 2
   - eventBase: {fileID: 11400000, guid: d2a18d5722908e640822431398fcbdb5, type: 2}
     turn: 5
+    possibleDelay: 2
+  - eventBase: {fileID: 11400000, guid: 06b17f862b1023041822d8d5a7ec4b8e, type: 2}
+    turn: 12
     possibleDelay: 2
   - eventBase: {fileID: 11400000, guid: d9041afc69d39564481daddc345f5b2c, type: 2}
     turn: 17

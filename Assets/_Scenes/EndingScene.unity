@@ -564,16 +564,48 @@ PrefabInstance:
       objectReference: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
     - target: {fileID: 3040041348067368765, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
       propertyPath: m_fontSize
-      value: 70
+      value: 66.35
       objectReference: {fileID: 0}
     - target: {fileID: 3040041348067368765, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
     - target: {fileID: 3040041348067368765, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040041348067368765, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
+    - target: {fileID: 3040041348067368766, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040041348067368766, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040041348067368766, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040041348067368766, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040041348067368766, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 875
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040041348067368766, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 86
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040041348067368766, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -72
+      objectReference: {fileID: 0}
     - target: {fileID: 3040041348115975682, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -665,7 +697,7 @@ PrefabInstance:
     - target: {fileID: 3040041348115975687, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
       propertyPath: data
       value: 
-      objectReference: {fileID: 11400000, guid: 7283a3ffb1fb32146b20880a646b95ac, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3040041348115975687, guid: a0e3ba89d9e5b8644aabf28c1b0d7d4a, type: 3}
       propertyPath: MessagesEnded.m_PersistentCalls.m_Calls.Array.size
       value: 1

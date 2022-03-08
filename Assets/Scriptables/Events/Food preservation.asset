@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localeTitle: event/foodPreservation/title
   localeDescription: event/foodPreservation/description
-  turnDuration: 3
+  turnDuration: 4
+  eventPriority: 0
   requirements:
   - resource: {fileID: 11400000, guid: 0f76ab08f0674984fa3c0712680d9969, type: 2}
     amount: 20

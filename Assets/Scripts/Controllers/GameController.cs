@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -25,6 +26,7 @@ namespace Village.Controllers
 		public const int STAT_MAX = 5;
 		public const int RESOURCES_MAX = 999;
 		public const int START_VILLAGERS = 6;
+		public const int VILLAGER_START_HEALTH = 4;
 		public const int MERCHANT_SELL_ITEMS_COUNT = 4;
 		public const int MERCHANT_BUY_ITEMS_COUNT = 4;
 
@@ -50,8 +52,6 @@ namespace Village.Controllers
 
 		[SerializeField]
 		private GameObject loadingScreen;
-		
-		private AsyncOperationHandle<IList<ScriptableObject>> assetsHandle;
 
 		private AudioController AudioController => AudioController.instance;
 
@@ -70,7 +70,7 @@ namespace Village.Controllers
 			if (SaveController.SaveExists)
 			{
 				SaveController.SaveData save = SaveController.LoadSaveData();
-				StartCoroutine(ILoadPreviousGame(save));
+				LoadPreviousGame(save);
 			}
 			else
 			{
@@ -84,21 +84,18 @@ namespace Village.Controllers
 			villagerController.CreateStartVillagers(START_VILLAGERS);
 			locationController.LoadLoctions();
 			resourceController.LoadResources();
-			TurnUpdate();
+			turnController.LoadChapter();
+			eventController.LoadChapterEvents();
+
+			UpdateGUI();
 			PlayMusic();
 			SaveController.SaveGameState();
 		}
 
-		private IEnumerator ILoadPreviousGame(SaveController.SaveData save)
+		private async void LoadPreviousGame(SaveController.SaveData save)
 		{
 			Debug.Log("Loading save...");
 			loadingScreen.SetActive(true);
-
-			var assets = new Dictionary<string, ScriptableObject>();
-			assetsHandle = Addressables.LoadAssetsAsync<ScriptableObject>("village", (asset) =>
-			{
-				assets.Add(asset.name, asset);
-			});
 
 			locationController.LoadLoctions();
 			turnController.LoadTurnAndChapter(save.turn);
@@ -106,15 +103,23 @@ namespace Village.Controllers
 			locationController.LoadBuildings(save.buildings);
 			eventController.PredictionFactor = save.predictionFactor;
 
-			yield return new WaitUntil(() => assetsHandle.IsDone);
+			await AssetManager.instance.Handle.Task;
 
-			villagerController.LoadVillagers(save.villagers, assets);
-			eventController.LoadCurrentEvents(save.currentEvents, assets);
-			eventController.LoadChapterEvents(save.chapterEvents, assets);
-			tradeController.LoadTrades(save.merchantTrades, assets);
+			villagerController.LoadVillagers(save.villagers);
+			eventController.LoadChapterEvents(save.chapterEvents);
+			eventController.LoadCurrentEvents(save.currentEvents);
+			tradeController.LoadTrades(save.merchantTrades);
+
+			//List<Task> loadTasks = new List<Task>();
+			//loadTasks.Add(villagerController.LoadVillagers(save.villagers));
+			//loadTasks.Add(eventController.LoadChapterEvents(save.chapterEvents));
+			//loadTasks.Add(eventController.LoadCurrentEvents(save.currentEvents));
+			//loadTasks.Add(tradeController.LoadTrades(save.merchantTrades));
+
+			//await Task.WhenAll(loadTasks);
+
 			UpdateGUI();
 			PlayMusic();
-
 			loadingScreen.SetActive(false);
 		}
 

@@ -15,6 +15,7 @@ MonoBehaviour:
   localeTitle: event/bandits/title
   localeDescription: event/bandits/description
   turnDuration: 3
+  eventPriority: 0
   requirements:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
     amount: 10
@@ -30,3 +31,5 @@ MonoBehaviour:
     value: -50
   - effect: {fileID: 11400000, guid: 589a88112db49c24cafc4f7b46447af5, type: 2}
     value: -5
+  - effect: {fileID: 11400000, guid: 627e18a2cdad1cb4cb5979acfcf0ddc8, type: 2}
+    value: -1

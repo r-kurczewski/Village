@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localeTitle: event/envoyTharros/title
   localeDescription: event/envoyTharros/description
-  turnDuration: 3
+  turnDuration: 2
   eventPriority: 2
   requirements:
   - resource: {fileID: 11400000, guid: 276a9847a78915b46bb48e7d72a033e5, type: 2}
-    amount: 20
+    amount: 10
   - resource: {fileID: 11400000, guid: 89ccf5a1788e2dc4487261ed0aea1f86, type: 2}
     amount: 10
   - resource: {fileID: 11400000, guid: 589a88112db49c24cafc4f7b46447af5, type: 2}
-    amount: 5
+    amount: 10
   onSuccess:
   - effect: {fileID: 11400000, guid: 8e622f24acd0b0844b4248fdbb7b13c1, type: 2}
     value: 200

@@ -85,8 +85,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    m_MainAsset: {fileID: 11400000, guid: 06b17f862b1023041822d8d5a7ec4b8e, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 06b17f862b1023041822d8d5a7ec4b8e, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 3041724d13eafec449a4825b232116a2
     m_Address: Firewood I
     m_ReadOnly: 0
@@ -113,8 +113,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    m_MainAsset: {fileID: 11400000, guid: 7fa5f0ce12a554b44b97546980ac859e, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 7fa5f0ce12a554b44b97546980ac859e, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 2288dfadcbf30fd488db6d31b0dadc5c
     m_Address: Food preservation
     m_ReadOnly: 0
@@ -232,8 +232,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_MainAsset: {fileID: 11400000, guid: 389ae6ddb3eee6e4c94fe350940428df, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 389ae6ddb3eee6e4c94fe350940428df, type: 2}
   - m_GUID: 89ccf5a1788e2dc4487261ed0aea1f86
     m_Address: Medicine
     m_ReadOnly: 0
@@ -253,8 +253,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    m_MainAsset: {fileID: 11400000, guid: f77db6335bfa7664f927a025e5f4cc62, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: f77db6335bfa7664f927a025e5f4cc62, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 211dcfd509658244d9bbcba6f056f2bc
     m_Address: Stone
     m_ReadOnly: 0
@@ -288,22 +288,29 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    m_MainAsset: {fileID: 11400000, guid: 1f81c9501500b6e4186fb0ee5753741f, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 1f81c9501500b6e4186fb0ee5753741f, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 830ee09c3c6c27645b235cb6c8f8bba1
     m_Address: Thirst II
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    m_MainAsset: {fileID: 11400000, guid: 830ee09c3c6c27645b235cb6c8f8bba1, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 830ee09c3c6c27645b235cb6c8f8bba1, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 1436dfafce2599a4687a49ddf00ebfb1
     m_Address: Epidemic I
     m_ReadOnly: 0
     m_SerializedLabels:
     - village
-    m_MainAsset: {fileID: 11400000, guid: 1436dfafce2599a4687a49ddf00ebfb1, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 1436dfafce2599a4687a49ddf00ebfb1, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 8e72bef6e56b4b748871b22e4caf7af5
+    m_Address: Finale
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - village
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c99fc6eb275dc4946a4c65cf931d69b1, type: 2}
   m_SchemaSet:

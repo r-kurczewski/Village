@@ -19,4 +19,7 @@ MonoBehaviour:
   nextChapter: {fileID: 0}
   chapterStartMessage: {fileID: 11400000, guid: 94ca266cdc89a964a91bdc65f3c55840, type: 2}
   periodicEvents: []
-  events: []
+  events:
+  - eventBase: {fileID: 11400000, guid: 8e72bef6e56b4b748871b22e4caf7af5, type: 2}
+    turn: 0
+    possibleDelay: 0

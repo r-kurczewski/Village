@@ -16,9 +16,9 @@ namespace Village.Controllers
 	{
 		public static GameController instance;
 
-		public const int COUNTRY_A_ENDING_REPUTATION = 750;
-		public const int COUNTRY_B_ENDING_REPUTATION = 750;
-		public const int NEUTRAL_ENDING_REPUTATION = 500;
+		public const int COUNTRY_A_ENDING_REPUTATION = 600;
+		public const int COUNTRY_B_ENDING_REPUTATION = 600;
+		public const int NEUTRAL_ENDING_REPUTATION = 400;
 		public const float SELL_VALUE_MULTIPLIER = 0.5f;
 		public const float TRADE_DISCOUNT = 0.06f;
 		public const float STAT_MULTIPIER = 0.2f;
@@ -80,7 +80,7 @@ namespace Village.Controllers
 
 		private void StartNewGame()
 		{
-			Debug.Log("Starting new game...");
+			//Debug.Log("Starting new game...");
 			villagerController.CreateStartVillagers(START_VILLAGERS);
 			locationController.LoadLoctions();
 			resourceController.LoadResources();
@@ -94,7 +94,6 @@ namespace Village.Controllers
 
 		private async void LoadPreviousGame(SaveController.SaveData save)
 		{
-			Debug.Log("Loading save...");
 			loadingScreen.SetActive(true);
 
 			locationController.LoadLoctions();
@@ -109,14 +108,6 @@ namespace Village.Controllers
 			eventController.LoadChapterEvents(save.chapterEvents);
 			eventController.LoadCurrentEvents(save.currentEvents);
 			tradeController.LoadTrades(save.merchantTrades);
-
-			//List<Task> loadTasks = new List<Task>();
-			//loadTasks.Add(villagerController.LoadVillagers(save.villagers));
-			//loadTasks.Add(eventController.LoadChapterEvents(save.chapterEvents));
-			//loadTasks.Add(eventController.LoadCurrentEvents(save.currentEvents));
-			//loadTasks.Add(tradeController.LoadTrades(save.merchantTrades));
-
-			//await Task.WhenAll(loadTasks);
 
 			UpdateGUI();
 			PlayMusic();

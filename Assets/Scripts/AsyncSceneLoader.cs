@@ -43,11 +43,10 @@ public class AsyncSceneLoader : MonoBehaviour
 
 	private IEnumerator IChangeScene()
 	{
-		while(loading.progress <= 0.89f)
+		while(loading.progress <= 0.8999f)
 		{
 			yield return null;
 		}
-		Debug.Log($"Scene {sceneName} loaded.");
 		yield return new WaitUntil(() => changeScene);
 		loading.allowSceneActivation = true;
 	}

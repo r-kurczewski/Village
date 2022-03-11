@@ -87,6 +87,7 @@ event/foodPreservation/title,Food preservation
 event/heat/title,Heatwave
 event/merchant/title,Merchant arrives
 event/water/title,Water reserves
+event/finale/title,Final negotiations
 event/animals/description,"Wild animals are eating up the food supplies. We need to supply the villagers in basic tools for defense and prepare traps and snares."
 event/bandits/description,"A group of bandits appeared in the area. They will probably try to rob us. We need to set traps and equip ourselves with weapons."
 event/cold/description,"The weather is starting to get crazy, it's getting extremely cold. We need warm clothes and a bunch of firewood so people don't get sick."
@@ -99,6 +100,7 @@ event/foodPreservation/description,"Our food is slowly spoiling. If we do not pr
 event/heat/description,"Temperatures are getting more and more oppressive. We need to prepare additional water supplies."
 event/merchant/description,"A merchant stopped near the village. Maybe it's worth trading with him?"
 event/water/description,"We need to accumulate a supply of water for the next few weeks."
+event/finale/description,Our last chance to negotiate with representatives of both countries. Our fate will depend on their decisions.
 messages/ending1/title,Death of the villagers
 messages/ending2/title,Destruction of the village
 messages/ending3/title,Joining Tharros
@@ -112,8 +114,8 @@ messages/winter/title,Winter begins.
 messages/summer/title,Summer begins.
 messages/ending1/description,"Living conditions in the village were worsening day by day. The settlers had less and less strength, were more often ill and suffered from lack of basic resources. With time, the first deaths occurred, and the situation began to deteriorate. In the end, no one managed to survive even until the slowly returning conflict was resolved."
 messages/ending2/description,"The time of truce is coming to an end. The inhabitants have failed to communicate with any of the representatives of the rulers. Both armies enter the disputed areas, the village is completely destroyed. Hiding people pursued by the countries are arrested or killed. Others are robbed of all possessions and left to die."
-messages/ending3/description,"The time of truce comes to an end. The villagers succeed in negotiating voluntary incorporation into the kingdom of Tharros. Most of the inhabitants are pardoned from minor crimes, become citizens of this expansive power, and the village area is taken over and adapted for mining."
-messages/ending4/description,"The time of truce comes to an end. The inhabitants manage to negotiate a voluntary annexation to the merchant state of Salvante. The inhabitants are pardoned of any guilt, become citizens of this rich country, and are given the opportunity to stay on familiar lands. The mining industry begins to expand in the village."
+messages/ending3/description,"The time of truce comes to an end. The villagers succeed in negotiating voluntary incorporation into the kingdom of Tharros. Most of the inhabitants are pardoned from minor crimes, become citizens of this expansive power. The area of village is taken over and adapted for mining."
+messages/ending4/description,"The time of truce comes to an end. The inhabitants manage to negotiate a voluntary annexation to the merchant state of Salvante. The inhabitants are pardoned of any guilt, become citizens of this rich country and are given the opportunity to stay on familiar lands. The mining industry begins to expand in the village."
 messages/ending5/description,"The time of truce is coming to an end. Thanks to the efforts of the inhabitants, a neutral territory has been established and they are allowed to stay on the lands they know on condition of a continuous supply of precious stones to both countries. The inhabitants can thus lead a peaceful, modest life. It is not clear, however, whether and for how long this state of affairs can be maintained."
 messages/prologue/description,"After a long, bloody, and fruitless territorial war between the kingdom of Tharros and the merchant oligarchy of Salvante, a temporary truce is called. Lead the people - deserters, surviving citizens, exiles - ensure their survival in these disputed lands. Fertile and rich in various natural resources, these lands are also full of dangers, such as dangerous animals and plunderers looking for easy loot."
 messages/fall/description,Every day it gets colder and colder...
@@ -133,17 +135,17 @@ resource/stone,Stone
 resource/tharrosReputation,Tharros' esteem
 resource/water,Water
 resource/wood,Wood
-game/help/description,"During each turn, assign citizens to appropriate tasks on the map. Some actions have attributes that will allow you to obtain more materials. 
+game/help/description,"During each turn, assign villagers to appropriate tasks on the map. Some actions have attributes that will allow you to obtain more materials. 
 
 You can see more details about characters and actions by hovering your mouse cursor over them. 
 
-Keep an eye on emerging events on the panel on the right. They are crucial to survival.
+Keep an eye on emerging events on the panel on the right. They are crucial to survival. You can collapse them by clicking on their title bar.
 
 Rebuild your village to gain additional actions or rewards. 
 
 Increase esteem of countries to give your settlers a better fate after the truce ends.
  
-Each settler is characterized by a set of stats, his health, his reputation, and:
+Each villager is characterized by a set of stats, his health, his reputation, and:
 <sprite index=1>  Strength
 <sprite index=2>  Gathering
 <sprite index=6>  Crafting
@@ -156,16 +158,16 @@ Additionally, each diplomacy point gives a +6% bonus to the price of items sold 
 
 In addition to this, each point of intelligence causes another random stat to increase at the beginning of a new chapter.
 
-Health represents the condition and fitness for work of a given inhabitant. It influences the effective stats of the character. There are several levels of health:
+Health represents the condition and fitness for work of a given villager. It influences the effective stats of the character. There are several levels of health:
 
 Level 4: No modifiers.
-Level 3: -1 point to all character stats. 
+Level 3: -1 point to all character stats.
 Level 2 -2 points to all character stats.
 Level 1: -4 points to all character stats.
 Level 0: Causes the death of the villager.
 
 You can increase a character's health using actions in the field hospital.
 
-The settler's reputation affects the effective charisma value when interacting with a country.
+The villager's reputation affects his efficiency when interacting with a country.
 
 To hide this information, press the Help button again."

@@ -15,7 +15,7 @@ MonoBehaviour:
   localeTitle: event/bandits/title
   localeDescription: event/bandits/description
   turnDuration: 2
-  eventPriority: 0
+  eventPriority: 2
   requirements:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
     amount: 20

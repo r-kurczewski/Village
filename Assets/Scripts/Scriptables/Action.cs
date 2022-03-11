@@ -13,8 +13,10 @@ namespace Village.Scriptables
 	{
 		[SerializeField]
 		private string localeActionName;
+
 		[SerializeField]
 		private string localeDescription;
+
 		public Sprite icon;
 		public VillagerStat stat1, stat2;
 		public int executionPriority;

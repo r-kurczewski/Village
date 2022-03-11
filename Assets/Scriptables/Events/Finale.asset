@@ -10,16 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce2ee1299a4cc6e4e9be60473b9cf415, type: 3}
-  m_Name: Firewood II
+  m_Name: Finale
   m_EditorClassIdentifier: 
-  localeTitle: event/firewood/title
-  localeDescription: event/firewood/description
-  turnDuration: 3
-  eventPriority: 0
-  requirements:
-  - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
-    amount: 50
+  localeTitle: event/finale/title
+  localeDescription: event/finale/description
+  turnDuration: 1
+  eventPriority: 5
+  requirements: []
   onSuccess: []
-  onFailure:
-  - effect: {fileID: 11400000, guid: 627e18a2cdad1cb4cb5979acfcf0ddc8, type: 2}
-    value: -2
+  onFailure: []

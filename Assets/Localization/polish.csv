@@ -63,7 +63,7 @@ build/well,Napraw studnię
 building/miningEquipment,Pozwala na wysyłanie ludzi w celu wydobycia kamieni szlachetnych.
 building/fisherman,Odblokuje dodatkową akcję do pozyskiwania żywności.
 building/herbalist,Pozwala na wytwarzanie lekarstw oraz obróbkę żywności.
-building/hospital,"Umożliwia stosowanie dodatkowych, wzmocnionych kuracji."
+building/hospital,"Umożliwia stosowanie dodatkowych, skuteczniejszych kuracji."
 building/hunter,Odblokowywuje możliwość wyprawiania skóry.
 building/lumberjack,Dodaje efektywniejszą metodę pozyskiwania drewna.
 building/watchtower,Pozwala na wcześniejsze wykrywanie nadchodzących wydarzeń.
@@ -88,6 +88,7 @@ event/foodPreservation/title,Konserwacja żywności
 event/heat/title,Fale upałów
 event/merchant/title,Przybycie handlarza
 event/water/title,Zapasy wody
+event/finale/title,Ostatnie negocjacje
 event/animals/description,"Dzikie zwierzęta wyżerają zapasy żywności. Trzeba zaopatrzyć mieszkańców w podstawowe narzędzia do obrony oraz przygotować pułapki i sidła."
 event/bandits/description,"W okolicy pojawiła się grupka bandytów. Prawdopodobnie będą chcieli nas ograbić. Musimy zastawić pułapki i wyposażyć się w broń."
 event/cold/description,"Pogoda zaczyna wariować, robi się bardzo zimno. Potrzebujemy ciepłych ubrań i zapasu drewna na opał, aby ludzie nie pochorowali się."
@@ -100,6 +101,7 @@ event/foodPreservation/description,"Nasza żywność powoli się psuje. Jeśli j
 event/heat/description,"Temperatura robią się coraz bardziej uciążliwe. Musimy przygotować dodatkowe zapasy wody."
 event/merchant/description,"W pobliżu wioski zatrzymał się handlarz. Może warto się z nim powymieniać?"
 event/water/description,"Potrzebujemy zgromadzić zapas wody na kolejne tygodnie."
+event/finale/description,Nasza ostatnia szansa na negocjacje z przedstawicielami obu państw. Od ich decyzji zależny będzie nasz los.
 messages/ending1/title,Śmierć mieszkańców
 messages/ending2/title,Zniszczenie wioski
 messages/ending3/title,Przyłączenie do Tharros
@@ -138,7 +140,7 @@ game/help/description,"Podczas każdej tury przydzielaj mieszkańców do odpowie
 
 Więcej szczegółów odnośnie postaci i akcji zobaczysz najeżdżając na nie kursorem myszy. 
 
-Pilnuj pojawiających się wydarzeń na panelu po prawej. Są kluczowe do przetrwania.
+Pilnuj pojawiających się wydarzeń na panelu po prawej. Są kluczowe do przetrwania. Możesz je zwijać klikając na belkę z nazwą.
 
 Odbuduj wioskę, aby zyskać dodatkowe akcje lub profity. 
 
@@ -167,6 +169,6 @@ Poziom 0: Powoduje śmierć mieszkańca.
 
 Zdrowie postaci możesz zwiększać używając akcji w szpitalu polowym.
 
-Reputacja osadnika wpływa na efektywną wartość charyzmy przy interakcjach z danym krajem.
+Reputacja osadnika wpływa na jego efektywność przy interakcjach z danym krajem.
 
 Aby schować te informacje, ponownie naciśnij pzycisk Pomoc."

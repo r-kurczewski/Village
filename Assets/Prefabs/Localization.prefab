@@ -281,7 +281,7 @@ MonoBehaviour:
   - Name: building/herbalist
     Text: "Pozwala na wytwarzanie lekarstw oraz obr\xF3bk\u0119 \u017Cywno\u015Bci."
   - Name: building/hospital
-    Text: "Umo\u017Cliwia stosowanie dodatkowych, wzmocnionych kuracji."
+    Text: "Umo\u017Cliwia stosowanie dodatkowych, skuteczniejszych kuracji."
   - Name: building/hunter
     Text: "Odblokowywuje mo\u017Cliwo\u015B\u0107 wyprawiania sk\xF3ry."
   - Name: building/lumberjack
@@ -330,6 +330,8 @@ MonoBehaviour:
     Text: Przybycie handlarza
   - Name: event/water/title
     Text: Zapasy wody
+  - Name: event/finale/title
+    Text: Ostatnie negocjacje
   - Name: event/animals/description
     Text: "Dzikie zwierz\u0119ta wy\u017Ceraj\u0105 zapasy \u017Cywno\u015Bci. Trzeba
       zaopatrzy\u0107 mieszka\u0144c\xF3w w podstawowe narz\u0119dzia do obrony oraz
@@ -367,6 +369,9 @@ MonoBehaviour:
       si\u0119 z nim powymienia\u0107?"
   - Name: event/water/description
     Text: "Potrzebujemy zgromadzi\u0107 zapas wody na kolejne tygodnie."
+  - Name: event/finale/description
+    Text: "Nasza ostatnia szansa na negocjacje z przedstawicielami obu pa\u0144stw.
+      Od ich decyzji zale\u017Cny b\u0119dzie nasz los."
   - Name: messages/ending1/title
     Text: "\u015Amier\u0107 mieszka\u0144c\xF3w"
   - Name: messages/ending2/title
@@ -470,7 +475,8 @@ MonoBehaviour:
       ci uzyska\u0107 wi\u0119cej materia\u0142\xF3w. \n\nWi\u0119cej szczeg\xF3\u0142\xF3w
       odno\u015Bnie postaci i akcji zobaczysz naje\u017Cd\u017Caj\u0105c na nie kursorem
       myszy. \n\nPilnuj pojawiaj\u0105cych si\u0119 wydarze\u0144 na panelu po prawej.
-      S\u0105 kluczowe do przetrwania.\n\nOdbuduj wiosk\u0119, aby zyska\u0107 dodatkowe
+      S\u0105 kluczowe do przetrwania. Mo\u017Cesz je zwija\u0107 klikaj\u0105c na
+      belk\u0119 z nazw\u0105.\n\nOdbuduj wiosk\u0119, aby zyska\u0107 dodatkowe
       akcje lub profity. \n\nZwi\u0119kszaj uznanie pa\u0144stw, aby zapewni\u0107
       twoim osadnikom lepszy los po zako\u0144czeniu rozejmu.\n \nKa\u017Cdego osadnika
       charakteryzuje zestaw statystyk, jego zdrowie, jego reputacja, a tak\u017Ce:\n<sprite
@@ -488,8 +494,8 @@ MonoBehaviour:
       postaci.\nPoziom 1: -4 punkty do wszystkich statystyk postaci.\nPoziom 0: Powoduje
       \u015Bmier\u0107 mieszka\u0144ca.\n\nZdrowie postaci mo\u017Cesz zwi\u0119ksza\u0107
       u\u017Cywaj\u0105c akcji w szpitalu polowym.\n\nReputacja osadnika wp\u0142ywa
-      na efektywn\u0105 warto\u015B\u0107 charyzmy przy interakcjach z danym krajem.\n\nAby
-      schowa\u0107 te informacje, ponownie naci\u015Bnij pzycisk Pomoc."
+      na jego efektywno\u015B\u0107 przy interakcjach z danym krajem.\n\nAby schowa\u0107
+      te informacje, ponownie naci\u015Bnij pzycisk Pomoc."
 --- !u!1 &5426732834749606647
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,6 +790,8 @@ MonoBehaviour:
     Text: Merchant arrives
   - Name: event/water/title
     Text: Water reserves
+  - Name: event/finale/title
+    Text: Final negotiations
   - Name: event/animals/description
     Text: Wild animals are eating up the food supplies. We need to supply the villagers
       in basic tools for defense and prepare traps and snares.
@@ -815,6 +823,9 @@ MonoBehaviour:
     Text: A merchant stopped near the village. Maybe it's worth trading with him?
   - Name: event/water/description
     Text: We need to accumulate a supply of water for the next few weeks.
+  - Name: event/finale/description
+    Text: Our last chance to negotiate with representatives of both countries. Our
+      fate will depend on their decisions.
   - Name: messages/ending1/title
     Text: Death of the villagers
   - Name: messages/ending2/title
@@ -851,13 +862,13 @@ MonoBehaviour:
   - Name: messages/ending3/description
     Text: The time of truce comes to an end. The villagers succeed in negotiating
       voluntary incorporation into the kingdom of Tharros. Most of the inhabitants
-      are pardoned from minor crimes, become citizens of this expansive power, and
-      the village area is taken over and adapted for mining.
+      are pardoned from minor crimes, become citizens of this expansive power. The
+      area of village is taken over and adapted for mining.
   - Name: messages/ending4/description
     Text: The time of truce comes to an end. The inhabitants manage to negotiate
       a voluntary annexation to the merchant state of Salvante. The inhabitants are
-      pardoned of any guilt, become citizens of this rich country, and are given
-      the opportunity to stay on familiar lands. The mining industry begins to expand
+      pardoned of any guilt, become citizens of this rich country and are given the
+      opportunity to stay on familiar lands. The mining industry begins to expand
       in the village.
   - Name: messages/ending5/description
     Text: The time of truce is coming to an end. Thanks to the efforts of the inhabitants,
@@ -907,25 +918,25 @@ MonoBehaviour:
   - Name: resource/wood
     Text: Wood
   - Name: game/help/description
-    Text: "During each turn, assign citizens to appropriate tasks on the map. Some
+    Text: "During each turn, assign villagers to appropriate tasks on the map. Some
       actions have attributes that will allow you to obtain more materials. \n\nYou
       can see more details about characters and actions by hovering your mouse cursor
       over them. \n\nKeep an eye on emerging events on the panel on the right. They
-      are crucial to survival.\n\nRebuild your village to gain additional actions
-      or rewards. \n\nIncrease esteem of countries to give your settlers a better
-      fate after the truce ends.\n \nEach settler is characterized by a set of stats,
-      his health, his reputation, and:\n<sprite index=1>  Strength\n<sprite index=2> 
-      Gathering\n<sprite index=6>  Crafting\n<sprite index=7>  Diplomacy\n<sprite
-      index=5>  Intelligence\n \nEach point increases the number of resources harvested
-      by 20% of the default value per point on actions of that type.  \n\nAdditionally,
-      each diplomacy point gives a +6% bonus to the price of items sold and -6% to
-      the price of items bought.\n\nIn addition to this, each point of intelligence
-      causes another random stat to increase at the beginning of a new chapter.\n\nHealth
-      represents the condition and fitness for work of a given inhabitant. It influences
-      the effective stats of the character. There are several levels of health:\n\nLevel
-      4: No modifiers.\nLevel 3: -1 point to all character stats. \nLevel 2 -2 points
-      to all character stats.\nLevel 1: -4 points to all character stats.\nLevel
-      0: Causes the death of the villager.\n\nYou can increase a character's health
-      using actions in the field hospital.\n\nThe settler's reputation affects the
-      effective charisma value when interacting with a country.\n\nTo hide this information,
-      press the Help button again."
+      are crucial to survival. You can collapse them by clicking on their title bar.\n\nRebuild
+      your village to gain additional actions or rewards. \n\nIncrease esteem of
+      countries to give your settlers a better fate after the truce ends.\n \nEach
+      villager is characterized by a set of stats, his health, his reputation, and:\n<sprite
+      index=1>  Strength\n<sprite index=2>  Gathering\n<sprite index=6>  Crafting\n<sprite
+      index=7>  Diplomacy\n<sprite index=5>  Intelligence\n \nEach point increases
+      the number of resources harvested by 20% of the default value per point on
+      actions of that type.  \n\nAdditionally, each diplomacy point gives a +6% bonus
+      to the price of items sold and -6% to the price of items bought.\n\nIn addition
+      to this, each point of intelligence causes another random stat to increase
+      at the beginning of a new chapter.\n\nHealth represents the condition and fitness
+      for work of a given villager. It influences the effective stats of the character.
+      There are several levels of health:\n\nLevel 4: No modifiers.\nLevel 3: -1
+      point to all character stats.\nLevel 2 -2 points to all character stats.\nLevel
+      1: -4 points to all character stats.\nLevel 0: Causes the death of the villager.\n\nYou
+      can increase a character's health using actions in the field hospital.\n\nThe
+      villager's reputation affects his efficiency when interacting with a country.\n\nTo
+      hide this information, press the Help button again."

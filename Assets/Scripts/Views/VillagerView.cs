@@ -94,7 +94,11 @@ namespace Village.Views
 
 			if (!slot && !villager) // if wrong placement
 			{
-				MoveToPanel(playSound: true);
+				MoveToPanel(playSound: false);
+			}
+			else if (slot)
+			{
+
 			}
 			if(PlaceholderClone) Destroy(PlaceholderClone.gameObject);
 			GetComponent<Image>().raycastTarget = true;

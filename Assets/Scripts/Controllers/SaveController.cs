@@ -47,7 +47,7 @@ namespace Village.Controllers
 
 		public static void ClearSave()
 		{
-			Debug.Log("Erasing save file...");
+			//Debug.Log("Erasing save file...");
 			save = null;
 			SaveGame.Delete(saveFileName);
 		}

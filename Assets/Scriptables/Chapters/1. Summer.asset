@@ -35,3 +35,6 @@ MonoBehaviour:
   - eventBase: {fileID: 11400000, guid: f7e2dc895aaa87447b668d4b78426295, type: 2}
     turn: 20
     possibleDelay: 1
+  - eventBase: {fileID: 11400000, guid: 1fefb57b2ac9e2e498bfea0252be3e5e, type: 2}
+    turn: 1
+    possibleDelay: 0

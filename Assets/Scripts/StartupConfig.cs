@@ -9,19 +9,19 @@ namespace Village
 {
     public class StartupConfig : MonoBehaviour
     {
-        static bool finished = false;
+        static bool completed = false;
 
         [SerializeField]
         private bool saveEncode;
 
         private void Awake()
 		{
-            if (!finished)
+            if (!completed)
             {
                 SaveGame.Encode = saveEncode;
-                //QualitySettings.vSyncCount = 0;
-                //Application.targetFrameRate = 60;
-                finished = true;
+				QualitySettings.vSyncCount = 0;
+				Application.targetFrameRate = 60;
+				completed = true;
             }
 		}
     }

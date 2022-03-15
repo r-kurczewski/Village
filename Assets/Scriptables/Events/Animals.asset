@@ -19,9 +19,9 @@ MonoBehaviour:
   requirements:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
     amount: 15
-  - resource: {fileID: 11400000, guid: 276a9847a78915b46bb48e7d72a033e5, type: 2}
-    amount: 3
   - resource: {fileID: 11400000, guid: 211dcfd509658244d9bbcba6f056f2bc, type: 2}
+    amount: 3
+  - resource: {fileID: 11400000, guid: 276a9847a78915b46bb48e7d72a033e5, type: 2}
     amount: 3
   onSuccess:
   - effect: {fileID: 11400000, guid: 45064975a6a06084b884e05747925761, type: 2}

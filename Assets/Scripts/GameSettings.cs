@@ -41,6 +41,12 @@ public class GameSettings : MonoBehaviour
 	[SerializeField]
 	private Toggle hideTooltips;
 
+	private List<LocalizedLanguage> languageNames = new List<LocalizedLanguage>()
+	{
+		new LocalizedLanguage("English", "English"),
+		new LocalizedLanguage("Polish", "Polski"),
+	};
+
 	private void Start()
 	{
 		LoadResolutions();
@@ -69,7 +75,12 @@ public class GameSettings : MonoBehaviour
 	private void LoadResolutions()
 	{
 		resolution.ClearOptions();
-		var resolutions = Screen.resolutions.Select(x => $"{x.width}x{x.height}").ToList();
+		var resolutions = Screen.resolutions
+			.Where(x=> x.width >= 1024)
+			.Where(x=> x.height >= 768)
+			.Select(x => $"{x.width}x{x.height}")
+			.Distinct()
+			.ToList();
 		resolution.AddOptions(resolutions);
 		var currentResolution = PlayerPrefs.GetString("resolution");
 		var currentResolutionIndex = resolution.options.IndexOf(resolution.options.FirstOrDefault(x => x.text == currentResolution));
@@ -79,10 +90,12 @@ public class GameSettings : MonoBehaviour
 
 	private void LoadLanguages()
 	{
-		var langNames = LeanLocalization.CurrentLanguages.Keys.Select(x => new TMP_Dropdown.OptionData(x));
+		var langNames = LeanLocalization.CurrentLanguages.Keys
+			.Select(x => GetLocalizedLanguageName(x))
+			.ToList();
 		var selectedLang = LeanLocalization.Instances.First().CurrentLanguage;
-		language.options.AddRange(langNames);
-		language.SetValueWithoutNotify(language.options.IndexOf(language.options.First(x => x.text == selectedLang)));
+		language.AddOptions(langNames);
+		language.SetValueWithoutNotify(language.options.IndexOf(language.options.First(x => x.text == GetLocalizedLanguageName(selectedLang))));
 	}
 
 	private void LoadMasterVolume()
@@ -140,12 +153,35 @@ public class GameSettings : MonoBehaviour
 	{
 		string lang = language.options[language.value].text;
 		PlayerPrefs.SetString(languageString, lang);
-		LeanLocalization.SetCurrentLanguageAll(lang);
+		LeanLocalization.SetCurrentLanguageAll(GetEnglishLanguageName(lang));
 	}
 
 	public void ChangeAdavancedTooltips()
 	{
 		PlayerPrefs.SetInt(hideTooltipsString, hideTooltips.isOn ? 1 : 0);
 	}
+
+
+	private class LocalizedLanguage
+	{
+		public string englishName;
+		public string localisedName;
+		public LocalizedLanguage(string englishName, string localisedName)
+		{
+			this.englishName = englishName;
+			this.localisedName = localisedName;
+		}
+	}
+
+	private string GetLocalizedLanguageName(string languageName)
+	{
+		return languageNames.First(x => x.englishName == languageName).localisedName;
+	}
+
+	private string GetEnglishLanguageName(string localizedName)
+	{
+		return languageNames.First(x => x.localisedName == localizedName).englishName;
+	}
+
 }
 

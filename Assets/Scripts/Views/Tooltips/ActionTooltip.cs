@@ -31,6 +31,27 @@ namespace Village.Views.Tooltips
 		private Transform effectsParent;
 
 		[SerializeField]
+		private Transform villagerOverview;
+
+		[SerializeField]
+		private Image villagerAvatar;
+
+		[SerializeField]
+		private TMP_Text villagerStrengthLabel;
+
+		[SerializeField]
+		private TMP_Text villagerGatheringLabel;
+
+		[SerializeField]
+		private TMP_Text villagerCraftingLabel;
+
+		[SerializeField]
+		private TMP_Text villagerDiplomacyLabel;
+
+		[SerializeField]
+		private TMP_Text villagerIntelligenceLabel;
+
+		[SerializeField]
 		private EffectView actionResultPrefab;
 
 		[SerializeField]
@@ -50,6 +71,9 @@ namespace Village.Views.Tooltips
 				return;
 			}
 
+			var stat1 = slot.Action.Stat1;
+			var stat2 = slot.Action.Stat2;
+
 			Clear();
 			actionName.text = slot.Action.ActionName;
 
@@ -61,10 +85,10 @@ namespace Village.Views.Tooltips
 			}
 			actionDescription.transform.parent.gameObject.SetActive(hasDescription && !hideDescription);
 
-			if (slot.Action.Stat1)
+			if (stat1)
 			{
-				statIcon1.sprite = slot.Action.Stat1.backgroundIcon;
-				statIcon1.color = slot.Action.Stat1.color;
+				statIcon1.sprite = stat1.backgroundIcon;
+				statIcon1.color = stat1.color;
 			}
 			else
 			{
@@ -72,11 +96,11 @@ namespace Village.Views.Tooltips
 				statIcon1.color = defaultValue;
 			}
 
-			if (slot.Action.Stat2)
+			if (stat2)
 			{
 				statIcon2.gameObject.SetActive(true);
-				statIcon2.sprite = slot.Action.Stat2.backgroundIcon;
-				statIcon2.color = slot.Action.Stat2.color;
+				statIcon2.sprite = stat2.backgroundIcon;
+				statIcon2.color = stat2.color;
 			}
 			else statIcon2.gameObject.SetActive(false);
 
@@ -90,6 +114,24 @@ namespace Village.Views.Tooltips
 				float multiplier = slot.Action.GetMultiplier(slot.Villager);
 				LoadEffect(eff, multiplier);
 			}
+
+			if (slot.Villager)
+			{
+				villagerOverview.gameObject.SetActive(true);
+				villagerAvatar.sprite = slot.Villager.Avatar;
+				villagerStrengthLabel.text = slot.Villager.EffectiveStrength.ToString();
+				villagerGatheringLabel.text = slot.Villager.EffectiveGathering.ToString();
+				villagerCraftingLabel.text = slot.Villager.EffectiveCrafting.ToString();
+				villagerDiplomacyLabel.text = slot.Villager.EffectiveDiplomacy.ToString();
+				villagerIntelligenceLabel.text = slot.Villager.EffectiveIntelligence.ToString();
+
+				villagerStrengthLabel.color = GetStatColor(slot.Villager.StrengthReference, stat1, stat2);
+				villagerGatheringLabel.color = GetStatColor(slot.Villager.GatheringReference, stat1, stat2);
+				villagerCraftingLabel.color = GetStatColor(slot.Villager.CraftingReference,stat1, stat2);
+				villagerDiplomacyLabel.color = GetStatColor(slot.Villager.DiplomacyReference, stat1, stat2);
+				villagerIntelligenceLabel.color = GetStatColor(slot.Villager.IntelligenceReference, stat1, stat2);
+			}
+			else villagerOverview.gameObject.SetActive(false);
 
 			RefreshLayout();
 		}
@@ -129,19 +171,24 @@ namespace Village.Views.Tooltips
 			actionResult.SetIcon(res.resource.icon);
 			actionResult.SetIconColor(res.resource.color);
 			actionResult.SetAmount(-res.Amount);
-			if(GameController.instance.GetResourceAmount(res.resource) < res.Amount)
+			if (GameController.instance.GetResourceAmount(res.resource) < res.Amount)
 			{
 				actionResult.SetFontColor(negativeValue);
-				//actionResult.SetBold(true);
 			}
 			else
 			{
 				actionResult.SetFontColor(defaultValue);
-				//actionResult.SetBold(false);
 			}
 		}
 
-
+		private Color GetStatColor(VillagerStat stat, VillagerStat stat1, VillagerStat stat2)
+		{
+			if (stat.name == stat1?.name || stat.name == stat2?.name)
+			{
+				return effectiveValue;
+			}
+			else return defaultValue;
+		}
 
 		private void RefreshLayout()
 		{

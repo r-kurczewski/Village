@@ -2103,6 +2103,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5426732834721320161, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
+      propertyPath: m_Name
+      value: Polish
+      objectReference: {fileID: 0}
     - target: {fileID: 5426732834749606645, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2146,6 +2150,14 @@ PrefabInstance:
     - target: {fileID: 5426732834749606645, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426732834749606646, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
+      propertyPath: detectLanguage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426732834749606646, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
+      propertyPath: currentLanguage
+      value: Polski
       objectReference: {fileID: 0}
     - target: {fileID: 5426732834749606647, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
       propertyPath: m_Name

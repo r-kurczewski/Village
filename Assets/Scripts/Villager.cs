@@ -46,9 +46,16 @@ public class Villager : MonoBehaviour
 	public int EffectiveDiplomacy => GetEffectiveStatValue(references.diplomacy);
 	public int EffectiveIntelligence => GetEffectiveStatValue(references.intelligence);
 
+	public VillagerStat StrengthReference => references.strength;
+	public VillagerStat GatheringReference => references.gathering;
+	public VillagerStat CraftingReference => references.crafting;
+	public VillagerStat DiplomacyReference => references.diplomacy;
+	public VillagerStat IntelligenceReference => references.intelligence;
+
 	#endregion
 
 	public int Health { get => _health; set => _health = Mathf.Clamp(value, 0, HEALTH_MAX); }
+	public Sprite Avatar => villagerBase.avatar;
 
 	public void Load(VillagerBase vBase)
 	{

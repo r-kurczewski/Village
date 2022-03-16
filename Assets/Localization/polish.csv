@@ -18,6 +18,7 @@ game/turnLabel,Tura
 game/turn,{turn}
 game/endTurn,Zakończ turę
 game/helpButton,Pomoc
+game/logButton,Dziennik
 game/mainMenu,Menu
 game/clickToContinue,"Kliknij, aby kontynuować..."
 game/loading,"Ładowanie..."
@@ -102,6 +103,30 @@ event/heat/description,"Temperatura robią się coraz bardziej uciążliwe. Musi
 event/merchant/description,"W pobliżu wioski zatrzymał się handlarz. Może warto się z nim powymieniać?"
 event/water/description,"Potrzebujemy zgromadzić zapas wody na kolejne tygodnie."
 event/finale/description,Nasza ostatnia szansa na negocjacje z przedstawicielami obu państw. Od ich decyzji zależny będzie nasz los.
+log/entryTitle,Wpis
+log/merchant,
+log/building/lumberjack,Udało się nam odbudować chatkę drwala
+log/building/miningEquipment,Udało nam się przygotować ekwipunek górniczy
+log/building/fisherman,Udało się doprowadzić do stanu używalnosci starą chatkę rybacką
+log/building/herbalist,Chatka zielarza znów może zacząć funkcjonować
+log/building/hospital,Odbudowaliśmy pomieszczenie w budynku szpitala polowego
+log/building/hunter,Odbudowaliśmy zniszczoną chatkę myśliwską
+log/building/watchtower,Wieża obserwacyjna znów funkcjonuje
+log/building/well,Studnia została naprawiona
+log/failure/animals,Dzikie zwierzęta dobrały się do naszych zapasów jedzenia
+log/failure/bandits,Bandyci zaatakowali i zrabowali nasze zapasy
+log/failure/cold,Nie zdołaliśmy przygotować się na ochłodzenie
+log/failure/envoyTharros,Negocjator z Tharros odszedł niezadowolony
+log/failure/envoySalvante,Negocjator z Salvante odszedł niezadowolony
+log/failure/epidemic,Nie udało się zapobiec rozwojowi epidemii
+log/failure/firewood,Nie zebraliśmy wystarczającej ilości opału
+log/failure/food,Nie mieliśmy wystarczającej ilości jedzenia
+log/failure/foodPreservation,Nasze zapasy jedzenia zepsuły się
+log/failure/heat,Fala upałów osłabiła mieszkańców
+log/failure/thirst,Nie udało się zebrać odpowiedniej ilości wody
+log/success/animals,Udało nam się upolować okoliczną zwierzynę
+log/success/envoyTharros,Spełniliśmy oczekiwania posłańca z Tharros
+log/success/envoySalvante,Spełniliśmy oczekiwania posłańca z Salvante
 messages/ending1/title,Śmierć mieszkańców
 messages/ending2/title,Zniszczenie wioski
 messages/ending3/title,Przyłączenie do Tharros

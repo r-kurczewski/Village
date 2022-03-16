@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localeTitle: event/water/title
   localeDescription: event/water/description
+  localeLogSuccess: 
+  localeLogFailure: log/failure/thirst
   turnDuration: 3
   eventPriority: 0
   requirements:

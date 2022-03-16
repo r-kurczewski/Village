@@ -51,6 +51,9 @@ namespace Village.Controllers
 		private TradeController tradeController;
 
 		[SerializeField]
+		private GameLog gameLog;
+
+		[SerializeField]
 		private GameObject loadingScreen;
 
 		private AudioController AudioController => AudioController.instance;
@@ -80,7 +83,6 @@ namespace Village.Controllers
 
 		private void StartNewGame()
 		{
-			//Debug.Log("Starting new game...");
 			villagerController.CreateStartVillagers(START_VILLAGERS);
 			locationController.LoadLoctions();
 			resourceController.LoadResources();
@@ -101,6 +103,7 @@ namespace Village.Controllers
 			resourceController.LoadResources(save.resources);
 			locationController.LoadBuildings(save.buildings);
 			eventController.PredictionFactor = save.predictionFactor;
+			gameLog.SetLogData(save.log);
 
 			await AssetManager.instance.Handle.Task;
 
@@ -198,6 +201,7 @@ namespace Village.Controllers
 			villagerController.MoveVillagersToPanel();
 			turnController.MoveToNextTurn();
 			TurnUpdate();
+			instance.AddLogDayEntry();
 			if(autoSave) SaveController.SaveGameState();
 		}
 
@@ -277,5 +281,26 @@ namespace Village.Controllers
 		{
 			SaveController.ClearSave();
 		}
+
+		public void UpdateLogDayEntry(string localeLogMessage)
+		{
+			gameLog.UpdateDayEntry(localeLogMessage);
+		}
+
+		public void AddLogDayEntry()
+		{
+			gameLog.PrintDayEntry();
+		}
+		public List<GameLog.LogEntry> GetGameLogData()
+		{
+			return gameLog.GetLogData();
+		}
+
+		public void LoadGameLogData(List<GameLog.LogEntry> logData)
+		{
+			gameLog.SetLogData(logData);
+		}
+
+
 	}
 }

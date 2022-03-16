@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localeTitle: event/firewood/title
   localeDescription: event/firewood/description
+  localeLogSuccess: 
+  localeLogFailure: log/failure/firewood
   turnDuration: 3
   eventPriority: 0
   requirements:

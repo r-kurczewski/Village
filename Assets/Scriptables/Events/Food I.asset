@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localeTitle: event/food/title
   localeDescription: event/food/description
+  localeLogSuccess: 
+  localeLogFailure: log/failure/food
   turnDuration: 4
+  eventPriority: 0
   requirements:
   - resource: {fileID: 11400000, guid: 45064975a6a06084b884e05747925761, type: 2}
     amount: 30

@@ -12,8 +12,9 @@ namespace Village.Scriptables
 	{
 		public string LocaleBuildActionName;
 
-		[TextArea(4,5), FormerlySerializedAs("buildingDescription")]
 		public string localeBuildingDescription;
+
+		public string localeLogBuilt;
 
 		public List<ResourceAmount> buildingCost = new List<ResourceAmount>();
 

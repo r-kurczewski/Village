@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localeTitle: event/epidemic/title
   localeDescription: event/epidemic/description
+  localeLogSuccess: 
+  localeLogFailure: log/failure/epidemic
   turnDuration: 2
   eventPriority: 2
   requirements:

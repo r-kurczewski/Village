@@ -192,6 +192,8 @@ MonoBehaviour:
     Text: "Zako\u0144cz tur\u0119"
   - Name: game/helpButton
     Text: Pomoc
+  - Name: game/logButton
+    Text: Dziennik
   - Name: game/mainMenu
     Text: Menu
   - Name: game/clickToContinue
@@ -372,6 +374,55 @@ MonoBehaviour:
   - Name: event/finale/description
     Text: "Nasza ostatnia szansa na negocjacje z przedstawicielami obu pa\u0144stw.
       Od ich decyzji zale\u017Cny b\u0119dzie nasz los."
+  - Name: log/entryTitle
+    Text: Wpis
+  - Name: log/merchant
+    Text: 
+  - Name: log/building/lumberjack
+    Text: "Uda\u0142o si\u0119 nam odbudowa\u0107 chatk\u0119 drwala"
+  - Name: log/building/miningEquipment
+    Text: "Uda\u0142o nam si\u0119 przygotowa\u0107 ekwipunek g\xF3rniczy"
+  - Name: log/building/fisherman
+    Text: "Uda\u0142o si\u0119 doprowadzi\u0107 do stanu u\u017Cywalnosci star\u0105
+      chatk\u0119 ryback\u0105"
+  - Name: log/building/herbalist
+    Text: "Chatka zielarza zn\xF3w mo\u017Ce zacz\u0105\u0107 funkcjonowa\u0107"
+  - Name: log/building/hospital
+    Text: "Odbudowali\u015Bmy pomieszczenie w budynku szpitala polowego"
+  - Name: log/building/hunter
+    Text: "Odbudowali\u015Bmy zniszczon\u0105 chatk\u0119 my\u015Bliwsk\u0105"
+  - Name: log/building/watchtower
+    Text: "Wie\u017Ca obserwacyjna zn\xF3w funkcjonuje"
+  - Name: log/building/well
+    Text: "Studnia zosta\u0142a naprawiona"
+  - Name: log/failure/animals
+    Text: "Dzikie zwierz\u0119ta dobra\u0142y si\u0119 do naszych zapas\xF3w jedzenia"
+  - Name: log/failure/bandits
+    Text: Bandyci zaatakowali i zrabowali nasze zapasy
+  - Name: log/failure/cold
+    Text: "Nie zdo\u0142ali\u015Bmy przygotowa\u0107 si\u0119 na och\u0142odzenie"
+  - Name: log/failure/envoyTharros
+    Text: "Negocjator z Tharros odszed\u0142 niezadowolony"
+  - Name: log/failure/envoySalvante
+    Text: "Negocjator z Salvante odszed\u0142 niezadowolony"
+  - Name: log/failure/epidemic
+    Text: "Nie uda\u0142o si\u0119 zapobiec rozwojowi epidemii"
+  - Name: log/failure/firewood
+    Text: "Nie zebrali\u015Bmy wystarczaj\u0105cej ilo\u015Bci opa\u0142u"
+  - Name: log/failure/food
+    Text: "Nie mieli\u015Bmy wystarczaj\u0105cej ilo\u015Bci jedzenia"
+  - Name: log/failure/foodPreservation
+    Text: "Nasze zapasy jedzenia zepsu\u0142y si\u0119"
+  - Name: log/failure/heat
+    Text: "Fala upa\u0142\xF3w os\u0142abi\u0142a mieszka\u0144c\xF3w"
+  - Name: log/failure/thirst
+    Text: "Nie uda\u0142o si\u0119 zebra\u0107 odpowiedniej ilo\u015Bci wody"
+  - Name: log/success/animals
+    Text: "Uda\u0142o nam si\u0119 upolowa\u0107 okoliczn\u0105 zwierzyn\u0119"
+  - Name: log/success/envoyTharros
+    Text: "Spe\u0142nili\u015Bmy oczekiwania pos\u0142a\u0144ca z Tharros"
+  - Name: log/success/envoySalvante
+    Text: "Spe\u0142nili\u015Bmy oczekiwania pos\u0142a\u0144ca z Salvante"
   - Name: messages/ending1/title
     Text: "\u015Amier\u0107 mieszka\u0144c\xF3w"
   - Name: messages/ending2/title
@@ -543,7 +594,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: English
+  currentLanguage: Polish
+  localeResourceName: 
   detectLanguage: 1
   defaultLanguage: English
   saveLoad: 1
@@ -652,6 +704,8 @@ MonoBehaviour:
     Text: End turn
   - Name: game/helpButton
     Text: Help
+  - Name: game/logButton
+    Text: Log
   - Name: game/mainMenu
     Text: Menu
   - Name: game/clickToContinue
@@ -826,6 +880,8 @@ MonoBehaviour:
   - Name: event/finale/description
     Text: Our last chance to negotiate with representatives of both countries. Our
       fate will depend on their decisions.
+  - Name: log/entryTitle
+    Text: Entry
   - Name: messages/ending1/title
     Text: Death of the villagers
   - Name: messages/ending2/title

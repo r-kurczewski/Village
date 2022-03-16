@@ -16,6 +16,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 88ee2048ad0a3b24686464ccb77f04a6, type: 2}
   LocaleBuildActionName: build/lumberjack
   localeBuildingDescription: building/lumberjack
+  localeLogBuilt: log/building/lumberjack
   buildingCost:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
     amount: 15

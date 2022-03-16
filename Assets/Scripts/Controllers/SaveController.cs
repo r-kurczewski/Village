@@ -8,6 +8,7 @@ using Village.Views;
 using System.IO;
 using BayatGames.SaveGameFree.Serializers;
 using System.Runtime.Serialization;
+using static Village.GameLog;
 
 namespace Village.Controllers
 {
@@ -28,7 +29,8 @@ namespace Village.Controllers
 				currentEvents = gController.SaveCurrentEvents(),
 				chapterEvents = gController.SaveChapterEvents(),
 				merchantTrades = gController.SaveTrades(),
-				buildings = gController.SaveBuildings()
+				buildings = gController.SaveBuildings(),
+				log = gController.GetGameLogData(),
 			};
 			SaveGame.Save(saveFileName, data);
 		}
@@ -47,7 +49,6 @@ namespace Village.Controllers
 
 		public static void ClearSave()
 		{
-			//Debug.Log("Erasing save file...");
 			save = null;
 			SaveGame.Delete(saveFileName);
 		}
@@ -63,6 +64,7 @@ namespace Village.Controllers
 			public List<GameEvent.SaveData> chapterEvents;
 			public List<TradeOffer.SaveData> merchantTrades;
 			public List<string> buildings;
+			public List<LogEntry> log;
 		}
 
 	}

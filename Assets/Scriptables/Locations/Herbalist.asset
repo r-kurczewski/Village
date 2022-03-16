@@ -16,6 +16,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d64d1353ccce53042983476c682f9e15, type: 2}
   LocaleBuildActionName: build/herbalist
   localeBuildingDescription: building/herbalist
+  localeLogBuilt: log/building/herbalist
   buildingCost:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
     amount: 25

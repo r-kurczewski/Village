@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localeTitle: event/foodPreservation/title
   localeDescription: event/foodPreservation/description
+  localeLogSuccess: 
+  localeLogFailure: log/failure/foodPreservation
   turnDuration: 4
   eventPriority: 0
   requirements:

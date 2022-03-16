@@ -15,6 +15,7 @@ MonoBehaviour:
   basicActions: []
   LocaleBuildActionName: build/well
   localeBuildingDescription: building/well
+  localeLogBuilt: log/building/well
   buildingCost:
   - resource: {fileID: 11400000, guid: b03b648a2d79ba046a7c65b8e7a3fa05, type: 2}
     amount: 30

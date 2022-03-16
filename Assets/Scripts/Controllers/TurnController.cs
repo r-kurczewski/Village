@@ -32,7 +32,7 @@ namespace Village.Controllers
 			GameChapter selected = chapter;
 			while (selected != null)
 			{
-				// New chapter begins
+				// If new chapter begins
 				if (turn == selected.chapterTurnStart)
 				{
 					LoadChapterDetails(selected);

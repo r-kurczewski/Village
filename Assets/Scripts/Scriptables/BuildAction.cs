@@ -36,17 +36,18 @@ namespace Village.Scriptables
 
 		public IEnumerator Execute(Villager target)
 		{
-			if (IsCostCorrect())
+			if (buildingView.Location is MapBuilding building)
 			{
-				ApplyCosts();
-				if (buildingView.Location is MapBuilding building)
+				if (IsCostCorrect())
 				{
+					ApplyCosts();
 					building.ApplyOnetimeBonus();
 					buildingView.SetAsBuilt();
+					instance.UpdateLogDayEntry(buildingBase.localeLogBuilt);
 				}
-				else Debug.LogWarning("Trying to build not-building location!");
 			}
-			yield break;
+			else Debug.LogWarning("Trying to build not-building location!");
+			yield return null;
 		}
 
 		protected void ApplyCosts()

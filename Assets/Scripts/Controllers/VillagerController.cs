@@ -10,12 +10,16 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
 using System.Threading.Tasks;
+using static Village.Controllers.GameController;
 
 namespace Village.Controllers
 {
 	[SelectionBase]
 	public class VillagerController : MonoBehaviour
 	{
+
+		private const string localeVillagerDied = "log/villagerDied";
+
 		[SerializeField]
 		private VillagerView villagerPrefab;
 
@@ -80,7 +84,7 @@ namespace Village.Controllers
 			foreach (var villagerBase in randomVillagerBases)
 			{
 				var villager = CreateVillager(villagerBase);
-				villager.Health = GameController.VILLAGER_START_HEALTH;
+				villager.Health = VILLAGER_START_HEALTH;
 			}
 		}
 
@@ -97,12 +101,14 @@ namespace Village.Controllers
 				if (view.Villager.Health == 0)
 				{
 					toRemove.Add(view);
-					Destroy(view.gameObject);
 				}
 			}
 			foreach (var view in toRemove)
 			{
 				villagers.Remove(view);
+				var entry = new GameLog.LogSubEntry(localeVillagerDied);
+				entry.AddParameter("{villager}", view.Villager.villagerBase.villagerName);
+				instance.AddLogSubEntry(entry);
 				Destroy(view.gameObject);
 			}
 		}
@@ -117,7 +123,7 @@ namespace Village.Controllers
 		public void AddRemoveVillagersHealth(int value, bool playSound)
 		{
 			villagers.ForEach(x => x.Villager.Health += value);
-			AudioController.instance.PlaySound(loseHealthSound);
+			if (!instance.GameEnds) AudioController.instance.PlaySound(loseHealthSound);
 		}
 
 		public void LoadVillagers(List<Villager.SaveData> save)
@@ -131,7 +137,7 @@ namespace Village.Controllers
 
 		public int GetVillagersCount()
 		{
-			return villagers.Count;
+			return villagers.Count(x=> x.Villager.Health > 0);
 		}
 
 		public void SortVillagers()

@@ -30,24 +30,22 @@ namespace Village
 		private List<LogEntry> log = new List<LogEntry>();
 
 		[SerializeField]
-		private List<string> dayBuffer = new List<string>();
+		private List<LogSubEntry> dayEntries = new List<LogSubEntry>();
 
-		private string EntryTitle(int turn) => $"<b>{LeanLocalization.GetTranslationText(entryTitleLocale)} {turn}:</b>\n";
-
-		public void UpdateDayEntry(string entryLocale)
+		public void UpdateDayEntry(LogSubEntry subEntry)
 		{
-			if (entryLocale != string.Empty)
+			if (subEntry.localeMessage != string.Empty)
 			{
-				dayBuffer.Add(entryLocale);
+				dayEntries.Add(subEntry);
 			}
 		}
 
 		public void PrintDayEntry()
 		{
-			if (dayBuffer.Count > 0)
+			if (dayEntries.Count > 0)
 			{
 				var turn = instance.GetCurrentTurn();
-				var entry = new LogEntry(turn, new List<string>(dayBuffer));
+				var entry = new LogEntry(turn, new List<LogSubEntry>(dayEntries));
 				PrintDayEntry(entry);
 				log.Add(entry);
 			}
@@ -55,12 +53,8 @@ namespace Village
 
 		public void PrintDayEntry(LogEntry entry)
 		{
-			var entryMessage = entry.localeEntries.Select(x => $"~ {LeanLocalization.GetTranslationText(x)}");
-			logLabel.text += EntryTitle(entry.turn);
-			logLabel.text += string.Join("\n", entryMessage);
-			logLabel.text += "\n\n";
-
-			dayBuffer.Clear();
+			logLabel.text += entry.FormatedMessage;
+			dayEntries.Clear();
 			refresher.RefreshContentFitters();
 			ScrollToBottom();
 		}
@@ -104,12 +98,56 @@ namespace Village
 		public class LogEntry
 		{
 			public int turn;
-			public List<string> localeEntries;
+			public List<LogSubEntry> subEntries;
 
-			public LogEntry(int turn, List<string> localeEntries)
+			public LogEntry(int turn, List<LogSubEntry> subEntries)
 			{
 				this.turn = turn;
-				this.localeEntries = localeEntries;
+				this.subEntries = subEntries;
+			}
+
+			private string EntryTitle(int turn) => $"<b>{LeanLocalization.GetTranslationText(entryTitleLocale)} {turn}:</b>\n";
+
+			public string FormatedMessage
+			{
+				get
+				{
+					var result = EntryTitle(turn);
+					result += string.Join("\n", subEntries.Select(x => x.FormatedMessage));
+					result += "\n\n";
+					return result;
+				}
+			}
+		}
+
+		[Serializable]
+		public class LogSubEntry
+		{
+			public string localeMessage;
+			public Dictionary<string, string> parameters;
+
+			public LogSubEntry(string localeMessage)
+			{
+				this.localeMessage = localeMessage;
+				parameters = new Dictionary<string, string>();
+			}
+
+			public void AddParameter(string key, string value)
+			{
+				parameters.Add(key, value);
+			}
+
+			public string FormatedMessage
+			{
+				get
+				{
+					var result = $"~ {LeanLocalization.GetTranslationText(localeMessage)}";
+					foreach(var param in parameters)
+					{
+						result = result.Replace(param.Key, param.Value);
+					}
+					return result;
+				}
 			}
 		}
 	}

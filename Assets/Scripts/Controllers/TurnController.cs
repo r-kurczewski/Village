@@ -27,6 +27,16 @@ namespace Village.Controllers
 
 		public GameChapter Chapter => chapter;
 
+		public bool GameEnds
+		{
+			get
+			{
+				var lastTurn = chapter.nextChapter is null && Turn != Chapter.chapterTurnStart;
+				var villagersCount = instance.GetVillagersCount();
+				return villagersCount == 0 || lastTurn;
+			}
+		}
+
 		public void ChapterUpdate()
 		{
 			GameChapter selected = chapter;
@@ -56,15 +66,13 @@ namespace Village.Controllers
 
 		public void CheckIfGameEnds()
 		{
-			bool lastTurn = chapter.nextChapter is null && Turn != Chapter.chapterTurnStart;
-			int villagersCount = instance.GetVillagersCount();
-			if (villagersCount == 0 || lastTurn)
+			if (GameEnds)
 			{
 				instance.autoSave = false;
 				instance.ClearSave();
 				int reputationA = instance.GetResourceAmount(references.countryAReputation);
 				int reputationB = instance.GetResourceAmount(references.countryBReputation);
-				EndingLoader.ending = SelectEnding(villagersCount, reputationA, reputationB);
+				EndingLoader.ending = SelectEnding(reputationA, reputationB);
 				SceneManager.LoadScene("EndingScene");
 			}
 		}
@@ -76,11 +84,11 @@ namespace Village.Controllers
 			view.MessagesEnded.AddListener(() => Destroy(view.gameObject));
 		}
 
-		private Message SelectEnding(int villagersCount, int reputationA, int reputationB)
+		private Message SelectEnding(int reputationA, int reputationB)
 		{
 			Message ending = default;
 
-			if (villagersCount == 0)
+			if (instance.GetVillagersCount() == 0)
 			{
 				ending = references.ending1;
 			}
@@ -126,7 +134,7 @@ namespace Village.Controllers
 		public void MoveToNextTurn()
 		{
 			turn++;
-			AudioController.instance.PlaySound(newTurnSound);
+			if(!instance.GameEnds) AudioController.instance.PlaySound(newTurnSound);
 		}
 
 		public void RefreshGUI()

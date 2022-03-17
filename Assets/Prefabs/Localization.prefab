@@ -375,9 +375,11 @@ MonoBehaviour:
     Text: "Nasza ostatnia szansa na negocjacje z przedstawicielami obu pa\u0144stw.
       Od ich decyzji zale\u017Cny b\u0119dzie nasz los."
   - Name: log/entryTitle
-    Text: Wpis
+    Text: Tura
   - Name: log/merchant
     Text: 
+  - Name: log/villagerDied
+    Text: "Mieszkaniec wioski zmar\u0142: {villager}"
   - Name: log/building/lumberjack
     Text: "Uda\u0142o si\u0119 nam odbudowa\u0107 chatk\u0119 drwala"
   - Name: log/building/miningEquipment
@@ -594,7 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: Polish
+  currentLanguage: English
   localeResourceName: 
   detectLanguage: 1
   defaultLanguage: English
@@ -881,7 +883,9 @@ MonoBehaviour:
     Text: Our last chance to negotiate with representatives of both countries. Our
       fate will depend on their decisions.
   - Name: log/entryTitle
-    Text: Entry
+    Text: Turn
+  - Name: log/villagerDied
+    Text: '{villager} died'
   - Name: messages/ending1/title
     Text: Death of the villagers
   - Name: messages/ending2/title

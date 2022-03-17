@@ -103,8 +103,9 @@ event/heat/description,"Temperatura robią się coraz bardziej uciążliwe. Musi
 event/merchant/description,"W pobliżu wioski zatrzymał się handlarz. Może warto się z nim powymieniać?"
 event/water/description,"Potrzebujemy zgromadzić zapas wody na kolejne tygodnie."
 event/finale/description,Nasza ostatnia szansa na negocjacje z przedstawicielami obu państw. Od ich decyzji zależny będzie nasz los.
-log/entryTitle,Wpis
+log/entryTitle,Tura
 log/merchant,
+log/villagerDied,Mieszkaniec wioski zmarł: {villager}
 log/building/lumberjack,Udało się nam odbudować chatkę drwala
 log/building/miningEquipment,Udało nam się przygotować ekwipunek górniczy
 log/building/fisherman,Udało się doprowadzić do stanu używalnosci starą chatkę rybacką

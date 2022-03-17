@@ -43,7 +43,7 @@ namespace Village.Scriptables
 					ApplyCosts();
 					building.ApplyOnetimeBonus();
 					buildingView.SetAsBuilt();
-					instance.UpdateLogDayEntry(buildingBase.localeLogBuilt);
+					instance.AddLogSubEntry(new GameLog.LogSubEntry(buildingBase.localeLogBuilt));
 				}
 			}
 			else Debug.LogWarning("Trying to build not-building location!");

@@ -60,6 +60,8 @@ namespace Village.Controllers
 
 		public GameChapter Chapter => turnController.Chapter;
 
+		public bool GameEnds => turnController.GameEnds;
+
 		private void Awake()
 		{
 			if (instance == null)
@@ -282,9 +284,9 @@ namespace Village.Controllers
 			SaveController.ClearSave();
 		}
 
-		public void UpdateLogDayEntry(string localeLogMessage)
+		public void AddLogSubEntry(GameLog.LogSubEntry subEntry)
 		{
-			gameLog.UpdateDayEntry(localeLogMessage);
+			gameLog.UpdateDayEntry(subEntry);
 		}
 
 		public void AddLogDayEntry()

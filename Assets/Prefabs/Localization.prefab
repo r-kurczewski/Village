@@ -200,8 +200,12 @@ MonoBehaviour:
     Text: "Kliknij, aby kontynuowa\u0107..."
   - Name: game/loading
     Text: "\u0141adowanie..."
-  - Name: game/simplifyTooltips
-    Text: Uproszczone podpowiedzi
+  - Name: settings/actions
+    Text: Akcje
+  - Name: settings/action/hideDescription
+    Text: Ukryj opisy
+  - Name: settings/action/revertVillagers
+    Text: ' Cofnij postacie po akcji'
   - Name: credits/gameCreator
     Text: "Tw\xF3rca gry"
   - Name: credits/music
@@ -714,8 +718,12 @@ MonoBehaviour:
     Text: Click to continue...
   - Name: game/loading
     Text: Loading...
-  - Name: game/simplifyTooltips
-    Text: Simplified tooltips
+  - Name: settings/actions
+    Text: Actions
+  - Name: settings/action/hideDescription
+    Text: Hide descriptions
+  - Name: settings/action/revertVillagers
+    Text: Return after action
   - Name: credits/gameCreator
     Text: Game creator
   - Name: credits/music
@@ -883,9 +891,55 @@ MonoBehaviour:
     Text: Our last chance to negotiate with representatives of both countries. Our
       fate will depend on their decisions.
   - Name: log/entryTitle
-    Text: Turn
+    Text: Tura
+  - Name: log/merchant
+    Text: 
   - Name: log/villagerDied
     Text: '{villager} died'
+  - Name: log/building/lumberjack
+    Text: We managed to rebuild the lumberjack hut
+  - Name: log/building/miningEquipment
+    Text: We managed to prepare the mining equipment
+  - Name: log/building/fisherman
+    Text: The old fisherman's hut has been successfully restored to a usable condition
+  - Name: log/building/herbalist
+    Text: The herbalist's cottage can start functioning again
+  - Name: log/building/hospital
+    Text: We restored a room in the field hospital building
+  - Name: log/building/hunter
+    Text: We rebuilt a destroyed hunting cabin
+  - Name: log/building/watchtower
+    Text: The observation tower is back in operation
+  - Name: log/building/well
+    Text: The well has been repaired
+  - Name: log/failure/animals
+    Text: Wild animals have gotten into our food supply
+  - Name: log/failure/bandits
+    Text: Bandits attacked and looted our supplies
+  - Name: log/failure/cold
+    Text: We failed to prepare for the cold
+  - Name: log/failure/envoyTharros
+    Text: Tharros negotiator left displeased
+  - Name: log/failure/envoySalvante
+    Text: Salvante negotiator left displeased
+  - Name: log/failure/epidemic
+    Text: It was not possible to prevent the spread of the disease
+  - Name: log/failure/firewood
+    Text: We did not collect enough firewood
+  - Name: log/failure/food
+    Text: We didn't have enough food
+  - Name: log/failure/foodPreservation
+    Text: Our food supply has spoiled
+  - Name: log/failure/heat
+    Text: We didn't prepare properly for the heat wave
+  - Name: log/failure/thirst
+    Text: We were not able to collect enough water
+  - Name: log/success/animals
+    Text: We managed to hunt the local wildlife
+  - Name: log/success/envoyTharros
+    Text: We have fulfilled the expectations of the messenger from Tharros
+  - Name: log/success/envoySalvante
+    Text: We met the expectations of the messenger from Salvante
   - Name: messages/ending1/title
     Text: Death of the villagers
   - Name: messages/ending2/title

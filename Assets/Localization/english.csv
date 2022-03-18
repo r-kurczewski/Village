@@ -22,7 +22,9 @@ game/logButton,Log
 game/mainMenu,Menu
 game/clickToContinue,"Click to continue..."
 game/loading,"Loading..."
-game/simplifyTooltips,Simplified tooltips
+settings/actions,Actions
+settings/action/hideDescription,Hide descriptions
+settings/action/revertVillagers,Return after action
 credits/gameCreator,Game creator
 credits/music,Music
 credits/sounds,Sounds
@@ -102,6 +104,31 @@ event/heat/description,"Temperatures are getting more and more oppressive. We ne
 event/merchant/description,"A merchant stopped near the village. Maybe it's worth trading with him?"
 event/water/description,"We need to accumulate a supply of water for the next few weeks."
 event/finale/description,Our last chance to negotiate with representatives of both countries. Our fate will depend on their decisions.
+log/entryTitle,Tura
+log/merchant,
+log/villagerDied,{villager} died
+log/building/lumberjack,We managed to rebuild the lumberjack hut
+log/building/miningEquipment,We managed to prepare the mining equipment
+log/building/fisherman,The old fisherman's hut has been successfully restored to a usable condition
+log/building/herbalist,The herbalist's cottage can start functioning again
+log/building/hospital,We restored a room in the field hospital building
+log/building/hunter,We rebuilt a destroyed hunting cabin
+log/building/watchtower,The observation tower is back in operation
+log/building/well,The well has been repaired
+log/failure/animals,Wild animals have gotten into our food supply
+log/failure/bandits,Bandits attacked and looted our supplies
+log/failure/cold,We failed to prepare for the cold
+log/failure/envoyTharros,Tharros negotiator left displeased
+log/failure/envoySalvante,Salvante negotiator left displeased
+log/failure/epidemic,It was not possible to prevent the spread of the disease
+log/failure/firewood,We did not collect enough firewood
+log/failure/food,We didn't have enough food
+log/failure/foodPreservation,Our food supply has spoiled
+log/failure/heat,We didn't prepare properly for the heat wave
+log/failure/thirst,We were not able to collect enough water
+log/success/animals,We managed to hunt the local wildlife
+log/success/envoyTharros,We have fulfilled the expectations of the messenger from Tharros
+log/success/envoySalvante,We met the expectations of the messenger from Salvante
 messages/ending1/title,Death of the villagers
 messages/ending2/title,Destruction of the village
 messages/ending3/title,Joining Tharros

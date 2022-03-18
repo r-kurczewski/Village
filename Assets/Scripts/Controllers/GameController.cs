@@ -200,7 +200,7 @@ namespace Village.Controllers
 		{
 			turnController.CheckIfGameEnds();
 			yield return locationController.IExecuteVillagerActions();
-			//villagerController.MoveVillagersToPanel();
+			if(GameSettings.RevertVillagers) villagerController.MoveVillagersToPanel();
 			turnController.MoveToNextTurn();
 			TurnUpdate();
 			instance.AddLogDayEntry();

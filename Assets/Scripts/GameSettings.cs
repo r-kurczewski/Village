@@ -15,6 +15,7 @@ public class GameSettings : MonoBehaviour
 	public const string resolutionString = "resolution";
 	public const string fullscreenString = "fullscreen";
 	public const string hideTooltipsString = "hideAdvancedTooltips";
+	public const string revertVIllagersString = "revertVillagers";
 
 	[SerializeField]
 	private TMP_Dropdown resolution;
@@ -37,15 +38,16 @@ public class GameSettings : MonoBehaviour
 	[SerializeField]
 	private Toggle hideTooltips;
 
+	[SerializeField]
+	private Toggle revertVillagers;
+
 	private List<LocalizedLanguage> languageNames = new List<LocalizedLanguage>()
 	{
-		new LocalizedLanguage("English", "English"),
 		new LocalizedLanguage("Polish", "Polski"),
+		new LocalizedLanguage("English", "English"),
 	};
 
-	public static bool SimplifiedTooltips => PlayerPrefs.GetInt(hideTooltipsString, defaultValue: 0) != 0;
-
-	public static bool FullScreen => PlayerPrefs.GetInt("fullscreen", defaultValue: Screen.fullScreen ? 1 : 0) != 0;
+	public static bool FullScreen => PlayerPrefs.GetInt(fullscreenString, defaultValue: Screen.fullScreen ? 1 : 0) != 0;
 
 	public static float MasterVolume => PlayerPrefs.GetFloat(masterVolumeString, defaultValue: 1);
 
@@ -53,16 +55,16 @@ public class GameSettings : MonoBehaviour
 
 	public static float EffectsVolume => PlayerPrefs.GetFloat(effectsVolumeString, defaultValue: 1);
 
-	private void LoadHideTooltips()
-	{
-		hideTooltips.isOn = SimplifiedTooltips;
-	}
+	public static bool SimplifiedTooltips => PlayerPrefs.GetInt(hideTooltipsString, defaultValue: 0) != 0;
+
+	public static bool RevertVillagers => PlayerPrefs.GetInt(revertVIllagersString, defaultValue: 1) != 0;
 
 	private void Start()
 	{
 		LoadResolutions();
 		LoadLanguages();
 		LoadHideTooltips();
+		LoadRevertVillagers();
 
 		LoadMasterVolume();
 		LoadMusicVolume();
@@ -93,6 +95,16 @@ public class GameSettings : MonoBehaviour
 		var selectedLang = LeanLocalization.Instances.First().CurrentLanguage;
 		language.AddOptions(langNames);
 		language.SetValueWithoutNotify(language.options.IndexOf(language.options.First(x => x.text == GetLocalizedLanguageName(selectedLang))));
+	}
+
+	private void LoadHideTooltips()
+	{
+		hideTooltips.isOn = SimplifiedTooltips;
+	}
+
+	private void LoadRevertVillagers()
+	{
+		revertVillagers.isOn = RevertVillagers;
 	}
 
 	private void LoadMasterVolume()
@@ -153,9 +165,14 @@ public class GameSettings : MonoBehaviour
 		LeanLocalization.SetCurrentLanguageAll(GetEnglishLanguageName(lang));
 	}
 
-	public void ChangeAdavancedTooltips()
+	public void ChangeAdvancedTooltips()
 	{
 		PlayerPrefs.SetInt(hideTooltipsString, hideTooltips.isOn ? 1 : 0);
+	}
+
+	public void ChangeRevertVillagers()
+	{
+		PlayerPrefs.SetInt(revertVIllagersString, revertVillagers.isOn ? 1 : 0);
 	}
 
 

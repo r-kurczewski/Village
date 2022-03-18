@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Village.Controllers;
-using UnityEngine.Serialization;
 using Village.Views.Tooltips;
 
 namespace Village.Views
@@ -29,9 +28,6 @@ namespace Village.Views
 		[SerializeField]
 		private VillagerController controller;
 
-		[SerializeField]
-		private AudioClip takeVillagerSound;
-
 		public Villager Villager => _villager;
 
 		public Transform PrevParent { get; private set; }
@@ -49,9 +45,9 @@ namespace Village.Views
 			this.dragParent = controller.dragParent;
 
 			icon.sprite = villager.villagerBase.avatar;
-			healthBar.value = villager.Health;
 			name = villager.villagerBase.villagerName;
 			SortIndex = transform.GetSiblingIndex();
+			Refresh();
 		}
 
 		public void SetHealtBarVisibility(bool visibilty)
@@ -79,7 +75,13 @@ namespace Village.Views
 
 			GetComponent<Image>().raycastTarget = false;
 			blockTooltip = true;
-			AudioController.instance.PlaySound(takeVillagerSound);
+			PlayMoveSound();
+		}
+
+		private static void PlayMoveSound()
+		{
+			var sound = AudioController.instance.villagerMoveSound;
+			AudioController.instance.PlaySound(sound);
 		}
 
 		public void OnDrag(PointerEventData eventData)
@@ -100,9 +102,9 @@ namespace Village.Views
 			{
 
 			}
-			if(PlaceholderClone) Destroy(PlaceholderClone.gameObject);
+			if (PlaceholderClone) Destroy(PlaceholderClone.gameObject);
 			GetComponent<Image>().raycastTarget = true;
-			
+
 		}
 
 		public void OnDrop(PointerEventData eventData)
@@ -115,7 +117,6 @@ namespace Village.Views
 
 			var droppedSize = dropped.GetComponent<RectTransform>().sizeDelta;
 			int droppedIndex = index < dropped.PrevSiblingIndex ? index : index + 1;
-			//Debug.Log($"{dropped.Villager.name} on {Villager.name}");
 
 			this.transform.SetParent(dropped.PrevParent);
 			this.transform.localPosition = Vector2.zero;
@@ -138,9 +139,9 @@ namespace Village.Views
 			controller.RefreshGUI();
 		}
 
-		public void SetHealth(int value)
+		public void Refresh()
 		{
-			healthBar.value = value;
+			healthBar.value = (float)Villager.Health / GameController.MAX_HEALTH;
 		}
 
 		public void MoveToPanel(bool playSound)
@@ -148,7 +149,7 @@ namespace Village.Views
 			GetComponent<Image>().raycastTarget = true;
 			blockTooltip = false;
 			controller.PutVillager(this);
-			if (playSound) AudioController.instance.PlaySound(takeVillagerSound);
+			if (playSound) PlayMoveSound();
 		}
 
 		private Vector2 ClampedMousePos(Vector2 mousePos)
@@ -158,6 +159,7 @@ namespace Village.Views
 			result.y = Mathf.Clamp(mousePos.y, 0, Screen.height);
 			return result;
 		}
+
 		protected override void LoadTooltipData()
 		{
 			VillagerTooltip.instance.Load(_villager);

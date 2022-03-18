@@ -20,7 +20,7 @@ public class Villager : MonoBehaviour
 		diplomacy,
 		intelligence;
 
-	[SerializeField, Range(0, 4)]
+	[SerializeField, Range(0, MAX_HEALTH)]
 	private int _health;
 
 	[SerializeField]
@@ -54,7 +54,7 @@ public class Villager : MonoBehaviour
 
 	#endregion
 
-	public int Health { get => _health; set => _health = Mathf.Clamp(value, 0, HEALTH_MAX); }
+	public int Health { get => _health; set => _health = Mathf.Clamp(value, 0, MAX_HEALTH); }
 	public Sprite Avatar => villagerBase.avatar;
 
 	public void Load(VillagerBase vBase)
@@ -65,7 +65,7 @@ public class Villager : MonoBehaviour
 		crafting = vBase.baseCrafting;
 		diplomacy = vBase.baseDiplomacy;
 		intelligence = vBase.baseIntelligence;
-		Health = HEALTH_MAX;
+		Health = MAX_HEALTH;
 	}
 
 	public void Load(SaveData data, VillagerBase vBase)
@@ -154,21 +154,21 @@ public class Villager : MonoBehaviour
 	{
 		switch (Health)
 		{
-			case 4:
+			case MAX_HEALTH:
 				return 0;
 
-			case 3:
+			case MAX_HEALTH - 1:
 				return -1;
 
-			case 2:
+			case MAX_HEALTH - 2:
 				return -2;
 
-			case 1:
+			case MAX_HEALTH -3:
 				return -4;
 
 			default:
 				Debug.LogWarning("Health error: " + Health);
-				return -4;
+				return -5;
 		}
 	}
 

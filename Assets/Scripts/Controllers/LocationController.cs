@@ -36,10 +36,6 @@ namespace Village.Controllers
 		public void RefreshGUI()
 		{
 			merchantLocation.SetVisibility(instance.MerchantAvailable());
-			foreach (var view in locations)
-			{
-				view.Reload();
-			}
 			actionSlots = locations
 				.SelectMany(x => x.ActionSlots)
 				.OrderByDescending(x => x.Action.ExecutionPriority)
@@ -87,7 +83,7 @@ namespace Village.Controllers
 			{
 				if (view.Location is MapBuilding building)
 				{
-					if (save.Contains(building.name)) view.SetAsBuilt();
+					if (save.Contains(building.name)) view.Build();
 				}
 			}
 		}

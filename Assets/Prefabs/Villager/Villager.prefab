@@ -234,9 +234,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 4
-  m_WholeNumbers: 1
-  m_Value: 3
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -304,12 +304,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showTime: 0.5
-  villager: {fileID: 4125827751447017467}
+  _villager: {fileID: 0}
   icon: {fileID: 824766934}
   healthBar: {fileID: 7093668046160082946}
   dragParent: {fileID: 0}
   controller: {fileID: 0}
-  takeVillagerSound: {fileID: 8300000, guid: 9872e481ff15e6d49bb01f974241bc65, type: 3}
+  SortIndex: 0
 --- !u!114 &4125827751447017467
 MonoBehaviour:
   m_ObjectHideFlags: 0

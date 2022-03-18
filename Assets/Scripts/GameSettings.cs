@@ -1,24 +1,20 @@
 ﻿using Lean.Localization;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.UI;
 using Village.Controllers;
 
 public class GameSettings : MonoBehaviour
 {
-	private const string languageString = "language";
-	private const string masterVolumeString = "masterVolume";
-	private const string musicVolumeString = "musicVolume";
-	private const string effectsVolumeString = "effectsVolume";
-	private const string resolutionString = "resolution";
-	private const string fullscreenString = "fullscreen";
-	private const string hideTooltipsString = "hideAdvancedTooltips";
+	public const string languageString = "language";
+	public const string masterVolumeString = "masterVolume";
+	public const string musicVolumeString = "musicVolume";
+	public const string effectsVolumeString = "effectsVolume";
+	public const string resolutionString = "resolution";
+	public const string fullscreenString = "fullscreen";
+	public const string hideTooltipsString = "hideAdvancedTooltips";
 
 	[SerializeField]
 	private TMP_Dropdown resolution;
@@ -47,16 +43,6 @@ public class GameSettings : MonoBehaviour
 		new LocalizedLanguage("Polish", "Polski"),
 	};
 
-	private void Start()
-	{
-		LoadResolutions();
-		LoadLanguages();
-		LoadHideTooltips();
-
-		LoadMasterVolume();
-		LoadMusicVolume();
-		LoadEffectsVolume();
-	}
 	public static bool SimplifiedTooltips => PlayerPrefs.GetInt(hideTooltipsString, defaultValue: 0) != 0;
 
 	public static bool FullScreen => PlayerPrefs.GetInt("fullscreen", defaultValue: Screen.fullScreen ? 1 : 0) != 0;
@@ -72,12 +58,23 @@ public class GameSettings : MonoBehaviour
 		hideTooltips.isOn = SimplifiedTooltips;
 	}
 
+	private void Start()
+	{
+		LoadResolutions();
+		LoadLanguages();
+		LoadHideTooltips();
+
+		LoadMasterVolume();
+		LoadMusicVolume();
+		LoadEffectsVolume();
+	}
+
 	private void LoadResolutions()
 	{
 		resolution.ClearOptions();
 		var resolutions = Screen.resolutions
-			.Where(x=> x.width >= 1024)
-			.Where(x=> x.height >= 768)
+			.Where(x => x.width >= 1024)
+			.Where(x => x.height >= 768)
 			.Select(x => $"{x.width}x{x.height}")
 			.Distinct()
 			.ToList();

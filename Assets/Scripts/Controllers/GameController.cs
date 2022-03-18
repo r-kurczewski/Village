@@ -14,22 +14,22 @@ namespace Village.Controllers
 	[SelectionBase]
 	public class GameController : MonoBehaviour
 	{
-		public static GameController instance;
-
 		public const int COUNTRY_A_ENDING_REPUTATION = 600;
 		public const int COUNTRY_B_ENDING_REPUTATION = 600;
 		public const int NEUTRAL_ENDING_REPUTATION = 400;
 		public const float SELL_VALUE_MULTIPLIER = 0.5f;
 		public const float TRADE_DISCOUNT = 0.06f;
 		public const float STAT_MULTIPIER = 0.2f;
-		public const int HEALTH_MAX = 4;
+		public const int MAX_HEALTH = 5;
 		public const int STAT_MAX = 5;
 		public const int RESOURCES_MAX = 999;
 		public const int START_VILLAGERS = 6;
-		public const int VILLAGER_START_HEALTH = 4;
+		public const int VILLAGER_START_HEALTH = 5;
 		public const int MERCHANT_SELL_ITEMS_COUNT = 4;
 		public const int MERCHANT_BUY_ITEMS_COUNT = 4;
 
+		public static GameController instance;
+		
 		public bool autoSave = true;
 
 		[SerializeField]
@@ -93,7 +93,7 @@ namespace Village.Controllers
 
 			UpdateGUI();
 			PlayMusic();
-			SaveController.SaveGameState();
+			SaveGameState();
 		}
 
 		private async void LoadPreviousGame(SaveController.SaveData save)
@@ -107,7 +107,7 @@ namespace Village.Controllers
 			eventController.PredictionFactor = save.predictionFactor;
 			gameLog.SetLogData(save.log);
 
-			await AssetManager.instance.Handle.Task;
+			await AssetManager.instance.LoadAssets();
 
 			villagerController.LoadVillagers(save.villagers);
 			eventController.LoadChapterEvents(save.chapterEvents);
@@ -200,7 +200,7 @@ namespace Village.Controllers
 		{
 			turnController.CheckIfGameEnds();
 			yield return locationController.IExecuteVillagerActions();
-			villagerController.MoveVillagersToPanel();
+			//villagerController.MoveVillagersToPanel();
 			turnController.MoveToNextTurn();
 			TurnUpdate();
 			instance.AddLogDayEntry();
@@ -247,6 +247,11 @@ namespace Village.Controllers
 		public void SetMusic(AudioClip clip)
 		{
 			AudioController.SetMusic(clip);
+		}
+
+		private static void SaveGameState()
+		{
+			SaveController.SaveGameState();
 		}
 
 		public List<Villager.SaveData> SaveVillagers()

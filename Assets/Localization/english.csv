@@ -102,8 +102,6 @@ event/heat/description,"Temperatures are getting more and more oppressive. We ne
 event/merchant/description,"A merchant stopped near the village. Maybe it's worth trading with him?"
 event/water/description,"We need to accumulate a supply of water for the next few weeks."
 event/finale/description,Our last chance to negotiate with representatives of both countries. Our fate will depend on their decisions.
-log/entryTitle,Turn
-log/villagerDied,{villager} died
 messages/ending1/title,Death of the villagers
 messages/ending2/title,Destruction of the village
 messages/ending3/title,Joining Tharros

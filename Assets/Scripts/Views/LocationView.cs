@@ -29,14 +29,7 @@ namespace Village.Views
 
 		public bool Built => isBuilt;
 
-		private void Clear()
-		{
-			foreach (var slot in _slots)
-			{
-				Destroy(slot.gameObject);
-			}
-			_slots.Clear();
-		}
+		private ActionSlot buildActionSlot;
 
 		public void Load()
 		{
@@ -49,29 +42,40 @@ namespace Village.Views
 
 			if (location is MapBuilding building)
 			{
-				LoadBuildingActions(building);
-				bool noActions = building.basicActions.Count == 0 && building.buildingAction.Count == 0;
-				if (isBuilt && noActions)
+				if (isBuilt)
 				{
-					SetVisibility(false);
+					LoadBuildingActions(building);
 				}
+				else
+				{
+					LoadBuildAction(building);
+				}
+
+				Refresh(building);
+			}
+		}
+
+		private void Refresh(MapBuilding building)
+		{
+			bool noActions = building.basicActions.Count == 0 && building.buildingAction.Count == 0;
+			if (isBuilt && noActions)
+			{
+				SetVisibility(false);
 			}
 		}
 
 		private void LoadBuildingActions(MapBuilding building)
 		{
-			if (isBuilt)
+			foreach (var action in building.buildingAction)
 			{
-				foreach (var action in building.buildingAction)
-				{
-					LoadAction(action);
-				}
+				LoadAction(action);
 			}
-			else
-			{
-				var buildAction = new BuildAction(buildBaseAction, building, this);
-				LoadAction(buildAction);
-			}
+		}
+
+		private void LoadBuildAction(MapBuilding building)
+		{
+			var buildAction = new BuildAction(buildBaseAction, building, this);
+			buildActionSlot = LoadAction(buildAction);
 		}
 
 		private void LoadBasicActions()
@@ -84,27 +88,30 @@ namespace Village.Views
 			}
 		}
 
-		private void LoadAction(IAction action)
+		private ActionSlot LoadAction(IAction action)
 		{
 			var actionSlot = Instantiate(actionSlotPrefab, transform);
 			_slots.Add(actionSlot);
 			actionSlot.Load(action);
+			return actionSlot;
 		}
 
-		public void SetAsBuilt()
+		public void Build()
 		{
 			isBuilt = true;
+			buildActionSlot.gameObject.SetActive(false);
+			if (location is MapBuilding building)
+			{
+				buildActionSlot.RemoveVillager();
+				LoadBuildingActions(building);
+				Refresh(building);
+			}
 		}
 
-		public void SetVisibility(bool visibility)
+		public void SetVisibility(bool visible)
 		{
-			gameObject.SetActive(visibility);
-		}
-
-		public void Reload()
-		{
-			Clear();
-			Load(location);
+			if (!visible) ActionSlots.ForEach(x => x.RemoveVillager());
+			gameObject.SetActive(visible);
 		}
 	}
 }

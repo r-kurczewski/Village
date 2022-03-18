@@ -302,3 +302,8 @@ MonoBehaviour:
   mixer: {fileID: 24100000, guid: 8b4ec920e5ff4414c93bc1a24a0a48ff, type: 2}
   music: {fileID: 1284892620}
   soundEffects: {fileID: 1218177102}
+  villagerMoveSound: {fileID: 8300000, guid: 6f8f5dbafa608794994f374ed5f03d2c, type: 3}
+  actionPutSound: {fileID: 8300000, guid: 7538dc3f3147d0144bb0679f978e03c5, type: 3}
+  loseHealthSound: {fileID: 8300000, guid: e6b90dbaf3595d94786f7e2caa06b50e, type: 3}
+  newTurnSound: {fileID: 8300000, guid: 76f3c41119276664b870e97fc15155c2, type: 3}
+  newEventSound: {fileID: 8300000, guid: 6d780ce17d1abfc4fa575c4b560f1099, type: 3}

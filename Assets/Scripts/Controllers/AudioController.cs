@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Serialization;
 
 namespace Village.Controllers
 {
@@ -13,7 +14,7 @@ namespace Village.Controllers
 		private const string soundEffectsVolumeString = "effectsVol";
 
 		public static AudioController instance;
-
+		
 		[SerializeField]
 		private AudioMixer mixer;
 		
@@ -22,7 +23,14 @@ namespace Village.Controllers
 
 		[SerializeField]
 		private AudioSource soundEffects;
-		
+
+		[Header("Sounds")]
+		public AudioClip villagerMoveSound;
+		public AudioClip actionPutSound;
+		public AudioClip loseHealthSound;
+		public AudioClip newTurnSound;
+		public AudioClip newEventSound;
+
 		private bool blockSound;
 
 		private float LinearToVolume(float value) => (float)Math.Log10(value) * 20;
@@ -40,6 +48,11 @@ namespace Village.Controllers
 		}
 
 		private void Start()
+		{
+			SetStartVolumes();
+		}
+
+		private void SetStartVolumes()
 		{
 			SetMasterVolume(GameSettings.MasterVolume);
 			SetMusicVolume(GameSettings.MusicVolume);

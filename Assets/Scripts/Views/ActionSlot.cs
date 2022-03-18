@@ -18,9 +18,6 @@ namespace Village.Views
 		[SerializeField]
 		private Image icon;
 
-		[SerializeField]
-		private AudioClip putVillagerSound;
-
 		public IAction Action => action;
 
 		public VillagerView VillagerView => GetComponentInChildren<VillagerView>();
@@ -40,7 +37,8 @@ namespace Village.Views
 			if (dropped)
 			{
 				PutVillager(dropped);
-				AudioController.instance.PlaySound(putVillagerSound);
+				var sound = AudioController.instance.actionPutSound;
+				AudioController.instance.PlaySound(sound);
 			}
 		}
 
@@ -48,6 +46,11 @@ namespace Village.Views
 		{
 			dropped.transform.SetParent(transform);
 			dropped.transform.localPosition = Vector2.zero;
+		}
+
+		public void RemoveVillager()
+		{
+			VillagerView?.MoveToPanel(playSound: false);
 		}
 
 		public void OnPointerClick(PointerEventData eventData)

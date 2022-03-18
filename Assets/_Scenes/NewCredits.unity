@@ -332,36 +332,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8989566413836673998, guid: 6b4175e4b9717514e9af4fa0c0c19a8a, type: 3}
   m_PrefabInstance: {fileID: 216226824}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &223824747
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 223824748}
-  m_Layer: 0
-  m_Name: Spanish
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &223824748
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 223824747}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 307332787}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &303057157
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,11 +422,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303057157}
   m_CullTransparentMesh: 1
---- !u!4 &307332787 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5426732834749606645, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
-  m_PrefabInstance: {fileID: 1404011176}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &430348046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -762,7 +727,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back to menu
+  m_text: "Powr\xF3t do menu"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
   m_sharedMaterial: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
@@ -1458,14 +1423,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 261468754, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1120611074, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5426732834749606645, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1513,10 +1470,6 @@ PrefabInstance:
     - target: {fileID: 5426732834749606647, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
       propertyPath: m_Name
       value: Localization
-      objectReference: {fileID: 0}
-    - target: {fileID: 8535497682757374160, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79b23503b554e94a8ffbbb300c4acaf, type: 3}
@@ -1693,7 +1646,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6997568039977827180, guid: 6b4175e4b9717514e9af4fa0c0c19a8a, type: 3}
       propertyPath: m_text
-      value: https://mixkit.co
+      value: 'https://mixkit.co
+
+
+        https://freesound.org
+
+        kgeshev
+
+        j1987'
       objectReference: {fileID: 0}
     - target: {fileID: 6997568040968490574, guid: 6b4175e4b9717514e9af4fa0c0c19a8a, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2542,7 +2502,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1765874433}
   m_Direction: 2
   m_Value: 0.9999999
-  m_Size: 0.24847303
+  m_Size: 0.23665011
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

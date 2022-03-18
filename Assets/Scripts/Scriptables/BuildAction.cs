@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Village.Scriptables;
 using Village.Views;
-using static Village.Controllers.GameController;
 using static Village.Scriptables.Effect;
 using static Village.Scriptables.Resource;
+using static Village.Controllers.GameController;
 
 namespace Village.Scriptables
 {
@@ -42,7 +42,7 @@ namespace Village.Scriptables
 				{
 					ApplyCosts();
 					building.ApplyOnetimeBonus();
-					buildingView.SetAsBuilt();
+					buildingView.Build();
 					instance.AddLogSubEntry(new GameLog.LogSubEntry(buildingBase.localeLogBuilt));
 				}
 			}

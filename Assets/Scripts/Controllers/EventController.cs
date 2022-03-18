@@ -33,9 +33,6 @@ namespace Village.Controllers
 		[SerializeField]
 		private List<GameEvent> chapterEvents;
 
-		[SerializeField]
-		private AudioClip newEventsSound;
-
 		public List<GameEvent.SaveData> SaveCurrentEvents()
 		{
 			return currentEvents.Select(x => x.Event.Save()).ToList();
@@ -152,7 +149,8 @@ namespace Village.Controllers
 
 			if(newEvents.Count > 0)
 			{
-				AudioController.instance.PlaySound(newEventsSound);
+				var sound = AudioController.instance.newEventSound;
+				AudioController.instance.PlaySound(sound);
 			}
 
 			foreach (var newEvent in newEvents)

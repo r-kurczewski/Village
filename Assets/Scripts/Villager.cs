@@ -164,6 +164,9 @@ public class Villager : MonoBehaviour
 				return -2;
 
 			case MAX_HEALTH -3:
+				return -3;
+
+			case MAX_HEALTH - 4:
 				return -4;
 
 			default:

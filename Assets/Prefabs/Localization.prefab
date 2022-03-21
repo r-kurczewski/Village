@@ -200,6 +200,13 @@ MonoBehaviour:
     Text: "Kliknij, aby kontynuowa\u0107..."
   - Name: game/loading
     Text: "\u0141adowanie..."
+  - Name: prompt/startNewGame
+    Text: "Czy na pewno chcesz usun\u0105\u0107 stary zapis i rozpocz\u0105\u0107
+      now\u0105 gr\u0119?"
+  - Name: settings/yes
+    Text: Tak
+  - Name: settings/no
+    Text: Nie
   - Name: settings/actions
     Text: Akcje
   - Name: settings/action/hideDescription
@@ -379,7 +386,7 @@ MonoBehaviour:
     Text: "Nasza ostatnia szansa na negocjacje z przedstawicielami obu pa\u0144stw.
       Od ich decyzji zale\u017Cny b\u0119dzie nasz los."
   - Name: log/entryTitle
-    Text: Tura
+    Text: Turn
   - Name: log/merchant
     Text: 
   - Name: log/villagerDied
@@ -546,13 +553,14 @@ MonoBehaviour:
       wzrost innej, losowej statystyki na pocz\u0105tku nowego rozdzia\u0142u.\n\nZdrowie
       reprezentuje stan i przydatno\u015B\u0107 do pracy danego mieszka\u0144ca.
       Wp\u0142ywa ono na efektywne statystyki postaci. Wyszczeg\xF3lnia si\u0119
-      kilka poziom\xF3w zdrowia:\n\nPoziom 4: Brak modyfikator\xF3w.\nPoziom 3: -1
-      punkt do wszystkich statystyk postaci. \nPoziom 2 -2 punkty do wszystkich statystyk
-      postaci.\nPoziom 1: -4 punkty do wszystkich statystyk postaci.\nPoziom 0: Powoduje
-      \u015Bmier\u0107 mieszka\u0144ca.\n\nZdrowie postaci mo\u017Cesz zwi\u0119ksza\u0107
-      u\u017Cywaj\u0105c akcji w szpitalu polowym.\n\nReputacja osadnika wp\u0142ywa
-      na jego efektywno\u015B\u0107 przy interakcjach z danym krajem.\n\nAby schowa\u0107
-      te informacje, ponownie naci\u015Bnij pzycisk Pomoc."
+      kilka poziom\xF3w zdrowia:\n\nPoziom 5: Brak modyfikator\xF3w.\nPoziom 4: -1
+      punkt do wszystkich statystyk postaci. \nPoziom 3 -2 punkty do wszystkich statystyk
+      postaci.\nPoziom 2: -3 punkty do wszystkich statystyk postaci.\nPoziom 1: -4
+      punkty do wszystkich statystyk postaci.\nPoziom 0: Powoduje \u015Bmier\u0107
+      mieszka\u0144ca.\n\nZdrowie postaci mo\u017Cesz zwi\u0119ksza\u0107 u\u017Cywaj\u0105c
+      akcji w szpitalu polowym.\n\nReputacja osadnika wp\u0142ywa na jego efektywno\u015B\u0107
+      przy interakcjach z danym krajem.\n\nAby schowa\u0107 te informacje, ponownie
+      naci\u015Bnij pzycisk Pomoc."
 --- !u!1 &5426732834749606647
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,6 +726,12 @@ MonoBehaviour:
     Text: Click to continue...
   - Name: game/loading
     Text: Loading...
+  - Name: prompt/startNewGame
+    Text: Are you sure you want to delete the old save and start a new game?
+  - Name: settings/yes
+    Text: Tak
+  - Name: settings/no
+    Text: Nie
   - Name: settings/actions
     Text: Actions
   - Name: settings/action/hideDescription
@@ -1048,9 +1062,10 @@ MonoBehaviour:
       to this, each point of intelligence causes another random stat to increase
       at the beginning of a new chapter.\n\nHealth represents the condition and fitness
       for work of a given villager. It influences the effective stats of the character.
-      There are several levels of health:\n\nLevel 4: No modifiers.\nLevel 3: -1
-      point to all character stats.\nLevel 2 -2 points to all character stats.\nLevel
-      1: -4 points to all character stats.\nLevel 0: Causes the death of the villager.\n\nYou
-      can increase a character's health using actions in the field hospital.\n\nThe
-      villager's reputation affects his efficiency when interacting with a country.\n\nTo
-      hide this information, press the Help button again."
+      There are several levels of health:\n\nLevel 5: No modifiers.\nLevel 4: -1
+      point to all character stats.\nLevel 3 -2 points to all character stats.\nLevel
+      2: -3 points to all character stats.\nLevel 1: -4 points to all character stats.\nLevel
+      0: Causes the death of the villager.\n\nYou can increase a character's health
+      using actions in the field hospital.\n\nThe villager's reputation affects his
+      efficiency when interacting with a country.\n\nTo hide this information, press
+      the Help button again."

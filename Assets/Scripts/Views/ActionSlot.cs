@@ -48,14 +48,18 @@ namespace Village.Views
 			dropped.transform.localPosition = Vector2.zero;
 		}
 
-		public void RemoveVillager()
+		public void RemoveVillager(bool playSound)
 		{
-			VillagerView?.MoveToPanel(playSound: false);
+			VillagerView?.MoveToPanel(playSound);
 		}
 
 		public void OnPointerClick(PointerEventData eventData)
 		{
-			if (VillagerView) VillagerView.MoveToPanel(playSound: true);
+			if(eventData.button == PointerEventData.InputButton.Right)
+			{
+				Debug.Log("right click");
+			}
+			RemoveVillager(playSound: true);
 		}
 
 		protected override void LoadTooltipData()

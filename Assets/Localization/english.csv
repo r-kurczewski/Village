@@ -22,6 +22,9 @@ game/logButton,Log
 game/mainMenu,Menu
 game/clickToContinue,"Click to continue..."
 game/loading,"Loading..."
+prompt/startNewGame,Are you sure you want to delete the old save and start a new game?
+settings/yes,Tak
+settings/no,Nie
 settings/actions,Actions
 settings/action/hideDescription,Hide descriptions
 settings/action/revertVillagers,Return after action
@@ -188,9 +191,10 @@ In addition to this, each point of intelligence causes another random stat to in
 
 Health represents the condition and fitness for work of a given villager. It influences the effective stats of the character. There are several levels of health:
 
-Level 4: No modifiers.
-Level 3: -1 point to all character stats.
-Level 2 -2 points to all character stats.
+Level 5: No modifiers.
+Level 4: -1 point to all character stats.
+Level 3 -2 points to all character stats.
+Level 2: -3 points to all character stats.
 Level 1: -4 points to all character stats.
 Level 0: Causes the death of the villager.
 

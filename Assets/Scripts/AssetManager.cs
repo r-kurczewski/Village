@@ -42,7 +42,7 @@ namespace Village
 			if (instance == this)
 			{
 				//LoadAssets();
-				Debug.Log("Start asset loading...");
+				//Debug.Log("Start asset loading...");
 			}
 		}
 

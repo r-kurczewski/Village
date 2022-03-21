@@ -1727,6 +1727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95a0d89edec124545abc1f82a81217ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loaded: 0
 --- !u!4 &1629703144
 Transform:
   m_ObjectHideFlags: 0
@@ -2204,6 +2205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df9f6a0f96ac91d489f5342ba61666de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prompt: {fileID: 7133363440504557413, guid: bb9a356dbdba6d041bb0aa57b815a229, type: 3}
+  canvas: {fileID: 1382200567}
 --- !u!4 &1794347582
 Transform:
   m_ObjectHideFlags: 0

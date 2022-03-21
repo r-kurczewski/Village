@@ -22,6 +22,9 @@ game/logButton,Dziennik
 game/mainMenu,Menu
 game/clickToContinue,"Kliknij, aby kontynuować..."
 game/loading,"Ładowanie..."
+prompt/startNewGame,Czy na pewno chcesz usunąć stary zapis i rozpocząć nową grę?
+settings/yes,Tak
+settings/no,Nie
 settings/actions,Akcje
 settings/action/hideDescription,Ukryj opisy
 settings/action/revertVillagers, Cofnij postacie po akcji
@@ -189,9 +192,10 @@ Oprócz tego każdy punkt inteligencji powoduje dodatkowo wzrost innej, losowej 
 
 Zdrowie reprezentuje stan i przydatność do pracy danego mieszkańca. Wpływa ono na efektywne statystyki postaci. Wyszczególnia się kilka poziomów zdrowia:
 
-Poziom 4: Brak modyfikatorów.
-Poziom 3: -1 punkt do wszystkich statystyk postaci. 
-Poziom 2 -2 punkty do wszystkich statystyk postaci.
+Poziom 5: Brak modyfikatorów.
+Poziom 4: -1 punkt do wszystkich statystyk postaci. 
+Poziom 3 -2 punkty do wszystkich statystyk postaci.
+Poziom 2: -3 punkty do wszystkich statystyk postaci.
 Poziom 1: -4 punkty do wszystkich statystyk postaci.
 Poziom 0: Powoduje śmierć mieszkańca.
 

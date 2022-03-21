@@ -1,11 +1,21 @@
+using Lean.Localization;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using Village.Controllers;
 
 public class SceneLoader : MonoBehaviour
 {
+	private const string localeStartNewGamePrompt = "prompt/startNewGame";
+
+	[SerializeField]
+	private PromptWindow prompt;
+
+	[SerializeField]
+	private Transform canvas;
+
 	public void LoadGameScene()
 	{
 		SceneManager.LoadScene("GameScene");
@@ -43,8 +53,27 @@ public class SceneLoader : MonoBehaviour
 
 	public void StartNewGame()
 	{
-		SaveController.ClearSave();
-		LoadProlog();
+		if (SaveController.SaveExists)
+		{
+			var window = Instantiate(prompt, canvas);
+			var message = LeanLocalization.GetTranslationText(localeStartNewGamePrompt);
+			window.SetMessage(message);
+			window.OnAccept.AddListener(() =>
+			{
+				SaveController.ClearSave();
+				LoadProlog();
+				window.Close();
+			});
+			window.OnDecline.AddListener(() =>
+			{
+				window.Close();
+			});
+		}
+		else
+		{
+			SaveController.ClearSave();
+			LoadProlog();
+		}
 	}
 
 	public void LoadPreviousGame()

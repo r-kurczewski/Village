@@ -102,7 +102,7 @@ namespace Village.Views
 			buildActionSlot.gameObject.SetActive(false);
 			if (location is MapBuilding building)
 			{
-				buildActionSlot.RemoveVillager();
+				buildActionSlot.RemoveVillager(false);
 				LoadBuildingActions(building);
 				Refresh(building);
 			}
@@ -110,7 +110,7 @@ namespace Village.Views
 
 		public void SetVisibility(bool visible)
 		{
-			if (!visible) ActionSlots.ForEach(x => x.RemoveVillager());
+			if (!visible) ActionSlots.ForEach(x => x.RemoveVillager(false));
 			gameObject.SetActive(visible);
 		}
 	}

@@ -4,10 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using static Village.Scriptables.Resource;
-using Village.Views;
 using System.IO;
-using BayatGames.SaveGameFree.Serializers;
-using System.Runtime.Serialization;
 using static Village.GameLog;
 
 namespace Village.Controllers
@@ -23,7 +20,6 @@ namespace Village.Controllers
 			SaveData data = new SaveData
 			{
 				turn = gController.GetCurrentTurn(),
-				predictionFactor = gController.GetPredictionFactor(),
 				villagers = gController.SaveVillagers(),
 				resources = gController.SaveResources(),
 				currentEvents = gController.SaveCurrentEvents(),
@@ -57,7 +53,6 @@ namespace Village.Controllers
 		public class SaveData
 		{
 			public int turn;
-			public int predictionFactor;
 			public List<ResourceAmount.SaveData> resources;
 			public List<Villager.SaveData> villagers;
 			public List<GameEvent.SaveData> currentEvents;
@@ -66,6 +61,5 @@ namespace Village.Controllers
 			public List<string> buildings;
 			public List<LogEntry> log;
 		}
-
 	}
 }

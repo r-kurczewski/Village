@@ -43,7 +43,10 @@ namespace Village.Views
 
 		protected override void LoadTooltipData()
 		{
-			TextTooltip.instance.Load(resource.ResourceName);
+			var bonus = GameController.instance.GetTurnBonus(resource);
+			string tooltip = resource.ResourceName;
+			if (bonus > 0) tooltip += $" (+{bonus})";
+			TextTooltip.instance.Load(tooltip);
 		}
 
 		protected override void SetTooltipObject()

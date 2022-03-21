@@ -57,14 +57,14 @@ namespace Village.Views.Tooltips
 
 		protected abstract void SetTooltipObject();
 
-		private void ShowTooltip()
+		protected void ShowTooltip()
 		{
 			tooltip.SetActive(true);
 			LoadTooltipData();
 			tooltipShown = true;
 		}
 
-		protected void HideTooltip()
+		public void HideTooltip()
 		{
 			tooltip.SetActive(false);
 			tooltipShown = false;

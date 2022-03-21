@@ -36,9 +36,11 @@ namespace Village.Views
 			VillagerView dropped = eventData.pointerDrag.GetComponent<VillagerView>();
 			if (dropped)
 			{
+				VillagerView.draggedVillager = null;
 				PutVillager(dropped);
 				var sound = AudioController.instance.actionPutSound;
 				AudioController.instance.PlaySound(sound);
+				LoadTooltipData();
 			}
 		}
 

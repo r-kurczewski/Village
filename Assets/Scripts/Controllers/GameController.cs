@@ -104,7 +104,6 @@ namespace Village.Controllers
 			turnController.LoadTurnAndChapter(save.turn);
 			resourceController.LoadResources(save.resources);
 			locationController.LoadBuildings(save.buildings);
-			eventController.PredictionFactor = save.predictionFactor;
 			gameLog.SetLogData(save.log);
 
 			await AssetManager.instance.LoadAssets();
@@ -122,7 +121,7 @@ namespace Village.Controllers
 		private void TurnUpdate()
 		{
 			turnController.ChapterUpdate();
-			locationController.ApplyTurnBonuses();
+			resourceController.ApplyTurnBonuses();
 			eventController.EventUpdate();
 			villagerController.VillagerUpdate();
 			turnController.CheckIfGameEnds();
@@ -154,6 +153,11 @@ namespace Village.Controllers
 			return resourceController.GetResourceAmount(resource);
 		}
 
+		public int GetTurnBonus(Resource resource)
+		{
+			return resourceController.GetTurnBonus(resource);
+		}
+
 		public int GetVillagersCount()
 		{
 			return villagerController.GetVillagersCount();
@@ -162,6 +166,11 @@ namespace Village.Controllers
 		public void ApplyIntelligenceBonus()
 		{
 			villagerController.ApplyIntelligenceBonus();
+		}
+
+		public void RegisterTurnBonus(Resource.ResourceAmount resource)
+		{
+			resourceController.RegisterTurnBonus(resource);
 		}
 
 		public bool MerchantAvailable()
@@ -207,17 +216,12 @@ namespace Village.Controllers
 			if(autoSave) SaveController.SaveGameState();
 		}
 
-		public void IncreasePredictionFactor()
+		public void SetPredictionFactor()
 		{
-			eventController.PredictionFactor++;
+			eventController.PredictionFactor = 1;
 
 			// load events that would be skipped
 			eventController.EventUpdate();
-		}
-
-		public void SetPredictionFactor(int value)
-		{
-			eventController.PredictionFactor = value;
 		}
 
 		public void UpdateGUI()

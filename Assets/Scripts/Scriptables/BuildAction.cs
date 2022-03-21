@@ -41,7 +41,6 @@ namespace Village.Scriptables
 				if (IsCostCorrect())
 				{
 					ApplyCosts();
-					building.ApplyOnetimeBonus();
 					buildingView.Build();
 					instance.AddLogSubEntry(new GameLog.LogSubEntry(buildingBase.localeLogBuilt));
 				}

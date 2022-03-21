@@ -11,9 +11,10 @@ namespace Village.Scriptables
 	{
 		[SerializeField]
 		private ResourceAmount resource;
-		public override void ApplyTurnBonus()
+
+		public override void ApplyOnetimeBonus()
 		{
-			GameController.instance.AddRemoveResource(resource.resource, resource.Amount);
+			GameController.instance.RegisterTurnBonus(resource);
 		}
 	}
 }

@@ -24,10 +24,5 @@ namespace Village.Scriptables
 		{
 
 		}
-
-		public virtual void ApplyTurnBonus()
-		{
-
-		}
 	}
 }

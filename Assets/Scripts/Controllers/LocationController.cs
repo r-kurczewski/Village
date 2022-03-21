@@ -53,17 +53,6 @@ namespace Village.Controllers
 			}
 		}
 
-		public void ApplyTurnBonuses()
-		{
-			foreach (var view in locations)
-			{
-				if (view.Location is MapBuilding building)
-				{
-					if (view.Built) building.ApplyTurnBonus();
-				}
-			}
-		}
-
 		public List<string> SaveBuildings()
 		{
 			List<string> buildings = new List<string>();
@@ -83,7 +72,10 @@ namespace Village.Controllers
 			{
 				if (view.Location is MapBuilding building)
 				{
-					if (save.Contains(building.name)) view.Build();
+					if (save.Contains(building.name))
+					{
+						view.Build();
+					}
 				}
 			}
 		}

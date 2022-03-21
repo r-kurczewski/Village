@@ -729,9 +729,9 @@ MonoBehaviour:
   - Name: prompt/startNewGame
     Text: Are you sure you want to delete the old save and start a new game?
   - Name: settings/yes
-    Text: Tak
+    Text: Yes
   - Name: settings/no
-    Text: Nie
+    Text: No
   - Name: settings/actions
     Text: Actions
   - Name: settings/action/hideDescription

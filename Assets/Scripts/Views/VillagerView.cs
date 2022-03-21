@@ -97,14 +97,15 @@ namespace Village.Views
 			if (!slot && !villager) // if wrong placement
 			{
 				MoveToPanel(playSound: false);
+				transform.SetSiblingIndex(PrevSiblingIndex);
 			}
-			else if (slot)
+
+			if (PlaceholderClone)
 			{
-
+				Destroy(PlaceholderClone.gameObject);
 			}
-			if (PlaceholderClone) Destroy(PlaceholderClone.gameObject);
 			GetComponent<Image>().raycastTarget = true;
-
+			draggedVillager = null;
 		}
 
 		public void OnDrop(PointerEventData eventData)

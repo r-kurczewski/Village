@@ -10,7 +10,7 @@ namespace Village.Scriptables
 	{
 		public override void ApplyOnetimeBonus()
 		{
-			GameController.instance.IncreasePredictionFactor();
+			GameController.instance.SetPredictionFactor();
 		}
 	}
 }

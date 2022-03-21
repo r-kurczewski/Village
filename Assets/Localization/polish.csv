@@ -95,7 +95,7 @@ event/heat/title,Fale upałów
 event/merchant/title,Przybycie handlarza
 event/water/title,Zapasy wody
 event/finale/title,Ostatnie negocjacje
-event/animals/description,"Dzikie zwierzęta wyżerają zapasy żywności. Trzeba zaopatrzyć mieszkańców w podstawowe narzędzia do obrony oraz przygotować pułapki i sidła."
+event/animals/description,"Dzikie zwierzęta wyżerają zapasy żywności. Trzeba przygotować pułapki i sidła."
 event/bandits/description,"W okolicy pojawiła się grupka bandytów. Prawdopodobnie będą chcieli nas ograbić. Musimy zastawić pułapki i wyposażyć się w broń."
 event/cold/description,"Pogoda zaczyna wariować, robi się bardzo zimno. Potrzebujemy ciepłych ubrań i zapasu drewna na opał, aby ludzie nie pochorowali się."
 event/envoyTharros/description,"Do wioski przybył wysłannik jednego z państw. W zamian za konkretne dobra jest w stanie przychylniej spojrzeć na twoją sytuację."
@@ -130,7 +130,7 @@ log/failure/food,Nie mieliśmy wystarczającej ilości jedzenia
 log/failure/foodPreservation,Nasze zapasy jedzenia zepsuły się
 log/failure/heat,Fala upałów osłabiła mieszkańców
 log/failure/thirst,Nie udało się zebrać odpowiedniej ilości wody
-log/success/animals,Udało nam się upolować okoliczną zwierzynę
+log/success/animals,Udało nam się złapać okoliczną zwierzynę
 log/success/envoyTharros,Spełniliśmy oczekiwania posłańca z Tharros
 log/success/envoySalvante,Spełniliśmy oczekiwania posłańca z Salvante
 messages/ending1/title,Śmierć mieszkańców

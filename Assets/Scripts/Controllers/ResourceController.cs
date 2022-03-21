@@ -21,6 +21,9 @@ namespace Village.Controllers
 		[SerializeField]
 		private List<ResourceAmount> resources;
 
+		[SerializeField]
+		private List<ResourceAmount> turnBonuses;
+
 		public void LoadResources()
 		{
 			foreach (var view in views)
@@ -79,6 +82,26 @@ namespace Village.Controllers
 		public List<ResourceAmount.SaveData> SaveResources()
 		{
 			return resources.Select(x => x.Save()).ToList();
+		}
+
+		public void ApplyTurnBonuses()
+		{
+			foreach(var bonus in turnBonuses)
+			{
+				AddRemoveResource(bonus.resource, bonus.Amount);
+			}
+		}
+
+		public void RegisterTurnBonus(ResourceAmount resource)
+		{
+			turnBonuses.Add(resource);
+		}
+
+		public int GetTurnBonus(Resource resouce)
+		{
+			return turnBonuses
+				.Where(x => x.resource.name == resouce.name)
+				.Sum(x => x.Amount);
 		}
 	}
 }

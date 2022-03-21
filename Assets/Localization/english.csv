@@ -23,8 +23,8 @@ game/mainMenu,Menu
 game/clickToContinue,"Click to continue..."
 game/loading,"Loading..."
 prompt/startNewGame,Are you sure you want to delete the old save and start a new game?
-settings/yes,Tak
-settings/no,Nie
+settings/yes,Yes
+settings/no,No
 settings/actions,Actions
 settings/action/hideDescription,Hide descriptions
 settings/action/revertVillagers,Return after action
@@ -94,7 +94,7 @@ event/heat/title,Heatwave
 event/merchant/title,Merchant arrives
 event/water/title,Water reserves
 event/finale/title,Final negotiations
-event/animals/description,"Wild animals are eating up the food supplies. We need to supply the villagers in basic tools for defense and prepare traps and snares."
+event/animals/description,"Wild animals are eating up the food supplies. We need to prepare traps and snares."
 event/bandits/description,"A group of bandits appeared in the area. They will probably try to rob us. We need to set traps and equip ourselves with weapons."
 event/cold/description,"The weather is starting to get crazy, it's getting extremely cold. We need warm clothes and a bunch of firewood so people don't get sick."
 event/envoyTharros/description,"An envoy from one of the countries has arrived in the village. In exchange for specific goods, they are able to look at your situation more favorably."

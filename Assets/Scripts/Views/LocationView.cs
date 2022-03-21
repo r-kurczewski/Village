@@ -104,6 +104,7 @@ namespace Village.Views
 			{
 				buildActionSlot.RemoveVillager(false);
 				LoadBuildingActions(building);
+				building.ApplyOnetimeBonus();
 				Refresh(building);
 			}
 		}

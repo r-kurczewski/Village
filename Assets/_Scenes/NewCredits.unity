@@ -477,6 +477,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8931900600127132800, guid: c14a8e1f1c336894abc6fae42c304994, type: 3}
+      propertyPath: slotLock
+      value: 
+      objectReference: {fileID: 8300000, guid: f9c28d26186961e45bc115dda948dda8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c14a8e1f1c336894abc6fae42c304994, type: 3}
 --- !u!1 &451954178
@@ -509,6 +513,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df9f6a0f96ac91d489f5342ba61666de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prompt: {fileID: 0}
+  canvas: {fileID: 0}
 --- !u!4 &451954180
 Transform:
   m_ObjectHideFlags: 0
@@ -1653,7 +1659,9 @@ PrefabInstance:
 
         kgeshev
 
-        j1987'
+        j1987
+
+        SpaceJoe'
       objectReference: {fileID: 0}
     - target: {fileID: 6997568040968490574, guid: 6b4175e4b9717514e9af4fa0c0c19a8a, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2502,7 +2510,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1765874433}
   m_Direction: 2
   m_Value: 0.9999999
-  m_Size: 0.23665011
+  m_Size: 0.23472978
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

@@ -4,32 +4,37 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PromptWindow : MonoBehaviour
+namespace Village.Views
 {
-    public UnityEvent OnAccept;
-
-    public UnityEvent OnDecline;
-
-    [SerializeField]
-    private TMP_Text label;
-
-    public void SetMessage(string text)
+	public class PromptWindow : MonoBehaviour
 	{
-        label.text = text;
-	}
+		[SerializeField]
+		private TMP_Text label;
 
-    public void Close()
-	{
-        Destroy(gameObject);
-	}
+		[HideInInspector]
+		public UnityEvent OnAccept;
 
-    public void Accept()
-	{
-        OnAccept.Invoke();
-	}
+		[HideInInspector]
+		public UnityEvent OnDecline;
 
-    public void Decline()
-	{
-        OnDecline.Invoke();
+		public void LoadMessage(string text)
+		{
+			label.text = text;
+		}
+
+		public void Close()
+		{
+			Destroy(gameObject);
+		}
+
+		public void Accept()
+		{
+			OnAccept.Invoke();
+		}
+
+		public void Decline()
+		{
+			OnDecline.Invoke();
+		}
 	}
 }

@@ -26,3 +26,4 @@ MonoBehaviour:
     amount: 15
   buildingAction:
   - {fileID: 11400000, guid: 070d970f137f4bf4094e5a5fcd3ef378, type: 2}
+  - {fileID: 11400000, guid: e508f4a814744da42bc5c71eaca0136c, type: 2}

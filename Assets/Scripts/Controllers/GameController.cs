@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lean.Localization;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.Serialization;
 using Village.Scriptables;
+using Village.Views;
 
 namespace Village.Controllers
 {
@@ -56,6 +58,9 @@ namespace Village.Controllers
 		[SerializeField]
 		private GameObject loadingScreen;
 
+		[SerializeField]
+		private TipsController hintWindow;
+
 		private AudioController AudioController => AudioController.instance;
 
 		public GameChapter Chapter => turnController.Chapter;
@@ -99,14 +104,16 @@ namespace Village.Controllers
 		private async void LoadPreviousGame(SaveController.SaveData save)
 		{
 			loadingScreen.SetActive(true);
+			Task assetsLoading = AssetManager.instance.LoadAssets();
 
 			locationController.LoadLoctions();
 			turnController.LoadTurnAndChapter(save.turn);
 			resourceController.LoadResources(save.resources);
 			locationController.LoadBuildings(save.buildings);
+			hintWindow.displayedTips = save.displayedHints;
 			gameLog.SetLogData(save.log);
 
-			await AssetManager.instance.LoadAssets();
+			await assetsLoading;
 
 			villagerController.LoadVillagers(save.villagers);
 			eventController.LoadChapterEvents(save.chapterEvents);
@@ -125,6 +132,7 @@ namespace Village.Controllers
 			eventController.EventUpdate();
 			villagerController.VillagerUpdate();
 			turnController.CheckIfGameEnds();
+			hintWindow.TipUpdate();
 			UpdateGUI();
 		}
 
@@ -209,7 +217,6 @@ namespace Village.Controllers
 		{
 			turnController.CheckIfGameEnds();
 			yield return locationController.IExecuteVillagerActions();
-			if(GameSettings.RevertVillagers) villagerController.MoveVillagersToPanel();
 			turnController.MoveToNextTurn();
 			TurnUpdate();
 			instance.AddLogDayEntry();
@@ -268,6 +275,11 @@ namespace Village.Controllers
 			return resourceController.SaveResources();
 		}
 
+		public List<string> SaveHints()
+		{
+			return hintWindow.displayedTips;
+		}
+
 		public List<GameEvent.SaveData> SaveCurrentEvents()
 		{
 			return eventController.SaveCurrentEvents();
@@ -291,6 +303,11 @@ namespace Village.Controllers
 		public void ClearSave()
 		{
 			SaveController.ClearSave();
+		}
+
+		public void TryLoadHint(string hintMessageLocale)
+		{
+			hintWindow.TryLoadTip(hintMessageLocale);
 		}
 
 		public void AddLogSubEntry(GameLog.LogSubEntry subEntry)

@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Village.Controllers;
+using UnityEngine.Serialization;
 
 public class GameSettings : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class GameSettings : MonoBehaviour
 	public const string resolutionString = "resolution";
 	public const string fullscreenString = "fullscreen";
 	public const string hideTooltipsString = "hideAdvancedTooltips";
-	public const string revertVIllagersString = "revertVillagers";
+	public const string villagerReturnString = "returnVillagers";
+	private const string showTipsString = "showTips";
 
 	[SerializeField]
 	private TMP_Dropdown resolution;
@@ -35,11 +37,11 @@ public class GameSettings : MonoBehaviour
 	[SerializeField]
 	private Slider effects;
 
-	[SerializeField]
-	private Toggle hideTooltips;
+	[SerializeField][FormerlySerializedAs("hideTooltips")]
+	private Toggle hideDescription;
 
 	[SerializeField]
-	private Toggle revertVillagers;
+	private Toggle showTips;
 
 	private List<LocalizedLanguage> languageNames = new List<LocalizedLanguage>()
 	{
@@ -47,24 +49,60 @@ public class GameSettings : MonoBehaviour
 		new LocalizedLanguage("English", "English"),
 	};
 
-	public static bool FullScreen => PlayerPrefs.GetInt(fullscreenString, defaultValue: Screen.fullScreen ? 1 : 0) != 0;
+	public static string Resolution
+	{
+		get { return PlayerPrefs.GetString(resolutionString, defaultValue: string.Empty); }
+		set { PlayerPrefs.SetString(resolutionString, value); }
+	}
 
-	public static float MasterVolume => PlayerPrefs.GetFloat(masterVolumeString, defaultValue: 1);
+	public static string Language
+	{
+		get { return PlayerPrefs.GetString(languageString, defaultValue: string.Empty); }
+		private set { PlayerPrefs.SetString(languageString, value); }
+	}
 
-	public static float MusicVolume => PlayerPrefs.GetFloat(musicVolumeString, defaultValue: 1);
+	public static bool Fullscreen
+	{
+		get { return PlayerPrefs.GetInt(fullscreenString, defaultValue: Screen.fullScreen ? 1 : 0) != 0; }
+		private set { PlayerPrefs.SetInt(fullscreenString, value ? 1 : 0); }
+	}
 
-	public static float EffectsVolume => PlayerPrefs.GetFloat(effectsVolumeString, defaultValue: 1);
+	public static bool HideDescription
+	{
+		get { return PlayerPrefs.GetInt(hideTooltipsString, defaultValue: 0) != 0; }
+		private set { PlayerPrefs.SetInt(hideTooltipsString, value ? 1 : 0); }
+	}
 
-	public static bool SimplifiedTooltips => PlayerPrefs.GetInt(hideTooltipsString, defaultValue: 0) != 0;
+	public static bool ShowTips
+	{
+		get { return PlayerPrefs.GetInt(showTipsString, defaultValue: 1) != 0; }
+		set { PlayerPrefs.SetInt(showTipsString, value ? 1 : 0); }
+	}
 
-	public static bool RevertVillagers => PlayerPrefs.GetInt(revertVIllagersString, defaultValue: 1) != 0;
+	public static float MasterVolume
+	{
+		get { return PlayerPrefs.GetFloat(masterVolumeString, defaultValue: 1); }
+		private set { PlayerPrefs.SetFloat(masterVolumeString, value); }
+	}
+
+	public static float MusicVolume
+	{
+		get { return PlayerPrefs.GetFloat(musicVolumeString, defaultValue: 1); }
+		private set { PlayerPrefs.SetFloat(musicVolumeString, value); }
+	}
+
+	public static float EffectsVolume
+	{
+		get { return PlayerPrefs.GetFloat(effectsVolumeString, defaultValue: 1); }
+		private set { PlayerPrefs.SetFloat(effectsVolumeString, value); }
+	}
 
 	private void Start()
 	{
 		LoadResolutions();
 		LoadLanguages();
-		LoadHideTooltips();
-		LoadRevertVillagers();
+		hideDescription.isOn = HideDescription;
+		showTips.isOn = ShowTips;
 
 		LoadMasterVolume();
 		LoadMusicVolume();
@@ -81,10 +119,9 @@ public class GameSettings : MonoBehaviour
 			.Distinct()
 			.ToList();
 		resolution.AddOptions(resolutions);
-		var currentResolution = PlayerPrefs.GetString("resolution");
-		var currentResolutionIndex = resolution.options.IndexOf(resolution.options.FirstOrDefault(x => x.text == currentResolution));
+		var currentResolutionIndex = resolution.options.IndexOf(resolution.options.FirstOrDefault(x => x.text == Resolution));
 		resolution.SetValueWithoutNotify(currentResolutionIndex);
-		fullscreen.isOn = FullScreen;
+		fullscreen.isOn = Fullscreen;
 	}
 
 	private void LoadLanguages()
@@ -95,16 +132,6 @@ public class GameSettings : MonoBehaviour
 		var selectedLang = LeanLocalization.Instances.First().CurrentLanguage;
 		language.AddOptions(langNames);
 		language.SetValueWithoutNotify(language.options.IndexOf(language.options.First(x => x.text == GetLocalizedLanguageName(selectedLang))));
-	}
-
-	private void LoadHideTooltips()
-	{
-		hideTooltips.isOn = SimplifiedTooltips;
-	}
-
-	private void LoadRevertVillagers()
-	{
-		revertVillagers.isOn = RevertVillagers;
 	}
 
 	private void LoadMasterVolume()
@@ -132,8 +159,8 @@ public class GameSettings : MonoBehaviour
 	{
 		var option = resolution.options[resolution.value];
 		var res = option.text.Split('x').Select(x => int.Parse(x)).ToArray();
-		PlayerPrefs.SetString(resolutionString, option.text);
-		PlayerPrefs.SetInt(fullscreenString, fullscreen.isOn ? 1 : 0);
+		Resolution = option.text;
+		Fullscreen = fullscreen.isOn;
 		Screen.SetResolution(res[0], res[1], fullscreen.isOn);
 	}
 
@@ -141,38 +168,38 @@ public class GameSettings : MonoBehaviour
 	{
 		float volume = master.value;
 		AudioController.instance.SetMasterVolume(volume);
-		PlayerPrefs.SetFloat(masterVolumeString, volume);
+		MasterVolume = volume;
 	}
 
 	public void ChangeMusicVolume()
 	{
 		float volume = music.value;
 		AudioController.instance.SetMusicVolume(volume);
-		PlayerPrefs.SetFloat(musicVolumeString, volume);
+		MusicVolume = volume;
 	}
 
 	public void ChangeEffectsVolume()
 	{
 		float volume = effects.value;
 		AudioController.instance.SetEffectsVolume(volume);
-		PlayerPrefs.SetFloat(effectsVolumeString, volume);
+		EffectsVolume = volume;
 	}
 
 	public void ChangeLanguage()
 	{
 		string lang = language.options[language.value].text;
-		PlayerPrefs.SetString(languageString, lang);
+		Language = lang;
 		LeanLocalization.SetCurrentLanguageAll(GetEnglishLanguageName(lang));
 	}
 
 	public void ChangeAdvancedTooltips()
 	{
-		PlayerPrefs.SetInt(hideTooltipsString, hideTooltips.isOn ? 1 : 0);
+		HideDescription = hideDescription.isOn;
 	}
 
-	public void ChangeRevertVillagers()
+	public void ChangeShowTips()
 	{
-		PlayerPrefs.SetInt(revertVIllagersString, revertVillagers.isOn ? 1 : 0);
+		ShowTips = showTips.isOn;
 	}
 
 

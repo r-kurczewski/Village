@@ -50,10 +50,7 @@ namespace Village.Controllers
 			var view = Instantiate(eventPrefab, contentParent);
 			view.Load(gameEvent);
 			currentEvents.Add(view);
-			if (gameEvent.eventBase.name == merchantEvent.name && !saveLoad)
-			{
-				instance.LoadNewMerchantTrades();
-			}
+			gameEvent.eventBase.OnLoad(saveLoad);
 			return view;
 		}
 

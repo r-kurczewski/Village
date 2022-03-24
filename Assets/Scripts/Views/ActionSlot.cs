@@ -18,6 +18,17 @@ namespace Village.Views
 		[SerializeField]
 		private Image icon;
 
+		[SerializeField]
+		private GameObject lockIcon;
+
+		[SerializeField]
+		private Transform villagerParent;
+
+		[SerializeField]
+		private bool locked;
+
+		public bool Locked { get => locked; private set => locked = value; }
+
 		public IAction Action => action;
 
 		public VillagerView VillagerView => GetComponentInChildren<VillagerView>();
@@ -33,6 +44,8 @@ namespace Village.Views
 
 		public void OnDrop(PointerEventData eventData)
 		{
+			if (eventData.button != PointerEventData.InputButton.Left) return;
+
 			VillagerView dropped = eventData.pointerDrag.GetComponent<VillagerView>();
 			if (dropped)
 			{
@@ -46,7 +59,7 @@ namespace Village.Views
 
 		public void PutVillager(VillagerView dropped)
 		{
-			dropped.transform.SetParent(transform);
+			dropped.transform.SetParent(villagerParent);
 			dropped.transform.localPosition = Vector2.zero;
 		}
 
@@ -57,12 +70,20 @@ namespace Village.Views
 
 		public void OnPointerClick(PointerEventData eventData)
 		{
-			if(eventData.button == PointerEventData.InputButton.Right)
+			if (eventData.button == PointerEventData.InputButton.Left)
 			{
-				Debug.Log("right click");
+				RemoveVillager(playSound: true);
 			}
-			RemoveVillager(playSound: true);
+			else if (eventData.button == PointerEventData.InputButton.Right)
+			{
+				// TODO: Slot locking
+				locked = !locked;
+				lockIcon.SetActive(locked);
+				var sound = AudioController.instance.slotLock;
+				AudioController.instance.PlaySound(sound);
+			}
 		}
+
 
 		protected override void LoadTooltipData()
 		{

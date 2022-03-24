@@ -9,12 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce2ee1299a4cc6e4e9be60473b9cf415, type: 3}
+  m_Script: {fileID: 11500000, guid: 59f0e0895a7955d4786e9ad755f8c36a, type: 3}
   m_Name: Merchant
   m_EditorClassIdentifier: 
   localeTitle: event/merchant/title
   localeDescription: event/merchant/description
+  localeLogSuccess: 
+  localeLogFailure: 
   turnDuration: 3
+  eventPriority: 0
   requirements: []
   onSuccess: []
   onFailure: []

@@ -307,3 +307,4 @@ MonoBehaviour:
   loseHealthSound: {fileID: 8300000, guid: e6b90dbaf3595d94786f7e2caa06b50e, type: 3}
   newTurnSound: {fileID: 8300000, guid: 76f3c41119276664b870e97fc15155c2, type: 3}
   newEventSound: {fileID: 8300000, guid: 6d780ce17d1abfc4fa575c4b560f1099, type: 3}
+  slotLock: {fileID: 8300000, guid: f9c28d26186961e45bc115dda948dda8, type: 3}

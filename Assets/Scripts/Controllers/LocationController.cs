@@ -44,11 +44,12 @@ namespace Village.Controllers
 
 		public IEnumerator IExecuteVillagerActions()
 		{
-			foreach (var actionSlot in actionSlots)
+			foreach (var slot in actionSlots)
 			{
-				if (actionSlot.Villager)
+				if (slot.Villager)
 				{
-					yield return actionSlot.Action.Execute(actionSlot.Villager);
+					yield return slot.Action.Execute(slot.Villager);
+					if (!slot.Locked) slot.VillagerView?.MoveToPanel(playSound: false);
 				}
 			}
 		}

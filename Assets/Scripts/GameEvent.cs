@@ -8,15 +8,12 @@ public class GameEvent
 	public EventBase eventBase;
 	public int turn;
 
-	public GameEvent()
-	{
+	public GameEvent() { }
 
-	}
-
-	public GameEvent(EventBase eventBase, int turns)
+	public GameEvent(EventBase eventBase, int turn)
 	{
 		this.eventBase = eventBase;
-		this.turn = turns;
+		this.turn = turn;
 	}
 
 	public SaveData Save()

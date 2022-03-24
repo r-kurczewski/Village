@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   villagerName: Wilfred
   avatar: {fileID: 21300000, guid: 51483980a22d6bd4488c99d8b5df987e, type: 3}
-  CountryAReputation: -2
+  CountryAReputation: -1
   CountryBReputation: 1
   baseStrength: 2
   baseGathering: 2

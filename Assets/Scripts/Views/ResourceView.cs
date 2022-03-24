@@ -22,6 +22,9 @@ namespace Village.Views
 		[SerializeField]
 		private Resource resource;
 
+		[SerializeField]
+		private bool showBonus;
+
 		public Resource Resource => resource;
 
 		public void Load(Resource res)
@@ -45,7 +48,10 @@ namespace Village.Views
 		{
 			var bonus = GameController.instance.GetTurnBonus(resource);
 			string tooltip = resource.ResourceName;
-			if (bonus > 0) tooltip += $" (+{bonus})";
+			if (showBonus && bonus > 0)
+			{
+				tooltip += $" (+{bonus})";
+			}
 			TextTooltip.instance.Load(tooltip);
 		}
 

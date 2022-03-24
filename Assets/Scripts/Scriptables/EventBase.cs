@@ -41,6 +41,8 @@ namespace Village.Scriptables
 
 		public string Description => LeanLocalization.GetTranslationText(localeDescription);
 
+		public virtual void OnLoad(bool saveLoad) { }
+
 		public void ApplySuccess()
 		{
 			foreach (var eff in onSuccess)

@@ -203,16 +203,65 @@ MonoBehaviour:
   - Name: prompt/startNewGame
     Text: "Czy na pewno chcesz usun\u0105\u0107 stary zapis i rozpocz\u0105\u0107
       now\u0105 gr\u0119?"
+  - Name: tips/merchant
+    Text: "U handlarza mo\u017Cesz wymieni\u0107 zasoby za z\u0142oto. Handlarz za
+      ka\u017Cdym razem ma inne oferty. Aby skorzysta\u0107 z handlarza przydziel
+      postaci akcj\u0119 handlu. Handlarz jest dost\u0119pny tylko podczas wydarzenia
+      z nim zwi\u0105zanego."
+  - Name: tips/treatment
+    Text: "Ranne postacie otrzymuj\u0105 kary do statystyk. Mo\u017Cesz je leczy\u0107
+      za pomoc\u0105 akcji w szpitalu polowym. Podstawowe leczenie za zio\u0142a
+      nie jest op\u0142acalne, rozwa\u017C szybk\u0105 budow\u0119 chatki zielarza
+      i szpitala."
+  - Name: tips/watchtower
+    Text: "Wie\u017Ca obserwacyjna daje dodatkow\u0105 tur\u0119 na przygotowanie
+      si\u0119 do nadchodz\u0105cych kryzys\xF3w. Wyd\u0142u\u017Ca to r\xF3wnie\u017C
+      czas na wymian\u0119 zasob\xF3w u handlarza."
+  - Name: tips/slotLocking
+    Text: "Klikaj\u0105c na okno akcji prawym przyciskiem myszy mo\u017Cesz zablokowa\u0107
+      cofanie postaci na koniec kolejnej tury. Staraj si\u0119 nie blokowa\u0107
+      wszystkich akcji, cz\u0119\u015B\u0107 akcji nie powinna by\u0107 wykonywana
+      ca\u0142y czas."
+  - Name: tips/envoy
+    Text: "Uznanie Tharros i Salvante pozwala na uzyskanie lepszego wariantu zako\u0144czenia.
+      Uznanie mo\u017Cna zdoby\u0107 m.in. na drodze wype\u0142niania wymaga\u0144
+      pojawiaj\u0105cych si\u0119 negocjator\xF3w danego kraju."
+  - Name: tips/diplomacy
+    Text: "Uznanie mo\u017Cna zdobywa\u0107 r\xF3wnie\u017C przy pomocy akcji dyplomacji
+      i sprzeda\u017Cy drogocennych klejnot\xF3w. Na wydajno\u015B\u0107 obu akcji
+      dyplomatycznych opr\xF3cz podstawowych statystyk ma wp\u0142yw r\xF3wnie\u017C
+      reputacja danej postaci."
+  - Name: tips/eventFolding
+    Text: "Zdarzenia mo\u017Cna zwija\u0107 przy pomocy klikni\u0119cia na belk\u0119
+      z ich nazw\u0105. Mo\u017Ce by\u0107 to przydatne w momencie gdy jest ich za
+      du\u017Co lub aby oznaczy\u0107 wst\u0119pne spe\u0142nienie jego warunk\xF3w."
+  - Name: tips/well
+    Text: "Studnia pozwala na \u0142atwiejsze pozyskiwanie wody. Sta\u0142y zysk
+      odci\u0105\u017Ca postacie nosz\u0105ce wod\u0119 i pozwala na wykorzystanie
+      ich w innych miejscach."
+  - Name: tips/resourceUsage
+    Text: "Zasoby mog\u0105 by\u0107 wykorzystywane na bie\u017C\u0105co. Je\u015Bli
+      w danej turze zdob\u0119dziesz zasoby potrzebne np. do zbudowania budynku,
+      mo\u017Cesz w tej samej turze zacz\u0105\u0107 jego budow\u0119. Wyj\u0105tkiem
+      od tej regu\u0142y jest wymiana z handlarzem."
+  - Name: tips/intelligence
+    Text: "Po ka\u017Cdym rozdziale postaci zwi\u0119kszaj\u0105 swoje statystyki
+      zale\u017Cnie od posiadanej inteligencji. Sprawd\u017A, czy teraz mog\u0105
+      sprawdza\u0107 si\u0119 lepiej w innych pracach."
+  - Name: tips/ok
+    Text: OK
+  - Name: tips/disable
+    Text: "Wy\u0142\u0105cz"
   - Name: settings/yes
     Text: Tak
   - Name: settings/no
     Text: Nie
-  - Name: settings/actions
-    Text: Akcje
+  - Name: settings/showTips
+    Text: "Wy\u015Bwietlaj wskaz\xF3wki"
+  - Name: settings/gameplay
+    Text: Rozgrywka
   - Name: settings/action/hideDescription
-    Text: Ukryj opisy
-  - Name: settings/action/revertVillagers
-    Text: ' Cofnij postacie po akcji'
+    Text: Ukryj opisy akcji
   - Name: credits/gameCreator
     Text: "Tw\xF3rca gry"
   - Name: credits/music
@@ -347,7 +396,6 @@ MonoBehaviour:
     Text: Ostatnie negocjacje
   - Name: event/animals/description
     Text: "Dzikie zwierz\u0119ta wy\u017Ceraj\u0105 zapasy \u017Cywno\u015Bci. Trzeba
-      zaopatrzy\u0107 mieszka\u0144c\xF3w w podstawowe narz\u0119dzia do obrony oraz
       przygotowa\u0107 pu\u0142apki i sid\u0142a."
   - Name: event/bandits/description
     Text: "W okolicy pojawi\u0142a si\u0119 grupka bandyt\xF3w. Prawdopodobnie b\u0119d\u0105
@@ -431,7 +479,7 @@ MonoBehaviour:
   - Name: log/failure/thirst
     Text: "Nie uda\u0142o si\u0119 zebra\u0107 odpowiedniej ilo\u015Bci wody"
   - Name: log/success/animals
-    Text: "Uda\u0142o nam si\u0119 upolowa\u0107 okoliczn\u0105 zwierzyn\u0119"
+    Text: "Uda\u0142o nam si\u0119 z\u0142apa\u0107 okoliczn\u0105 zwierzyn\u0119"
   - Name: log/success/envoyTharros
     Text: "Spe\u0142nili\u015Bmy oczekiwania pos\u0142a\u0144ca z Tharros"
   - Name: log/success/envoySalvante
@@ -728,16 +776,56 @@ MonoBehaviour:
     Text: Loading...
   - Name: prompt/startNewGame
     Text: Are you sure you want to delete the old save and start a new game?
+  - Name: tips/merchant
+    Text: At the merchant you can exchange resources for gold. Traders have different
+      offers every time. To use a trader assign the character to the trade action.
+      Merchant is only present during the associated event.
+  - Name: tips/treatment
+    Text: Injured characters receive stat penalties. You can heal them with actions
+      in the field hospital. Basic healing for herbs is not viable, consider building
+      an herbalist hut and hospital quickly.
+  - Name: tips/watchtower
+    Text: The watchtower gives you an extra turn to prepare for upcoming emergencies.
+      It also extends the time to trade resources with the merchant.
+  - Name: tips/slotLocking
+    Text: By right-clicking on the action window, you can block a character from
+      returning at the end of the next turn. Try not to block all actions, some actions
+      should not be performed all the time.
+  - Name: tips/envoy
+    Text: Tharros and Salvante esteem allows you to get a better option of ending.
+      The esteem can be earned by, among other things, fulfilling the demands of
+      the appearing negotiators of the country.
+  - Name: tips/diplomacy
+    Text: Esteem can also be gained with the diplomacy action and the selling of
+      precious gems. In addition to the basic stats, the reputation of a character
+      also influences the results of both of these diplomatic actions.
+  - Name: tips/eventFolding
+    Text: Events can be collapsed by clicking on their title. This can be useful
+      when there are too many of them, or to mark the completion of its conditions.
+  - Name: tips/well
+    Text: Well allows you to obtain water more easily. The consistent gain frees
+      up water-carrying characters for other uses.
+  - Name: tips/resourceUsage
+    Text: Resources can be used on the fly. If in a current turn you acquire the
+      resources you need, for example, to construct a building, you can start constructing
+      it in the same turn. An exception to this rule is when you trade with a merchant.
+  - Name: tips/intelligence
+    Text: After each chapter, characters increase their stats depending on their
+      intelligence. Check if they can now perform better in other jobs.
+  - Name: tips/ok
+    Text: OK
+  - Name: tips/disable
+    Text: Disable
   - Name: settings/yes
     Text: Yes
   - Name: settings/no
     Text: No
-  - Name: settings/actions
-    Text: Actions
+  - Name: settings/showTips
+    Text: Show tips
+  - Name: settings/gameplay
+    Text: Gameplay
   - Name: settings/action/hideDescription
-    Text: Hide descriptions
-  - Name: settings/action/revertVillagers
-    Text: Return after action
+    Text: Hide action descriptions
   - Name: credits/gameCreator
     Text: Game creator
   - Name: credits/music
@@ -871,8 +959,8 @@ MonoBehaviour:
   - Name: event/finale/title
     Text: Final negotiations
   - Name: event/animals/description
-    Text: Wild animals are eating up the food supplies. We need to supply the villagers
-      in basic tools for defense and prepare traps and snares.
+    Text: Wild animals are eating up the food supplies. We need to prepare traps
+      and snares.
   - Name: event/bandits/description
     Text: A group of bandits appeared in the area. They will probably try to rob
       us. We need to set traps and equip ourselves with weapons.
@@ -905,7 +993,7 @@ MonoBehaviour:
     Text: Our last chance to negotiate with representatives of both countries. Our
       fate will depend on their decisions.
   - Name: log/entryTitle
-    Text: Tura
+    Text: Turn
   - Name: log/merchant
     Text: 
   - Name: log/villagerDied

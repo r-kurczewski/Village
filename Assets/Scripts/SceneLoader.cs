@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using Village.Controllers;
+using Village.Views;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -57,7 +58,7 @@ public class SceneLoader : MonoBehaviour
 		{
 			var window = Instantiate(prompt, canvas);
 			var message = LeanLocalization.GetTranslationText(localeStartNewGamePrompt);
-			window.SetMessage(message);
+			window.LoadMessage(message);
 			window.OnAccept.AddListener(() =>
 			{
 				SaveController.ClearSave();

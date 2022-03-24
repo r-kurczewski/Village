@@ -30,6 +30,7 @@ namespace Village.Controllers
 		public AudioClip loseHealthSound;
 		public AudioClip newTurnSound;
 		public AudioClip newEventSound;
+		public AudioClip slotLock;
 
 		private bool blockSound;
 

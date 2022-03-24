@@ -74,11 +74,13 @@ namespace Village.Views.Tooltips
 
 			// load tooltip with either slot or dragged villager
 			Villager villager = null;
-			if (slot.Villager && !VillagerView.draggedVillager?.Villager)
+			Villager draggedVillager = VillagerView.draggedVillager?.Villager;
+
+			if (slot.Villager && !draggedVillager)
 			{
 				villager = slot.Villager;
 			}
-			else if(!slot.Villager && VillagerView.draggedVillager?.Villager)
+			else if(!slot.Villager && draggedVillager)
 			{
 				villager = VillagerView.draggedVillager?.Villager;
 			}
@@ -89,7 +91,7 @@ namespace Village.Views.Tooltips
 			actionName.text = slot.Action.ActionName;
 
 			bool hasDescription = slot.Action.Description != null;
-			bool hideDescription = GameSettings.SimplifiedTooltips;
+			bool hideDescription = GameSettings.HideDescription;
 			if (hasDescription)
 			{
 				actionDescription.text = slot.Action.Description;

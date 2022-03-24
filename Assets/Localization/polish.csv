@@ -23,11 +23,23 @@ game/mainMenu,Menu
 game/clickToContinue,"Kliknij, aby kontynuować..."
 game/loading,"Ładowanie..."
 prompt/startNewGame,Czy na pewno chcesz usunąć stary zapis i rozpocząć nową grę?
+tips/merchant,U handlarza możesz wymienić zasoby za złoto. Handlarz za każdym razem ma inne oferty. Aby skorzystać z handlarza przydziel postaci akcję handlu. Handlarz jest dostępny tylko podczas wydarzenia z nim związanego.
+tips/treatment,"Ranne postacie otrzymują kary do statystyk. Możesz je leczyć za pomocą akcji w szpitalu polowym. Podstawowe leczenie za zioła nie jest opłacalne, rozważ szybką budowę chatki zielarza i szpitala."
+tips/watchtower,Wieża obserwacyjna daje dodatkową turę na przygotowanie się do nadchodzących kryzysów. Wydłuża to również czas na wymianę zasobów u handlarza.
+tips/slotLocking,"Klikając na okno akcji prawym przyciskiem myszy możesz zablokować cofanie postaci na koniec kolejnej tury. Staraj się nie blokować wszystkich akcji, część akcji nie powinna być wykonywana cały czas."
+tips/envoy,Uznanie Tharros i Salvante pozwala na uzyskanie lepszego wariantu zakończenia. Uznanie można zdobyć m.in. na drodze wypełniania wymagań pojawiających się negocjatorów danego kraju.
+tips/diplomacy,Uznanie można zdobywać również przy pomocy akcji dyplomacji i sprzedaży drogocennych klejnotów. Na wydajność obu akcji dyplomatycznych oprócz podstawowych statystyk ma wpływ również reputacja danej postaci.
+tips/eventFolding,Zdarzenia można zwijać przy pomocy kliknięcia na belkę z ich nazwą. Może być to przydatne w momencie gdy jest ich za dużo lub aby oznaczyć wstępne spełnienie jego warunków.
+tips/well,Studnia pozwala na łatwiejsze pozyskiwanie wody. Stały zysk odciąża postacie noszące wodę i pozwala na wykorzystanie ich w innych miejscach.
+tips/resourceUsage,"Zasoby mogą być wykorzystywane na bieżąco. Jeśli w danej turze zdobędziesz zasoby potrzebne np. do zbudowania budynku, możesz w tej samej turze zacząć jego budowę. Wyjątkiem od tej reguły jest wymiana z handlarzem."
+tips/intelligence,"Po każdym rozdziale postaci zwiększają swoje statystyki zależnie od posiadanej inteligencji. Sprawdź, czy teraz mogą sprawdzać się lepiej w innych pracach."
+tips/ok,OK
+tips/disable,Wyłącz
 settings/yes,Tak
 settings/no,Nie
-settings/actions,Akcje
-settings/action/hideDescription,Ukryj opisy
-settings/action/revertVillagers, Cofnij postacie po akcji
+settings/showTips,Wyświetlaj wskazówki
+settings/gameplay,Rozgrywka
+settings/action/hideDescription,Ukryj opisy akcji
 credits/gameCreator,Twórca gry
 credits/music,Muzyka
 credits/sounds,Dźwięk

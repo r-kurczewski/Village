@@ -11,8 +11,9 @@ namespace Village.Controllers
 {
 	public class SaveController : MonoBehaviour
 	{
-		public static SaveData save;
 		private const string saveFileName = "save.dat";
+
+		public static SaveData save;
 
 		public static void SaveGameState()
 		{
@@ -26,6 +27,7 @@ namespace Village.Controllers
 				chapterEvents = gController.SaveChapterEvents(),
 				merchantTrades = gController.SaveTrades(),
 				buildings = gController.SaveBuildings(),
+				displayedHints = gController.SaveHints(),
 				log = gController.GetGameLogData(),
 			};
 			SaveGame.Save(saveFileName, data);
@@ -59,6 +61,7 @@ namespace Village.Controllers
 			public List<GameEvent.SaveData> chapterEvents;
 			public List<TradeOffer.SaveData> merchantTrades;
 			public List<string> buildings;
+			public List<string> displayedHints;
 			public List<LogEntry> log;
 		}
 	}

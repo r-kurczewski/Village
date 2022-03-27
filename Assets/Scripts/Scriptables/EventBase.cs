@@ -31,6 +31,8 @@ namespace Village.Scriptables
 
 		public int eventPriority;
 
+		public bool hardMode;
+
 		public List<ResourceAmount> requirements;
 
 		public List<EffectAmount> onSuccess;

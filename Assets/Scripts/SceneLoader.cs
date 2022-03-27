@@ -6,13 +6,17 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using Village.Controllers;
 using Village.Views;
+using UnityEngine.Serialization;
 
 public class SceneLoader : MonoBehaviour
 {
 	private const string localeStartNewGamePrompt = "prompt/startNewGame";
 
 	[SerializeField]
-	private PromptWindow prompt;
+	private PromptWindow newGamePrompt;
+
+	[SerializeField]
+	private DifficultyPickWindow difficultyWindow;
 
 	[SerializeField]
 	private Transform canvas;
@@ -22,7 +26,7 @@ public class SceneLoader : MonoBehaviour
 		SceneManager.LoadScene("GameScene");
 	}
 
-	public void LoadProlog()
+	public static void LoadProlog()
 	{
 		SceneManager.LoadScene("PrologScene");
 	}
@@ -56,25 +60,30 @@ public class SceneLoader : MonoBehaviour
 	{
 		if (SaveController.SaveExists)
 		{
-			var window = Instantiate(prompt, canvas);
+			var window = Instantiate(newGamePrompt, canvas);
 			var message = LeanLocalization.GetTranslationText(localeStartNewGamePrompt);
 			window.LoadMessage(message);
 			window.OnAccept.AddListener(() =>
 			{
-				SaveController.ClearSave();
-				LoadProlog();
+				LoadNewGame();
 				window.Close();
 			});
 			window.OnDecline.AddListener(() =>
 			{
 				window.Close();
 			});
+			window.RefreshLayout();
 		}
 		else
 		{
 			SaveController.ClearSave();
 			LoadProlog();
 		}
+	}
+
+	private void LoadNewGame()
+	{
+		difficultyWindow.Show();
 	}
 
 	public void LoadPreviousGame()

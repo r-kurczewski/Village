@@ -36,6 +36,7 @@ public class GameEvent
 public class EventTimeSpan : GameEvent
 {
 	public int possibleDelay;
+	public bool hardMode;
 }
 
 [Serializable]

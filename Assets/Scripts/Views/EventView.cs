@@ -57,7 +57,8 @@ namespace Village.Views
 			foreach (var req in gameEvent.eventBase.requirements)
 			{
 				var reqView = Instantiate(effectViewPrefab, requirementsList.transform);
-				reqView.SetAmount(req.Amount);
+				int amount = Mathf.RoundToInt(req.Amount * instance.GetDifficultyMultiplier());
+				reqView.SetAmount(amount);
 				reqView.SetIcon(req.resource.icon);
 				reqView.SetIconColor(req.resource.color);
 				reqView.SetFontColor(fontColor);

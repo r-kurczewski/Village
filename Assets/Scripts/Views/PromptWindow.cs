@@ -17,6 +17,9 @@ namespace Village.Views
 		[HideInInspector]
 		public UnityEvent OnDecline;
 
+		[SerializeField]
+		private LayoutRefresher refresher;
+
 		public void LoadMessage(string text)
 		{
 			label.text = text;
@@ -35,6 +38,11 @@ namespace Village.Views
 		public void Decline()
 		{
 			OnDecline.Invoke();
+		}
+
+		public void RefreshLayout()
+		{
+			refresher.RefreshContentFitters();
 		}
 	}
 }

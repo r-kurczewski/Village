@@ -119,8 +119,9 @@ namespace Village.Controllers
 		{
 			villagers.ForEach(x => x.Refresh());
 			RefreshLayout();
-			
 		}
+
+		public bool VillagersAssigned => !villagers.Any(x => x.transform.parent == transform);
 
 		public void AddRemoveVillagersHealth(int value, bool playSound)
 		{

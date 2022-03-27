@@ -44,14 +44,16 @@ namespace Village.Controllers
 
 		public IEnumerator IExecuteVillagerActions()
 		{
+			var villagersToMove = new List<VillagerView>();
 			foreach (var slot in actionSlots)
 			{
 				if (slot.Villager)
 				{
 					yield return slot.Action.Execute(slot.Villager);
-					if (!slot.Locked) slot.VillagerView?.MoveToPanel(playSound: false);
+					if (slot.VillagerView && !slot.Locked) villagersToMove.Add(slot.VillagerView);
 				}
 			}
+			villagersToMove.ForEach(x => x.MoveToPanel(playSound: false));
 		}
 
 		public List<string> SaveBuildings()

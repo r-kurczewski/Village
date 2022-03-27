@@ -32,15 +32,20 @@ MonoBehaviour:
   - eventBase: {fileID: 11400000, guid: 2288dfadcbf30fd488db6d31b0dadc5c, type: 2}
     turn: 4
     possibleDelay: 2
+    hardMode: 0
   - eventBase: {fileID: 11400000, guid: 791799ae627974f44bad6292cbdc8979, type: 2}
     turn: 14
     possibleDelay: 2
+    hardMode: 0
   - eventBase: {fileID: 11400000, guid: 17e2ab5458cd4c54e98aa3a13a767e1f, type: 2}
     turn: 16
     possibleDelay: 2
+    hardMode: 0
   - eventBase: {fileID: 11400000, guid: 11cda4331a1c20a45a0fd256800a66e4, type: 2}
     turn: 20
     possibleDelay: 2
+    hardMode: 0
   - eventBase: {fileID: 11400000, guid: 1436dfafce2599a4687a49ddf00ebfb1, type: 2}
     turn: 22
     possibleDelay: 2
+    hardMode: 1

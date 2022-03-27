@@ -200,9 +200,20 @@ MonoBehaviour:
     Text: "Kliknij, aby kontynuowa\u0107..."
   - Name: game/loading
     Text: "\u0141adowanie..."
+  - Name: game/easyDifficulty
+    Text: "\u0141atwy\n<size=20>(mniej wydarze\u0144)"
+  - Name: game/hardDifficulty
+    Text: "Trudny\n<size=20>(wi\u0119ksze wyzwanie)"
+  - Name: game/easyDifficulty2
+    Text: "\u0141atwy\n<size=20>(mniejsze wymagania)"
+  - Name: game/difficultyPickLabel
+    Text: "Wybierz poziom trudno\u015Bci na kt\xF3rym chcesz gra\u0107:"
   - Name: prompt/startNewGame
     Text: "Czy na pewno chcesz usun\u0105\u0107 stary zapis i rozpocz\u0105\u0107
       now\u0105 gr\u0119?"
+  - Name: prompt/villagersNotAssigned
+    Text: "Nie wszystkie postacie zosta\u0142y przydzielone do akcji. Czy na pewno
+      chcesz zako\u0144czy\u0107 tur\u0119?"
   - Name: tips/merchant
     Text: "U handlarza mo\u017Cesz wymieni\u0107 zasoby za z\u0142oto. Handlarz za
       ka\u017Cdym razem ma inne oferty. Aby skorzysta\u0107 z handlarza przydziel
@@ -434,9 +445,7 @@ MonoBehaviour:
     Text: "Nasza ostatnia szansa na negocjacje z przedstawicielami obu pa\u0144stw.
       Od ich decyzji zale\u017Cny b\u0119dzie nasz los."
   - Name: log/entryTitle
-    Text: Turn
-  - Name: log/merchant
-    Text: 
+    Text: Tura
   - Name: log/villagerDied
     Text: "Mieszkaniec wioski zmar\u0142: {villager}"
   - Name: log/building/lumberjack
@@ -656,7 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: English
+  currentLanguage: Polish
   localeResourceName: 
   detectLanguage: 1
   defaultLanguage: English
@@ -774,6 +783,23 @@ MonoBehaviour:
     Text: Click to continue...
   - Name: game/loading
     Text: Loading...
+  - Name: game/difficultyPickLabel
+    Text: 'Choose the difficulty level you want to play on:'
+  - Name: game/easyDifficulty
+    Text: 'Easy
+
+      <size=20>(less events)'
+  - Name: game/hardDifficulty
+    Text: 'Hard
+
+      <size=20>(greater challenge)'
+  - Name: game/easyDifficulty2
+    Text: 'Easy
+
+      <size=20>(lower requirements)'
+  - Name: prompt/villagersNotAssigned
+    Text: Not all characters have been assigned to an action. Are you sure you want
+      to end the turn?
   - Name: prompt/startNewGame
     Text: Are you sure you want to delete the old save and start a new game?
   - Name: tips/merchant
@@ -994,8 +1020,6 @@ MonoBehaviour:
       fate will depend on their decisions.
   - Name: log/entryTitle
     Text: Turn
-  - Name: log/merchant
-    Text: 
   - Name: log/villagerDied
     Text: '{villager} died'
   - Name: log/building/lumberjack

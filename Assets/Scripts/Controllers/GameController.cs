@@ -5,23 +5,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.Serialization;
 using Village.Scriptables;
 using Village.Views;
+using static Village.Controllers.GameController.GameDifficulty;
 
 namespace Village.Controllers
 {
 	[SelectionBase]
 	public class GameController : MonoBehaviour
 	{
+		private const string villagerNotAssignedPromptLocale = "prompt/villagersNotAssigned";
+
 		public const int COUNTRY_A_ENDING_REPUTATION = 600;
 		public const int COUNTRY_B_ENDING_REPUTATION = 600;
 		public const int NEUTRAL_ENDING_REPUTATION = 400;
+
 		public const float SELL_VALUE_MULTIPLIER = 0.5f;
 		public const float TRADE_DISCOUNT = 0.06f;
 		public const float STAT_MULTIPIER = 0.2f;
+		public const float DIFFICULTY_MULTIPLIER_EASY = 0.9f;
+		public const float DIFFICULTY_MULTIPLIER_HARD = 1f;
+
 		public const int MAX_HEALTH = 5;
 		public const int STAT_MAX = 5;
 		public const int RESOURCES_MAX = 999;
@@ -29,10 +34,12 @@ namespace Village.Controllers
 		public const int VILLAGER_START_HEALTH = 5;
 		public const int MERCHANT_SELL_ITEMS_COUNT = 4;
 		public const int MERCHANT_BUY_ITEMS_COUNT = 4;
-
-		public static GameController instance;
 		
+		public static GameController instance;
+
 		public bool autoSave = true;
+
+		private static GameDifficulty currentDifficulty = Hard;
 
 		[SerializeField]
 		private ResourceController resourceController;
@@ -52,6 +59,8 @@ namespace Village.Controllers
 		[SerializeField]
 		private TradeController tradeController;
 
+		public GameDifficulty Difficulty => currentDifficulty;
+
 		[SerializeField]
 		private GameLog gameLog;
 
@@ -60,6 +69,12 @@ namespace Village.Controllers
 
 		[SerializeField]
 		private TipsController hintWindow;
+
+		[SerializeField]
+		private PromptWindow promptPrefab;
+
+		[SerializeField]
+		private Transform promptParent;
 
 		private AudioController AudioController => AudioController.instance;
 
@@ -106,6 +121,7 @@ namespace Village.Controllers
 			loadingScreen.SetActive(true);
 			Task assetsLoading = AssetManager.instance.LoadAssets();
 
+			currentDifficulty = save.difficulty;
 			locationController.LoadLoctions();
 			turnController.LoadTurnAndChapter(save.turn);
 			resourceController.LoadResources(save.resources);
@@ -210,7 +226,25 @@ namespace Village.Controllers
 
 		public void EndTurn()
 		{
-			StartCoroutine(IEndTurn());
+			if (!villagerController.VillagersAssigned)
+			{
+				var prompt = Instantiate(promptPrefab, promptParent);
+				var message = LeanLocalization.GetTranslationText(villagerNotAssignedPromptLocale);
+				prompt.LoadMessage(message);
+				
+				prompt.OnAccept.AddListener(() =>
+				{
+					StartCoroutine(IEndTurn());
+					prompt.Close();
+				});
+
+				prompt.OnDecline.AddListener(() =>
+				{
+					prompt.Close();
+				});
+				prompt.RefreshLayout();
+			}
+			else StartCoroutine(IEndTurn());
 		}
 
 		private IEnumerator IEndTurn()
@@ -220,7 +254,7 @@ namespace Village.Controllers
 			turnController.MoveToNextTurn();
 			TurnUpdate();
 			instance.AddLogDayEntry();
-			if(autoSave) SaveController.SaveGameState();
+			if (autoSave) SaveController.SaveGameState();
 		}
 
 		public void SetPredictionFactor()
@@ -263,6 +297,11 @@ namespace Village.Controllers
 		private static void SaveGameState()
 		{
 			SaveController.SaveGameState();
+		}
+
+		public GameDifficulty SaveDifficulty()
+		{
+			return currentDifficulty;
 		}
 
 		public List<Villager.SaveData> SaveVillagers()
@@ -329,6 +368,30 @@ namespace Village.Controllers
 			gameLog.SetLogData(logData);
 		}
 
+		public static void SetDifficulty(GameDifficulty difficulty)
+		{
+			currentDifficulty = difficulty;
+		}
 
+		public float GetDifficultyMultiplier()
+		{
+			switch (currentDifficulty)
+			{
+				case EasyWeakerEvents:
+					return DIFFICULTY_MULTIPLIER_EASY;
+
+				case EasyLessEvents:
+					return DIFFICULTY_MULTIPLIER_HARD;
+
+				case Hard:
+					return DIFFICULTY_MULTIPLIER_HARD;
+
+				default:
+					throw new ArgumentException("Invalid difficulty");
+
+			}
+		}
+
+		public enum GameDifficulty { EasyWeakerEvents, EasyLessEvents, Hard }
 	}
 }

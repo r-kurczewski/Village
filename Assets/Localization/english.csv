@@ -22,6 +22,14 @@ game/logButton,Log
 game/mainMenu,Menu
 game/clickToContinue,"Click to continue..."
 game/loading,"Loading..."
+game/difficultyPickLabel,Choose the difficulty level you want to play on:
+game/easyDifficulty,"Easy
+<size=20>(less events)"
+game/hardDifficulty,"Hard
+<size=20>(greater challenge)"
+game/easyDifficulty2,"Easy
+<size=20>(lower requirements)"
+prompt/villagersNotAssigned,Not all characters have been assigned to an action. Are you sure you want to end the turn?
 prompt/startNewGame,Are you sure you want to delete the old save and start a new game?
 tips/merchant,At the merchant you can exchange resources for gold. Traders have different offers every time. To use a trader assign the character to the trade action. Merchant is only present during the associated event.
 tips/treatment,"Injured characters receive stat penalties. You can heal them with actions in the field hospital. Basic healing for herbs is not viable, consider building an herbalist hut and hospital quickly."
@@ -120,7 +128,6 @@ event/merchant/description,"A merchant stopped near the village. Maybe it's wort
 event/water/description,"We need to accumulate a supply of water for the next few weeks."
 event/finale/description,Our last chance to negotiate with representatives of both countries. Our fate will depend on their decisions.
 log/entryTitle,Turn
-log/merchant,
 log/villagerDied,{villager} died
 log/building/lumberjack,We managed to rebuild the lumberjack hut
 log/building/miningEquipment,We managed to prepare the mining equipment

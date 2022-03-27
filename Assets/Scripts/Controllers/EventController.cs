@@ -9,6 +9,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using Village.Scriptables;
 using Village.Views;
 using static Village.Controllers.GameController;
+using static Village.Controllers.GameController.GameDifficulty;
 
 namespace Village.Controllers
 {
@@ -56,7 +57,7 @@ namespace Village.Controllers
 
 		public bool MerchantAvailable()
 		{
-			return currentEvents.Select(x => x.Event.eventBase).Any(x=> x.name==merchantEvent.name);
+			return currentEvents.Select(x => x.Event.eventBase).Any(x => x.name == merchantEvent.name);
 		}
 
 		public void LoadChapterEvents()
@@ -64,7 +65,7 @@ namespace Village.Controllers
 			GameChapter chapter = instance.Chapter;
 			chapterEvents = chapter.GenerateEventList()
 				.OrderBy(x => x.turn)
-				.ThenByDescending(x=> x.eventBase.eventPriority)
+				.ThenByDescending(x => x.eventBase.eventPriority)
 				.ToList();
 		}
 
@@ -112,21 +113,26 @@ namespace Village.Controllers
 
 			var toRemove = new List<EventView>();
 			foreach (var ev in currentEvents)
-			{ 
+			{
 				ev.RefreshData();
 				if (ev.TurnsLeft == 0)
 				{
 					bool eventSuccess = true;
 					foreach (var req in ev.Event.eventBase.requirements)
 					{
-						if (instance.GetResourceAmount(req.resource) < req.Amount)
+						var amount = Mathf.RoundToInt(req.Amount * instance.GetDifficultyMultiplier());
+						if (instance.GetResourceAmount(req.resource) < amount)
 						{
 							eventSuccess = false;
 						}
 					}
 					if (eventSuccess)
 					{
-						ev.Event.eventBase.requirements.ForEach(x => x.resource.Apply(-x.Amount));
+						foreach (var req in ev.Event.eventBase.requirements)
+						{
+							var amount = Mathf.RoundToInt(req.Amount * instance.GetDifficultyMultiplier());
+							req.resource.Apply(-amount);
+						}
 						ev.Event.eventBase.ApplySuccess();
 					}
 					else
@@ -144,7 +150,7 @@ namespace Village.Controllers
 
 			var newEvents = chapterEvents.Where(x => x.turn == turnToLoad).ToList();
 
-			if(newEvents.Count > 0)
+			if (newEvents.Count > 0)
 			{
 				var sound = AudioController.instance.newEventSound;
 				AudioController.instance.PlaySound(sound);

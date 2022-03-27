@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using UnityEngine.Serialization;
+using static Village.Controllers.GameController;
+using static Village.Controllers.GameController.GameDifficulty;
 
 namespace Village.Scriptables
 {
@@ -29,11 +31,16 @@ namespace Village.Scriptables
 		public List<GameEvent> GenerateEventList()
 		{
 			List<GameEvent> list = new List<GameEvent>();
+			GameDifficulty difficulty = instance.Difficulty;
+
 			foreach (var timeSpanEvent in events)
 			{
-				int randDelay = Random.Range(0, timeSpanEvent.possibleDelay + 1);
-				int eventTurn = chapterTurnStart + timeSpanEvent.turn + randDelay;
-				list.Add(new GameEvent(timeSpanEvent.eventBase, eventTurn));
+				if (!timeSpanEvent.hardMode || difficulty != EasyLessEvents)
+				{
+					int randDelay = Random.Range(0, timeSpanEvent.possibleDelay + 1);
+					int eventTurn = chapterTurnStart + timeSpanEvent.turn + randDelay;
+					list.Add(new GameEvent(timeSpanEvent.eventBase, eventTurn));
+				}
 			}
 			foreach (var periodEvent in periodicEvents)
 			{

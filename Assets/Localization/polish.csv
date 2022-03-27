@@ -22,7 +22,15 @@ game/logButton,Dziennik
 game/mainMenu,Menu
 game/clickToContinue,"Kliknij, aby kontynuować..."
 game/loading,"Ładowanie..."
+game/easyDifficulty,"Łatwy
+<size=20>(mniej wydarzeń)"
+game/hardDifficulty,"Trudny
+<size=20>(większe wyzwanie)"
+game/easyDifficulty2,"Łatwy
+<size=20>(mniejsze wymagania)"
+game/difficultyPickLabel,Wybierz poziom trudności na którym chcesz grać:
 prompt/startNewGame,Czy na pewno chcesz usunąć stary zapis i rozpocząć nową grę?
+prompt/villagersNotAssigned,Nie wszystkie postacie zostały przydzielone do akcji. Czy na pewno chcesz zakończyć turę?
 tips/merchant,U handlarza możesz wymienić zasoby za złoto. Handlarz za każdym razem ma inne oferty. Aby skorzystać z handlarza przydziel postaci akcję handlu. Handlarz jest dostępny tylko podczas wydarzenia z nim związanego.
 tips/treatment,"Ranne postacie otrzymują kary do statystyk. Możesz je leczyć za pomocą akcji w szpitalu polowym. Podstawowe leczenie za zioła nie jest opłacalne, rozważ szybką budowę chatki zielarza i szpitala."
 tips/watchtower,Wieża obserwacyjna daje dodatkową turę na przygotowanie się do nadchodzących kryzysów. Wydłuża to również czas na wymianę zasobów u handlarza.
@@ -120,8 +128,7 @@ event/heat/description,"Temperatura robią się coraz bardziej uciążliwe. Musi
 event/merchant/description,"W pobliżu wioski zatrzymał się handlarz. Może warto się z nim powymieniać?"
 event/water/description,"Potrzebujemy zgromadzić zapas wody na kolejne tygodnie."
 event/finale/description,Nasza ostatnia szansa na negocjacje z przedstawicielami obu państw. Od ich decyzji zależny będzie nasz los.
-log/entryTitle,Turn
-log/merchant,
+log/entryTitle,Tura
 log/villagerDied,Mieszkaniec wioski zmarł: {villager}
 log/building/lumberjack,Udało się nam odbudować chatkę drwala
 log/building/miningEquipment,Udało nam się przygotować ekwipunek górniczy

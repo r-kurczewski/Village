@@ -6,6 +6,7 @@ using System.Linq;
 using static Village.Scriptables.Resource;
 using System.IO;
 using static Village.GameLog;
+using static Village.Controllers.GameController;
 
 namespace Village.Controllers
 {
@@ -17,18 +18,18 @@ namespace Village.Controllers
 
 		public static void SaveGameState()
 		{
-			var gController = GameController.instance;
 			SaveData data = new SaveData
 			{
-				turn = gController.GetCurrentTurn(),
-				villagers = gController.SaveVillagers(),
-				resources = gController.SaveResources(),
-				currentEvents = gController.SaveCurrentEvents(),
-				chapterEvents = gController.SaveChapterEvents(),
-				merchantTrades = gController.SaveTrades(),
-				buildings = gController.SaveBuildings(),
-				displayedHints = gController.SaveHints(),
-				log = gController.GetGameLogData(),
+				difficulty = instance.SaveDifficulty(),
+				turn = instance.GetCurrentTurn(),
+				villagers = instance.SaveVillagers(),
+				resources = instance.SaveResources(),
+				currentEvents = instance.SaveCurrentEvents(),
+				chapterEvents = instance.SaveChapterEvents(),
+				merchantTrades = instance.SaveTrades(),
+				buildings = instance.SaveBuildings(),
+				displayedHints = instance.SaveHints(),
+				log = instance.GetGameLogData(),
 			};
 			SaveGame.Save(saveFileName, data);
 		}
@@ -54,6 +55,7 @@ namespace Village.Controllers
 		[Serializable]
 		public class SaveData
 		{
+			public GameDifficulty difficulty;
 			public int turn;
 			public List<ResourceAmount.SaveData> resources;
 			public List<Villager.SaveData> villagers;

@@ -21,7 +21,6 @@ namespace Village
 		private bool loaded;
 
 		public AsyncOperationHandle _assetsHandle;
-		//private List<AsyncOperationHandle> assetsHandles = new List<AsyncOperationHandle>();
 
 		private void Awake()
 		{
@@ -41,8 +40,7 @@ namespace Village
 		{
 			if (instance == this)
 			{
-				//LoadAssets();
-				//Debug.Log("Start asset loading...");
+	
 			}
 		}
 
@@ -74,40 +72,8 @@ namespace Village
 			return Resources.Load<T>(assetPath);
 		}
 
-		//public async Task<T> GetAssetAsync<T>(string assetString) where T : Object
-		//{
-		//	if (assets.ContainsKey(assetString)) return assets[assetString] as T;
-
-		//	T asset = null;
-		//	var handle = Addressables.LoadAssetAsync<T>(assetString);
-		//	handle.Completed += (loaded) =>
-		//	{
-		//		asset = loaded.Result;
-		//		try
-		//		{
-		//			assets.Add(loaded.Result.name, loaded.Result);
-		//			assetsHandles.Add(handle);
-		//		}
-		//		catch (ArgumentException)
-		//		{
-		//			Debug.Log("Duplicate asset loaded.");
-		//			Addressables.Release(handle);
-		//		}
-		//	};
-		//	await handle.Task;
-		//	return asset;
-		//}
-
 		private void OnDestroy()
 		{
-			//if(instance == this)
-			//{
-			//	foreach (var handle in assetsHandles)
-			//	{
-			//		Addressables.Release(handle);
-			//	}
-			//}
-
 			if (instance == this && _assetsHandle.IsValid())
 			{
 				Debug.Log("Unloading assets.");

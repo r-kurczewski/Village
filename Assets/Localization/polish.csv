@@ -22,17 +22,17 @@ game/logButton,Dziennik
 game/mainMenu,Menu
 game/clickToContinue,"Kliknij, aby kontynuować..."
 game/loading,"Ładowanie..."
+game/difficultyPickLabel,Wybierz poziom trudności na którym chcesz grać:
 game/easyDifficulty,"Łatwy
 <size=20>(mniej wydarzeń)"
 game/hardDifficulty,"Trudny
 <size=20>(większe wyzwanie)"
 game/easyDifficulty2,"Łatwy
 <size=20>(mniejsze wymagania)"
-game/difficultyPickLabel,Wybierz poziom trudności na którym chcesz grać:
-prompt/startNewGame,Czy na pewno chcesz usunąć stary zapis i rozpocząć nową grę?
 prompt/villagersNotAssigned,Nie wszystkie postacie zostały przydzielone do akcji. Czy na pewno chcesz zakończyć turę?
+prompt/startNewGame,Czy na pewno chcesz usunąć stary zapis i rozpocząć nową grę?
 tips/merchant,U handlarza możesz wymienić zasoby za złoto. Handlarz za każdym razem ma inne oferty. Aby skorzystać z handlarza przydziel postaci akcję handlu. Handlarz jest dostępny tylko podczas wydarzenia z nim związanego.
-tips/treatment,"Ranne postacie otrzymują kary do statystyk. Możesz je leczyć za pomocą akcji w szpitalu polowym. Podstawowe leczenie za zioła nie jest opłacalne, rozważ szybką budowę chatki zielarza i szpitala."
+tips/treatment,"Ranne postacie otrzymują kary do statystyk. Możesz je leczyć za pomocą akcji w szpitalu polowym. Podstawowe leczenie za zioła nie jest najbardziej wydajną opcją, rozważ szybką budowę chatki zielarza i szpitala."
 tips/watchtower,Wieża obserwacyjna daje dodatkową turę na przygotowanie się do nadchodzących kryzysów. Wydłuża to również czas na wymianę zasobów u handlarza.
 tips/slotLocking,"Klikając na okno akcji prawym przyciskiem myszy możesz zablokować cofanie postaci na koniec kolejnej tury. Staraj się nie blokować wszystkich akcji, część akcji nie powinna być wykonywana cały czas."
 tips/envoy,Uznanie Tharros i Salvante pozwala na uzyskanie lepszego wariantu zakończenia. Uznanie można zdobyć m.in. na drodze wypełniania wymagań pojawiających się negocjatorów danego kraju.
@@ -42,7 +42,7 @@ tips/well,Studnia pozwala na łatwiejsze pozyskiwanie wody. Stały zysk odciąż
 tips/resourceUsage,"Zasoby mogą być wykorzystywane na bieżąco. Jeśli w danej turze zdobędziesz zasoby potrzebne np. do zbudowania budynku, możesz w tej samej turze zacząć jego budowę. Wyjątkiem od tej reguły jest wymiana z handlarzem."
 tips/intelligence,"Po każdym rozdziale postaci zwiększają swoje statystyki zależnie od posiadanej inteligencji. Sprawdź, czy teraz mogą sprawdzać się lepiej w innych pracach."
 tips/ok,OK
-tips/disable,Wyłącz
+tips/disable,Wyłącz wskazówki
 settings/yes,Tak
 settings/no,Nie
 settings/showTips,Wyświetlaj wskazówki
@@ -168,7 +168,7 @@ messages/ending2/description,"Czas rozejmu dobiega końca. Mieszkańcy nie zdoł
 messages/ending3/description,"Czas rozejmu dobiega końca. Mieszkańcom udaje się wynegocjować dobrowolne przyłączenie do królestwa Tharros. Większość mieszkańców zostaje ułaskawiona z drobniejszych przestępstw, stają się obywatelami tego ekspansywnego mocarstwa, a teren wioski zostaje przejęty i dostosowany do przemysłu górniczego."
 messages/ending4/description,"Czas rozejmu dobiega końca. Mieszkańcom udaje się wynegocjować dobrowolne przyłączenie do państwa kupieckiego Salvante. Mieszkańcy zostają ułaskawioni z wszelkich win, stają się obywatelami tego bogatego kraju oraz otrzymują możliwość zostania na znanych im ziemiach. W wiosce zaczyna się ekspansja przemysłu górniczego."
 messages/ending5/description,"Czas rozejmu dobiega końca. Dzięki staraniom mieszkanców udaje się ogłoszenie terenu neutralnego, otrzymują oni możliwość zostania na znanych im ziemiach pod warunkiem stałych dostaw cennego kruszca do obu państw. Mieszkańcy mogą dzięki temu wieść spokojne, skromne życie. Nie wiadomo jednak, czy i na jak długo ten stan da się utrzymać."
-messages/prologue/description,"Po długiej, krwawej i bezowocnej wojnie terytorialnej między królestwem Tharros i oligarchią kupiecką Salvante nastaje tymczasowy rozejm. Poprowadź ludzi - dezerterów, ocalałych mieszkańców, wygnańców - zapewnij im przetrwanie na tych spornych ziemiach. Tereny te, żyzne i bogate w różne surowce naturalne, są również pełne niebezpieczeństw, takich jak groźne zwierzęta czy szabrownicy szukający łatwego łupu."
+messages/prologue/description,"Po długiej, krwawej i bezowocnej wojnie terytorialnej między królestwem Tharros i oligarchią kupiecką Salvante nastaje tymczasowy rozejm. Poprowadź ludzi - dezerterów, ocalałych mieszkańców, wygnańców - zapewnij im przetrwanie na tych spornych ziemiach i ocal przed ponownym wybuchem konfliktu. Tereny te, żyzne i bogate w różne surowce naturalne, są również pełne niebezpieczeństw, takich jak groźne zwierzęta czy szabrownicy szukający łatwego łupu."
 messages/fall/description,Z dnia na dzień robi się coraz zimniej...
 messages/finale/description,Nadchodzi czas rozstrzygnięcia...
 messages/spring/description,Wzdłuż granic powoli zbierają się wojska...

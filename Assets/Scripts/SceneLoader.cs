@@ -65,7 +65,7 @@ public class SceneLoader : MonoBehaviour
 			window.LoadMessage(message);
 			window.OnAccept.AddListener(() =>
 			{
-				LoadNewGame();
+				LoadDiffciultyWindow();
 				window.Close();
 			});
 			window.OnDecline.AddListener(() =>
@@ -76,12 +76,11 @@ public class SceneLoader : MonoBehaviour
 		}
 		else
 		{
-			SaveController.ClearSave();
-			LoadProlog();
+			LoadDiffciultyWindow();
 		}
 	}
 
-	private void LoadNewGame()
+	private void LoadDiffciultyWindow()
 	{
 		difficultyWindow.Show();
 	}

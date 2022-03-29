@@ -42,7 +42,7 @@ tips/well,Well allows you to obtain water more easily. The consistent gain frees
 tips/resourceUsage,"Resources can be used on the fly. If in a current turn you acquire the resources you need, for example, to construct a building, you can start constructing it in the same turn. An exception to this rule is when you trade with a merchant."
 tips/intelligence,"After each chapter, characters increase their stats depending on their intelligence. Check if they can now perform better in other jobs."
 tips/ok,OK
-tips/disable,Disable
+tips/disable,Disable hints
 settings/yes,Yes
 settings/no,No
 settings/showTips,Show tips
@@ -167,7 +167,7 @@ messages/ending2/description,"The time of truce is coming to an end. The inhabit
 messages/ending3/description,"The time of truce comes to an end. The villagers succeed in negotiating voluntary incorporation into the kingdom of Tharros. Most of the inhabitants are pardoned from minor crimes, become citizens of this expansive power. The area of village is taken over and adapted for mining."
 messages/ending4/description,"The time of truce comes to an end. The inhabitants manage to negotiate a voluntary annexation to the merchant state of Salvante. The inhabitants are pardoned of any guilt, become citizens of this rich country and are given the opportunity to stay on familiar lands. The mining industry begins to expand in the village."
 messages/ending5/description,"The time of truce is coming to an end. Thanks to the efforts of the inhabitants, a neutral territory has been established and they are allowed to stay on the lands they know on condition of a continuous supply of precious stones to both countries. The inhabitants can thus lead a peaceful, modest life. It is not clear, however, whether and for how long this state of affairs can be maintained."
-messages/prologue/description,"After a long, bloody, and fruitless territorial war between the kingdom of Tharros and the merchant oligarchy of Salvante, a temporary truce is called. Lead the people - deserters, surviving citizens, exiles - ensure their survival in these disputed lands. Fertile and rich in various natural resources, these lands are also full of dangers, such as dangerous animals and plunderers looking for easy loot."
+messages/prologue/description,"After a long, bloody, and fruitless territorial war between the kingdom of Tharros and the merchant oligarchy of Salvante, a temporary truce is called. Lead the people - deserters, surviving citizens, exiles - ensure their survival in these disputed lands and save them from reigniting this conflict. Fertile and rich in various natural resources, these lands are also full of dangers, such as dangerous animals and plunderers looking for easy loot."
 messages/fall/description,Every day it gets colder and colder...
 messages/finale/description,It's time to resolve...
 messages/spring/description,"Along the borders, troops are slowly gathering..."

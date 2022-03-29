@@ -513,7 +513,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df9f6a0f96ac91d489f5342ba61666de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prompt: {fileID: 0}
+  newGamePrompt: {fileID: 0}
+  difficultyWindow: {fileID: 0}
   canvas: {fileID: 0}
 --- !u!4 &451954180
 Transform:
@@ -1303,9 +1304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6997568039977827180, guid: 6b4175e4b9717514e9af4fa0c0c19a8a, type: 3}
       propertyPath: m_text
-      value: 'kkurczewski
-
-        rkurczewski'
+      value: "kkurczewski\nKuba Wierci\u0144ski\nBart\u0142omiej Tr\u0105bka"
       objectReference: {fileID: 0}
     - target: {fileID: 6997568039977827182, guid: 6b4175e4b9717514e9af4fa0c0c19a8a, type: 3}
       propertyPath: m_Enabled
@@ -2510,7 +2509,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1765874433}
   m_Direction: 2
   m_Value: 0.9999999
-  m_Size: 0.23472978
+  m_Size: 0.23284169
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

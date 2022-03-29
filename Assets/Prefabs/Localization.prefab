@@ -200,20 +200,20 @@ MonoBehaviour:
     Text: "Kliknij, aby kontynuowa\u0107..."
   - Name: game/loading
     Text: "\u0141adowanie..."
+  - Name: game/difficultyPickLabel
+    Text: "Wybierz poziom trudno\u015Bci na kt\xF3rym chcesz gra\u0107:"
   - Name: game/easyDifficulty
     Text: "\u0141atwy\n<size=20>(mniej wydarze\u0144)"
   - Name: game/hardDifficulty
     Text: "Trudny\n<size=20>(wi\u0119ksze wyzwanie)"
   - Name: game/easyDifficulty2
     Text: "\u0141atwy\n<size=20>(mniejsze wymagania)"
-  - Name: game/difficultyPickLabel
-    Text: "Wybierz poziom trudno\u015Bci na kt\xF3rym chcesz gra\u0107:"
-  - Name: prompt/startNewGame
-    Text: "Czy na pewno chcesz usun\u0105\u0107 stary zapis i rozpocz\u0105\u0107
-      now\u0105 gr\u0119?"
   - Name: prompt/villagersNotAssigned
     Text: "Nie wszystkie postacie zosta\u0142y przydzielone do akcji. Czy na pewno
       chcesz zako\u0144czy\u0107 tur\u0119?"
+  - Name: prompt/startNewGame
+    Text: "Czy na pewno chcesz usun\u0105\u0107 stary zapis i rozpocz\u0105\u0107
+      now\u0105 gr\u0119?"
   - Name: tips/merchant
     Text: "U handlarza mo\u017Cesz wymieni\u0107 zasoby za z\u0142oto. Handlarz za
       ka\u017Cdym razem ma inne oferty. Aby skorzysta\u0107 z handlarza przydziel
@@ -262,7 +262,7 @@ MonoBehaviour:
   - Name: tips/ok
     Text: OK
   - Name: tips/disable
-    Text: "Wy\u0142\u0105cz"
+    Text: "Wy\u0142\u0105cz wskaz\xF3wki"
   - Name: settings/yes
     Text: Tak
   - Name: settings/no
@@ -841,7 +841,7 @@ MonoBehaviour:
   - Name: tips/ok
     Text: OK
   - Name: tips/disable
-    Text: Disable
+    Text: Disable hints
   - Name: settings/yes
     Text: Yes
   - Name: settings/no

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Battleground
   m_EditorClassIdentifier: 
   basicActions:
-  - {fileID: 11400000, guid: 82ded22b069486f4e96970143f850e6d, type: 2}
+  - action: {fileID: 11400000, guid: 82ded22b069486f4e96970143f850e6d, type: 2}
+    hideInHardMode: 0

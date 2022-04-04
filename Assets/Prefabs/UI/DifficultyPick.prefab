@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Wybierz poziom trudno\u015Bci na kt\xF3rym chcesz gra\u0107:"
+  m_text: 'Choose the difficulty level you want to play on:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
   m_sharedMaterial: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   translationName: game/difficultyPickLabel
-  FallbackText: 
+  FallbackText: "Wybierz poziom trudno\u015Bci na kt\xF3rym chcesz gra\u0107:"
 --- !u!1 &1728483531520191693
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,15 +306,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
+    m_Left: 75
+    m_Right: 75
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
   m_Spacing: 15
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
+  m_ChildControlWidth: 1
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
@@ -399,7 +399,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0141atwy\n<size=20>(mniejsze wymagania)"
+  m_text: 'Easy
+
+    <size=20>(lower requirements + easier treatment)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
   m_sharedMaterial: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
@@ -480,7 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  translationName: game/easyDifficulty2
+  translationName: game/easyDifficulty
   FallbackText: "\u0141atwy (mniej wydarze\u0144)"
 --- !u!1 &2907026827437889782
 GameObject:
@@ -519,7 +521,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 340, y: 65}
+  m_SizeDelta: {x: 0, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2907026827437889778
 CanvasRenderer:
@@ -652,7 +654,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 340, y: 65}
+  m_SizeDelta: {x: 0, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4084042292026524933
 CanvasRenderer:
@@ -738,7 +740,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5771441667113431059}
         m_TargetAssemblyTypeName: Village.Views.DifficultyPickWindow, Assembly-CSharp
-        m_MethodName: LoadEasy2
+        m_MethodName: LoadNormal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -814,7 +816,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0141atwy\n<size=20>(mniej wydarze\u0144)"
+  m_text: 'Normal
+
+    <size=20>(lower requirements)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
   m_sharedMaterial: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
@@ -895,7 +899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  translationName: game/easyDifficulty
+  translationName: game/normalDifficulty
   FallbackText: "\u0141atwy (wymagania -10%)"
 --- !u!1 &8001806747033765617
 GameObject:
@@ -1141,7 +1145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4602115218954413092, guid: 67a2e980d1572604abcabd525479cd9d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 340
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4602115218954413092, guid: 67a2e980d1572604abcabd525479cd9d, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1233,7 +1237,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4602115220051648693, guid: 67a2e980d1572604abcabd525479cd9d, type: 3}
       propertyPath: m_text
-      value: "Trudny\n<size=20>(wi\u0119ksze wyzwanie)"
+      value: 'Hard
+
+        <size=20>(greater challenge)'
       objectReference: {fileID: 0}
     - target: {fileID: 4602115220051648693, guid: 67a2e980d1572604abcabd525479cd9d, type: 3}
       propertyPath: m_fontSize

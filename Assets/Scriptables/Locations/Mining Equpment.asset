@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Mining Equpment
   m_EditorClassIdentifier: 
   basicActions: []
+  basicActions2: []
   LocaleBuildActionName: build/miningEquipment
   localeBuildingDescription: building/miningEquipment
   localeLogBuilt: log/building/miningEquipment
@@ -25,3 +26,6 @@ MonoBehaviour:
     amount: 10
   buildingAction:
   - {fileID: 11400000, guid: 30d216db7dcec98448b075d1a082aeb2, type: 2}
+  buildingAction2:
+  - action: {fileID: 11400000, guid: 30d216db7dcec98448b075d1a082aeb2, type: 2}
+    hideInHardMode: 0

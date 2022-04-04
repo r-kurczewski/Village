@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Village.Controllers;
 using Village.Scriptables;
+using static Village.Scriptables.MapLocation;
+using static Village.Controllers.GameController;
 
 namespace Village.Views
 {
@@ -57,7 +60,7 @@ namespace Village.Views
 
 		private void Refresh(MapBuilding building)
 		{
-			bool noActions = building.basicActions.Count == 0 && building.buildingAction.Count == 0;
+			bool noActions = building.basicActions.Count == 0 && building.buildingActions.Count == 0;
 			if (isBuilt && noActions)
 			{
 				SetVisibility(false);
@@ -66,9 +69,12 @@ namespace Village.Views
 
 		private void LoadBuildingActions(MapBuilding building)
 		{
-			foreach (var action in building.buildingAction)
+			foreach (var actionData in building.buildingActions)
 			{
-				LoadAction(action);
+				if (!actionData.hideInHardMode || !instance.HardMode)
+				{
+					LoadAction(actionData.action);
+				}
 			}
 		}
 
@@ -84,7 +90,10 @@ namespace Village.Views
 
 			foreach (var action in location.basicActions)
 			{
-				LoadAction(action);
+				if (!action.hideInHardMode || instance.HardMode)
+				{
+					LoadAction(action.action);
+				}
 			}
 		}
 

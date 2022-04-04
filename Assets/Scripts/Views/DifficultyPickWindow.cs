@@ -13,13 +13,18 @@ namespace Village.Views
 	{
 		public void LoadEasy()
 		{
-			SetDifficulty(GameDifficulty.EasyWeakerEvents);
+			SetDifficulty(GameDifficulty.Easy);
 			LoadGame();
 		}
 
-		public void LoadEasy2()
+		public void LoadNormal()
 		{
-			SetDifficulty(GameDifficulty.EasyLessEvents);
+			SetDifficulty(GameDifficulty.Normal);
+			LoadGame();
+		}
+		public void LoadHard()
+		{
+			SetDifficulty(GameDifficulty.Hard);
 			LoadGame();
 		}
 
@@ -27,12 +32,6 @@ namespace Village.Views
 		{
 			SaveController.ClearSave();
 			SceneLoader.LoadProlog();
-		}
-
-		public void LoadHard()
-		{
-			SetDifficulty(GameDifficulty.Hard);
-			LoadGame();
 		}
 
 		public void Hide()

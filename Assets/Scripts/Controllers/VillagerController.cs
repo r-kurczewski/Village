@@ -108,7 +108,7 @@ namespace Village.Controllers
 			foreach (var view in toRemove)
 			{
 				villagers.Remove(view);
-				var entry = new GameLog.LogSubEntry(localeVillagerDied);
+				var entry = new LogController.LogSubEntry(localeVillagerDied);
 				entry.AddParameter("{villager}", view.Villager.villagerBase.villagerName);
 				instance.AddLogSubEntry(entry);
 				Destroy(view.gameObject);
@@ -125,7 +125,7 @@ namespace Village.Controllers
 
 		public void AddRemoveVillagersHealth(int value, bool playSound)
 		{
-			villagers.ForEach(x => x.Villager.Health += value);
+			if(!instance.debugMode) villagers.ForEach(x => x.Villager.Health += value);
 			var sound = AudioController.instance.loseHealthSound;
 			if (!instance.GameEnds) AudioController.instance.PlaySound(sound);
 		}

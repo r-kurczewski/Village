@@ -59,10 +59,8 @@ namespace Village.Controllers
 		[SerializeField]
 		private TradeController tradeController;
 
-		public GameDifficulty Difficulty => currentDifficulty;
-
 		[SerializeField]
-		private GameLog gameLog;
+		private LogController gameLog;
 
 		[SerializeField]
 		private GameObject loadingScreen;
@@ -81,6 +79,10 @@ namespace Village.Controllers
 		public GameChapter Chapter => turnController.Chapter;
 
 		public bool GameEnds => turnController.GameEnds;
+
+		public bool HardMode => currentDifficulty != Easy;
+
+		public bool debugMode = false;
 
 		private void Awake()
 		{
@@ -101,6 +103,16 @@ namespace Village.Controllers
 			{
 				StartNewGame();
 			}
+		}
+
+		public void Update()
+		{
+			#if UNITY_EDITOR
+			if (Input.GetKeyDown(KeyCode.BackQuote))
+			{
+				debugMode = !debugMode;
+			}
+			#endif
 		}
 
 		private void StartNewGame()
@@ -349,7 +361,7 @@ namespace Village.Controllers
 			hintWindow.TryLoadTip(hintMessageLocale);
 		}
 
-		public void AddLogSubEntry(GameLog.LogSubEntry subEntry)
+		public void AddLogSubEntry(LogController.LogSubEntry subEntry)
 		{
 			gameLog.UpdateDayEntry(subEntry);
 		}
@@ -358,12 +370,12 @@ namespace Village.Controllers
 		{
 			gameLog.PrintDayEntry();
 		}
-		public List<GameLog.LogEntry> GetGameLogData()
+		public List<LogController.LogEntry> GetGameLogData()
 		{
 			return gameLog.GetLogData();
 		}
 
-		public void LoadGameLogData(List<GameLog.LogEntry> logData)
+		public void LoadGameLogData(List<LogController.LogEntry> logData)
 		{
 			gameLog.SetLogData(logData);
 		}
@@ -375,23 +387,15 @@ namespace Village.Controllers
 
 		public float GetDifficultyMultiplier()
 		{
-			switch (currentDifficulty)
+			return currentDifficulty switch
 			{
-				case EasyWeakerEvents:
-					return DIFFICULTY_MULTIPLIER_EASY;
-
-				case EasyLessEvents:
-					return DIFFICULTY_MULTIPLIER_HARD;
-
-				case Hard:
-					return DIFFICULTY_MULTIPLIER_HARD;
-
-				default:
-					throw new ArgumentException("Invalid difficulty");
-
-			}
+				Easy => DIFFICULTY_MULTIPLIER_EASY,
+				Normal => DIFFICULTY_MULTIPLIER_EASY,
+				Hard => DIFFICULTY_MULTIPLIER_HARD,
+				_ => throw new ArgumentException("Invalid difficulty"),
+			};
 		}
 
-		public enum GameDifficulty { EasyWeakerEvents, EasyLessEvents, Hard }
+		public enum GameDifficulty { Easy, Normal, Hard }
 	}
 }

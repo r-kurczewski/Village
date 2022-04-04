@@ -51,7 +51,7 @@ namespace Village.Scriptables
 			{
 				eff.effect.Apply(eff.value);
 			}
-			var entry = new GameLog.LogSubEntry(localeLogSuccess);
+			var entry = new LogController.LogSubEntry(localeLogSuccess);
 			GameController.instance.AddLogSubEntry(entry);
 		}
 
@@ -61,7 +61,7 @@ namespace Village.Scriptables
 			{
 				eff.effect.Apply(eff.value);
 			}
-			var entry = new GameLog.LogSubEntry(localeLogFailure);
+			var entry = new LogController.LogSubEntry(localeLogFailure);
 			GameController.instance.AddLogSubEntry(entry);
 		}
 	}

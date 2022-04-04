@@ -18,7 +18,9 @@ namespace Village.Scriptables
 
 		public List<ResourceAmount> buildingCost = new List<ResourceAmount>();
 
-		public List<Action> buildingAction;
+		//public List<Action> buildingAction;
+		[FormerlySerializedAs("buildingAction2")]
+		public List<ActionData> buildingActions;
 
 		public virtual void ApplyOnetimeBonus()
 		{

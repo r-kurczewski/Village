@@ -13,8 +13,10 @@ namespace Village.Scriptables
 	public class GameChapter : ScriptableObject
 	{
 		public Color color;
-		[SerializeField, FormerlySerializedAs("chapterName")]
+
+		[SerializeField]
 		private string localeChapterName;
+
 		public int chapterTurnStart;
 		public AudioClip chapterMusic;
 		public GameChapter nextChapter;
@@ -31,16 +33,15 @@ namespace Village.Scriptables
 		public List<GameEvent> GenerateEventList()
 		{
 			List<GameEvent> list = new List<GameEvent>();
-			GameDifficulty difficulty = instance.Difficulty;
 
 			foreach (var timeSpanEvent in events)
 			{
-				if (!timeSpanEvent.hardMode || difficulty != EasyLessEvents)
-				{
+				//if (!timeSpanEvent.hardMode || instance.HardMode)
+				//{
 					int randDelay = Random.Range(0, timeSpanEvent.possibleDelay + 1);
 					int eventTurn = chapterTurnStart + timeSpanEvent.turn + randDelay;
 					list.Add(new GameEvent(timeSpanEvent.eventBase, eventTurn));
-				}
+				//}
 			}
 			foreach (var periodEvent in periodicEvents)
 			{

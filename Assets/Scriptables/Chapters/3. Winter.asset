@@ -44,7 +44,7 @@ MonoBehaviour:
   - eventBase: {fileID: 11400000, guid: 06b17f862b1023041822d8d5a7ec4b8e, type: 2}
     turn: 12
     possibleDelay: 2
-    hardMode: 1
+    hardMode: 0
   - eventBase: {fileID: 11400000, guid: d9041afc69d39564481daddc345f5b2c, type: 2}
     turn: 17
     possibleDelay: 2

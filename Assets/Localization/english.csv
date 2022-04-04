@@ -24,11 +24,11 @@ game/clickToContinue,"Click to continue..."
 game/loading,"Loading..."
 game/difficultyPickLabel,Choose the difficulty level you want to play on:
 game/easyDifficulty,"Easy
-<size=20>(less events)"
+<size=20>(lower requirements + easier treatment)"
+game/normalDifficulty,"Normal
+<size=20>(lower requirements)"
 game/hardDifficulty,"Hard
 <size=20>(greater challenge)"
-game/easyDifficulty2,"Easy
-<size=20>(lower requirements)"
 prompt/villagersNotAssigned,Not all characters have been assigned to an action. Are you sure you want to end the turn?
 prompt/startNewGame,Are you sure you want to delete the old save and start a new game?
 tips/merchant,At the merchant you can exchange resources for gold. Traders have different offers every time. To use a trader assign the character to the trade action. Merchant is only present during the associated event.

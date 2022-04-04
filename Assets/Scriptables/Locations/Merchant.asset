@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Merchant
   m_EditorClassIdentifier: 
   basicActions:
-  - {fileID: 11400000, guid: 31c3b3ac656efa5438b85621804af15a, type: 2}
+  - action: {fileID: 11400000, guid: 31c3b3ac656efa5438b85621804af15a, type: 2}
+    hideInHardMode: 0

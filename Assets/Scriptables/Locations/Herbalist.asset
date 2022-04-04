@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Herbalist
   m_EditorClassIdentifier: 
   basicActions:
-  - {fileID: 11400000, guid: d64d1353ccce53042983476c682f9e15, type: 2}
+  - action: {fileID: 11400000, guid: d64d1353ccce53042983476c682f9e15, type: 2}
+    hideInHardMode: 0
   LocaleBuildActionName: build/herbalist
   localeBuildingDescription: building/herbalist
   localeLogBuilt: log/building/herbalist
@@ -24,6 +25,8 @@ MonoBehaviour:
     amount: 10
   - resource: {fileID: 11400000, guid: 389ae6ddb3eee6e4c94fe350940428df, type: 2}
     amount: 5
-  buildingAction:
-  - {fileID: 11400000, guid: 2d5f8a7c0cc75b340b01ad290cb82d18, type: 2}
-  - {fileID: 11400000, guid: ddc2be8a2fc255e4cb23a434ba7baddc, type: 2}
+  buildingActions:
+  - action: {fileID: 11400000, guid: 2d5f8a7c0cc75b340b01ad290cb82d18, type: 2}
+    hideInHardMode: 0
+  - action: {fileID: 11400000, guid: ddc2be8a2fc255e4cb23a434ba7baddc, type: 2}
+    hideInHardMode: 0

@@ -24,11 +24,11 @@ game/clickToContinue,"Kliknij, aby kontynuować..."
 game/loading,"Ładowanie..."
 game/difficultyPickLabel,Wybierz poziom trudności na którym chcesz grać:
 game/easyDifficulty,"Łatwy
-<size=20>(mniej wydarzeń)"
+<size=20>(mniejsze wymagania i prostsze leczenie)"
+game/normalDifficulty,"Normalny
+<size=20>(mniejsze wymagania)"
 game/hardDifficulty,"Trudny
 <size=20>(większe wyzwanie)"
-game/easyDifficulty2,"Łatwy
-<size=20>(mniejsze wymagania)"
 prompt/villagersNotAssigned,Nie wszystkie postacie zostały przydzielone do akcji. Czy na pewno chcesz zakończyć turę?
 prompt/startNewGame,Czy na pewno chcesz usunąć stary zapis i rozpocząć nową grę?
 tips/merchant,U handlarza możesz wymienić zasoby za złoto. Handlarz za każdym razem ma inne oferty. Aby skorzystać z handlarza przydziel postaci akcję handlu. Handlarz jest dostępny tylko podczas wydarzenia z nim związanego.

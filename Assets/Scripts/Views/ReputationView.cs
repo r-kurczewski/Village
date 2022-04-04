@@ -23,7 +23,7 @@ namespace Village.Views
 			{
 				negative.value = Mathf.Abs(value);
 				positive.value = 0;
-				label.text = LabelString(Mathf.Abs(value), negativeColor);
+				label.text = LabelString(value, negativeColor);
 			}
 			else if (value == 0)
 			{

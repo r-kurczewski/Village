@@ -19,6 +19,7 @@ namespace Village
 		{
 			if (!completed)
 			{
+				SaveGame.Encoder = new PlainEncoder();
 				SaveGame.Encode = saveEncode;
 				TryLoadOptimalResolution();
 				completed = true;

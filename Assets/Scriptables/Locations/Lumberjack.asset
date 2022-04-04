@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Lumberjack
   m_EditorClassIdentifier: 
   basicActions:
-  - {fileID: 11400000, guid: 88ee2048ad0a3b24686464ccb77f04a6, type: 2}
+  - action: {fileID: 11400000, guid: 88ee2048ad0a3b24686464ccb77f04a6, type: 2}
+    hideInHardMode: 0
   LocaleBuildActionName: build/lumberjack
   localeBuildingDescription: building/lumberjack
   localeLogBuilt: log/building/lumberjack
@@ -24,5 +25,6 @@ MonoBehaviour:
     amount: 10
   - resource: {fileID: 11400000, guid: 276a9847a78915b46bb48e7d72a033e5, type: 2}
     amount: 5
-  buildingAction:
-  - {fileID: 11400000, guid: 5b93de760ec629c418a534d4b914b910, type: 2}
+  buildingActions:
+  - action: {fileID: 11400000, guid: 5b93de760ec629c418a534d4b914b910, type: 2}
+    hideInHardMode: 0

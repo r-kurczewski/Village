@@ -109,6 +109,7 @@ namespace Village.Views
 			{
 				Destroy(PlaceholderClone.gameObject);
 			}
+
 			GetComponent<Image>().raycastTarget = true;
 			draggedVillager = null;
 		}

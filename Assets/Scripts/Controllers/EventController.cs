@@ -120,7 +120,7 @@ namespace Village.Controllers
 					bool eventSuccess = true;
 					foreach (var req in ev.Event.eventBase.requirements)
 					{
-						var amount = Mathf.RoundToInt(req.Amount * instance.GetDifficultyMultiplier());
+						var amount = req.DifficultyAmount;
 						if (instance.GetResourceAmount(req.resource) < amount)
 						{
 							eventSuccess = false;
@@ -130,7 +130,7 @@ namespace Village.Controllers
 					{
 						foreach (var req in ev.Event.eventBase.requirements)
 						{
-							var amount = Mathf.RoundToInt(req.Amount * instance.GetDifficultyMultiplier());
+							var amount = req.DifficultyAmount;
 							req.resource.Apply(-amount);
 						}
 						ev.Event.eventBase.ApplySuccess();

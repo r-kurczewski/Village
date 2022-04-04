@@ -43,6 +43,8 @@ namespace Village.Scriptables
 				}
 			}
 
+			public int DifficultyAmount => Mathf.RoundToInt(Amount * instance.GetDifficultyMultiplier());
+
 			public ResourceAmount(Resource resource, int amount)
 			{
 				this.resource = resource;

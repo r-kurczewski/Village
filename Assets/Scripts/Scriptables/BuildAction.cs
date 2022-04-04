@@ -2,7 +2,7 @@ using Lean.Localization;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Village.Scriptables;
+using Village.Controllers;
 using Village.Views;
 using static Village.Scriptables.Effect;
 using static Village.Scriptables.Resource;
@@ -33,16 +33,15 @@ namespace Village.Scriptables
 		public VillagerStat Stat1 => buildBaseAction.stat1;
 		public VillagerStat Stat2 => buildBaseAction.stat2;
 
-
 		public IEnumerator Execute(Villager target)
 		{
-			if (buildingView.Location is MapBuilding building)
+			if (buildingView.Location is MapBuilding)
 			{
 				if (IsCostCorrect())
 				{
 					ApplyCosts();
 					buildingView.Build();
-					instance.AddLogSubEntry(new GameLog.LogSubEntry(buildingBase.localeLogBuilt));
+					instance.AddLogSubEntry(new LogController.LogSubEntry(buildingBase.localeLogBuilt));
 				}
 			}
 			else Debug.LogWarning("Trying to build not-building location!");

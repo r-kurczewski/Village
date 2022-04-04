@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Tharros
   m_EditorClassIdentifier: 
   basicActions:
-  - {fileID: 11400000, guid: 810db2d0a98bf674d896dbf5b535dd9e, type: 2}
-  - {fileID: 11400000, guid: d3de43892b148af4aa4d7870fc922bae, type: 2}
+  - action: {fileID: 11400000, guid: 810db2d0a98bf674d896dbf5b535dd9e, type: 2}
+    hideInHardMode: 0
+  - action: {fileID: 11400000, guid: d3de43892b148af4aa4d7870fc922bae, type: 2}
+    hideInHardMode: 0

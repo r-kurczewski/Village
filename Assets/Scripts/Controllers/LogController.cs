@@ -8,9 +8,9 @@ using UnityEngine.UI;
 using Village.Views;
 using static Village.Controllers.GameController;
 
-namespace Village
+namespace Village.Controllers
 {
-	public class GameLog : HidePanel
+	public class LogController : HidePanel
 	{
 		private const string entryTitleLocale = "log/entryTitle";
 

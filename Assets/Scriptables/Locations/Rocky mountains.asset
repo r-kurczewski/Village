@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Rocky mountains
   m_EditorClassIdentifier: 
   basicActions:
-  - {fileID: 11400000, guid: b831be6fbeca41744a00faddab4ad07e, type: 2}
+  - action: {fileID: 11400000, guid: b831be6fbeca41744a00faddab4ad07e, type: 2}
+    hideInHardMode: 0

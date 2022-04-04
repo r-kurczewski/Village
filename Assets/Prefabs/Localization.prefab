@@ -203,11 +203,13 @@ MonoBehaviour:
   - Name: game/difficultyPickLabel
     Text: "Wybierz poziom trudno\u015Bci na kt\xF3rym chcesz gra\u0107:"
   - Name: game/easyDifficulty
-    Text: "\u0141atwy\n<size=20>(mniej wydarze\u0144)"
+    Text: "\u0141atwy\n<size=20>(mniejsze wymagania i prostsze leczenie)"
+  - Name: game/normalDifficulty
+    Text: 'Normalny
+
+      <size=20>(mniejsze wymagania)'
   - Name: game/hardDifficulty
     Text: "Trudny\n<size=20>(wi\u0119ksze wyzwanie)"
-  - Name: game/easyDifficulty2
-    Text: "\u0141atwy\n<size=20>(mniejsze wymagania)"
   - Name: prompt/villagersNotAssigned
     Text: "Nie wszystkie postacie zosta\u0142y przydzielone do akcji. Czy na pewno
       chcesz zako\u0144czy\u0107 tur\u0119?"
@@ -222,8 +224,8 @@ MonoBehaviour:
   - Name: tips/treatment
     Text: "Ranne postacie otrzymuj\u0105 kary do statystyk. Mo\u017Cesz je leczy\u0107
       za pomoc\u0105 akcji w szpitalu polowym. Podstawowe leczenie za zio\u0142a
-      nie jest op\u0142acalne, rozwa\u017C szybk\u0105 budow\u0119 chatki zielarza
-      i szpitala."
+      nie jest najbardziej wydajn\u0105 opcj\u0105, rozwa\u017C szybk\u0105 budow\u0119
+      chatki zielarza i szpitala."
   - Name: tips/watchtower
     Text: "Wie\u017Ca obserwacyjna daje dodatkow\u0105 tur\u0119 na przygotowanie
       si\u0119 do nadchodz\u0105cych kryzys\xF3w. Wyd\u0142u\u017Ca to r\xF3wnie\u017C
@@ -552,10 +554,11 @@ MonoBehaviour:
     Text: "Po d\u0142ugiej, krwawej i bezowocnej wojnie terytorialnej mi\u0119dzy
       kr\xF3lestwem Tharros i oligarchi\u0105 kupieck\u0105 Salvante nastaje tymczasowy
       rozejm. Poprowad\u017A ludzi - dezerter\xF3w, ocala\u0142ych mieszka\u0144c\xF3w,
-      wygna\u0144c\xF3w - zapewnij im przetrwanie na tych spornych ziemiach. Tereny
-      te, \u017Cyzne i bogate w r\xF3\u017Cne surowce naturalne, s\u0105 r\xF3wnie\u017C
-      pe\u0142ne niebezpiecze\u0144stw, takich jak gro\u017Ane zwierz\u0119ta czy
-      szabrownicy szukaj\u0105cy \u0142atwego \u0142upu."
+      wygna\u0144c\xF3w - zapewnij im przetrwanie na tych spornych ziemiach i ocal
+      przed ponownym wybuchem konfliktu. Tereny te, \u017Cyzne i bogate w r\xF3\u017Cne
+      surowce naturalne, s\u0105 r\xF3wnie\u017C pe\u0142ne niebezpiecze\u0144stw,
+      takich jak gro\u017Ane zwierz\u0119ta czy szabrownicy szukaj\u0105cy \u0142atwego
+      \u0142upu."
   - Name: messages/fall/description
     Text: "Z dnia na dzie\u0144 robi si\u0119 coraz zimniej..."
   - Name: messages/finale/description
@@ -665,7 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: Polish
+  currentLanguage: English
   localeResourceName: 
   detectLanguage: 1
   defaultLanguage: English
@@ -788,15 +791,15 @@ MonoBehaviour:
   - Name: game/easyDifficulty
     Text: 'Easy
 
-      <size=20>(less events)'
+      <size=20>(lower requirements + easier treatment)'
+  - Name: game/normalDifficulty
+    Text: 'Normal
+
+      <size=20>(lower requirements)'
   - Name: game/hardDifficulty
     Text: 'Hard
 
       <size=20>(greater challenge)'
-  - Name: game/easyDifficulty2
-    Text: 'Easy
-
-      <size=20>(lower requirements)'
   - Name: prompt/villagersNotAssigned
     Text: Not all characters have been assigned to an action. Are you sure you want
       to end the turn?
@@ -1120,9 +1123,9 @@ MonoBehaviour:
     Text: After a long, bloody, and fruitless territorial war between the kingdom
       of Tharros and the merchant oligarchy of Salvante, a temporary truce is called.
       Lead the people - deserters, surviving citizens, exiles - ensure their survival
-      in these disputed lands. Fertile and rich in various natural resources, these
-      lands are also full of dangers, such as dangerous animals and plunderers looking
-      for easy loot.
+      in these disputed lands and save them from reigniting this conflict. Fertile
+      and rich in various natural resources, these lands are also full of dangers,
+      such as dangerous animals and plunderers looking for easy loot.
   - Name: messages/fall/description
     Text: Every day it gets colder and colder...
   - Name: messages/finale/description

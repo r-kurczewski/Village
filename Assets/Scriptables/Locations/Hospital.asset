@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Hospital
   m_EditorClassIdentifier: 
   basicActions:
-  - {fileID: 11400000, guid: 96a0209c04ed5df4a943032f07d0a98c, type: 2}
+  - action: {fileID: 11400000, guid: 96a0209c04ed5df4a943032f07d0a98c, type: 2}
+    hideInHardMode: 0
   LocaleBuildActionName: build/hospital
   localeBuildingDescription: building/hospital
   localeLogBuilt: log/building/hospital
@@ -24,6 +25,8 @@ MonoBehaviour:
     amount: 5
   - resource: {fileID: 11400000, guid: 389ae6ddb3eee6e4c94fe350940428df, type: 2}
     amount: 15
-  buildingAction:
-  - {fileID: 11400000, guid: 070d970f137f4bf4094e5a5fcd3ef378, type: 2}
-  - {fileID: 11400000, guid: e508f4a814744da42bc5c71eaca0136c, type: 2}
+  buildingActions:
+  - action: {fileID: 11400000, guid: 070d970f137f4bf4094e5a5fcd3ef378, type: 2}
+    hideInHardMode: 0
+  - action: {fileID: 11400000, guid: e508f4a814744da42bc5c71eaca0136c, type: 2}
+    hideInHardMode: 1

@@ -1104,7 +1104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5660378, g: 0.38490883, b: 0.03470988, a: 0.9019608}
+  m_Color: {r: 0.5647059, g: 0.38431376, b: 0.03529412, a: 0.9019608}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1939,13 +1939,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
+      propertyPath: m_text
+      value: <color=#CC3333>-3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
+      propertyPath: m_fontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: dfffce3f5215cd046931496ebf7fccd0, type: 2}
     - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 349511989436311494, guid: dfffce3f5215cd046931496ebf7fccd0, type: 2}
+    - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
+      propertyPath: m_characterSpacing
+      value: -4
+      objectReference: {fileID: 0}
     - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
       propertyPath: m_VerticalAlignment
       value: 4096
@@ -2539,7 +2555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
       propertyPath: m_fontSize
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
       propertyPath: m_fontAsset
@@ -2551,12 +2567,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
       propertyPath: m_fontSizeBase
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 349511989436311494, guid: dfffce3f5215cd046931496ebf7fccd0, type: 2}
+    - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
+      propertyPath: m_characterSpacing
+      value: -4
+      objectReference: {fileID: 0}
     - target: {fileID: 7581061106605651659, guid: 5b8c299de7a9e0a4cabe575e86ff78f4, type: 3}
       propertyPath: m_VerticalAlignment
       value: 4096

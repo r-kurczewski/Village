@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Fisherman
   m_EditorClassIdentifier: 
   basicActions:
-  - {fileID: 11400000, guid: 66d565fbe9b00a04487cb75674dc6e5c, type: 2}
+  - action: {fileID: 11400000, guid: 66d565fbe9b00a04487cb75674dc6e5c, type: 2}
+    hideInHardMode: 0
   LocaleBuildActionName: build/fisherman
   localeBuildingDescription: building/fisherman
   localeLogBuilt: log/building/fisherman
@@ -24,5 +25,6 @@ MonoBehaviour:
     amount: 5
   - resource: {fileID: 11400000, guid: 276a9847a78915b46bb48e7d72a033e5, type: 2}
     amount: 2
-  buildingAction:
-  - {fileID: 11400000, guid: afe6762b4b2202049a0b6e50c769dce8, type: 2}
+  buildingActions:
+  - action: {fileID: 11400000, guid: afe6762b4b2202049a0b6e50c769dce8, type: 2}
+    hideInHardMode: 0

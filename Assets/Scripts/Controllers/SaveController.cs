@@ -5,7 +5,7 @@ using UnityEngine;
 using System.Linq;
 using static Village.Scriptables.Resource;
 using System.IO;
-using static Village.GameLog;
+using static Village.Controllers.LogController;
 using static Village.Controllers.GameController;
 
 namespace Village.Controllers

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Hunter
   m_EditorClassIdentifier: 
   basicActions:
-  - {fileID: 11400000, guid: 75eb5714ad91db943b4a3dabcd93f593, type: 2}
+  - action: {fileID: 11400000, guid: 75eb5714ad91db943b4a3dabcd93f593, type: 2}
+    hideInHardMode: 0
   LocaleBuildActionName: build/hunter
   localeBuildingDescription: building/hunter
   localeLogBuilt: log/building/hunter
@@ -24,5 +25,6 @@ MonoBehaviour:
     amount: 10
   - resource: {fileID: 11400000, guid: 276a9847a78915b46bb48e7d72a033e5, type: 2}
     amount: 5
-  buildingAction:
-  - {fileID: 11400000, guid: 3b1d300ce7e3bea43b33f7867af7c6bc, type: 2}
+  buildingActions:
+  - action: {fileID: 11400000, guid: 3b1d300ce7e3bea43b33f7867af7c6bc, type: 2}
+    hideInHardMode: 0

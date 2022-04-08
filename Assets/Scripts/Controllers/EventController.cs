@@ -109,7 +109,6 @@ namespace Village.Controllers
 		public void EventUpdate()
 		{
 			int turnToLoad = instance.GetCurrentTurn() + PredictionFactor;
-			var chapter = instance.Chapter;
 
 			var toRemove = new List<EventView>();
 			foreach (var ev in currentEvents)
@@ -148,6 +147,11 @@ namespace Village.Controllers
 				Destroy(ev.gameObject);
 			}
 
+			LoadEventsFromTurn(turnToLoad);
+		}
+
+		public void LoadEventsFromTurn(int turnToLoad)
+		{
 			var newEvents = chapterEvents.Where(x => x.turn == turnToLoad).ToList();
 
 			if (newEvents.Count > 0)

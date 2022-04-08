@@ -45,6 +45,13 @@ namespace Village.Controllers
 					LoadChapterDetails(selected);
 					LoadChapterMessage(chapter.chapterStartMessage);
 					instance.LoadChapterEvents();
+
+					// load events skipped with prediction factor
+					if(instance.GetPredictionFactor() == 1)
+					{
+						instance.LoadEventsFromTurn(turn);
+					}
+
 					instance.ApplyIntelligenceBonus();
 					instance.PlayMusic();
 					break;

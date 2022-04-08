@@ -291,6 +291,11 @@ namespace Village.Controllers
 			AudioController.PlayMusic();
 		}
 
+		public void LoadEventsFromTurn(int turn)
+		{
+			eventController.LoadEventsFromTurn(turn);
+		}
+
 		public void PlayMusic(AudioClip clip)
 		{
 			AudioController.PlayMusic(clip);

@@ -9,6 +9,7 @@ using UnityEngine.Serialization;
 using Village.Scriptables;
 using Village.Views;
 using static Village.Controllers.GameController.GameDifficulty;
+using GameSaveData = Village.Controllers.SaveController.SaveData;
 
 namespace Village.Controllers
 {
@@ -94,9 +95,10 @@ namespace Village.Controllers
 		}
 		private void Start()
 		{
-			if (SaveController.SaveExists)
+			
+			if (SaveController.IsCorrectSave)
 			{
-				SaveController.SaveData save = SaveController.LoadSaveData();
+				var save = SaveController.LoadSaveData();
 				LoadPreviousGame(save);
 			}
 			else
@@ -128,7 +130,7 @@ namespace Village.Controllers
 			SaveGameState();
 		}
 
-		private async void LoadPreviousGame(SaveController.SaveData save)
+		private async void LoadPreviousGame(GameSaveData save)
 		{
 			loadingScreen.SetActive(true);
 			Task assetsLoading = AssetManager.instance.LoadAssets();

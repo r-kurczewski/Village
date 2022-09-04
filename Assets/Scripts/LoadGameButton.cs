@@ -13,7 +13,7 @@ namespace Village
 
 		void Start()
 		{
-			button.interactable = SaveController.SaveExists;
+			button.interactable = SaveController.IsCorrectSave;
 		}
 	}
 }

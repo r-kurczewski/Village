@@ -762,7 +762,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Efekty
+  m_text: Effects
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
   m_sharedMaterial: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
@@ -1021,7 +1021,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df9f6a0f96ac91d489f5342ba61666de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prompt: {fileID: 0}
+  newGamePrompt: {fileID: 0}
+  difficultyWindow: {fileID: 0}
   canvas: {fileID: 0}
 --- !u!4 &451954180
 Transform:
@@ -1225,7 +1226,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Rozdzielczo\u015B\u0107"
+  m_text: Resolution
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
   m_sharedMaterial: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
@@ -1709,7 +1710,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Rozgrywka
+  m_text: Gameplay
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
   m_sharedMaterial: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
@@ -1802,6 +1803,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1043457276 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4602115218954413093, guid: 67a2e980d1572604abcabd525479cd9d, type: 3}
+  m_PrefabInstance: {fileID: 4602115220329353022}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1044141226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1860,14 +1872,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e180e486a62c61045bde31004a03eaff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resolution: {fileID: 411527752}
+  resolutionDropdown: {fileID: 411527752}
+  resolutionApplyButton: {fileID: 1043457276}
   language: {fileID: 1154422752}
   fullscreen: {fileID: 220098606}
   master: {fileID: 1012581229}
   music: {fileID: 1310269298}
   effects: {fileID: 1052662622}
   hideDescription: {fileID: 1395022603}
-  villagerReturn: {fileID: 0}
   showTips: {fileID: 292964635}
 --- !u!114 &1044141230
 MonoBehaviour:
@@ -2398,7 +2410,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ustawienia
+  m_text: Settings
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 76492c0ab7caf5443a7de3e04071d37a, type: 2}
   m_sharedMaterial: {fileID: -8453091325018883154, guid: 76492c0ab7caf5443a7de3e04071d37a, type: 2}
@@ -2714,7 +2726,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Muzyka
+  m_text: Music
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
   m_sharedMaterial: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
@@ -3037,7 +3049,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Og\xF3lny"
+  m_text: Master
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
   m_sharedMaterial: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
@@ -3422,7 +3434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "J\u0119zyk"
+  m_text: Language
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
   m_sharedMaterial: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
@@ -3757,7 +3769,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "D\u017Awi\u0119k"
+  m_text: Audio
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
   m_sharedMaterial: {fileID: 7770481541815364990, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
@@ -4088,7 +4100,7 @@ PrefabInstance:
       objectReference: {fileID: 1044141228}
     - target: {fileID: 4602115218954413095, guid: 67a2e980d1572604abcabd525479cd9d, type: 3}
       propertyPath: m_Name
-      value: Save
+      value: Apply
       objectReference: {fileID: 0}
     - target: {fileID: 4602115220051648692, guid: 67a2e980d1572604abcabd525479cd9d, type: 3}
       propertyPath: translationName

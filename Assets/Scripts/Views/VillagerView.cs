@@ -144,7 +144,7 @@ namespace Village.Views
 
 			var droppedSlot = dropped.GetComponentInParent<ActionSlot>();
 
-			// if dropped to slot refresh tooltip
+			// if dropped to slot then refresh tooltip
 			if (droppedSlot)
 			{
 				ActionTooltip.instance.Load(droppedSlot);
@@ -154,6 +154,11 @@ namespace Village.Views
 
 			controller.SortVillagers();
 			controller.RefreshGUI();
+
+			if (dropped.transform.parent != dropped.PrevParent)
+			{
+				AudioController.instance.PlaySound(AudioController.instance.actionPutSound);
+			}
 		}
 
 		public void Refresh()

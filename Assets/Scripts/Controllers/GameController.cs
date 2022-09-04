@@ -95,7 +95,6 @@ namespace Village.Controllers
 		}
 		private void Start()
 		{
-			
 			if (SaveController.IsCorrectSave)
 			{
 				var save = SaveController.LoadSaveData();
@@ -130,10 +129,10 @@ namespace Village.Controllers
 			SaveGameState();
 		}
 
-		private async void LoadPreviousGame(GameSaveData save)
+		private /*async*/ void LoadPreviousGame(GameSaveData save)
 		{
 			loadingScreen.SetActive(true);
-			Task assetsLoading = AssetManager.instance.LoadAssets();
+			//Task assetsLoading = AssetManager.instance.LoadAssets();
 
 			currentDifficulty = save.difficulty;
 			locationController.LoadLoctions();
@@ -143,7 +142,7 @@ namespace Village.Controllers
 			hintWindow.displayedTips = save.displayedHints;
 			gameLog.SetLogData(save.log);
 
-			await assetsLoading;
+			//await assetsLoading;
 
 			villagerController.LoadVillagers(save.villagers);
 			eventController.LoadChapterEvents(save.chapterEvents);

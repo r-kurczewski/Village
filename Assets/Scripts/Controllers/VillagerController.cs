@@ -17,7 +17,6 @@ namespace Village.Controllers
 	[SelectionBase]
 	public class VillagerController : MonoBehaviour
 	{
-
 		private const string localeVillagerDied = "log/villagerDied";
 
 		[SerializeField]
@@ -26,12 +25,19 @@ namespace Village.Controllers
 		[SerializeField]
 		private List<VillagerBase> villagerStartPool;
 
+		[SerializeField]
+		private LayoutGroup layout;
+
 		public Transform dragParent;
 
 		public List<VillagerView> villagers;
 
-		[SerializeField]
-		private LayoutGroup layout;
+		private void Update()
+		{
+			#if UNITY_WEBGL
+				RefreshGUI(); // Refresh layout every frame when dynamic resolution
+			#endif 
+		}
 
 		public void PutVillager(VillagerView villager)
 		{

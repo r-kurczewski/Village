@@ -32,15 +32,6 @@ namespace Village
 			else
 			{
 				Destroy(gameObject);
-				Debug.LogWarning("Duplicate of Asset Manager.");
-			}
-		}
-
-		private void Start()
-		{
-			if (instance == this)
-			{
-	
 			}
 		}
 
@@ -51,7 +42,8 @@ namespace Village
 
 		public T GetAsset<T>(string assetString) where T : Object
 		{
-			return assets[assetString] as T;
+			return GetResourcesAsset<T>(assetString);
+			//return assets[assetString] as T;
 		}
 
 		public async Task LoadAssets()
@@ -67,6 +59,7 @@ namespace Village
 				loaded = true;
 			}
 		}
+
 		public T GetResourcesAsset<T>(string assetPath) where T : Object
 		{
 			return Resources.Load<T>(assetPath);

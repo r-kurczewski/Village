@@ -20,7 +20,10 @@ public class GameSettings : MonoBehaviour
 	private const string showTipsString = "showTips";
 
 	[SerializeField]
-	private TMP_Dropdown resolution;
+	private TMP_Dropdown resolutionDropdown;
+
+	[SerializeField]
+	private Button resolutionApplyButton;
 
 	[SerializeField]
 	private TMP_Dropdown language;
@@ -37,7 +40,8 @@ public class GameSettings : MonoBehaviour
 	[SerializeField]
 	private Slider effects;
 
-	[SerializeField][FormerlySerializedAs("hideTooltips")]
+	[SerializeField]
+	[FormerlySerializedAs("hideTooltips")]
 	private Toggle hideDescription;
 
 	[SerializeField]
@@ -111,17 +115,29 @@ public class GameSettings : MonoBehaviour
 
 	private void LoadResolutions()
 	{
-		resolution.ClearOptions();
+		resolutionDropdown.ClearOptions();
+#if !UNITY_WEBGL
 		var resolutions = Screen.resolutions
 			.Where(x => x.width >= 1024)
 			.Where(x => x.height >= 768)
 			.Select(x => $"{x.width}x{x.height}")
 			.Distinct()
 			.ToList();
-		resolution.AddOptions(resolutions);
-		var currentResolutionIndex = resolution.options.IndexOf(resolution.options.FirstOrDefault(x => x.text == Resolution));
-		resolution.SetValueWithoutNotify(currentResolutionIndex);
+		resolutionDropdown.AddOptions(resolutions);
+		var currentResolutionIndex = resolutionDropdown.options.IndexOf(resolutionDropdown.options.FirstOrDefault(x => x.text == Resolution));
+		resolutionDropdown.SetValueWithoutNotify(currentResolutionIndex);
 		fullscreen.isOn = Fullscreen;
+#else
+		var currentResolution = $"{Screen.width}x{Screen.height}";
+		var resolutions = new List<string>() { currentResolution };
+		resolutionDropdown.AddOptions(resolutions);
+		resolutionDropdown.SetValueWithoutNotify(0);
+		fullscreen.isOn = Screen.fullScreen;
+		resolutionDropdown.interactable = false;
+		fullscreen.interactable = false;
+		resolutionApplyButton.interactable = false;
+#endif
+
 	}
 
 	private void LoadLanguages()
@@ -157,7 +173,7 @@ public class GameSettings : MonoBehaviour
 
 	public void ChangeResolution()
 	{
-		var option = resolution.options[resolution.value];
+		var option = resolutionDropdown.options[resolutionDropdown.value];
 		var res = option.text.Split('x').Select(x => int.Parse(x)).ToArray();
 		Resolution = option.text;
 		Fullscreen = fullscreen.isOn;

@@ -1,10 +1,6 @@
-using BayatGames.SaveGameFree;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using BayatGames.SaveGameFree.Serializers;
-using BayatGames.SaveGameFree.Encoders;
 using System.Linq;
+using UnityEngine;
+using Village.Controllers;
 
 namespace Village
 {
@@ -13,14 +9,13 @@ namespace Village
 		static bool completed = false;
 
 		[SerializeField]
-		private bool saveEncode;
+		private bool saveEncryption;
 
 		private void Awake()
 		{
 			if (!completed)
 			{
-				SaveGame.Encoder = new PlainEncoder();
-				SaveGame.Encode = saveEncode;
+				SaveController.Encryption = saveEncryption;
 				TryLoadOptimalResolution();
 				completed = true;
             }

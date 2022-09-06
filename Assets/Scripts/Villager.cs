@@ -10,7 +10,7 @@ using static Village.Controllers.GameController;
 public class Villager : MonoBehaviour
 {
 	[SerializeReference]
-	public VillagerBase villagerBase;
+	public VillagerBase villagerBase = null;
 
 	[SerializeField]
 	private int
@@ -24,7 +24,7 @@ public class Villager : MonoBehaviour
 	private int _health;
 
 	[SerializeField]
-	private UnityData references;
+	private UnityData references = null;
 
 	#region Stats properties
 
@@ -221,7 +221,7 @@ public class Villager : MonoBehaviour
 	[Serializable]
 	public class VillagerStatAmount
 	{
-		public VillagerStat stat;
+		public VillagerStat stat = null;
 		[SerializeField]
 		private int amount;
 
@@ -251,18 +251,18 @@ public class Villager : MonoBehaviour
 	private class UnityData
 	{
 		public VillagerStat
-			strength,
-			gathering,
-			crafting,
-			diplomacy,
-			intelligence;
+			strength = null,
+			gathering = null,
+			crafting = null,
+			diplomacy = null,
+			intelligence = null;
 
 	}
 
 	[Serializable]
 	public class SaveData
 	{
-		public string villagerName;
+		public string villagerName = null;
 		public int
 			health,
 			strength,

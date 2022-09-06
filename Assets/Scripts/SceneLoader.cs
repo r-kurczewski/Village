@@ -1,12 +1,8 @@
 using Lean.Localization;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using Village.Controllers;
 using Village.Views;
-using UnityEngine.Serialization;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -58,21 +54,21 @@ public class SceneLoader : MonoBehaviour
 
 	public void StartNewGame()
 	{
-		if (SaveController.SaveExists)
+		if (SaveController.IsCorrectSave)
 		{
-			var window = Instantiate(newGamePrompt, canvas);
+			var overwriteSaveWindow = Instantiate(newGamePrompt, canvas);
 			var message = LeanLocalization.GetTranslationText(localeStartNewGamePrompt);
-			window.LoadMessage(message);
-			window.OnAccept.AddListener(() =>
+			overwriteSaveWindow.LoadMessage(message);
+			overwriteSaveWindow.OnAccept.AddListener(() =>
 			{
 				LoadDiffciultyWindow();
-				window.Close();
+				overwriteSaveWindow.Close();
 			});
-			window.OnDecline.AddListener(() =>
+			overwriteSaveWindow.OnDecline.AddListener(() =>
 			{
-				window.Close();
+				overwriteSaveWindow.Close();
 			});
-			window.RefreshLayout();
+			overwriteSaveWindow.RefreshLayout();
 		}
 		else
 		{

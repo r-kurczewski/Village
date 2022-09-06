@@ -1,20 +1,42 @@
-﻿using BayatGames.SaveGameFree;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
-using static Village.Scriptables.Resource;
-using System.IO;
-using static Village.Controllers.LogController;
 using static Village.Controllers.GameController;
+using static Village.Controllers.LogController;
+using static Village.Scriptables.Resource;
 
 namespace Village.Controllers
 {
 	public class SaveController : MonoBehaviour
 	{
-		private const string saveFileName = "save.dat";
+		private static readonly string saveFullPath = $"{Application.persistentDataPath}/save.dat";
 
 		public static SaveData save;
+
+		public static bool Encryption { get; internal set; }
+
+		public static bool IsCorrectSave
+		{
+			get
+			{
+				bool isCorrectSave = false;
+				try
+				{
+					SaveManager.Instance.Load<SaveData>(saveFullPath, CheckSaveIfCorrect, Encryption);
+					return isCorrectSave;
+				}
+				catch(Exception ex)
+				{
+					Debug.LogError($"There is a problem with loading a save: {ex.Message}");
+					return false;
+				}
+
+				void CheckSaveIfCorrect(SaveData data, SaveResult result, string message)
+				{
+					isCorrectSave = result is SaveResult.Success;
+				}
+			}
+		}
 
 		public static void SaveGameState()
 		{
@@ -31,25 +53,48 @@ namespace Village.Controllers
 				displayedHints = instance.SaveHints(),
 				log = instance.GetGameLogData(),
 			};
-			SaveGame.Save(saveFileName, data);
+			SaveManager.Instance.Save(data, saveFullPath, OnSaveCompleted, Encryption);
+		}
+
+		public static void OnSaveCompleted(SaveResult result, string message)
+		{
+			if (result is SaveResult.Error)
+			{
+				Debug.LogError($"Could not save a game: {message}");
+				SaveManager.Instance.ClearFIle(saveFullPath);
+			}
 		}
 
 		public static SaveData LoadSaveData()
 		{
-			save = SaveGame.Load<SaveData>(saveFileName);
-			if (save == null)
-			{
-				throw new InvalidDataException("There was a problem with loading save.");
-			}
-			else return save;
+			SaveManager.Instance.Load<SaveData>(saveFullPath, OnLoadCompleted, Encryption);
+			return save;
 		}
 
-		public static bool SaveExists => SaveGame.Exists(saveFileName);
+		public static void OnLoadCompleted(SaveData data, SaveResult result, string message)
+		{
+			if (result is SaveResult.Success)
+			{
+				Debug.Log($"Save loaded: {message}");
+				save = data;
+			}
+			else if (result is SaveResult.EmptyData)
+			{
+				Debug.Log($"No save to load: {message}");
+				save = null;
+			}
+			else if (result is SaveResult.Error)
+			{
+				Debug.LogError($"There was a problem with loading save: {message}");
+				save = null;
+			}
+		}
 
 		public static void ClearSave()
 		{
 			save = null;
-			SaveGame.Delete(saveFileName);
+			SaveManager.Instance.ClearFIle(saveFullPath);
+			Debug.Log("Save cleared.");
 		}
 
 		[Serializable]

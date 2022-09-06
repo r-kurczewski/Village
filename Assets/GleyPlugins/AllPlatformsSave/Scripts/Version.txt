@@ -1,0 +1,5 @@
+{
+    "folderName": "AllPlatformsSave",
+    "longVersion": "1.1.6",
+    "shortVersion": 2
+}

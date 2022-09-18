@@ -26,6 +26,9 @@ public class GameSettings : MonoBehaviour
 	private Button resolutionApplyButton;
 
 	[SerializeField]
+	private GameObject resolutionItemGroup;
+
+	[SerializeField]
 	private TMP_Dropdown language;
 
 	[SerializeField]
@@ -128,14 +131,13 @@ public class GameSettings : MonoBehaviour
 		resolutionDropdown.SetValueWithoutNotify(currentResolutionIndex);
 		fullscreen.isOn = Fullscreen;
 #else
-		var currentResolution = $"{Screen.width}x{Screen.height}";
+		var currentResolution = $"Auto";
 		var resolutions = new List<string>() { currentResolution };
 		resolutionDropdown.AddOptions(resolutions);
 		resolutionDropdown.SetValueWithoutNotify(0);
 		fullscreen.isOn = Screen.fullScreen;
+		resolutionItemGroup.SetActive(false);
 		resolutionDropdown.interactable = false;
-		fullscreen.interactable = false;
-		resolutionApplyButton.interactable = false;
 #endif
 
 	}

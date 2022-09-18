@@ -9,11 +9,27 @@ namespace Village.Controllers
 {
 	public class SaveController : MonoBehaviour
 	{
+		private const string USER_ID_KEY = "userId";
+
 		private static readonly string saveFullPath = $"{Application.persistentDataPath}/save.dat";
 
-		public static SaveData save;
+		public static SaveData Save { get; private set; }
 
 		public static bool Encryption { get; internal set; }
+
+		public static string UserId
+		{
+			get
+			{
+				var userId = PlayerPrefs.GetString(USER_ID_KEY, string.Empty);
+				if (userId == string.Empty)
+				{
+					userId = Guid.NewGuid().ToString();
+					PlayerPrefs.SetString(USER_ID_KEY, userId);
+				}
+				return userId;
+			}
+		}
 
 		public static bool IsCorrectSave
 		{
@@ -42,6 +58,7 @@ namespace Village.Controllers
 		{
 			SaveData data = new SaveData
 			{
+				saveId = Save?.saveId ?? Guid.NewGuid().ToString(),
 				difficulty = instance.SaveDifficulty(),
 				turn = instance.GetCurrentTurn(),
 				villagers = instance.SaveVillagers(),
@@ -53,6 +70,7 @@ namespace Village.Controllers
 				displayedHints = instance.SaveHints(),
 				log = instance.GetGameLogData(),
 			};
+			Save = data;
 			SaveManager.Instance.Save(data, saveFullPath, OnSaveCompleted, Encryption);
 		}
 
@@ -65,10 +83,15 @@ namespace Village.Controllers
 			}
 		}
 
+		public static void CreateNewSave()
+		{
+			SaveGameState();
+		}
+
 		public static SaveData LoadSaveData()
 		{
 			SaveManager.Instance.Load<SaveData>(saveFullPath, OnLoadCompleted, Encryption);
-			return save;
+			return Save;
 		}
 
 		public static void OnLoadCompleted(SaveData data, SaveResult result, string message)
@@ -76,23 +99,23 @@ namespace Village.Controllers
 			if (result is SaveResult.Success)
 			{
 				Debug.Log($"Save loaded: {message}");
-				save = data;
+				Save = data;
 			}
 			else if (result is SaveResult.EmptyData)
 			{
 				Debug.Log($"No save to load: {message}");
-				save = null;
+				Save = null;
 			}
 			else if (result is SaveResult.Error)
 			{
 				Debug.LogError($"There was a problem with loading save: {message}");
-				save = null;
+				Save = null;
 			}
 		}
 
 		public static void ClearSave()
 		{
-			save = null;
+			Save = null;
 			SaveManager.Instance.ClearFIle(saveFullPath);
 			Debug.Log("Save cleared.");
 		}
@@ -100,15 +123,26 @@ namespace Village.Controllers
 		[Serializable]
 		public class SaveData
 		{
+			public string saveId;
+
 			public GameDifficulty difficulty;
+
 			public int turn;
+
 			public List<ResourceAmount.SaveData> resources;
+
 			public List<Villager.SaveData> villagers;
+
 			public List<GameEvent.SaveData> currentEvents;
+
 			public List<GameEvent.SaveData> chapterEvents;
+
 			public List<TradeOffer.SaveData> merchantTrades;
+
 			public List<string> buildings;
+
 			public List<string> displayedHints;
+
 			public List<LogEntry> log;
 		}
 	}

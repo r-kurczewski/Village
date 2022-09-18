@@ -1,21 +1,24 @@
 ﻿using Lean.Localization;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.IO;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Village.Scriptables;
 using Village.Views;
+using VillageAnalyticsModel;
 using static Village.Controllers.GameController.GameDifficulty;
 using GameSaveData = Village.Controllers.SaveController.SaveData;
+using UnityEngine.Networking;
 
 namespace Village.Controllers
 {
 	[SelectionBase]
 	public class GameController : MonoBehaviour
 	{
+		private readonly string CONFIG_FILE_PATH = $"{Application.streamingAssetsPath}/config.json";
+
 		private const string villagerNotAssignedPromptLocale = "prompt/villagersNotAssigned";
 
 		public const int COUNTRY_A_ENDING_REPUTATION = 600;
@@ -35,8 +38,10 @@ namespace Village.Controllers
 		public const int VILLAGER_START_HEALTH = 5;
 		public const int MERCHANT_SELL_ITEMS_COUNT = 4;
 		public const int MERCHANT_BUY_ITEMS_COUNT = 4;
-		
+
 		public static GameController instance;
+
+		public JObject Config { get; private set; }
 
 		public bool autoSave = true;
 
@@ -59,6 +64,9 @@ namespace Village.Controllers
 
 		[SerializeField]
 		private TradeController tradeController;
+
+		[SerializeField]
+		private AnalyticsController analyticsController;
 
 		[SerializeField]
 		private LogController gameLog;
@@ -104,16 +112,47 @@ namespace Village.Controllers
 			{
 				StartNewGame();
 			}
+
+			GetConfig();
+		}
+
+		private void GetConfig()
+		{
+			StartCoroutine(GetConfigCoroutine());
+		}
+
+		private IEnumerator GetConfigCoroutine()
+		{
+#if UNITY_WEBGL && !UNITY_EDITOR
+			using var request = UnityWebRequest.Get(CONFIG_FILE_PATH);
+
+			yield return request.SendWebRequest();
+
+			if (request.result != UnityWebRequest.Result.Success)
+			{
+				Debug.LogError($"Could not get config: {request.error}");
+			}
+			else
+			{
+				var json = request.downloadHandler.text;
+				Config = JObject.Parse(json);
+				Debug.Log($"Config: {json} loaded.");
+			}
+#else
+			var json = File.ReadAllText(CONFIG_FILE_PATH);
+			Config = JObject.Parse(json);
+			yield return default;
+#endif
 		}
 
 		public void Update()
 		{
-			#if UNITY_EDITOR
+#if UNITY_EDITOR
 			if (Input.GetKeyDown(KeyCode.BackQuote))
 			{
 				debugMode = !debugMode;
 			}
-			#endif
+#endif
 		}
 
 		private void StartNewGame()
@@ -126,7 +165,7 @@ namespace Village.Controllers
 
 			UpdateGUI();
 			PlayMusic();
-			SaveGameState();
+			SaveController.CreateNewSave();
 		}
 
 		private /*async*/ void LoadPreviousGame(GameSaveData save)
@@ -244,7 +283,7 @@ namespace Village.Controllers
 				var prompt = Instantiate(promptPrefab, promptParent);
 				var message = LeanLocalization.GetTranslationText(villagerNotAssignedPromptLocale);
 				prompt.LoadMessage(message);
-				
+
 				prompt.OnAccept.AddListener(() =>
 				{
 					StartCoroutine(IEndTurn());
@@ -267,7 +306,11 @@ namespace Village.Controllers
 			turnController.MoveToNextTurn();
 			TurnUpdate();
 			instance.AddLogDayEntry();
-			if (autoSave) SaveController.SaveGameState();
+			if (autoSave)
+			{
+				SaveController.SaveGameState();
+				SendAnalyticsData();
+			}
 		}
 
 		public void SetPredictionFactor()
@@ -310,11 +353,6 @@ namespace Village.Controllers
 		public void SetMusic(AudioClip clip)
 		{
 			AudioController.SetMusic(clip);
-		}
-
-		private static void SaveGameState()
-		{
-			SaveController.SaveGameState();
 		}
 
 		public GameDifficulty SaveDifficulty()
@@ -400,6 +438,19 @@ namespace Village.Controllers
 				Hard => DIFFICULTY_MULTIPLIER_HARD,
 				_ => throw new ArgumentException("Invalid difficulty"),
 			};
+		}
+
+		private void SendAnalyticsData()
+		{
+			var save = SaveController.Save;
+			var data = new GameAnalyticsData()
+			{
+				UserId = SaveController.UserId,
+				SaveId = save.saveId,
+				Turn = save.turn,
+				Timestamp = DateTime.UtcNow,
+			};
+			analyticsController.SendGameAnalyticsData(data);
 		}
 
 		public enum GameDifficulty { Easy, Normal, Hard }

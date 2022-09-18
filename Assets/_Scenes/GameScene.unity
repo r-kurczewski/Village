@@ -2544,7 +2544,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &773828905
 PrefabInstance:
@@ -3661,6 +3661,49 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6859613252906170227, guid: 9ff6246a8448e1149b0d225ae1bcdddd, type: 3}
   m_PrefabInstance: {fileID: 1011606901465726557}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1150250595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1150250597}
+  - component: {fileID: 1150250596}
+  m_Layer: 0
+  m_Name: Analytics
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1150250596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150250595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60106cf49d3c51d4c85994e253fcf853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1150250597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150250595}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1171.2057, y: 409.9602, z: -302.90924}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1150322344
 GameObject:
   m_ObjectHideFlags: 0
@@ -4311,7 +4354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc089a426756534488b0a951a66e0a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveEncode: 1
+  saveEncryption: 0
 --- !u!1 &1339390100
 GameObject:
   m_ObjectHideFlags: 0
@@ -4589,6 +4632,7 @@ MonoBehaviour:
   eventController: {fileID: 1150322349}
   turnController: {fileID: 367870223}
   tradeController: {fileID: 1504542417}
+  analyticsController: {fileID: 1150250596}
   gameLog: {fileID: 1695756887}
   loadingScreen: {fileID: 479229276}
   hintWindow: {fileID: 1831291330}
@@ -4902,7 +4946,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tura
+  m_text: Turn
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63ed27cd4102f944b9a5ebd2b6054cc8, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 107fb786f0aab054a8a2ba06b2bcb977, type: 2}
@@ -7368,9 +7412,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 720886d416b95934e8ef52142b0c8282, type: 2}
   - {fileID: 11400000, guid: 9cf42f0bf11b64a458928b4afb43f8d0, type: 2}
   - {fileID: 11400000, guid: 1f81c9501500b6e4186fb0ee5753741f, type: 2}
+  layout: {fileID: 1999839125}
   dragParent: {fileID: 522349095}
   villagers: []
-  layout: {fileID: 1999839125}
 --- !u!224 &2002801832 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6859613252906170227, guid: 9ff6246a8448e1149b0d225ae1bcdddd, type: 3}

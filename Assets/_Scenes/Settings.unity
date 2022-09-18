@@ -1874,6 +1874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resolutionDropdown: {fileID: 411527752}
   resolutionApplyButton: {fileID: 1043457276}
+  resolutionItemGroup: {fileID: 1682305635}
   language: {fileID: 1154422752}
   fullscreen: {fileID: 220098606}
   master: {fileID: 1012581229}
@@ -4223,6 +4224,10 @@ PrefabInstance:
     - target: {fileID: 6008665922369328742, guid: b16be7fd003feaa4a916f2ecd5867311, type: 3}
       propertyPath: m_Name
       value: Resolution
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008665922369328742, guid: b16be7fd003feaa4a916f2ecd5867311, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6008665922369328743, guid: b16be7fd003feaa4a916f2ecd5867311, type: 3}
       propertyPath: m_Pivot.x

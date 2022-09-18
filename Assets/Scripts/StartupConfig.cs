@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 using Village.Controllers;
@@ -15,10 +16,15 @@ namespace Village
 		{
 			if (!completed)
 			{
-				SaveController.Encryption = saveEncryption;
+				SetSaveEncryption();
 				TryLoadOptimalResolution();
 				completed = true;
-            }
+			}
+		}
+
+		private void SetSaveEncryption()
+		{
+			SaveController.Encryption = saveEncryption;
 		}
 
 		private void TryLoadOptimalResolution()

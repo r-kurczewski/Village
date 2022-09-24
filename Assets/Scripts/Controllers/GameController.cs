@@ -11,6 +11,7 @@ using VillageAnalyticsModel;
 using static Village.Controllers.GameController.GameDifficulty;
 using GameSaveData = Village.Controllers.SaveController.SaveData;
 using UnityEngine.Networking;
+using Newtonsoft.Json;
 
 namespace Village.Controllers
 {
@@ -447,7 +448,9 @@ namespace Village.Controllers
 			{
 				UserId = SaveController.UserId,
 				SaveId = save.saveId,
+				Difficulty = (int)save.difficulty,
 				Turn = save.turn,
+				SaveJson = JsonConvert.SerializeObject(save),
 				Timestamp = DateTime.UtcNow,
 			};
 			analyticsController.SendGameAnalyticsData(data);

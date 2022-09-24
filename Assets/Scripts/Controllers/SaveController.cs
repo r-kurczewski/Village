@@ -7,7 +7,7 @@ using static Village.Scriptables.Resource;
 
 namespace Village.Controllers
 {
-	public class SaveController : MonoBehaviour
+	public static class SaveController
 	{
 		private const string USER_ID_KEY = "userId";
 

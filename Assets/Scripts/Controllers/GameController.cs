@@ -137,7 +137,6 @@ namespace Village.Controllers
 			{
 				var json = request.downloadHandler.text;
 				Config = JObject.Parse(json);
-				Debug.Log($"Config: {json} loaded.");
 			}
 #else
 			var json = File.ReadAllText(CONFIG_FILE_PATH);

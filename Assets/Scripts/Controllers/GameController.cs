@@ -139,20 +139,27 @@ namespace Village.Controllers
 				Config = JObject.Parse(json);
 			}
 #else
-			var json = File.ReadAllText(CONFIG_FILE_PATH);
-			Config = JObject.Parse(json);
+			try
+			{
+				var json = File.ReadAllText(CONFIG_FILE_PATH);
+				Config = JObject.Parse(json);
+			}
+			catch(Exception ex) 
+			{
+				Debug.LogWarning($"Could not load a config file: {ex.Message}");
+			}
 			yield return default;
 #endif
 		}
 
 		public void Update()
 		{
-#if UNITY_EDITOR
+			#if UNITY_EDITOR
 			if (Input.GetKeyDown(KeyCode.BackQuote))
 			{
 				debugMode = !debugMode;
 			}
-#endif
+			#endif
 		}
 
 		private void StartNewGame()
